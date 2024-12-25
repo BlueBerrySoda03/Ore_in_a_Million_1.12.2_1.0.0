@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "active=false,facing=north": {"model":  "oreinamillion:alloyer"},
+    "active=false,facing=east": {"model":  "oreinamillion:alloyer", "y":  90},
+    "active=false,facing=south": {"model":  "oreinamillion:alloyer", "y":  180},
+    "active=false,facing=west": {"model":  "oreinamillion:alloyer", "y": 270},
+    "active=true,facing=north": {"model":  "oreinamillion:active_alloyer"},
+    "active=true,facing=east": {"model":  "oreinamillion:active_alloyer", "y":  90},
+    "active=true,facing=south": {"model":  "oreinamillion:active_alloyer", "y":  180},
+    "active=true,facing=west": {"model":  "oreinamillion:active_alloyer", "y": 270}
+  }
+}

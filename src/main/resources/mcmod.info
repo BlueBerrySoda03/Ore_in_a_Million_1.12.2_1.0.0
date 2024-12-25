@@ -1,0 +1,16 @@
+[
+{
+  "modid": "oreinamillion",
+  "name": "Ore in a Million",
+  "description": "an attempt as an AIO ore mod",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["BlueBerry_Soda"],
+  "credits": "The ATM team for helping the inspiration of this mod :D",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

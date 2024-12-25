@@ -1,0 +1,194 @@
+#creative tabs
+itemGroup.CreativeTabMain=Ore in a Million: Main
+itemGroup.CreativeTabMineral=Ore in a Million: Minerals
+itemGroup.CreativeTabCrafting=Ore in a Million: Crafting
+itemGroup.CreativeTabBlock=Ore in a Million: Blocks
+itemGroup.CreativeTabTool=Ore in a Million: Tools
+itemGroup.CreativeTabArmor=Ore in a Million: Armor
+
+#item.oreinamillion..name=
+#minerals
+#base
+item.oreinamillion.aluminum_ingot.name=Aluminum Ingot
+item.oreinamillion.ardite_ingot.name=Ardite Ingot
+item.oreinamillion.chrome_ingot.name=Chrome Ingot
+item.oreinamillion.cobalt_ingot.name=Cobalt Ingot
+item.oreinamillion.copper_ingot.name=Copper Ingot
+item.oreinamillion.ender_ingot.name=Ender Ingot
+item.oreinamillion.iridium_ingot.name=Iridium Ingot
+item.oreinamillion.lead_ingot.name=Lead Ingot
+item.oreinamillion.mithril_ingot.name=Mithril Ingot
+item.oreinamillion.nickel_ingot.name=Nickel Ingot
+item.oreinamillion.osmium_ingot.name=Osmium Ingot
+item.oreinamillion.platinum_ingot.name=Platinum Ingot
+item.oreinamillion.silver_ingot.name=Silver Ingot
+item.oreinamillion.tin_ingot.name=Tin Ingot
+item.oreinamillion.titanium_ingot.name=Titanium Ingot
+item.oreinamillion.tungsten_ingot.name=Tungsten Ingot
+item.oreinamillion.uranium_ingot.name=Uranium Ingot
+item.oreinamillion.zinc_ingot.name=Zinc Ingot
+#alloy
+item.oreinamillion.brass_ingot.name=Brass Ingot
+item.oreinamillion.bronze_ingot.name=Bronze Ingot
+item.oreinamillion.constantan_ingot.name=Constantan Ingot
+item.oreinamillion.electrum_ingot.name=Electrum Ingot
+item.oreinamillion.enderium_ingot.name=Enderium Ingot
+item.oreinamillion.fairy_ingot.name=Fairy Ingot
+item.oreinamillion.invar_ingot.name=Invar Ingot
+item.oreinamillion.knightslime_ingot.name=Knightslime Ingot
+item.oreinamillion.lumium_ingot.name=Lumium Ingot
+item.oreinamillion.manyullyn_ingot.name=Manyullyn Ingot
+item.oreinamillion.pigiron_ingot.name=Pigiron Ingot
+item.oreinamillion.signalum_ingot.name=Signalum Ingot
+item.oreinamillion.steel_ingot.name=Steel Ingot
+#gems
+item.oreinamillion.amethyst.name=Amethyst
+item.oreinamillion.peridot.name=Peridot
+item.oreinamillion.ruby.name=Ruby
+item.oreinamillion.sapphire.name=Sapphire
+#other
+item.oreinamillion.carbon.name=Carbon
+item.oreinamillion.cinnabar.name=Cinnabar
+item.oreinamillion.silicon.name=Silicon
+item.oreinamillion.sulfur.name=Sulfur
+
+#nuggets
+#base
+item.oreinamillion.aluminum_nugget.name=Aluminum Nugget
+item.oreinamillion.ardite_nugget.name=Ardite Nugget
+item.oreinamillion.chrome_nugget.name=Chrome Nugget
+item.oreinamillion.cobalt_nugget.name=Cobalt Nugget
+item.oreinamillion.copper_nugget.name=Copper Nugget
+item.oreinamillion.ender_nugget.name=Ender Nugget
+item.oreinamillion.iridium_nugget.name=Iridium Nugget
+item.oreinamillion.lead_nugget.name=Lead Nugget
+item.oreinamillion.mithril_nugget.name=Mithril Nugget
+item.oreinamillion.nickel_nugget.name=Nickel Nugget
+item.oreinamillion.osmium_nugget.name=Osmium Nugget
+item.oreinamillion.platinum_nugget.name=Platinum Nugget
+item.oreinamillion.silver_nugget.name=Silver Nugget
+item.oreinamillion.tin_nugget.name=Tin Nugget
+item.oreinamillion.titanium_nugget.name=Titanium Nugget
+item.oreinamillion.tungsten_nugget.name=Tungsten Nugget
+item.oreinamillion.uranium_nugget.name=Uranium Nugget
+item.oreinamillion.zinc_nugget.name=Zinc Nugget
+#alloy
+item.oreinamillion.brass_nugget.name=Brass Nugget
+item.oreinamillion.bronze_nugget.name=Bronze Nugget
+item.oreinamillion.constantan_nugget.name=Constantan Nugget
+item.oreinamillion.electrum_nugget.name=Electrum Nugget
+item.oreinamillion.enderium_nugget.name=Enderium Nugget
+item.oreinamillion.fairy_nugget.name=Fairy Nugget
+item.oreinamillion.invar_nugget.name=Invar Nugget
+item.oreinamillion.knightslime_nugget.name=Knightslime Nugget
+item.oreinamillion.lumium_nugget.name=Lumium Nugget
+item.oreinamillion.manyullyn_nugget.name=Manyullyn Nugget
+item.oreinamillion.pigiron_nugget.name=Pigiron Nugget
+item.oreinamillion.signalum_nugget.name=Signalum Nugget
+item.oreinamillion.steel_nugget.name=Steel Nugget
+#gems
+item.oreinamillion.amethyst_nugget.name=Amethyst Nugget
+item.oreinamillion.peridot_nugget.name=Peridot Nugget
+item.oreinamillion.ruby_nugget.name=Ruby Nugget
+item.oreinamillion.sapphire_nugget.name=Sapphire Nugget
+#other
+item.oreinamillion.carbon_nugget.name=Carbon Nugget
+item.oreinamillion.cinnabar_nugget.name=Cinnabar Nugget
+item.oreinamillion.silicon_nugget.name=Silicon Nugget
+item.oreinamillion.sulfur_nugget.name=Sulfur Nugget
+#vanilla
+item.oreinamillion.charcoal_nugget.name=Charcoal Nugget
+item.oreinamillion.coal_nugget.name=Coal Nugget
+item.oreinamillion.diamond_nugget.name=Diamond Nugget
+item.oreinamillion.emerald_nugget.name=Emerald Nugget
+item.oreinamillion.quartz_nugget.name=Quartz Nugget
+
+#dusts
+item.oreinamillion.aluminum_dust.name=Aluminum Dust
+item.oreinamillion.ardite_dust.name=Ardite Dust
+item.oreinamillion.chrome_dust.name=Chrome Dust
+item.oreinamillion.cobalt_dust.name=Cobalt Dust
+item.oreinamillion.copper_dust.name=Copper Dust
+item.oreinamillion.ender_dust.name=Ender Dust
+item.oreinamillion.iridium_dust.name=Iridium Dust
+item.oreinamillion.lead_dust.name=Lead Dust
+item.oreinamillion.mithril_dust.name=Mithril Dust
+item.oreinamillion.nickel_dust.name=Nickel Dust
+item.oreinamillion.osmium_dust.name=Osmium Dust
+item.oreinamillion.platinum_dust.name=Platinum Dust
+item.oreinamillion.silver_dust.name=Silver Dust
+item.oreinamillion.tin_dust.name=Tin Dust
+item.oreinamillion.titanium_dust.name=Titanium Dust
+item.oreinamillion.tungsten_dust.name=Tungsten Dust
+item.oreinamillion.uranium_dust.name=Uranium Dust
+item.oreinamillion.zinc_dust.name=Zinc Dust
+#alloy
+item.oreinamillion.brass_dust.name=Brass Dust
+item.oreinamillion.bronze_dust.name=Bronze Dust
+item.oreinamillion.constantan_dust.name=Constantan Dust
+item.oreinamillion.electrum_dust.name=Electrum Dust
+item.oreinamillion.enderium_dust.name=Enderium Dust
+item.oreinamillion.fairy_dust.name=Fairy Dust
+item.oreinamillion.invar_dust.name=Invar Dust
+item.oreinamillion.knightslime_dust.name=Knightslime Dust
+item.oreinamillion.lumium_dust.name=Lumium Dust
+item.oreinamillion.manyullyn_dust.name=Manyullyn Dust
+item.oreinamillion.pigiron_dust.name=Pigiron Dust
+item.oreinamillion.signalum_dust.name=Signalum Dust
+item.oreinamillion.steel_dust.name=Steel Dust
+#gems
+item.oreinamillion.amethyst_dust.name=Amethyst Dust
+item.oreinamillion.peridot_dust.name=Peridot Dust
+item.oreinamillion.ruby_dust.name=Ruby Dust
+item.oreinamillion.sapphire_dust.name=Sapphire Dust
+#other
+item.oreinamillion.carbon_dust.name=Carbon Dust
+item.oreinamillion.cinnabar_dust.name=Cinnabar Dust
+item.oreinamillion.silicon_dust.name=Silicon Dust
+item.oreinamillion.sulfur_dust.name=Sulfur Dust
+#vanilla
+item.oreinamillion.charcoal_dust.name=Charcoal Dust
+item.oreinamillion.coal_dust.name=Coal Dust
+item.oreinamillion.diamond_dust.name=Diamond Dust
+item.oreinamillion.emerald_dust.name=Emerald Dust
+item.oreinamillion.quartz_dust.name=Quartz Dust
+
+#ores
+#ingots
+tile.oreinamillion.aluminum_ore.name=Aluminum Ore
+tile.oreinamillion.ardite_ore.name=Ardite Ore
+tile.oreinamillion.chrome_ore.name=Chrome Ore
+tile.oreinamillion.cobalt_ore.name=Cobalt Ore
+tile.oreinamillion.copper_ore.name=Copper Ore
+tile.oreinamillion.ender_ore.name=Ender Ore
+tile.oreinamillion.iridium_ore.name=Iridium Ore
+tile.oreinamillion.lead_ore.name=Lead Ore
+tile.oreinamillion.mithril_ore.name=Mithril Ore
+tile.oreinamillion.nickel_ore.name=Nickel Ore
+tile.oreinamillion.osmium_ore.name=Osmium Ore
+tile.oreinamillion.platinum_ore.name=Platinum Ore
+tile.oreinamillion.silver_ore.name=Silver Ore
+tile.oreinamillion.tin_ore.name=Tin Ore
+tile.oreinamillion.titanium_ore.name=Titanium Ore
+tile.oreinamillion.tungsten_ore.name=Tungsten Ore
+tile.oreinamillion.uranium_ore.name=Uranium Ore
+tile.oreinamillion.zinc_ore.name=Zinc Ore
+#gems
+tile.oreinamillion.amethyst_ore.name=Amethyst Ore
+tile.oreinamillion.peridot_ore.name=Peridot Ore
+tile.oreinamillion.ruby_ore.name=Ruby Ore
+tile.oreinamillion.sapphire_ore.name=Sapphire Ore
+#other
+tile.oreinamillion.cinnabar_ore.name=Cinnabar Ore
+tile.oreinamillion.sulfur_ore.name=Sulfur Ore
+
+#combined blocks
+#base
+
+#alloy
+
+
+#icons
+item.oreinamillion.creative_icon1.name=Main Icon
+item.oreinamillion.creative_icon2.name=Minerals Icon
+item.oreinamillion.creative_icon3.name=Blocks Icon

@@ -856,7 +856,7 @@ public class ModBlocks {
             if (OreInAMillionConfig.isIngotsEnabled) {
                 //aluminum
                 if (OreInAMillionConfig.isAluminumEnabled) {
-                    OreDictionary.registerOre("oreAluminium", ModBlocks.oreAluminum);
+                    OreDictionary.registerOre("oreAluminum", ModBlocks.oreAluminum);
                 }
                 //chrome
                 if (OreInAMillionConfig.isChromeEnabled) {

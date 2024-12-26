@@ -276,6 +276,16 @@ public class OreInAMillionConfig {
     @Config.RequiresMcRestart
     public static boolean isEmeraldEnabled = true;
 
+    @Config.Name("Is Modded Gold Enabled?")
+    @Config.Comment("true or false")
+    @Config.RequiresMcRestart
+    public static boolean isGoldEnabled = true;
+
+    @Config.Name("Is Modded Iron Enabled?")
+    @Config.Comment("true or false")
+    @Config.RequiresMcRestart
+    public static boolean isIronEnabled = true;
+
     @Config.Name("Is Modded Quartz Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart

@@ -187,6 +187,14 @@
                 if (OreInAMillionConfig.isEmeraldEnabled) {
 
                 }
+                //gold
+                if (OreInAMillionConfig.isGoldEnabled){
+
+                }
+                //iron
+                if (OreInAMillionConfig.isIronEnabled){
+
+                }
                 //quartz
                 if (OreInAMillionConfig.isQuartzEnabled){
 

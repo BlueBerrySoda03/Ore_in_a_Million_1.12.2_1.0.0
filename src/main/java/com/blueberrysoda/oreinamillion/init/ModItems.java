@@ -170,6 +170,8 @@ public class ModItems {
     public static ItemCoal dustCoal;
     public static ItemDust dustDiamond;
     public static ItemDust dustEmerald;
+    public static ItemDust dustGold;
+    public static ItemDust dustIron;
     public static ItemDust dustQuartz;
 
     //========
@@ -458,6 +460,14 @@ public class ModItems {
                 if (OreInAMillionConfig.isEmeraldEnabled) {
                     nuggetEmerald = new ItemNugget("emerald_nugget");
                     dustEmerald = new ItemDust("emerald_dust");
+                }
+                //gold
+                if (OreInAMillionConfig.isGoldEnabled){
+                    dustGold = new ItemDust("gold_dust");
+                }
+                //iron
+                if (OreInAMillionConfig.isIronEnabled){
+                    dustIron = new ItemDust("iron_dust");
                 }
                 //quartz
                 if (OreInAMillionConfig.isQuartzEnabled){
@@ -751,6 +761,14 @@ public class ModItems {
                     event.getRegistry().register(nuggetEmerald);
                     event.getRegistry().register(dustEmerald);
                 }
+                //gold
+                if (OreInAMillionConfig.isGoldEnabled){
+                    event.getRegistry().register(dustGold);
+                }
+                //iron
+                if (OreInAMillionConfig.isIronEnabled){
+                    event.getRegistry().register(dustIron);
+                }
                 //quartz
                 if (OreInAMillionConfig.isQuartzEnabled) {
                     event.getRegistry().register(nuggetQuartz);
@@ -1024,6 +1042,16 @@ public class ModItems {
                 }
             }
             if (OreInAMillionConfig.isVanillaEnabled) {
+                //charcoal
+                if (OreInAMillionConfig.isCharcoalEnabled) {
+                    registerRender(nuggetCharcoal);
+                    registerRender(dustCharcoal);
+                }
+                //coal
+                if (OreInAMillionConfig.isCoalEnabled) {
+                    registerRender(nuggetCoal);
+                    registerRender(dustCoal);
+                }
                 //diamond
                 if (OreInAMillionConfig.isDiamondEnabled) {
                     registerRender(nuggetDiamond);
@@ -1034,15 +1062,18 @@ public class ModItems {
                     registerRender(nuggetEmerald);
                     registerRender(dustEmerald);
                 }
-                //coal
-                if (OreInAMillionConfig.isCoalEnabled) {
-                    registerRender(nuggetCoal);
-                    registerRender(dustCoal);
+                //gold
+                if (OreInAMillionConfig.isGoldEnabled){
+                    registerRender(dustGold);
                 }
-                //charcoal
-                if (OreInAMillionConfig.isCharcoalEnabled) {
-                    registerRender(nuggetCharcoal);
-                    registerRender(dustCharcoal);
+                //iron
+                if (OreInAMillionConfig.isIronEnabled){
+                    registerRender(dustIron);
+                }
+                //quartz
+                if (OreInAMillionConfig.isQuartzEnabled){
+                    registerRender(nuggetQuartz);
+                    registerRender(dustQuartz);
                 }
             }
             if (OreInAMillionConfig.isSillyStuffEnabled) {
@@ -1336,6 +1367,14 @@ public class ModItems {
                 if (OreInAMillionConfig.isEmeraldEnabled) {
                     OreDictionary.registerOre("nuggetEmerald", ModItems.nuggetEmerald);
                     OreDictionary.registerOre("dustEmerald", ModItems.dustEmerald);
+                }
+                //gold
+                if (OreInAMillionConfig.isGoldEnabled){
+                    OreDictionary.registerOre("dustGold", ModItems.dustGold);
+                }
+                //iron
+                if (OreInAMillionConfig.isIronEnabled){
+                    OreDictionary.registerOre("dustIron", ModItems.dustIron);
                 }
                 //quartz
                 if (OreInAMillionConfig.isQuartzEnabled){

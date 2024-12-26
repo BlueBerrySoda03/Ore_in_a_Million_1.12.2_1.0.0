@@ -6,6 +6,7 @@ import com.blueberrysoda.oreinamillion.items.crafting.*;
 import com.blueberrysoda.oreinamillion.items.food.ItemFoodMetal;
 import com.blueberrysoda.oreinamillion.items.food.ItemFoodSoupcan;
 import com.blueberrysoda.oreinamillion.items.misc.ItemIcon;
+import com.blueberrysoda.oreinamillion.items.misc.ItemWeezer;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -175,6 +176,13 @@ public class ModItems {
     public static ItemDust dustQuartz;
 
     //========
+    //silly stuff
+    //========
+    public static ItemMain tinCan;
+    public static ItemFoodSoupcan foodSoupcan;
+    public static ItemWeezer weezerWeezer;
+
+    //========
     //icons
     //========
     public static ItemIcon creativeIcon1;
@@ -183,10 +191,6 @@ public class ModItems {
     public static ItemIcon creativeIcon4;
     public static ItemIcon creativeIcon5;
     public static ItemIcon creativeIcon6;
-
-    //other stuffs
-    public static ItemMain tinCan;
-    public static ItemFoodSoupcan foodSoupcan;
 
     public static void init(){
         // = new ("");
@@ -478,6 +482,7 @@ public class ModItems {
             if (OreInAMillionConfig.isSillyStuffEnabled){
                 tinCan = new ItemMain("tin_can");
                 foodSoupcan = new ItemFoodSoupcan("soupcan", 7, 4, false);
+                weezerWeezer = new ItemWeezer("weezer");
             }
         }
 
@@ -778,6 +783,7 @@ public class ModItems {
             if (OreInAMillionConfig.isSillyStuffEnabled) {
                 event.getRegistry().register(tinCan);
                 event.getRegistry().register(foodSoupcan);
+                event.getRegistry().register(weezerWeezer);
             }
         }
 
@@ -1079,6 +1085,7 @@ public class ModItems {
             if (OreInAMillionConfig.isSillyStuffEnabled) {
                 registerRender(tinCan);
                 registerRender(foodSoupcan);
+                registerRender(weezerWeezer);
             }
         }
 
@@ -1385,6 +1392,7 @@ public class ModItems {
             if (OreInAMillionConfig.isSillyStuffEnabled){
                 OreDictionary.registerOre("tinCan", ModItems.tinCan);
                 OreDictionary.registerOre("foodSoupcan", ModItems.foodSoupcan);
+                OreDictionary.registerOre("weezer", ModItems.weezerWeezer);
             }
         }
     }

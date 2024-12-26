@@ -631,7 +631,7 @@ public class ModTools {
                         axeSapphire = new ItemToolAxe("sapphire_axe", MaterialTool.toolSapphire);
                         shovelSapphire = new ItemToolShovel("sapphire_shovel", MaterialTool.toolSapphire);
                         hoeSapphire = new ItemToolHoe("sapphire_hoe", MaterialTool.toolSapphire);
-                        crusherSapphire = new ItemToolCrusher("_crusher", MaterialTool.toolSapphire);
+                        crusherSapphire = new ItemToolCrusher("sapphire_crusher", MaterialTool.toolSapphire);
                     }
                 }
                 //elements

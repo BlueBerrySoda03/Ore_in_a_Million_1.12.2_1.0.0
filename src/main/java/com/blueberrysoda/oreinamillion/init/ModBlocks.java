@@ -85,7 +85,6 @@ public class ModBlocks {
     //=========
 
 
-
     public static void init(){
         // = new ("", Material.);
         if (OreInAMillionConfig.isMineralsEnabled) {

@@ -188,6 +188,12 @@ tile.oreinamillion.sulfur_ore.name=Sulfur Ore
 #alloy
 
 
+
+item.oreinamillion.hecktite_ingot.name=Hecktite Ingot
+#other
+item.oreinamillion.weezer.name=Weezer
+item.oreinamillion.weezer.tooltip=weezer
+
 #icons
 item.oreinamillion.creative_icon1.name=Main Icon
 item.oreinamillion.creative_icon2.name=Minerals Icon

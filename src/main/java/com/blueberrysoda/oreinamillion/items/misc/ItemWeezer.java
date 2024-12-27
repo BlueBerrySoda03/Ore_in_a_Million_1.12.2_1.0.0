@@ -23,7 +23,7 @@ public class ItemWeezer extends ItemBase {
 
     public ItemWeezer(String name){
         super(name);
-        setCreativeTab(OreInAMillion.CREATIVE_TAB_MINERAL);
+        setCreativeTab(OreInAMillion.CREATIVE_TAB_MAIN);
         setMaxStackSize(1);
     }
 

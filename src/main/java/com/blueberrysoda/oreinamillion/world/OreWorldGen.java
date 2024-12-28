@@ -137,6 +137,10 @@ public class OreWorldGen implements IWorldGenerator {
                         generateOre(ModBlocks.oreSulfur.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 64, 255, random.nextInt(10) + 3, 8);
                     }
                 }
+                //silly stuffs
+                if (OreInAMillionConfig.isSillyStuffEnabled) {
+                    generateOre(ModBlocks.oreWeezer.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 255, random.nextInt(1) + 1, 1);
+                }
             }
         }
     }

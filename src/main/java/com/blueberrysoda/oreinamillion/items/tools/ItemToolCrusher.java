@@ -297,6 +297,19 @@ public class ItemToolCrusher extends ItemPickaxe {
 
                         state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                         worldIn.setBlockToAir(pos);
+                    } else if (oreType.equals("oreWeezer")) {
+                        ItemStack customDrop1 = new ItemStack(ModItems.weezerWeezer);
+                        ItemStack customDrop2 = new ItemStack(ModItems.weezerWeezer);
+                        ItemStack customDrop3 = new ItemStack(ModItems.weezerWeezer);
+                        ItemStack customDrop4 = new ItemStack(ModItems.weezerWeezer);
+
+                        Block.spawnAsEntity(worldIn, pos, customDrop1);
+                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                        Block.spawnAsEntity(worldIn, pos, customDrop3);
+                        Block.spawnAsEntity(worldIn, pos, customDrop4);
+
+                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                        worldIn.setBlockToAir(pos);
                     }
                 }
             }

@@ -1,5 +1,6 @@
 package com.blueberrysoda.oreinamillion.init;
 
+import com.blueberrysoda.oreinamillion.items.armor.customarmor.ItemCopperArmor;
 import net.minecraftforge.fml.common.Mod;
 
 import com.blueberrysoda.oreinamillion.config.OreInAMillionConfig;
@@ -15,6 +16,12 @@ import java.util.Objects;
 @Mod.EventBusSubscriber
 public class ModArmor {
     //aluminum
+    public static ItemCopperArmor helmetCopper;
+    public static ItemCopperArmor chestplateCopper;
+    public static ItemCopperArmor leggingsCopper;
+    public static ItemCopperArmor bootsCopper;
+
+
 
 
     public static void init() {

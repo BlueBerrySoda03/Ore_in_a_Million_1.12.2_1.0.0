@@ -85,6 +85,11 @@ public class ModBlocks {
     //=========
 
 
+    //=========
+    //other
+    //=========
+    public static BlockWeezerOre oreWeezer;
+
     public static void init(){
         // = new ("", Material.);
         if (OreInAMillionConfig.isMineralsEnabled) {
@@ -266,6 +271,9 @@ public class ModBlocks {
                 if (OreInAMillionConfig.isCharcoalEnabled) {
 
                 }
+            }
+            if (OreInAMillionConfig.isSillyStuffEnabled) {
+                oreWeezer = new BlockWeezerOre("weezer_ore", Material.ROCK);
             }
         }
     }
@@ -458,6 +466,10 @@ public class ModBlocks {
 
                 }
             }
+            //silly stuff
+            if (OreInAMillionConfig.isSillyStuffEnabled) {
+                event.getRegistry().register(oreWeezer);
+            }
         }
     }
 
@@ -648,6 +660,10 @@ public class ModBlocks {
                 if (OreInAMillionConfig.isQuartzEnabled){
 
                 }
+            }
+            //silly stuff
+            if (OreInAMillionConfig.isSillyStuffEnabled) {
+                event.getRegistry().register(new ItemBlock(oreWeezer).setRegistryName(Objects.requireNonNull(oreWeezer.getRegistryName())));
             }
         }
     }
@@ -841,6 +857,9 @@ public class ModBlocks {
                 if (OreInAMillionConfig.isQuartzEnabled){
 
                 }
+            }
+            if (OreInAMillionConfig.isSillyStuffEnabled) {
+                registerRender(Item.getItemFromBlock(oreWeezer));
             }
         }
     }
@@ -1042,7 +1061,7 @@ public class ModBlocks {
                 }
             }
             if (OreInAMillionConfig.isSillyStuffEnabled){
-
+                OreDictionary.registerOre("oreWeezer", ModBlocks.oreWeezer);
             }
         }
         //OreDictionary.registerOre("blockAluminium", ModBlocks.blockAluminium);

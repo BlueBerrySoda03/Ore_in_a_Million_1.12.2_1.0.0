@@ -1,6 +1,8 @@
 package com.blueberrysoda.oreinamillion.init;
 
 import com.blueberrysoda.oreinamillion.items.armor.ItemArmorBase;
+import com.blueberrysoda.oreinamillion.items.armor.armorspecial.ItemArmorCoal;
+import com.blueberrysoda.oreinamillion.items.armor.armorspecial.ItemArmorFood;
 import net.minecraftforge.fml.common.Mod;
 
 import com.blueberrysoda.oreinamillion.config.OreInAMillionConfig;
@@ -162,10 +164,10 @@ public class ModArmor {
     public static ItemArmorBase leggingsManyullyn;
     public static ItemArmorBase bootsManyullyn;
     //pigiron
-    public static ItemArmorBase helmetPigIron;
-    public static ItemArmorBase chestplatePigIron;
-    public static ItemArmorBase leggingsPigIron;
-    public static ItemArmorBase bootsPigIron;
+    public static ItemArmorFood helmetPigIron;
+    public static ItemArmorFood chestplatePigIron;
+    public static ItemArmorFood leggingsPigIron;
+    public static ItemArmorFood bootsPigIron;
     //signalum
     public static ItemArmorBase helmetSignalum;
     public static ItemArmorBase chestplateSignalum;
@@ -197,15 +199,15 @@ public class ModArmor {
     public static ItemArmorBase leggingsSapphire;
     public static ItemArmorBase bootsSapphire;
     //charcoal
-    public static ItemArmorBase helmetCharcoal;
-    public static ItemArmorBase chestplateCharcoal;
-    public static ItemArmorBase leggingsCharcoal;
-    public static ItemArmorBase bootsCharcoal;
+    public static ItemArmorCoal helmetCharcoal;
+    public static ItemArmorCoal chestplateCharcoal;
+    public static ItemArmorCoal leggingsCharcoal;
+    public static ItemArmorCoal bootsCharcoal;
     //coal
-    public static ItemArmorBase helmetCoal;
-    public static ItemArmorBase chestplateCoal;
-    public static ItemArmorBase leggingsCoal;
-    public static ItemArmorBase bootsCoal;
+    public static ItemArmorCoal helmetCoal;
+    public static ItemArmorCoal chestplateCoal;
+    public static ItemArmorCoal leggingsCoal;
+    public static ItemArmorCoal bootsCoal;
     //emerald
     public static ItemArmorBase helmetEmerald;
     public static ItemArmorBase chestplateEmerald;

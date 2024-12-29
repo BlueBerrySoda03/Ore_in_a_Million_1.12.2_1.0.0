@@ -64,6 +64,7 @@ public class ItemLeadArmor {
     //slowing down players based on how many pieces are worn
     @SubscribeEvent
     public void onLivingUpdate(LivingEvent.LivingUpdateEvent event) {
+        if (event.getEntityLiving() instanceof EntityPlayer) {
         EntityPlayer player = (EntityPlayer) event.getEntityLiving();
 
         ItemStack helmet = player.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
@@ -106,5 +107,6 @@ public class ItemLeadArmor {
 
         player.capabilities.setPlayerWalkSpeed(speedReduction);
         player.sendPlayerAbilities();
+        }
     }
 }

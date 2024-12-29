@@ -14,8 +14,14 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
+import javax.annotation.Nonnull;
+
 public class ItemToolFoodAxe extends ItemAxe {
-    public ItemToolFoodAxe(String name, ToolMaterial material) {
+
+    public static int addHunger;
+    public static int addSaturation;
+
+    public ItemToolFoodAxe(String name, ToolMaterial material, int addHunger, int addSaturation) {
         ///the code to make the axes flexible in damage and attack speed came from Metallurgy 4 Reforged
         ///I thought I was gonna go crazy figuring this out. Thank you Metallurgy dev :D
         //-2.5F - (material.getAttackDamage() / 5)
@@ -23,9 +29,12 @@ public class ItemToolFoodAxe extends ItemAxe {
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_TOOL);
+        ItemToolFoodAxe.addHunger = addHunger;
+        ItemToolFoodAxe.addSaturation = addSaturation;
     }
 
     @Override
+    @Nonnull
     public EnumAction getItemUseAction(ItemStack stack) {
         return EnumAction.EAT;
     }
@@ -36,17 +45,21 @@ public class ItemToolFoodAxe extends ItemAxe {
         return 32;
     }
 
-    @Override
+    @Nonnull
     public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
         if (entityLiving instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) entityLiving;
-            player.getFoodStats().addStats(12, 6F);
-            return new ItemStack(Items.STICK);
+            player.getFoodStats().addStats(addHunger, addSaturation);
+            stack.shrink(1);
+
+            ItemStack dropStack = new ItemStack(Items.STICK, 2);
+            player.dropItem(dropStack, false);
         }
         return super.onItemUseFinish(stack, worldIn, entityLiving);
     }
 
     @Override
+    @Nonnull
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
         ItemStack itemStack = playerIn.getHeldItem(handIn);
 

@@ -55,246 +55,311 @@ public class ItemToolCoalCrusher extends ItemPickaxe {
 
                 if (harvestLevel >= requiredHarvestLevel) {
                     //aluminum
-                    if (oreType.equals("oreAluminum")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustAluminum);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustAluminum);
+                    switch (oreType) {
+                        case "oreAluminum": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustAluminum);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustAluminum);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    }
-                    //chrome
-                    else if (oreType.equals("oreChrome")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustChrome);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustChrome);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        //chrome
+                        case "oreChrome": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustChrome);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustChrome);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    }
-                    //cobalt
-                    else if (oreType.equals("oreCobalt")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustCobalt);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustCobalt);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        //cobalt
+                        case "oreCobalt": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustCobalt);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustCobalt);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    }
-                    //copper
-                    else if (oreType.equals("oreCopper")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustCopper);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustCopper);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        //copper
+                        case "oreCopper": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustCopper);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustCopper);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreEnder")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustEnder);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustEnder);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreEnder": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustEnder);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustEnder);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreIridium")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustIridium);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustIridium);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreIridium": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustIridium);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustIridium);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreLead")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustLead);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustLead);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreLead": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustLead);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustLead);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreMithril")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustMithril);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustMithril);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreMithril": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustMithril);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustMithril);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreNickel")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustNickel);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustNickel);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreNickel": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustNickel);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustNickel);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreOsmium")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustOsmium);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustOsmium);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreOsmium": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustOsmium);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustOsmium);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("orePlatinum")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustPlatinum);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustPlatinum);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "orePlatinum": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustPlatinum);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustPlatinum);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreSilver")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustSilver);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustSilver);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreSilver": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustSilver);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustSilver);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreTin")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustTin);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustTin);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreTin": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustTin);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustTin);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreTitanium")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustTitanium);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustTitanium);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreTitanium": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustTitanium);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustTitanium);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreUranium")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustUranium);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustUranium);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreUranium": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustUranium);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustUranium);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreZinc")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustZinc);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustZinc);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreZinc": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustZinc);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustZinc);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreArdite")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustArdite);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustArdite);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreArdite": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustArdite);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustArdite);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreAmethyst")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustAmethyst);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustAmethyst);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreAmethyst": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustAmethyst);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustAmethyst);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("orePeridot")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustPeridot);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustPeridot);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "orePeridot": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustPeridot);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustPeridot);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreRuby")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustRuby);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustRuby);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreRuby": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustRuby);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustRuby);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreSapphire")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustSapphire);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustSapphire);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreSapphire": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustSapphire);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustSapphire);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreCinnabar")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustCinnabar);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustCinnabar);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreCinnabar": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustCinnabar);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustCinnabar);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreIron")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustIron);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustIron);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreIron": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustIron);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustIron);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreGold")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustGold);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustGold);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreGold": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustGold);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustGold);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreDiamond")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustDiamond);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustDiamond);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreDiamond": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustDiamond);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustDiamond);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
-                    } else if (oreType.equals("oreEmerald")) {
-                        ItemStack customDrop1 = new ItemStack(ModItems.dustEmerald);
-                        ItemStack customDrop2 = new ItemStack(ModItems.dustEmerald);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreEmerald": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.dustEmerald);
+                            ItemStack customDrop2 = new ItemStack(ModItems.dustEmerald);
 
-                        Block.spawnAsEntity(worldIn, pos, customDrop1);
-                        Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
 
-                        state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                        worldIn.setBlockToAir(pos);
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreWeezer": {
+                            ItemStack customDrop1 = new ItemStack(ModItems.weezerWeezer);
+                            ItemStack customDrop2 = new ItemStack(ModItems.weezerWeezer);
+                            ItemStack customDrop3 = new ItemStack(ModItems.weezerWeezer);
+                            ItemStack customDrop4 = new ItemStack(ModItems.weezerWeezer);
+
+                            Block.spawnAsEntity(worldIn, pos, customDrop1);
+                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            Block.spawnAsEntity(worldIn, pos, customDrop3);
+                            Block.spawnAsEntity(worldIn, pos, customDrop4);
+
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
                     }
                 }
             }

@@ -14,13 +14,20 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
+import javax.annotation.Nonnull;
+
 public class ItemToolFoodPickaxe extends ItemPickaxe {
 
-    public ItemToolFoodPickaxe(String name, ToolMaterial material) {
+    public static int addHunger;
+    public static int addSaturation;
+
+    public ItemToolFoodPickaxe(String name, ToolMaterial material, int addHunger, int addSaturation) {
         super(material);
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_TOOL);
+        ItemToolFoodPickaxe.addHunger = addHunger;
+        ItemToolFoodPickaxe.addSaturation = addSaturation;
     }
 
 
@@ -35,12 +42,15 @@ public class ItemToolFoodPickaxe extends ItemPickaxe {
         return 32;
     }
 
-    @Override
+    @Nonnull
     public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
         if (entityLiving instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) entityLiving;
-            player.getFoodStats().addStats(12, 6F);
-            return new ItemStack(Items.STICK);
+            player.getFoodStats().addStats(addHunger, addSaturation);
+            stack.shrink(1);
+
+            ItemStack dropStack = new ItemStack(Items.STICK, 2);
+            player.dropItem(dropStack, false);
         }
         return super.onItemUseFinish(stack, worldIn, entityLiving);
     }

@@ -14,13 +14,20 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
+import javax.annotation.Nonnull;
+
 public class ItemToolFoodSword extends ItemSword {
 
-    public ItemToolFoodSword(String name, ToolMaterial material) {
+    public static int addHunger;
+    public static int addSaturation;
+
+    public ItemToolFoodSword(String name, ToolMaterial material, int addHunger, int addSaturation) {
         super(material);
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_TOOL);
+        ItemToolFoodSword.addHunger = addHunger;
+        ItemToolFoodSword.addSaturation = addSaturation;
     }
 
 
@@ -35,12 +42,15 @@ public class ItemToolFoodSword extends ItemSword {
         return 32;
     }
 
-    @Override
+    @Nonnull
     public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
         if (entityLiving instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) entityLiving;
-            player.getFoodStats().addStats(8, 4F);
-            return new ItemStack(Items.STICK);
+            player.getFoodStats().addStats(addHunger, addSaturation);
+            stack.shrink(1);
+
+            ItemStack dropStack = new ItemStack(Items.STICK, 1);
+            player.dropItem(dropStack, false);
         }
         return super.onItemUseFinish(stack, worldIn, entityLiving);
     }

@@ -577,12 +577,12 @@ public class ModTools {
                         }
                         //pigiron
                         if (OreInAMillionConfig.isPigIronEnabled) {
-                            swordPigIron = new ItemToolFoodSword("pigiron_sword", MaterialTool.toolPigIron);
-                            pickaxePigIron = new ItemToolFoodPickaxe("pigiron_pickaxe", MaterialTool.toolPigIron);
-                            axePigIron = new ItemToolFoodAxe("pigiron_axe", MaterialTool.toolPigIron);
-                            shovelPigIron = new ItemToolFoodShovel("pigiron_shovel", MaterialTool.toolPigIron);
-                            hoePigIron = new ItemToolFoodHoe("pigiron_hoe", MaterialTool.toolPigIron);
-                            crusherPigIron = new ItemToolFoodCrusher("pigiron_crusher", MaterialTool.toolPigIron);
+                            swordPigIron = new ItemToolFoodSword("pigiron_sword", MaterialTool.toolPigIron, (int) 8F, (int) 4F);
+                            pickaxePigIron = new ItemToolFoodPickaxe("pigiron_pickaxe", MaterialTool.toolPigIron, (int) 12F, (int) 6F);
+                            axePigIron = new ItemToolFoodAxe("pigiron_axe", MaterialTool.toolPigIron, (int) 12F, (int) 6F);
+                            shovelPigIron = new ItemToolFoodShovel("pigiron_shovel", MaterialTool.toolPigIron, (int) 4F, (int) 2F);
+                            hoePigIron = new ItemToolFoodHoe("pigiron_hoe", MaterialTool.toolPigIron, (int) 8F, (int) 4F);
+                            crusherPigIron = new ItemToolFoodCrusher("pigiron_crusher", MaterialTool.toolPigIron, (int) 76F, (int) 38F);
                         }
                         //manyullyn
                         if (OreInAMillionConfig.isManyullynEnabled) {

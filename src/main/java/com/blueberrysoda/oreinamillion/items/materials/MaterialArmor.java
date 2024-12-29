@@ -41,14 +41,16 @@ public class MaterialArmor {
     public static final ItemArmor.ArmorMaterial armorSignalum = EnumHelper.addArmorMaterial("armorSignalum", OreInAMillion.MODID + ":signalum", 12, new int[] {2, 8, 8, 2}, 8, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
     public static final ItemArmor.ArmorMaterial armorSteel = EnumHelper.addArmorMaterial("armorSteel", OreInAMillion.MODID + ":steel", 13, new int[] {3, 5, 8, 2}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 4.0F);
 
-    public static final ItemArmor.ArmorMaterial armorAmethyst = EnumHelper.addArmorMaterial("armor", OreInAMillion.MODID + ":", 6, new int[] {1, 3, 4, 2}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
-    public static final ItemArmor.ArmorMaterial armorPeridot = EnumHelper.addArmorMaterial("armor", OreInAMillion.MODID + ":", 6, new int[] {1, 3, 4, 2}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
-    public static final ItemArmor.ArmorMaterial armorRuby = EnumHelper.addArmorMaterial("armor", OreInAMillion.MODID + ":", 6, new int[] {1, 3, 4, 2}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
-    public static final ItemArmor.ArmorMaterial armorSapphire = EnumHelper.addArmorMaterial("armor", OreInAMillion.MODID + ":", 6, new int[] {1, 3, 4, 2}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
+    public static final ItemArmor.ArmorMaterial armorAmethyst = EnumHelper.addArmorMaterial("armor", OreInAMillion.MODID + ":amethyst", 6, new int[] {1, 3, 4, 2}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
+    public static final ItemArmor.ArmorMaterial armorPeridot = EnumHelper.addArmorMaterial("armor", OreInAMillion.MODID + ":peridot", 6, new int[] {1, 3, 4, 2}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
+    public static final ItemArmor.ArmorMaterial armorRuby = EnumHelper.addArmorMaterial("armor", OreInAMillion.MODID + ":ruby", 6, new int[] {1, 3, 4, 2}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
+    public static final ItemArmor.ArmorMaterial armorSapphire = EnumHelper.addArmorMaterial("armor", OreInAMillion.MODID + ":sapphire", 6, new int[] {1, 3, 4, 2}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
 
-    public static final ItemArmor.ArmorMaterial armorCoal = EnumHelper.addArmorMaterial("armorCoal", OreInAMillion.MODID + ":", 1, new int[] {1, 1, 1, 1}, 1, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
-    public static final ItemArmor.ArmorMaterial armorCharcoal = EnumHelper.addArmorMaterial("armorCharcoal", OreInAMillion.MODID + ":", 1, new int[] {1, 1, 1, 1}, 1, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
-    public static final ItemArmor.ArmorMaterial armorEmerald = EnumHelper.addArmorMaterial("armorEmerald", OreInAMillion.MODID + ":", 6, new int[] {2, 5, 6, 3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 10.0F);
-    public static final ItemArmor.ArmorMaterial armorQuartz = EnumHelper.addArmorMaterial("armorQuartz", OreInAMillion.MODID + ":", 6, new int[] {1, 2, 2, 1}, 5, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
+    public static final ItemArmor.ArmorMaterial armorCharcoal = EnumHelper.addArmorMaterial("armorCharcoal", OreInAMillion.MODID + ":charcoal", 1, new int[] {1, 1, 1, 1}, 1, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
+    public static final ItemArmor.ArmorMaterial armorDenseCharcoal = EnumHelper.addArmorMaterial("armorDenseCharcoal", OreInAMillion.MODID + ":dense_charcoal", 7, new int[] {2, 3, 5, 3}, 1, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 2.0F);
+    public static final ItemArmor.ArmorMaterial armorCoal = EnumHelper.addArmorMaterial("armorCoal", OreInAMillion.MODID + ":coal", 1, new int[] {1, 1, 1, 1}, 1, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
+    public static final ItemArmor.ArmorMaterial armorDenseCoal = EnumHelper.addArmorMaterial("armorDenseCoal", OreInAMillion.MODID + ":dense_coal", 7, new int[] {2, 3, 5, 3}, 1, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 2.0F);
+    public static final ItemArmor.ArmorMaterial armorEmerald = EnumHelper.addArmorMaterial("armorEmerald", OreInAMillion.MODID + ":emerald", 6, new int[] {2, 5, 6, 3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 10.0F);
+    public static final ItemArmor.ArmorMaterial armorQuartz = EnumHelper.addArmorMaterial("armorQuartz", OreInAMillion.MODID + ":quartz", 6, new int[] {1, 2, 2, 1}, 5, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
 
 }

@@ -13,6 +13,7 @@ public class CommonProxy {
         ModTools.init();
         ModArmor.init();
         ModSounds.init();
+        ModArmorEvents.init();
     }
 
     public static void initCommon(FMLInitializationEvent event){

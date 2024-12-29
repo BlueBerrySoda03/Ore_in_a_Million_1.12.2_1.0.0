@@ -1,4 +1,4 @@
-package com.blueberrysoda.oreinamillion.items.tools;
+package com.blueberrysoda.oreinamillion.items.tools.base;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
 import net.minecraft.item.ItemAxe;

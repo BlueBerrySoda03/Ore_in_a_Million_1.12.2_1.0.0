@@ -1,11 +1,11 @@
-package com.blueberrysoda.oreinamillion.items.tools;
+package com.blueberrysoda.oreinamillion.items.tools.base;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
-import net.minecraft.item.ItemSpade;
+import net.minecraft.item.ItemHoe;
 
-public class ItemToolShovel extends ItemSpade {
+public class ItemToolHoe extends ItemHoe {
 
-    public ItemToolShovel(String name, ToolMaterial material) {
+    public ItemToolHoe(String name, ToolMaterial material) {
         super(material);
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);

@@ -2,7 +2,7 @@ package com.blueberrysoda.oreinamillion.init;
 
 import com.blueberrysoda.oreinamillion.config.OreInAMillionConfig;
 import com.blueberrysoda.oreinamillion.items.materials.MaterialTool;
-import com.blueberrysoda.oreinamillion.items.tools.*;
+import com.blueberrysoda.oreinamillion.items.tools.base.*;
 import com.blueberrysoda.oreinamillion.items.tools.coaltools.*;
 import com.blueberrysoda.oreinamillion.items.tools.foodtools.*;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;

@@ -42,7 +42,7 @@ public class OreInAMillion {
     public static void preInit(FMLPreInitializationEvent event){
         ClientProxy.preInitClient(event);
         CommonProxy.preInitCommon(event);
-        GameRegistry.registerWorldGenerator(new OreWorldGen(), 0);
+        GameRegistry.registerWorldGenerator(new OreWorldGen(), 1);
     }
 
     @Mod.EventHandler

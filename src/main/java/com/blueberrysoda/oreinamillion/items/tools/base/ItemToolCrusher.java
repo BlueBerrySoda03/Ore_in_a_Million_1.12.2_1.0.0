@@ -1,4 +1,4 @@
-package com.blueberrysoda.oreinamillion.items.tools;
+package com.blueberrysoda.oreinamillion.items.tools.base;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
 import com.blueberrysoda.oreinamillion.init.ModItems;
@@ -8,9 +8,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 

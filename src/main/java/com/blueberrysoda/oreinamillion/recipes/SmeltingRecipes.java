@@ -37,6 +37,7 @@ public class SmeltingRecipes {
                 if (OreInAMillionConfig.isEnderEnabled) {
                     GameRegistry.addSmelting(ModBlocks.oreEnder, new ItemStack(ModItems.ingotEnder), 0.7F);
                     GameRegistry.addSmelting(ModItems.dustEnder, new ItemStack(ModItems.ingotEnder), 0.7F);
+                    GameRegistry.addSmelting(Items.ENDER_PEARL, new ItemStack(ModItems.ingotEnder), 0.7F);
                 }
                 //iridium
                 if (OreInAMillionConfig.isIridiumEnabled) {

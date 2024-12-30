@@ -9,7 +9,6 @@ public class CommonProxy {
     public static void preInitCommon(FMLPreInitializationEvent event){
         ModItems.init();
         ModBlocks.init();
-        ModCrafting.init();
         ModTools.init();
         ModArmor.init();
         ModSounds.init();
@@ -19,7 +18,6 @@ public class CommonProxy {
     public static void initCommon(FMLInitializationEvent event){
         ModItems.initOreDict();
         ModBlocks.initOreDict();
-        ModCrafting.initOreDict();
         ModTools.initOreDict();
         ModArmor.initOreDict();
     }

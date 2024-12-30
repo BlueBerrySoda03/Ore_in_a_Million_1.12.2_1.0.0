@@ -4,14 +4,14 @@ import com.blueberrysoda.oreinamillion.OreInAMillion;
 import com.blueberrysoda.oreinamillion.items.base.ItemBase;
 import net.minecraft.item.ItemStack;
 
-public class ItemCoal extends ItemBase {
+public class ItemCoalCrafting extends ItemBase {
 
     public final int burnTime;
 
-    public ItemCoal(String name, int burnTimeIn){
+    public ItemCoalCrafting(String name, int burnTimeIn){
         super(name);
         this.burnTime = burnTimeIn;
-        setCreativeTab(OreInAMillion.CREATIVE_TAB_MINERAL);
+        setCreativeTab(OreInAMillion.CREATIVE_TAB_CRAFTING);
     }
 
     @Override

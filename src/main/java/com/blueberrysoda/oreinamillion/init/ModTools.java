@@ -2,7 +2,7 @@ package com.blueberrysoda.oreinamillion.init;
 
 import com.blueberrysoda.oreinamillion.config.OreInAMillionConfig;
 import com.blueberrysoda.oreinamillion.items.materials.MaterialTool;
-import com.blueberrysoda.oreinamillion.items.tools.base.*;
+import com.blueberrysoda.oreinamillion.items.tools.basetools.*;
 import com.blueberrysoda.oreinamillion.items.tools.coaltools.*;
 import com.blueberrysoda.oreinamillion.items.tools.foodtools.*;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -311,287 +311,287 @@ public class ModTools {
                 if (OreInAMillionConfig.isIngotsEnabled) {
                     //aluminum
                     if (OreInAMillionConfig.isAluminumEnabled) {
-                        swordAluminum = new ItemToolSword("aluminum_sword", MaterialTool.toolAluminum);
-                        pickaxeAluminum = new ItemToolPickaxe("aluminum_pickaxe", MaterialTool.toolAluminum);
-                        axeAluminum = new ItemToolAxe("aluminum_axe", MaterialTool.toolAluminum);
-                        shovelAluminum = new ItemToolShovel("aluminum_shovel", MaterialTool.toolAluminum);
-                        hoeAluminum = new ItemToolHoe("aluminum_hoe", MaterialTool.toolAluminum);
-                        crusherAluminum = new ItemToolCrusher("aluminum_crusher", MaterialTool.toolAluminum);
+                        swordAluminum = new ItemToolSword("aluminum_sword", MaterialTool.toolAluminum, false);
+                        pickaxeAluminum = new ItemToolPickaxe("aluminum_pickaxe", MaterialTool.toolAluminum, false);
+                        axeAluminum = new ItemToolAxe("aluminum_axe", MaterialTool.toolAluminum, false);
+                        shovelAluminum = new ItemToolShovel("aluminum_shovel", MaterialTool.toolAluminum, false);
+                        hoeAluminum = new ItemToolHoe("aluminum_hoe", MaterialTool.toolAluminum, false);
+                        crusherAluminum = new ItemToolCrusher("aluminum_crusher", MaterialTool.toolAluminum, false);
                     }
                     //chrome
                     if (OreInAMillionConfig.isChromeEnabled) {
-                        swordChrome = new ItemToolSword("chrome_sword", MaterialTool.toolChrome);
-                        pickaxeChrome = new ItemToolPickaxe("chrome_pickaxe", MaterialTool.toolChrome);
-                        axeChrome = new ItemToolAxe("chrome_axe", MaterialTool.toolChrome);
-                        shovelChrome = new ItemToolShovel("chrome_shovel", MaterialTool.toolChrome);
-                        hoeChrome = new ItemToolHoe("chrome_hoe", MaterialTool.toolChrome);
-                        crusherChrome = new ItemToolCrusher("chrome_crusher", MaterialTool.toolChrome);
+                        swordChrome = new ItemToolSword("chrome_sword", MaterialTool.toolChrome, false);
+                        pickaxeChrome = new ItemToolPickaxe("chrome_pickaxe", MaterialTool.toolChrome, false);
+                        axeChrome = new ItemToolAxe("chrome_axe", MaterialTool.toolChrome, false);
+                        shovelChrome = new ItemToolShovel("chrome_shovel", MaterialTool.toolChrome, false);
+                        hoeChrome = new ItemToolHoe("chrome_hoe", MaterialTool.toolChrome, false);
+                        crusherChrome = new ItemToolCrusher("chrome_crusher", MaterialTool.toolChrome, false);
                     }
                     //cobalt
                     if (OreInAMillionConfig.isCobaltEnabled) {
-                        swordCobalt= new ItemToolSword("cobalt_sword", MaterialTool.toolCobalt);
-                        pickaxeCobalt = new ItemToolPickaxe("cobalt_pickaxe", MaterialTool.toolCobalt);
-                        axeCobalt = new ItemToolAxe("cobalt_axe", MaterialTool.toolCobalt);
-                        shovelCobalt = new ItemToolShovel("cobalt_shovel", MaterialTool.toolCobalt);
-                        hoeCobalt = new ItemToolHoe("cobalt_hoe", MaterialTool.toolCobalt);
-                        crusherCobalt = new ItemToolCrusher("cobalt_crusher", MaterialTool.toolCobalt);
+                        swordCobalt= new ItemToolSword("cobalt_sword", MaterialTool.toolCobalt, false);
+                        pickaxeCobalt = new ItemToolPickaxe("cobalt_pickaxe", MaterialTool.toolCobalt, false);
+                        axeCobalt = new ItemToolAxe("cobalt_axe", MaterialTool.toolCobalt, false);
+                        shovelCobalt = new ItemToolShovel("cobalt_shovel", MaterialTool.toolCobalt, false);
+                        hoeCobalt = new ItemToolHoe("cobalt_hoe", MaterialTool.toolCobalt, false);
+                        crusherCobalt = new ItemToolCrusher("cobalt_crusher", MaterialTool.toolCobalt, false);
                     }
                     //copper
                     if (OreInAMillionConfig.isCopperEnabled) {
-                        swordCopper = new ItemToolSword("copper_sword", MaterialTool.toolCopper);
-                        pickaxeCopper = new ItemToolPickaxe("copper_pickaxe", MaterialTool.toolCopper);
-                        axeCopper = new ItemToolAxe("copper_axe", MaterialTool.toolCopper);
-                        shovelCopper = new ItemToolShovel("copper_shovel", MaterialTool.toolCopper);
-                        hoeCopper = new ItemToolHoe("copper_hoe", MaterialTool.toolCopper);
-                        crusherCopper = new ItemToolCrusher("copper_crusher", MaterialTool.toolCopper);
+                        swordCopper = new ItemToolSword("copper_sword", MaterialTool.toolCopper, false);
+                        pickaxeCopper = new ItemToolPickaxe("copper_pickaxe", MaterialTool.toolCopper, false);
+                        axeCopper = new ItemToolAxe("copper_axe", MaterialTool.toolCopper, false);
+                        shovelCopper = new ItemToolShovel("copper_shovel", MaterialTool.toolCopper, false);
+                        hoeCopper = new ItemToolHoe("copper_hoe", MaterialTool.toolCopper, false);
+                        crusherCopper = new ItemToolCrusher("copper_crusher", MaterialTool.toolCopper, false);
                     }
                     //ender
                     if (OreInAMillionConfig.isEnderEnabled) {
-                        swordEnder = new ItemToolSword("ender_sword", MaterialTool.toolEnder);
-                        pickaxeEnder = new ItemToolPickaxe("ender_pickaxe", MaterialTool.toolEnder);
-                        axeEnder = new ItemToolAxe("ender_axe", MaterialTool.toolEnder);
-                        shovelEnder = new ItemToolShovel("ender_shovel", MaterialTool.toolEnder);
-                        hoeEnder = new ItemToolHoe("ender_hoe", MaterialTool.toolEnder);
-                        crusherEnder = new ItemToolCrusher("ender_crusher", MaterialTool.toolEnder);
+                        swordEnder = new ItemToolSword("ender_sword", MaterialTool.toolEnder, false);
+                        pickaxeEnder = new ItemToolPickaxe("ender_pickaxe", MaterialTool.toolEnder, false);
+                        axeEnder = new ItemToolAxe("ender_axe", MaterialTool.toolEnder, false);
+                        shovelEnder = new ItemToolShovel("ender_shovel", MaterialTool.toolEnder, false);
+                        hoeEnder = new ItemToolHoe("ender_hoe", MaterialTool.toolEnder, false);
+                        crusherEnder = new ItemToolCrusher("ender_crusher", MaterialTool.toolEnder, false);
                     }
                     //iridium
                     if (OreInAMillionConfig.isIridiumEnabled) {
-                        swordIridium = new ItemToolSword("iridium_sword", MaterialTool.toolIridium);
-                        pickaxeIridium = new ItemToolPickaxe("iridium_pickaxe", MaterialTool.toolIridium);
-                        axeIridium = new ItemToolAxe("iridium_axe", MaterialTool.toolIridium);
-                        shovelIridium = new ItemToolShovel("iridium_shovel", MaterialTool.toolIridium);
-                        hoeIridium = new ItemToolHoe("iridium_hoe", MaterialTool.toolIridium);
-                        crusherIridium = new ItemToolCrusher("iridium_crusher", MaterialTool.toolIridium);
+                        swordIridium = new ItemToolSword("iridium_sword", MaterialTool.toolIridium, false);
+                        pickaxeIridium = new ItemToolPickaxe("iridium_pickaxe", MaterialTool.toolIridium, false);
+                        axeIridium = new ItemToolAxe("iridium_axe", MaterialTool.toolIridium, false);
+                        shovelIridium = new ItemToolShovel("iridium_shovel", MaterialTool.toolIridium, false);
+                        hoeIridium = new ItemToolHoe("iridium_hoe", MaterialTool.toolIridium, false);
+                        crusherIridium = new ItemToolCrusher("iridium_crusher", MaterialTool.toolIridium, false);
                     }
                     //lead
                     if (OreInAMillionConfig.isLeadEnabled) {
-                        swordLead = new ItemToolSword("lead_sword", MaterialTool.toolLead);
-                        pickaxeLead = new ItemToolPickaxe("lead_pickaxe", MaterialTool.toolLead);
-                        axeLead = new ItemToolAxe("lead_axe", MaterialTool.toolLead);
-                        shovelLead = new ItemToolShovel("lead_shovel", MaterialTool.toolLead);
-                        hoeLead = new ItemToolHoe("lead_hoe", MaterialTool.toolLead);
-                        crusherLead = new ItemToolCrusher("lead_crusher", MaterialTool.toolLead);
+                        swordLead = new ItemToolSword("lead_sword", MaterialTool.toolLead, false);
+                        pickaxeLead = new ItemToolPickaxe("lead_pickaxe", MaterialTool.toolLead, false);
+                        axeLead = new ItemToolAxe("lead_axe", MaterialTool.toolLead, false);
+                        shovelLead = new ItemToolShovel("lead_shovel", MaterialTool.toolLead, false);
+                        hoeLead = new ItemToolHoe("lead_hoe", MaterialTool.toolLead, false);
+                        crusherLead = new ItemToolCrusher("lead_crusher", MaterialTool.toolLead, false);
                     }
                     //mithril
                     if (OreInAMillionConfig.isMithrilEnabled) {
-                        swordMithril = new ItemToolSword("mithril_sword", MaterialTool.toolMithril);
-                        pickaxeMithril = new ItemToolPickaxe("mithril_pickaxe", MaterialTool.toolMithril);
-                        axeMithril = new ItemToolAxe("mithril_axe", MaterialTool.toolMithril);
-                        shovelMithril = new ItemToolShovel("mithril_shovel", MaterialTool.toolMithril);
-                        hoeMithril = new ItemToolHoe("mithril_hoe", MaterialTool.toolMithril);
-                        crusherMithril = new ItemToolCrusher("mithril_crusher", MaterialTool.toolMithril);
+                        swordMithril = new ItemToolSword("mithril_sword", MaterialTool.toolMithril, false);
+                        pickaxeMithril = new ItemToolPickaxe("mithril_pickaxe", MaterialTool.toolMithril, false);
+                        axeMithril = new ItemToolAxe("mithril_axe", MaterialTool.toolMithril, false);
+                        shovelMithril = new ItemToolShovel("mithril_shovel", MaterialTool.toolMithril, false);
+                        hoeMithril = new ItemToolHoe("mithril_hoe", MaterialTool.toolMithril, false);
+                        crusherMithril = new ItemToolCrusher("mithril_crusher", MaterialTool.toolMithril, false);
                     }
                     //nickel
                     if (OreInAMillionConfig.isNickelEnabled) {
-                        swordNickel = new ItemToolSword("nickel_sword", MaterialTool.toolNickel);
-                        pickaxeNickel = new ItemToolPickaxe("nickel_pickaxe", MaterialTool.toolNickel);
-                        axeNickel = new ItemToolAxe("nickel_axe", MaterialTool.toolNickel);
-                        shovelNickel = new ItemToolShovel("nickel_shovel", MaterialTool.toolNickel);
-                        hoeNickel= new ItemToolHoe("nickel_hoe", MaterialTool.toolNickel);
-                        crusherNickel = new ItemToolCrusher("nickel_crusher", MaterialTool.toolNickel);
+                        swordNickel = new ItemToolSword("nickel_sword", MaterialTool.toolNickel, false);
+                        pickaxeNickel = new ItemToolPickaxe("nickel_pickaxe", MaterialTool.toolNickel, false);
+                        axeNickel = new ItemToolAxe("nickel_axe", MaterialTool.toolNickel, false);
+                        shovelNickel = new ItemToolShovel("nickel_shovel", MaterialTool.toolNickel, false);
+                        hoeNickel= new ItemToolHoe("nickel_hoe", MaterialTool.toolNickel, false);
+                        crusherNickel = new ItemToolCrusher("nickel_crusher", MaterialTool.toolNickel, false);
                     }
                     //osmium
                     if (OreInAMillionConfig.isOsmiumEnabled) {
-                        swordOsmium = new ItemToolSword("osmium_sword", MaterialTool.toolOsmium);
-                        pickaxeOsmium = new ItemToolPickaxe("osmium_pickaxe", MaterialTool.toolOsmium);
-                        axeOsmium = new ItemToolAxe("osmium_axe", MaterialTool.toolOsmium);
-                        shovelOsmium = new ItemToolShovel("osmium_shovel", MaterialTool.toolOsmium);
-                        hoeOsmium = new ItemToolHoe("osmium_hoe", MaterialTool.toolOsmium);
-                        crusherOsmium = new ItemToolCrusher("osmium_crusher", MaterialTool.toolOsmium);
+                        swordOsmium = new ItemToolSword("osmium_sword", MaterialTool.toolOsmium, false);
+                        pickaxeOsmium = new ItemToolPickaxe("osmium_pickaxe", MaterialTool.toolOsmium, false);
+                        axeOsmium = new ItemToolAxe("osmium_axe", MaterialTool.toolOsmium, false);
+                        shovelOsmium = new ItemToolShovel("osmium_shovel", MaterialTool.toolOsmium, false);
+                        hoeOsmium = new ItemToolHoe("osmium_hoe", MaterialTool.toolOsmium, false);
+                        crusherOsmium = new ItemToolCrusher("osmium_crusher", MaterialTool.toolOsmium, false);
                     }
                     //platinum
                     if (OreInAMillionConfig.isPlatinumEnabled) {
-                        swordPlatinum = new ItemToolSword("platinum_sword", MaterialTool.toolPlatinum);
-                        pickaxePlatinum = new ItemToolPickaxe("platinum_pickaxe", MaterialTool.toolPlatinum);
-                        axePlatinum = new ItemToolAxe("platinum_axe", MaterialTool.toolPlatinum);
-                        shovelPlatinum = new ItemToolShovel("platinum_shovel", MaterialTool.toolPlatinum);
-                        hoePlatinum = new ItemToolHoe("platinum_hoe", MaterialTool.toolPlatinum);
-                        crusherPlatinum = new ItemToolCrusher("platinum_crusher", MaterialTool.toolPlatinum);
+                        swordPlatinum = new ItemToolSword("platinum_sword", MaterialTool.toolPlatinum, false);
+                        pickaxePlatinum = new ItemToolPickaxe("platinum_pickaxe", MaterialTool.toolPlatinum, false);
+                        axePlatinum = new ItemToolAxe("platinum_axe", MaterialTool.toolPlatinum, false);
+                        shovelPlatinum = new ItemToolShovel("platinum_shovel", MaterialTool.toolPlatinum, false);
+                        hoePlatinum = new ItemToolHoe("platinum_hoe", MaterialTool.toolPlatinum, false);
+                        crusherPlatinum = new ItemToolCrusher("platinum_crusher", MaterialTool.toolPlatinum, false);
                     }
                     //silver
                     if (OreInAMillionConfig.isSilverEnabled) {
-                        swordSilver = new ItemToolSword("silver_sword", MaterialTool.toolSilver);
-                        pickaxeSilver = new ItemToolPickaxe("silver_pickaxe", MaterialTool.toolSilver);
-                        axeSilver = new ItemToolAxe("silver_axe", MaterialTool.toolSilver);
-                        shovelSilver = new ItemToolShovel("silver_shovel", MaterialTool.toolSilver);
-                        hoeSilver = new ItemToolHoe("silver_hoe", MaterialTool.toolSilver);
-                        crusherSilver = new ItemToolCrusher("silver_crusher", MaterialTool.toolSilver);
+                        swordSilver = new ItemToolSword("silver_sword", MaterialTool.toolSilver, true);
+                        pickaxeSilver = new ItemToolPickaxe("silver_pickaxe", MaterialTool.toolSilver, true);
+                        axeSilver = new ItemToolAxe("silver_axe", MaterialTool.toolSilver, true);
+                        shovelSilver = new ItemToolShovel("silver_shovel", MaterialTool.toolSilver, true);
+                        hoeSilver = new ItemToolHoe("silver_hoe", MaterialTool.toolSilver, true);
+                        crusherSilver = new ItemToolCrusher("silver_crusher", MaterialTool.toolSilver, true);
                     }
                     //tin
                     if (OreInAMillionConfig.isTinEnabled) {
-                        swordTin = new ItemToolSword("tin_sword", MaterialTool.toolTin);
-                        pickaxeTin = new ItemToolPickaxe("tin_pickaxe", MaterialTool.toolTin);
-                        axeTin = new ItemToolAxe("tin_axe", MaterialTool.toolTin);
-                        shovelTin = new ItemToolShovel("tin_shovel", MaterialTool.toolTin);
-                        hoeTin = new ItemToolHoe("tin_hoe", MaterialTool.toolTin);
-                        crusherTin = new ItemToolCrusher("tin_crusher", MaterialTool.toolTin);
+                        swordTin = new ItemToolSword("tin_sword", MaterialTool.toolTin, false);
+                        pickaxeTin = new ItemToolPickaxe("tin_pickaxe", MaterialTool.toolTin, false);
+                        axeTin = new ItemToolAxe("tin_axe", MaterialTool.toolTin, false);
+                        shovelTin = new ItemToolShovel("tin_shovel", MaterialTool.toolTin, false);
+                        hoeTin = new ItemToolHoe("tin_hoe", MaterialTool.toolTin, false);
+                        crusherTin = new ItemToolCrusher("tin_crusher", MaterialTool.toolTin, false);
                     }
                     //titanium
                     if (OreInAMillionConfig.isTitaniumEnabled) {
-                        swordTitanium = new ItemToolSword("titanium_sword", MaterialTool.toolTitanium);
-                        pickaxeTitanium = new ItemToolPickaxe("titanium_pickaxe", MaterialTool.toolTitanium);
-                        axeTitanium = new ItemToolAxe("titanium_axe", MaterialTool.toolTitanium);
-                        shovelTitanium = new ItemToolShovel("titanium_shovel", MaterialTool.toolTitanium);
-                        hoeTitanium = new ItemToolHoe("titanium_hoe", MaterialTool.toolTitanium);
-                        crusherTitanium = new ItemToolCrusher("titanium_crusher", MaterialTool.toolTitanium);
+                        swordTitanium = new ItemToolSword("titanium_sword", MaterialTool.toolTitanium, false);
+                        pickaxeTitanium = new ItemToolPickaxe("titanium_pickaxe", MaterialTool.toolTitanium, false);
+                        axeTitanium = new ItemToolAxe("titanium_axe", MaterialTool.toolTitanium, false);
+                        shovelTitanium = new ItemToolShovel("titanium_shovel", MaterialTool.toolTitanium, false);
+                        hoeTitanium = new ItemToolHoe("titanium_hoe", MaterialTool.toolTitanium, false);
+                        crusherTitanium = new ItemToolCrusher("titanium_crusher", MaterialTool.toolTitanium, false);
                     }
                     //tungsten
                     if (OreInAMillionConfig.isTungstenEnabled) {
-                        swordTungsten = new ItemToolSword("tungsten_sword", MaterialTool.toolTungsten);
-                        pickaxeTungsten = new ItemToolPickaxe("tungsten_pickaxe", MaterialTool.toolTungsten);
-                        axeTungsten = new ItemToolAxe("tungsten_axe", MaterialTool.toolTungsten);
-                        shovelTungsten = new ItemToolShovel("tungsten_shovel", MaterialTool.toolTungsten);
-                        hoeTungsten = new ItemToolHoe("tungsten_hoe", MaterialTool.toolTungsten);
-                        crusherTungsten = new ItemToolCrusher("tungsten_crusher", MaterialTool.toolTungsten);
+                        swordTungsten = new ItemToolSword("tungsten_sword", MaterialTool.toolTungsten, false);
+                        pickaxeTungsten = new ItemToolPickaxe("tungsten_pickaxe", MaterialTool.toolTungsten, false);
+                        axeTungsten = new ItemToolAxe("tungsten_axe", MaterialTool.toolTungsten, false);
+                        shovelTungsten = new ItemToolShovel("tungsten_shovel", MaterialTool.toolTungsten, false);
+                        hoeTungsten = new ItemToolHoe("tungsten_hoe", MaterialTool.toolTungsten, false);
+                        crusherTungsten = new ItemToolCrusher("tungsten_crusher", MaterialTool.toolTungsten, false);
                     }
                     //uranium
                     if (OreInAMillionConfig.isUraniumEnabled) {
-                        swordUranium = new ItemToolSword("uranium_sword", MaterialTool.toolUranium);
-                        pickaxeUranium = new ItemToolPickaxe("uranium_pickaxe", MaterialTool.toolUranium);
-                        axeUranium = new ItemToolAxe("uranium_axe", MaterialTool.toolUranium);
-                        shovelUranium = new ItemToolShovel("uranium_shovel", MaterialTool.toolUranium);
-                        hoeUranium = new ItemToolHoe("uranium_hoe", MaterialTool.toolUranium);
-                        crusherUranium = new ItemToolCrusher("uranium_crusher", MaterialTool.toolUranium);
+                        swordUranium = new ItemToolSword("uranium_sword", MaterialTool.toolUranium, false);
+                        pickaxeUranium = new ItemToolPickaxe("uranium_pickaxe", MaterialTool.toolUranium, false);
+                        axeUranium = new ItemToolAxe("uranium_axe", MaterialTool.toolUranium, false);
+                        shovelUranium = new ItemToolShovel("uranium_shovel", MaterialTool.toolUranium, false);
+                        hoeUranium = new ItemToolHoe("uranium_hoe", MaterialTool.toolUranium, false);
+                        crusherUranium = new ItemToolCrusher("uranium_crusher", MaterialTool.toolUranium, false);
                     }
                     //zinc
                     if (OreInAMillionConfig.isZincEnabled) {
-                        swordZinc = new ItemToolSword("zinc_sword", MaterialTool.toolZinc);
-                        pickaxeZinc = new ItemToolPickaxe("zinc_pickaxe", MaterialTool.toolZinc);
-                        axeZinc = new ItemToolAxe("zinc_axe", MaterialTool.toolZinc);
-                        shovelZinc = new ItemToolShovel("zinc_shovel", MaterialTool.toolZinc);
-                        hoeZinc = new ItemToolHoe("zinc_hoe", MaterialTool.toolZinc);
-                        crusherZinc = new ItemToolCrusher("zinc_crusher", MaterialTool.toolZinc);
+                        swordZinc = new ItemToolSword("zinc_sword", MaterialTool.toolZinc, false);
+                        pickaxeZinc = new ItemToolPickaxe("zinc_pickaxe", MaterialTool.toolZinc, false);
+                        axeZinc = new ItemToolAxe("zinc_axe", MaterialTool.toolZinc, false);
+                        shovelZinc = new ItemToolShovel("zinc_shovel", MaterialTool.toolZinc, false);
+                        hoeZinc = new ItemToolHoe("zinc_hoe", MaterialTool.toolZinc, false);
+                        crusherZinc = new ItemToolCrusher("zinc_crusher", MaterialTool.toolZinc, false);
                     }
                     //brass
                     if (OreInAMillionConfig.isBrassEnabled) {
-                        swordBrass = new ItemToolSword("brass_sword", MaterialTool.toolBrass);
-                        pickaxeBrass = new ItemToolPickaxe("brass_pickaxe", MaterialTool.toolBrass);
-                        axeBrass = new ItemToolAxe("brass_axe", MaterialTool.toolBrass);
-                        shovelBrass = new ItemToolShovel("brass_shovel", MaterialTool.toolBrass);
-                        hoeBrass = new ItemToolHoe("brass_hoe", MaterialTool.toolBrass);
-                        crusherBrass = new ItemToolCrusher("brass_crusher", MaterialTool.toolBrass);
+                        swordBrass = new ItemToolSword("brass_sword", MaterialTool.toolBrass, false);
+                        pickaxeBrass = new ItemToolPickaxe("brass_pickaxe", MaterialTool.toolBrass, false);
+                        axeBrass = new ItemToolAxe("brass_axe", MaterialTool.toolBrass, false);
+                        shovelBrass = new ItemToolShovel("brass_shovel", MaterialTool.toolBrass, false);
+                        hoeBrass = new ItemToolHoe("brass_hoe", MaterialTool.toolBrass, false);
+                        crusherBrass = new ItemToolCrusher("brass_crusher", MaterialTool.toolBrass, false);
                     }
                     //bronze
                     if (OreInAMillionConfig.isBronzeEnabled) {
-                        swordBronze = new ItemToolSword("bronze_sword", MaterialTool.toolBronze);
-                        pickaxeBronze = new ItemToolPickaxe("bronze_pickaxe", MaterialTool.toolBronze);
-                        axeBronze= new ItemToolAxe("bronze_axe", MaterialTool.toolBronze);
-                        shovelBronze = new ItemToolShovel("bronze_shovel", MaterialTool.toolBronze);
-                        hoeBronze = new ItemToolHoe("bronze_hoe", MaterialTool.toolBronze);
-                        crusherBronze = new ItemToolCrusher("bronze_crusher", MaterialTool.toolBronze);
+                        swordBronze = new ItemToolSword("bronze_sword", MaterialTool.toolBronze, false);
+                        pickaxeBronze = new ItemToolPickaxe("bronze_pickaxe", MaterialTool.toolBronze, false);
+                        axeBronze= new ItemToolAxe("bronze_axe", MaterialTool.toolBronze, false);
+                        shovelBronze = new ItemToolShovel("bronze_shovel", MaterialTool.toolBronze, false);
+                        hoeBronze = new ItemToolHoe("bronze_hoe", MaterialTool.toolBronze, false);
+                        crusherBronze = new ItemToolCrusher("bronze_crusher", MaterialTool.toolBronze, false);
                     }
                     //electrum
                     if (OreInAMillionConfig.isElectrumEnabled) {
-                        swordElectrum = new ItemToolSword("electrum_sword", MaterialTool.toolElectrum);
-                        pickaxeElectrum = new ItemToolPickaxe("electrum_pickaxe", MaterialTool.toolElectrum);
-                        axeElectrum = new ItemToolAxe("electrum_axe", MaterialTool.toolElectrum);
-                        shovelElectrum = new ItemToolShovel("electrum_shovel", MaterialTool.toolElectrum);
-                        hoeElectrum = new ItemToolHoe("electrum_hoe", MaterialTool.toolElectrum);
-                        crusherElectrum = new ItemToolCrusher("electrum_crusher", MaterialTool.toolElectrum);
+                        swordElectrum = new ItemToolSword("electrum_sword", MaterialTool.toolElectrum, false);
+                        pickaxeElectrum = new ItemToolPickaxe("electrum_pickaxe", MaterialTool.toolElectrum, false);
+                        axeElectrum = new ItemToolAxe("electrum_axe", MaterialTool.toolElectrum, false);
+                        shovelElectrum = new ItemToolShovel("electrum_shovel", MaterialTool.toolElectrum, false);
+                        hoeElectrum = new ItemToolHoe("electrum_hoe", MaterialTool.toolElectrum, false);
+                        crusherElectrum = new ItemToolCrusher("electrum_crusher", MaterialTool.toolElectrum, false);
                     }
                     //fairy
                     if (OreInAMillionConfig.isFairyEnabled) {
-                        swordFairy = new ItemToolSword("fairy_sword", MaterialTool.toolFairy);
-                        pickaxeFairy = new ItemToolPickaxe("fairy_pickaxe", MaterialTool.toolFairy);
-                        axeFairy = new ItemToolAxe("fairy_axe", MaterialTool.toolFairy);
-                        shovelFairy = new ItemToolShovel("fairy_shovel", MaterialTool.toolFairy);
-                        hoeFairy = new ItemToolHoe("fairy_hoe", MaterialTool.toolFairy);
-                        crusherFairy = new ItemToolCrusher("fairy_crusher", MaterialTool.toolFairy);
+                        swordFairy = new ItemToolSword("fairy_sword", MaterialTool.toolFairy, false);
+                        pickaxeFairy = new ItemToolPickaxe("fairy_pickaxe", MaterialTool.toolFairy, false);
+                        axeFairy = new ItemToolAxe("fairy_axe", MaterialTool.toolFairy, false);
+                        shovelFairy = new ItemToolShovel("fairy_shovel", MaterialTool.toolFairy, false);
+                        hoeFairy = new ItemToolHoe("fairy_hoe", MaterialTool.toolFairy, false);
+                        crusherFairy = new ItemToolCrusher("fairy_crusher", MaterialTool.toolFairy, false);
                     }
                     //invar
                     if (OreInAMillionConfig.isInvarEnabled) {
-                        swordInvar = new ItemToolSword("invar_sword", MaterialTool.toolInvar);
-                        pickaxeInvar = new ItemToolPickaxe("invar_pickaxe", MaterialTool.toolInvar);
-                        axeInvar = new ItemToolAxe("invar_axe", MaterialTool.toolInvar);
-                        shovelInvar = new ItemToolShovel("invar_shovel", MaterialTool.toolInvar);
-                        hoeInvar = new ItemToolHoe("invar_hoe", MaterialTool.toolInvar);
-                        crusherInvar = new ItemToolCrusher("invar_crusher", MaterialTool.toolInvar);
+                        swordInvar = new ItemToolSword("invar_sword", MaterialTool.toolInvar, false);
+                        pickaxeInvar = new ItemToolPickaxe("invar_pickaxe", MaterialTool.toolInvar, false);
+                        axeInvar = new ItemToolAxe("invar_axe", MaterialTool.toolInvar, false);
+                        shovelInvar = new ItemToolShovel("invar_shovel", MaterialTool.toolInvar, false);
+                        hoeInvar = new ItemToolHoe("invar_hoe", MaterialTool.toolInvar, false);
+                        crusherInvar = new ItemToolCrusher("invar_crusher", MaterialTool.toolInvar, false);
                     }
                     //steel
                     if (OreInAMillionConfig.isSteelEnabled) {
-                        swordSteel = new ItemToolSword("steel_sword", MaterialTool.toolSteel);
-                        pickaxeSteel = new ItemToolPickaxe("steel_pickaxe", MaterialTool.toolSteel);
-                        axeSteel = new ItemToolAxe("steel_axe", MaterialTool.toolSteel);
-                        shovelSteel = new ItemToolShovel("steel_shovel", MaterialTool.toolSteel);
-                        hoeSteel = new ItemToolHoe("steel_hoe", MaterialTool.toolSteel);
-                        crusherSteel = new ItemToolCrusher("steel_crusher", MaterialTool.toolSteel);
+                        swordSteel = new ItemToolSword("steel_sword", MaterialTool.toolSteel, false);
+                        pickaxeSteel = new ItemToolPickaxe("steel_pickaxe", MaterialTool.toolSteel, false);
+                        axeSteel = new ItemToolAxe("steel_axe", MaterialTool.toolSteel, false);
+                        shovelSteel = new ItemToolShovel("steel_shovel", MaterialTool.toolSteel, false);
+                        hoeSteel = new ItemToolHoe("steel_hoe", MaterialTool.toolSteel, false);
+                        crusherSteel = new ItemToolCrusher("steel_crusher", MaterialTool.toolSteel, false);
                     }
                     //thermal series
                     if (OreInAMillionConfig.isThermalIngotsEnabled) {
                         //constantan
                         if (OreInAMillionConfig.isConstantanEnabled) {
-                            swordConstantan = new ItemToolSword("constantan_sword", MaterialTool.toolConstantan);
-                            pickaxeConstantan = new ItemToolPickaxe("constantan_pickaxe", MaterialTool.toolConstantan);
-                            axeConstantan = new ItemToolAxe("constantan_axe", MaterialTool.toolConstantan);
-                            shovelConstantan = new ItemToolShovel("constantan_shovel", MaterialTool.toolConstantan);
-                            hoeConstantan = new ItemToolHoe("constantan_hoe", MaterialTool.toolConstantan);
-                            crusherConstantan = new ItemToolCrusher("constantan_crusher", MaterialTool.toolConstantan);
+                            swordConstantan = new ItemToolSword("constantan_sword", MaterialTool.toolConstantan, false);
+                            pickaxeConstantan = new ItemToolPickaxe("constantan_pickaxe", MaterialTool.toolConstantan, false);
+                            axeConstantan = new ItemToolAxe("constantan_axe", MaterialTool.toolConstantan, false);
+                            shovelConstantan = new ItemToolShovel("constantan_shovel", MaterialTool.toolConstantan, false);
+                            hoeConstantan = new ItemToolHoe("constantan_hoe", MaterialTool.toolConstantan, false);
+                            crusherConstantan = new ItemToolCrusher("constantan_crusher", MaterialTool.toolConstantan, false);
                         }
                         //enderium
                         if (OreInAMillionConfig.isEnderiumEnabled) {
-                            swordEnderium = new ItemToolSword("enderium_sword", MaterialTool.toolEnderium);
-                            pickaxeEnderium = new ItemToolPickaxe("enderium_pickaxe", MaterialTool.toolEnderium);
-                            axeEnderium = new ItemToolAxe("enderium_axe", MaterialTool.toolEnderium);
-                            shovelEnderium = new ItemToolShovel("enderium_shovel", MaterialTool.toolEnderium);
-                            hoeEnderium = new ItemToolHoe("enderium_hoe", MaterialTool.toolEnderium);
-                            crusherEnderium = new ItemToolCrusher("enderium_crusher", MaterialTool.toolEnderium);
+                            swordEnderium = new ItemToolSword("enderium_sword", MaterialTool.toolEnderium, false);
+                            pickaxeEnderium = new ItemToolPickaxe("enderium_pickaxe", MaterialTool.toolEnderium, false);
+                            axeEnderium = new ItemToolAxe("enderium_axe", MaterialTool.toolEnderium, false);
+                            shovelEnderium = new ItemToolShovel("enderium_shovel", MaterialTool.toolEnderium, false);
+                            hoeEnderium = new ItemToolHoe("enderium_hoe", MaterialTool.toolEnderium, false);
+                            crusherEnderium = new ItemToolCrusher("enderium_crusher", MaterialTool.toolEnderium, false);
                         }
                         //lumium
                         if (OreInAMillionConfig.isLumiumEnabled) {
-                            swordLumium = new ItemToolSword("lumium_sword", MaterialTool.toolLumium);
-                            pickaxeLumium = new ItemToolPickaxe("lumium_pickaxe", MaterialTool.toolLumium);
-                            axeLumium = new ItemToolAxe("lumium_axe", MaterialTool.toolLumium);
-                            shovelLumium = new ItemToolShovel("lumium_shovel", MaterialTool.toolLumium);
-                            hoeLumium = new ItemToolHoe("lumium_hoe", MaterialTool.toolLumium);
-                            crusherLumium = new ItemToolCrusher("lumium_crusher", MaterialTool.toolLumium);
+                            swordLumium = new ItemToolSword("lumium_sword", MaterialTool.toolLumium, false);
+                            pickaxeLumium = new ItemToolPickaxe("lumium_pickaxe", MaterialTool.toolLumium, false);
+                            axeLumium = new ItemToolAxe("lumium_axe", MaterialTool.toolLumium, false);
+                            shovelLumium = new ItemToolShovel("lumium_shovel", MaterialTool.toolLumium, false);
+                            hoeLumium = new ItemToolHoe("lumium_hoe", MaterialTool.toolLumium, false);
+                            crusherLumium = new ItemToolCrusher("lumium_crusher", MaterialTool.toolLumium, false);
                         }
                         //signalum
                         if (OreInAMillionConfig.isSignalumEnabled) {
-                            swordSignalum = new ItemToolSword("signalum_sword", MaterialTool.toolSignalum);
-                            pickaxeSignalum = new ItemToolPickaxe("signalum_pickaxe", MaterialTool.toolSignalum);
-                            axeSignalum = new ItemToolAxe("signalum_axe", MaterialTool.toolSignalum);
-                            shovelSignalum = new ItemToolShovel("signalum_shovel", MaterialTool.toolSignalum);
-                            hoeSignalum = new ItemToolHoe("signalum_hoe", MaterialTool.toolSignalum);
-                            crusherSignalum = new ItemToolCrusher("signalum_crusher", MaterialTool.toolSignalum);
+                            swordSignalum = new ItemToolSword("signalum_sword", MaterialTool.toolSignalum, false);
+                            pickaxeSignalum = new ItemToolPickaxe("signalum_pickaxe", MaterialTool.toolSignalum, false);
+                            axeSignalum = new ItemToolAxe("signalum_axe", MaterialTool.toolSignalum, false);
+                            shovelSignalum = new ItemToolShovel("signalum_shovel", MaterialTool.toolSignalum, false);
+                            hoeSignalum = new ItemToolHoe("signalum_hoe", MaterialTool.toolSignalum, false);
+                            crusherSignalum = new ItemToolCrusher("signalum_crusher", MaterialTool.toolSignalum, false);
                         }
                     }
                     //tinkers construct
                     if (OreInAMillionConfig.isTinkersIngotsEnabled) {
                         //ardite
                         if (OreInAMillionConfig.isArditeEnabled) {
-                            swordArdite = new ItemToolSword("ardite_sword", MaterialTool.toolArdite);
-                            pickaxeArdite = new ItemToolPickaxe("ardite_pickaxe", MaterialTool.toolArdite);
-                            axeArdite = new ItemToolAxe("ardite_axe", MaterialTool.toolArdite);
-                            shovelArdite = new ItemToolShovel("ardite_shovel", MaterialTool.toolArdite);
-                            hoeArdite = new ItemToolHoe("ardite_hoe", MaterialTool.toolArdite);
-                            crusherArdite = new ItemToolCrusher("ardite_crusher", MaterialTool.toolArdite);
+                            swordArdite = new ItemToolSword("ardite_sword", MaterialTool.toolArdite, false);
+                            pickaxeArdite = new ItemToolPickaxe("ardite_pickaxe", MaterialTool.toolArdite, false);
+                            axeArdite = new ItemToolAxe("ardite_axe", MaterialTool.toolArdite, false);
+                            shovelArdite = new ItemToolShovel("ardite_shovel", MaterialTool.toolArdite, false);
+                            hoeArdite = new ItemToolHoe("ardite_hoe", MaterialTool.toolArdite, false);
+                            crusherArdite = new ItemToolCrusher("ardite_crusher", MaterialTool.toolArdite, false);
                         }
                         //knightslime
                         if (OreInAMillionConfig.isKnightSlimeEnabled) {
-                            swordKnightSlime = new ItemToolSword("knightslime_sword", MaterialTool.toolKnightSlime);
-                            pickaxeKnightSlime = new ItemToolPickaxe("knightslime_pickaxe", MaterialTool.toolKnightSlime);
-                            axeKnightSlime = new ItemToolAxe("knightslime_axe", MaterialTool.toolKnightSlime);
-                            shovelKnightSlime = new ItemToolShovel("knightslime_shovel", MaterialTool.toolKnightSlime);
-                            hoeKnightSlime = new ItemToolHoe("knightslime_hoe", MaterialTool.toolKnightSlime);
-                            crusherKnightSlime = new ItemToolCrusher("knightslime_crusher", MaterialTool.toolKnightSlime);
+                            swordKnightSlime = new ItemToolSword("knightslime_sword", MaterialTool.toolKnightSlime, false);
+                            pickaxeKnightSlime = new ItemToolPickaxe("knightslime_pickaxe", MaterialTool.toolKnightSlime, false);
+                            axeKnightSlime = new ItemToolAxe("knightslime_axe", MaterialTool.toolKnightSlime, false);
+                            shovelKnightSlime = new ItemToolShovel("knightslime_shovel", MaterialTool.toolKnightSlime, false);
+                            hoeKnightSlime = new ItemToolHoe("knightslime_hoe", MaterialTool.toolKnightSlime, false);
+                            crusherKnightSlime = new ItemToolCrusher("knightslime_crusher", MaterialTool.toolKnightSlime, false);
                         }
                         //pigiron
                         if (OreInAMillionConfig.isPigIronEnabled) {
-                            swordPigIron = new ItemToolFoodSword("pigiron_sword", MaterialTool.toolPigIron, (int) 8F, (int) 4F);
-                            pickaxePigIron = new ItemToolFoodPickaxe("pigiron_pickaxe", MaterialTool.toolPigIron, (int) 12F, (int) 6F);
-                            axePigIron = new ItemToolFoodAxe("pigiron_axe", MaterialTool.toolPigIron, (int) 12F, (int) 6F);
-                            shovelPigIron = new ItemToolFoodShovel("pigiron_shovel", MaterialTool.toolPigIron, (int) 4F, (int) 2F);
-                            hoePigIron = new ItemToolFoodHoe("pigiron_hoe", MaterialTool.toolPigIron, (int) 8F, (int) 4F);
-                            crusherPigIron = new ItemToolFoodCrusher("pigiron_crusher", MaterialTool.toolPigIron, (int) 76F, (int) 38F);
+                            swordPigIron = new ItemToolFoodSword("pigiron_sword", MaterialTool.toolPigIron, 8,  true);
+                            pickaxePigIron = new ItemToolFoodPickaxe("pigiron_pickaxe", MaterialTool.toolPigIron, 12, true);
+                            axePigIron = new ItemToolFoodAxe("pigiron_axe", MaterialTool.toolPigIron, 12, true);
+                            shovelPigIron = new ItemToolFoodShovel("pigiron_shovel", MaterialTool.toolPigIron, 4, true);
+                            hoePigIron = new ItemToolFoodHoe("pigiron_hoe", MaterialTool.toolPigIron, 8, true);
+                            crusherPigIron = new ItemToolFoodCrusher("pigiron_crusher", MaterialTool.toolPigIron, 76, true);
                         }
                         //manyullyn
                         if (OreInAMillionConfig.isManyullynEnabled) {
-                            swordManyullyn = new ItemToolSword("manyullyn_sword", MaterialTool.toolManyullyn);
-                            pickaxeManyullyn = new ItemToolPickaxe("manyullyn_pickaxe", MaterialTool.toolManyullyn);
-                            axeManyullyn = new ItemToolAxe("manyullyn_axe", MaterialTool.toolManyullyn);
-                            shovelManyullyn = new ItemToolShovel("manyullyn_shovel", MaterialTool.toolManyullyn);
-                            hoeManyullyn = new ItemToolHoe("manyullyn_hoe", MaterialTool.toolManyullyn);
-                            crusherManyullyn = new ItemToolCrusher("manyullyn_crusher", MaterialTool.toolManyullyn);
+                            swordManyullyn = new ItemToolSword("manyullyn_sword", MaterialTool.toolManyullyn, false);
+                            pickaxeManyullyn = new ItemToolPickaxe("manyullyn_pickaxe", MaterialTool.toolManyullyn, false);
+                            axeManyullyn = new ItemToolAxe("manyullyn_axe", MaterialTool.toolManyullyn, false);
+                            shovelManyullyn = new ItemToolShovel("manyullyn_shovel", MaterialTool.toolManyullyn, false);
+                            hoeManyullyn = new ItemToolHoe("manyullyn_hoe", MaterialTool.toolManyullyn, false);
+                            crusherManyullyn = new ItemToolCrusher("manyullyn_crusher", MaterialTool.toolManyullyn, false);
                         }
                     }
                 }
@@ -599,109 +599,90 @@ public class ModTools {
                 if (OreInAMillionConfig.isGemsEnabled) {
                     //amethyst
                     if (OreInAMillionConfig.isAmethystEnabled) {
-                        swordAmethyst = new ItemToolSword("amethyst_sword", MaterialTool.toolAmethyst);
-                        pickaxeAmethyst = new ItemToolPickaxe("amethyst_pickaxe", MaterialTool.toolAmethyst);
-                        axeAmethyst = new ItemToolAxe("amethyst_axe", MaterialTool.toolAmethyst);
-                        shovelAmethyst = new ItemToolShovel("amethyst_shovel", MaterialTool.toolAmethyst);
-                        hoeAmethyst = new ItemToolHoe("amethyst_hoe", MaterialTool.toolAmethyst);
-                        crusherAmethyst = new ItemToolCrusher("amethyst_crusher", MaterialTool.toolAmethyst);
+                        swordAmethyst = new ItemToolSword("amethyst_sword", MaterialTool.toolAmethyst, false);
+                        pickaxeAmethyst = new ItemToolPickaxe("amethyst_pickaxe", MaterialTool.toolAmethyst, false);
+                        axeAmethyst = new ItemToolAxe("amethyst_axe", MaterialTool.toolAmethyst, false);
+                        shovelAmethyst = new ItemToolShovel("amethyst_shovel", MaterialTool.toolAmethyst, false);
+                        hoeAmethyst = new ItemToolHoe("amethyst_hoe", MaterialTool.toolAmethyst, false);
+                        crusherAmethyst = new ItemToolCrusher("amethyst_crusher", MaterialTool.toolAmethyst, false);
                     }
                     //peridot
                     if (OreInAMillionConfig.isPeridotEnabled) {
-                        swordPeridot = new ItemToolSword("peridot_sword", MaterialTool.toolPeridot);
-                        pickaxePeridot = new ItemToolPickaxe("peridot_pickaxe", MaterialTool.toolPeridot);
-                        axePeridot = new ItemToolAxe("peridot_axe", MaterialTool.toolPeridot);
-                        shovelPeridot = new ItemToolShovel("peridot_shovel", MaterialTool.toolPeridot);
-                        hoePeridot = new ItemToolHoe("peridot_hoe", MaterialTool.toolPeridot);
-                        crusherPeridot = new ItemToolCrusher("peridot_crusher", MaterialTool.toolPeridot);
+                        swordPeridot = new ItemToolSword("peridot_sword", MaterialTool.toolPeridot, false);
+                        pickaxePeridot = new ItemToolPickaxe("peridot_pickaxe", MaterialTool.toolPeridot, false);
+                        axePeridot = new ItemToolAxe("peridot_axe", MaterialTool.toolPeridot, false);
+                        shovelPeridot = new ItemToolShovel("peridot_shovel", MaterialTool.toolPeridot, false);
+                        hoePeridot = new ItemToolHoe("peridot_hoe", MaterialTool.toolPeridot, false);
+                        crusherPeridot = new ItemToolCrusher("peridot_crusher", MaterialTool.toolPeridot, false);
                     }
                     //ruby
                     if (OreInAMillionConfig.isRubyEnabled) {
-                        swordRuby = new ItemToolSword("ruby_sword", MaterialTool.toolRuby);
-                        pickaxeRuby = new ItemToolPickaxe("ruby_pickaxe", MaterialTool.toolRuby);
-                        axeRuby = new ItemToolAxe("ruby_axe", MaterialTool.toolRuby);
-                        shovelRuby = new ItemToolShovel("ruby_shovel", MaterialTool.toolRuby);
-                        hoeRuby = new ItemToolHoe("ruby_hoe", MaterialTool.toolRuby);
-                        crusherRuby = new ItemToolCrusher("ruby_crusher", MaterialTool.toolRuby);
+                        swordRuby = new ItemToolSword("ruby_sword", MaterialTool.toolRuby, false);
+                        pickaxeRuby = new ItemToolPickaxe("ruby_pickaxe", MaterialTool.toolRuby, false);
+                        axeRuby = new ItemToolAxe("ruby_axe", MaterialTool.toolRuby, false);
+                        shovelRuby = new ItemToolShovel("ruby_shovel", MaterialTool.toolRuby, false);
+                        hoeRuby = new ItemToolHoe("ruby_hoe", MaterialTool.toolRuby, false);
+                        crusherRuby = new ItemToolCrusher("ruby_crusher", MaterialTool.toolRuby, false);
                     }
                     //sapphire
                     if (OreInAMillionConfig.isSapphireEnabled) {
-                        swordSapphire = new ItemToolSword("sapphire_sword", MaterialTool.toolSapphire);
-                        pickaxeSapphire= new ItemToolPickaxe("sapphire_pickaxe", MaterialTool.toolSapphire);
-                        axeSapphire = new ItemToolAxe("sapphire_axe", MaterialTool.toolSapphire);
-                        shovelSapphire = new ItemToolShovel("sapphire_shovel", MaterialTool.toolSapphire);
-                        hoeSapphire = new ItemToolHoe("sapphire_hoe", MaterialTool.toolSapphire);
-                        crusherSapphire = new ItemToolCrusher("sapphire_crusher", MaterialTool.toolSapphire);
-                    }
-                }
-                //elements
-                if (OreInAMillionConfig.isElementsEnabled) {
-                    //carbon
-                    if (OreInAMillionConfig.isCarbonEnabled) {
-
-                    }
-                    //cinnabar
-                    if (OreInAMillionConfig.isCinnabarEnabled) {
-
-                    }
-                    //silicon
-                    if (OreInAMillionConfig.isSiliconEnabled) {
-
-                    }
-                    //sulphur
-                    if (OreInAMillionConfig.isSulphurEnabled) {
-
+                        swordSapphire = new ItemToolSword("sapphire_sword", MaterialTool.toolSapphire, false);
+                        pickaxeSapphire= new ItemToolPickaxe("sapphire_pickaxe", MaterialTool.toolSapphire, false);
+                        axeSapphire = new ItemToolAxe("sapphire_axe", MaterialTool.toolSapphire, false);
+                        shovelSapphire = new ItemToolShovel("sapphire_shovel", MaterialTool.toolSapphire, false);
+                        hoeSapphire = new ItemToolHoe("sapphire_hoe", MaterialTool.toolSapphire, false);
+                        crusherSapphire = new ItemToolCrusher("sapphire_crusher", MaterialTool.toolSapphire, false);
                     }
                 }
                 //vanilla additions
                 if (OreInAMillionConfig.isVanillaEnabled) {
                     //charcoal
                     if (OreInAMillionConfig.isCharcoalEnabled) {
-                        swordCharcoal = new ItemToolCoalSword("charcoal_sword", MaterialTool.toolCharcoal, 1700);
-                        pickaxeCharcoal = new ItemToolCoalPickaxe("charcoal_pickaxe", MaterialTool.toolCharcoal, 2600);
-                        axeCharcoal = new ItemToolCoalAxe("charcoal_axe", MaterialTool.toolCharcoal, 2600);
-                        shovelCharcoal = new ItemToolCoalShovel("charcoal_shovel", MaterialTool.toolCharcoal, 1800);
-                        hoeCharcoal = new ItemToolCoalHoe("charcoal_hoe", MaterialTool.toolCharcoal, 1000);
-                        crusherCharcoal = new ItemToolCoalCrusher("charcoal_crusher", MaterialTool.toolCharcoal, 15400);
+                        swordCharcoal = new ItemToolCoalSword("charcoal_sword", MaterialTool.toolCharcoal, 1700, true);
+                        pickaxeCharcoal = new ItemToolCoalPickaxe("charcoal_pickaxe", MaterialTool.toolCharcoal, 2600, true);
+                        axeCharcoal = new ItemToolCoalAxe("charcoal_axe", MaterialTool.toolCharcoal, 2600, true);
+                        shovelCharcoal = new ItemToolCoalShovel("charcoal_shovel", MaterialTool.toolCharcoal, 1800, true);
+                        hoeCharcoal = new ItemToolCoalHoe("charcoal_hoe", MaterialTool.toolCharcoal, 1000, true);
+                        crusherCharcoal = new ItemToolCoalCrusher("charcoal_crusher", MaterialTool.toolCharcoal, 15400, true);
                     }
                     //coal
                     if (OreInAMillionConfig.isCoalEnabled) {
-                        swordCoal = new ItemToolCoalSword("coal_sword", MaterialTool.toolCoal, 1700);
-                        pickaxeCoal = new ItemToolCoalPickaxe("coal_pickaxe", MaterialTool.toolCoal, 2600);
-                        axeCoal = new ItemToolCoalAxe("coal_axe", MaterialTool.toolCoal, 2600);
-                        shovelCoal = new ItemToolCoalShovel("coal_shovel", MaterialTool.toolCoal, 1800);
-                        hoeCoal = new ItemToolCoalHoe("coal_hoe", MaterialTool.toolCoal, 1000);
-                        crusherCoal = new ItemToolCoalCrusher("coal_crusher", MaterialTool.toolCoal, 15400);
+                        swordCoal = new ItemToolCoalSword("coal_sword", MaterialTool.toolCoal, 1700, true);
+                        pickaxeCoal = new ItemToolCoalPickaxe("coal_pickaxe", MaterialTool.toolCoal, 2600, true);
+                        axeCoal = new ItemToolCoalAxe("coal_axe", MaterialTool.toolCoal, 2600, true);
+                        shovelCoal = new ItemToolCoalShovel("coal_shovel", MaterialTool.toolCoal, 1800, true);
+                        hoeCoal = new ItemToolCoalHoe("coal_hoe", MaterialTool.toolCoal, 1000, true);
+                        crusherCoal = new ItemToolCoalCrusher("coal_crusher", MaterialTool.toolCoal, 15400, true);
                     }
                     //diamond
                     if (OreInAMillionConfig.isDiamondEnabled) {
-                        crusherDiamond = new ItemToolCrusher("diamond_crusher", Item.ToolMaterial.DIAMOND);
+                        crusherDiamond = new ItemToolCrusher("diamond_crusher", Item.ToolMaterial.DIAMOND, false);
                     }
                     //emerald
                     if (OreInAMillionConfig.isEmeraldEnabled) {
-                        swordEmerald = new ItemToolSword("emerald_sword", MaterialTool.toolEmerald);
-                        pickaxeEmerald = new ItemToolPickaxe("emerald_pickaxe", MaterialTool.toolEmerald);
-                        axeEmerald = new ItemToolAxe("emerald_axe", MaterialTool.toolEmerald);
-                        shovelEmerald = new ItemToolShovel("emerald_shovel", MaterialTool.toolEmerald);
-                        hoeEmerald = new ItemToolHoe("emerald_hoe", MaterialTool.toolEmerald);
-                        crusherEmerald = new ItemToolCrusher("emerald_crusher", MaterialTool.toolEmerald);
+                        swordEmerald = new ItemToolSword("emerald_sword", MaterialTool.toolEmerald, false);
+                        pickaxeEmerald = new ItemToolPickaxe("emerald_pickaxe", MaterialTool.toolEmerald, false);
+                        axeEmerald = new ItemToolAxe("emerald_axe", MaterialTool.toolEmerald, false);
+                        shovelEmerald = new ItemToolShovel("emerald_shovel", MaterialTool.toolEmerald, false);
+                        hoeEmerald = new ItemToolHoe("emerald_hoe", MaterialTool.toolEmerald, false);
+                        crusherEmerald = new ItemToolCrusher("emerald_crusher", MaterialTool.toolEmerald, false);
                     }
                     //gold
                     if (OreInAMillionConfig.isGoldEnabled){
-                        crusherGold = new ItemToolCrusher("gold_crusher", Item.ToolMaterial.GOLD);
+                        crusherGold = new ItemToolCrusher("gold_crusher", Item.ToolMaterial.GOLD, false);
                     }
                     //iron
                     if (OreInAMillionConfig.isIronEnabled){
-                        crusherIron = new ItemToolCrusher("iron_crusher", Item.ToolMaterial.IRON);
+                        crusherIron = new ItemToolCrusher("iron_crusher", Item.ToolMaterial.IRON, false);
                     }
                     //quartz
                     if (OreInAMillionConfig.isQuartzEnabled) {
-                        swordQuartz = new ItemToolSword("quartz_sword", MaterialTool.toolQuartz);
-                        pickaxeQuartz = new ItemToolPickaxe("quartz_pickaxe", MaterialTool.toolQuartz);
-                        axeQuartz = new ItemToolAxe("quartz_axe", MaterialTool.toolQuartz);
-                        shovelQuartz = new ItemToolShovel("quartz_shovel", MaterialTool.toolQuartz);
-                        hoeQuartz = new ItemToolHoe("quartz_hoe", MaterialTool.toolQuartz);
-                        crusherQuartz = new ItemToolCrusher("quartz_crusher", MaterialTool.toolQuartz);
+                        swordQuartz = new ItemToolSword("quartz_sword", MaterialTool.toolQuartz, false);
+                        pickaxeQuartz = new ItemToolPickaxe("quartz_pickaxe", MaterialTool.toolQuartz, false);
+                        axeQuartz = new ItemToolAxe("quartz_axe", MaterialTool.toolQuartz, false);
+                        shovelQuartz = new ItemToolShovel("quartz_shovel", MaterialTool.toolQuartz, false);
+                        hoeQuartz = new ItemToolHoe("quartz_hoe", MaterialTool.toolQuartz, false);
+                        crusherQuartz = new ItemToolCrusher("quartz_crusher", MaterialTool.toolQuartz, false);
                     }
                 }
                 if (OreInAMillionConfig.isSillyStuffEnabled) {

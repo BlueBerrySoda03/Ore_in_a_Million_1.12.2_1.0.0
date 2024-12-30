@@ -1,6 +1,9 @@
 package com.blueberrysoda.oreinamillion.items.tools.foodtools;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
+import com.blueberrysoda.oreinamillion.items.armor.ItemArmorBase;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -13,25 +16,33 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class ItemToolFoodSword extends ItemSword {
 
-    public static int addHunger;
-    public static int addSaturation;
+    private final int healAmount;
+    public static boolean addTooltip;
 
-    public ItemToolFoodSword(String name, ToolMaterial material, int addHunger, int addSaturation) {
+    public ItemToolFoodSword(String name, ToolMaterial material, int amount, boolean addTooltip) {
         super(material);
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_TOOL);
-        ItemToolFoodSword.addHunger = addHunger;
-        ItemToolFoodSword.addSaturation = addSaturation;
+        this.healAmount = amount;
+        ItemToolFoodSword.addTooltip = addTooltip;
     }
 
+    public float saturation() {
+        return this.healAmount /2;
+    }
 
     @Override
+    @Nonnull
     public EnumAction getItemUseAction(ItemStack stack) {
         return EnumAction.EAT;
     }
@@ -46,7 +57,7 @@ public class ItemToolFoodSword extends ItemSword {
     public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
         if (entityLiving instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) entityLiving;
-            player.getFoodStats().addStats(addHunger, addSaturation);
+            player.getFoodStats().addStats(healAmount, saturation());
             stack.shrink(1);
 
             ItemStack dropStack = new ItemStack(Items.STICK, 1);
@@ -56,6 +67,7 @@ public class ItemToolFoodSword extends ItemSword {
     }
 
     @Override
+    @Nonnull
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
         ItemStack itemStack = playerIn.getHeldItem(handIn);
 
@@ -66,6 +78,17 @@ public class ItemToolFoodSword extends ItemSword {
         }
         else {
             return new ActionResult<>(EnumActionResult.FAIL, itemStack);
+        }
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
+    {
+        super.addInformation(stack,worldIn,tooltip,flagIn);
+        if (ItemArmorBase.addTooltip) {
+            String s = stack.getItem().getUnlocalizedName() + ".tooltip";
+            String result = I18n.format(s);
+            tooltip.add(result);
         }
     }
 }

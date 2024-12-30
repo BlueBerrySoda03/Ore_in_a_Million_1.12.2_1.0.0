@@ -1,6 +1,9 @@
 package com.blueberrysoda.oreinamillion.items.tools.foodtools;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
+import com.blueberrysoda.oreinamillion.items.armor.ItemArmorBase;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -11,31 +14,31 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class ItemToolFoodHoe extends ItemHoe {
 
-    public static int addHunger;
-    public static int addSaturation;
+    private int healAmount;
+    public static float saturationModifier;
+    public static boolean addTooltip;
 
-    public ItemToolFoodHoe(String name, ToolMaterial material, int addHunger, int addSaturation) {
+    public ItemToolFoodHoe(String name, ToolMaterial material, int amount, boolean addTooltip) {
         super(material);
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_TOOL);
-        ItemToolFoodHoe.addHunger = addHunger;
-        ItemToolFoodHoe.addSaturation = addSaturation;
+        this.healAmount = amount;
+        ItemToolFoodHoe.addTooltip = addTooltip;
     }
 
-//    @Nonnull
-//    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-//        if (player.isSneaking()) {
-//            player.setActiveHand(hand);
-//            return EnumActionResult.SUCCESS;
-//        }
-//        return EnumActionResult.PASS;
-//    }
+    public float saturation() {
+        return this.healAmount /2;
+    }
 
     @Override
     @Nonnull
@@ -53,7 +56,8 @@ public class ItemToolFoodHoe extends ItemHoe {
     public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
         if (entityLiving instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) entityLiving;
-            player.getFoodStats().addStats(addHunger, addSaturation);
+            worldIn.playSound(null, entityLiving.posX, entityLiving.posY, entityLiving.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
+            player.getFoodStats().addStats(healAmount, saturation());
             stack.shrink(1);
 
             ItemStack dropStack = new ItemStack(Items.STICK, 2);
@@ -74,6 +78,17 @@ public class ItemToolFoodHoe extends ItemHoe {
         }
         else {
             return new ActionResult<>(EnumActionResult.FAIL, itemStack);
+        }
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
+    {
+        super.addInformation(stack,worldIn,tooltip,flagIn);
+        if (ItemArmorBase.addTooltip) {
+            String s = stack.getItem().getUnlocalizedName() + ".tooltip";
+            String result = I18n.format(s);
+            tooltip.add(result);
         }
     }
 }

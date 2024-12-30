@@ -23,18 +23,18 @@ import java.util.List;
 
 public class ItemArmorFood extends ItemArmor {
 
-    public static int addHunger;
-    public static int addSaturation;
+    public static int hunger;
+    public static float saturationModifier;
     public static boolean addTooltip;
 
-    public ItemArmorFood(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, boolean addTooltip, int addHunger, int addSaturation) {
+    public ItemArmorFood(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, boolean addTooltip, int hunger, float saturationModifier) {
         super(materialIn, renderIndexIn, equipmentSlotIn);
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setMaxStackSize(1);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_ARMOR);
-        ItemArmorFood.addHunger = addHunger;
-        ItemArmorFood.addSaturation = addSaturation;
+        ItemArmorFood.hunger = hunger;
+        ItemArmorFood.saturationModifier = saturationModifier;
         ItemArmorFood.addTooltip = addTooltip;
     }
 
@@ -53,7 +53,7 @@ public class ItemArmorFood extends ItemArmor {
     public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
         if (entityLiving instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) entityLiving;
-            player.getFoodStats().addStats(addHunger, addSaturation);
+            player.getFoodStats().addStats(hunger, saturationModifier);
             stack.shrink(1);
         }
         return super.onItemUseFinish(stack, worldIn, entityLiving);

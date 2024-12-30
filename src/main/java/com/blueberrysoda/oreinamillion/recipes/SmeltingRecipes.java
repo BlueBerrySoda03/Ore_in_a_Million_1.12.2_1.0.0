@@ -42,7 +42,7 @@ public class SmeltingRecipes {
                 //iridium
                 if (OreInAMillionConfig.isIridiumEnabled) {
                     GameRegistry.addSmelting(ModBlocks.oreIridium, new ItemStack(ModItems.ingotIridium), 0.7F);
-                    GameRegistry.addSmelting(ModItems.dustCobalt, new ItemStack(ModItems.ingotCobalt), 0.7F);
+                    GameRegistry.addSmelting(ModItems.dustIridium, new ItemStack(ModItems.ingotIridium), 0.7F);
                 }
                 //lead
                 if (OreInAMillionConfig.isLeadEnabled) {

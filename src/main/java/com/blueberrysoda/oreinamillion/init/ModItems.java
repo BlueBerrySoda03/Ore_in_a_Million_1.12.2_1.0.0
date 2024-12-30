@@ -217,7 +217,7 @@ public class ModItems {
     public static ItemCrafting gearRuby;
     public static ItemCrafting gearSapphire;
     //other
-    public static ItemCrafting gearSilicon;
+//    public static ItemCrafting gearSilicon;
     //vanilla
     public static ItemCoalCrafting gearCharcoal;
     public static ItemCoalCrafting gearCoal;
@@ -269,7 +269,7 @@ public class ModItems {
     public static ItemCrafting plateRuby;
     public static ItemCrafting plateSapphire;
     //other
-    public static ItemCrafting plateSilicon;
+//    public static ItemCrafting plateSilicon;
     //vanilla
     public static ItemCoalCrafting plateCharcoal;
     public static ItemCoalCrafting plateCoal;
@@ -321,7 +321,7 @@ public class ModItems {
     public static ItemCrafting rodRuby;
     public static ItemCrafting rodSapphire;
     //other
-    public static ItemCrafting rodSilicon;
+//    public static ItemCrafting rodSilicon;
     //vanilla
     public static ItemCoalCrafting rodCharcoal;
     public static ItemCoalCrafting rodCoal;
@@ -628,12 +628,12 @@ public class ModItems {
                     }
                     //pigiron
                     if (OreInAMillionConfig.isPigIronEnabled) {
-                        ingotPigIron = new ItemFoodMineral("pigiron_ingot", 4, 2, false);
+                        ingotPigIron = new ItemFoodMineral("pigiron_ingot", 4, 0.25F, false);
                         nuggetPigIron = new ItemFoodMineral("pigiron_nugget", 1, 0, false);
-                        dustPigIron = new ItemFoodMineral("pigiron_dust", 2, 4, false);
-                        gearPigIron = new ItemFoodCrafting("pigiron_gear", 16, 8, false);
-                        platePigIron = new ItemFoodCrafting("pigriron_plate", 3, 1, false);
-                        rodPigIron = new ItemFoodCrafting("pigiron_rod", 8, 4, false);
+                        dustPigIron = new ItemFoodMineral("pigiron_dust", 2, 2.0F, false);
+                        gearPigIron = new ItemFoodCrafting("pigiron_gear", 16, 0.5F, false);
+                        platePigIron = new ItemFoodCrafting("pigiron_plate", 3, 0.3F, false);
+                        rodPigIron = new ItemFoodCrafting("pigiron_rod", 8, 0.5F, false);
                     }
                     //manyullyn
                     if (OreInAMillionConfig.isManyullynEnabled){
@@ -704,9 +704,9 @@ public class ModItems {
                     elementSilicon = new ItemMineral("silicon");
                     nuggetSilicon = new ItemMineral("silicon_nugget");
                     dustSilicon = new ItemMineral("silicon_dust");
-                    gearSilicon = new ItemCrafting("silicon_gear");
-                    plateSilicon = new ItemCrafting("silicon_plate");
-                    rodSilicon = new ItemCrafting("silicon_rod");
+//                    gearSilicon = new ItemCrafting("silicon_gear");
+//                    plateSilicon = new ItemCrafting("silicon_plate");
+//                    rodSilicon = new ItemCrafting("silicon_rod");
                 }
                 //sulphur
                 if (OreInAMillionConfig.isSulphurEnabled){
@@ -775,7 +775,7 @@ public class ModItems {
             }
             if (OreInAMillionConfig.isSillyStuffEnabled){
                 tinCan = new ItemMain("tin_can");
-                foodSoupcan = new ItemFoodSoupcan("soupcan", 7, 4, false);
+                foodSoupcan = new ItemFoodSoupcan("soupcan", 7, 0.5F, false);
                 weezerWeezer = new ItemWeezer("weezer");
             }
         }
@@ -1144,9 +1144,9 @@ public class ModItems {
                     event.getRegistry().register(elementSilicon);
                     event.getRegistry().register(nuggetSilicon);
                     event.getRegistry().register(dustSilicon);
-                    event.getRegistry().register(gearSilicon);
-                    event.getRegistry().register(plateSilicon);
-                    event.getRegistry().register(rodSilicon);
+//                    event.getRegistry().register(gearSilicon);
+//                    event.getRegistry().register(plateSilicon);
+//                    event.getRegistry().register(rodSilicon);
                 }
                 //sulphur
                 if (OreInAMillionConfig.isSulphurEnabled) {
@@ -1575,9 +1575,9 @@ public class ModItems {
                     registerRender(elementSilicon);
                     registerRender(nuggetSilicon);
                     registerRender(dustSilicon);
-                    registerRender(gearSilicon);
-                    registerRender(plateSilicon);
-                    registerRender(rodSilicon);
+//                    registerRender(gearSilicon);
+//                    registerRender(plateSilicon);
+//                    registerRender(rodSilicon);
                 }
                 //sulphur
                 if (OreInAMillionConfig.isSulphurEnabled){
@@ -2467,15 +2467,15 @@ public class ModItems {
                     OreDictionary.registerOre("dustSilicon", ModItems.dustSilicon);
                     OreDictionary.registerOre("dust", ModItems.dustSilicon);
                     OreDictionary.registerOre("oreDust", ModItems.dustSilicon);
-                    OreDictionary.registerOre("gearSilicon", ModItems.gearSilicon);
-                    OreDictionary.registerOre("gear", ModItems.gearSilicon);
-                    OreDictionary.registerOre("oreGear", ModItems.gearSilicon);
-                    OreDictionary.registerOre("plateSilicon", ModItems.dustSilicon);
-                    OreDictionary.registerOre("plate", ModItems.dustSilicon);
-                    OreDictionary.registerOre("orePlate", ModItems.dustSilicon);
-                    OreDictionary.registerOre("rodSilicon", ModItems.rodSilicon);
-                    OreDictionary.registerOre("rod", ModItems.rodSilicon);
-                    OreDictionary.registerOre("oreRod", ModItems.rodSilicon);
+//                    OreDictionary.registerOre("gearSilicon", ModItems.gearSilicon);
+//                    OreDictionary.registerOre("gear", ModItems.gearSilicon);
+//                    OreDictionary.registerOre("oreGear", ModItems.gearSilicon);
+//                    OreDictionary.registerOre("plateSilicon", ModItems.dustSilicon);
+//                    OreDictionary.registerOre("plate", ModItems.dustSilicon);
+//                    OreDictionary.registerOre("orePlate", ModItems.dustSilicon);
+//                    OreDictionary.registerOre("rodSilicon", ModItems.rodSilicon);
+//                    OreDictionary.registerOre("rod", ModItems.rodSilicon);
+//                    OreDictionary.registerOre("oreRod", ModItems.rodSilicon);
                 }
                 //sulphur
                 if (OreInAMillionConfig.isSulphurEnabled){

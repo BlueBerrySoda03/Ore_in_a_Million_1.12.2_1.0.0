@@ -208,6 +208,16 @@ public class ModArmor {
     public static ItemArmorCoal chestplateCoal;
     public static ItemArmorCoal leggingsCoal;
     public static ItemArmorCoal bootsCoal;
+    //dense charcoal
+    public static ItemArmorCoal helmetDenseCharcoal;
+    public static ItemArmorCoal chestplateDenseCharcoal;
+    public static ItemArmorCoal leggingsDenseCharcoal;
+    public static ItemArmorCoal bootsDenseCharcoal;
+    //dense coal
+    public static ItemArmorCoal helmetDenseCoal;
+    public static ItemArmorCoal chestplateDenseCoal;
+    public static ItemArmorCoal leggingsDenseCoal;
+    public static ItemArmorCoal bootsDenseCoal;
     //emerald
     public static ItemArmorBase helmetEmerald;
     public static ItemArmorBase chestplateEmerald;
@@ -318,7 +328,7 @@ public class ModArmor {
 
                     }
                     //thermal series
-                    if (OreInAMillionConfig.isThermalIngotsEnabled) {
+                    if (OreInAMillionConfig.isThermalEnabled) {
                         //constantan
                         if (OreInAMillionConfig.isConstantanEnabled) {
 
@@ -337,7 +347,7 @@ public class ModArmor {
                         }
                     }
                     //tinkers construct
-                    if (OreInAMillionConfig.isTinkersIngotsEnabled) {
+                    if (OreInAMillionConfig.isTinkersEnabled) {
                         //ardite
                         if (OreInAMillionConfig.isArditeEnabled) {
 
@@ -521,7 +531,7 @@ public class ModArmor {
 
                 }
                 //thermal series
-                if (OreInAMillionConfig.isThermalIngotsEnabled){
+                if (OreInAMillionConfig.isThermalEnabled){
                     //constantan
                     if (OreInAMillionConfig.isConstantanEnabled){
 
@@ -540,7 +550,7 @@ public class ModArmor {
                     }
                 }
                 //tinkers construct
-                if (OreInAMillionConfig.isTinkersIngotsEnabled){
+                if (OreInAMillionConfig.isTinkersEnabled){
                     //ardite
                     if (OreInAMillionConfig.isArditeEnabled){
 
@@ -723,7 +733,7 @@ public class ModArmor {
 
                 }
                 //thermal series
-                if (OreInAMillionConfig.isThermalIngotsEnabled){
+                if (OreInAMillionConfig.isThermalEnabled){
                     //constantan
                     if (OreInAMillionConfig.isConstantanEnabled){
 
@@ -742,7 +752,7 @@ public class ModArmor {
                     }
                 }
                 //tinkers construct
-                if (OreInAMillionConfig.isTinkersIngotsEnabled){
+                if (OreInAMillionConfig.isTinkersEnabled){
                     //ardite
                     if (OreInAMillionConfig.isArditeEnabled){
 
@@ -929,7 +939,7 @@ public class ModArmor {
 
                 }
                 //thermal series
-                if (OreInAMillionConfig.isThermalIngotsEnabled){
+                if (OreInAMillionConfig.isThermalEnabled){
                     //constantan
                     if (OreInAMillionConfig.isConstantanEnabled){
 
@@ -948,7 +958,7 @@ public class ModArmor {
                     }
                 }
                 //tinkers construct
-                if (OreInAMillionConfig.isTinkersIngotsEnabled){
+                if (OreInAMillionConfig.isTinkersEnabled){
                     //ardite
                     if (OreInAMillionConfig.isArditeEnabled){
 

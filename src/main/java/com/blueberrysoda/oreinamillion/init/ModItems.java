@@ -56,6 +56,7 @@ public class ModItems {
     public static ItemFoodMineral ingotPigIron;
     public static ItemMineral ingotSignalum;
     public static ItemMineral ingotSteel;
+    public static ItemMineral ingotVoidBorn;
     //gems
     public static ItemMineral gemAmethyst;
     public static ItemMineral gemPeridot;
@@ -103,6 +104,7 @@ public class ModItems {
     public static ItemFoodMineral nuggetPigIron;
     public static ItemMineral nuggetSignalum;
     public static ItemMineral nuggetSteel;
+    public static ItemMineral nuggetVoidBorn;
     //gem nuggets
     public static ItemMineral nuggetAmethyst;
     public static ItemMineral nuggetPeridot;
@@ -142,6 +144,7 @@ public class ModItems {
     public static ItemMineral dustTungsten;
     public static ItemMineral dustUranium;
     public static ItemMineral dustZinc;
+    public static ItemMineral dustVoidBorn;
     //alloy ingots
     public static ItemMineral dustBrass;
     public static ItemMineral dustBronze;
@@ -211,13 +214,13 @@ public class ModItems {
     public static ItemFoodCrafting gearPigIron;
     public static ItemCrafting gearSignalum;
     public static ItemCrafting gearSteel;
+    public static ItemCrafting gearVoidBorn;
     //gems
     public static ItemCrafting gearAmethyst;
     public static ItemCrafting gearPeridot;
     public static ItemCrafting gearRuby;
     public static ItemCrafting gearSapphire;
     //other
-//    public static ItemCrafting gearSilicon;
     //vanilla
     public static ItemCoalCrafting gearCharcoal;
     public static ItemCoalCrafting gearCoal;
@@ -263,13 +266,13 @@ public class ModItems {
     public static ItemFoodCrafting platePigIron;
     public static ItemCrafting plateSignalum;
     public static ItemCrafting plateSteel;
+    public static ItemCrafting plateVoidBorn;
     //gems
     public static ItemCrafting plateAmethyst;
     public static ItemCrafting platePeridot;
     public static ItemCrafting plateRuby;
     public static ItemCrafting plateSapphire;
     //other
-//    public static ItemCrafting plateSilicon;
     //vanilla
     public static ItemCoalCrafting plateCharcoal;
     public static ItemCoalCrafting plateCoal;
@@ -320,8 +323,8 @@ public class ModItems {
     public static ItemCrafting rodPeridot;
     public static ItemCrafting rodRuby;
     public static ItemCrafting rodSapphire;
+    public static ItemCrafting rodVoidBorn;
     //other
-//    public static ItemCrafting rodSilicon;
     //vanilla
     public static ItemCoalCrafting rodCharcoal;
     public static ItemCoalCrafting rodCoal;
@@ -365,9 +368,11 @@ public class ModItems {
                     ingotAluminum = new ItemMineral("aluminum_ingot");
                     nuggetAluminum = new ItemMineral("aluminum_nugget");
                     dustAluminum = new ItemMineral("aluminum_dust");
-                    gearAluminum = new ItemCrafting("aluminum_gear");
-                    plateAluminum = new ItemCrafting("aluminum_plate");
-                    rodAluminum = new ItemCrafting("aluminum_rod");
+                    if (OreInAMillionConfig.isAluminumCraftingEnabled) {
+                        gearAluminum = new ItemCrafting("aluminum_gear");
+                        plateAluminum = new ItemCrafting("aluminum_plate");
+                        rodAluminum = new ItemCrafting("aluminum_rod");
+                    }
                 }
                 //chrome
                 if (OreInAMillionConfig.isChromeEnabled) {
@@ -567,8 +572,17 @@ public class ModItems {
                     plateSteel = new ItemCrafting("steel_plate");
                     rodSteel = new ItemCrafting("steel_rod");
                 }
+                //voidborn
+                if (OreInAMillionConfig.isVoidBornEnabled) {
+                    ingotVoidBorn = new ItemMineral("voidborn_ingot");
+                    nuggetVoidBorn = new ItemMineral("voidborn_nugget");
+                    dustVoidBorn = new ItemMineral("voidborn_dust");
+                    gearVoidBorn = new ItemCrafting("voidborn_gear");
+                    plateVoidBorn = new ItemCrafting("voidborn_plate");
+                    rodVoidBorn = new ItemCrafting("voidborn_rod");
+                }
                 //thermal series
-                if (OreInAMillionConfig.isThermalIngotsEnabled){
+                if (OreInAMillionConfig.isThermalEnabled){
                     //constantan
                     if (OreInAMillionConfig.isConstantanEnabled){
                         ingotConstantan = new ItemMineral("constantan_ingot");
@@ -607,7 +621,7 @@ public class ModItems {
                     }
                 }
                 //tinkers construct
-                if (OreInAMillionConfig.isTinkersIngotsEnabled){
+                if (OreInAMillionConfig.isTinkersEnabled){
                     //ardite
                     if (OreInAMillionConfig.isArditeEnabled){
                         ingotArdite = new ItemMineral("ardite_ingot");
@@ -704,9 +718,6 @@ public class ModItems {
                     elementSilicon = new ItemMineral("silicon");
                     nuggetSilicon = new ItemMineral("silicon_nugget");
                     dustSilicon = new ItemMineral("silicon_dust");
-//                    gearSilicon = new ItemCrafting("silicon_gear");
-//                    plateSilicon = new ItemCrafting("silicon_plate");
-//                    rodSilicon = new ItemCrafting("silicon_rod");
                 }
                 //sulphur
                 if (OreInAMillionConfig.isSulphurEnabled){
@@ -1008,8 +1019,17 @@ public class ModItems {
                     event.getRegistry().register(plateSteel);
                     event.getRegistry().register(rodSteel);
                 }
+                //voidborn
+                if (OreInAMillionConfig.isVoidBornEnabled) {
+                    event.getRegistry().register(ingotVoidBorn);
+                    event.getRegistry().register(nuggetVoidBorn);
+                    event.getRegistry().register(dustVoidBorn);
+                    event.getRegistry().register(gearVoidBorn);
+                    event.getRegistry().register(plateVoidBorn);
+                    event.getRegistry().register(rodVoidBorn);
+                }
                 //thermal series
-                if (OreInAMillionConfig.isThermalIngotsEnabled) {
+                if (OreInAMillionConfig.isThermalEnabled) {
                     //constantan
                     if (OreInAMillionConfig.isConstantanEnabled) {
                         event.getRegistry().register(ingotConstantan);
@@ -1048,7 +1068,7 @@ public class ModItems {
                     }
                 }
                 //tinkers construct
-                if (OreInAMillionConfig.isTinkersIngotsEnabled) {
+                if (OreInAMillionConfig.isTinkersEnabled) {
                     //ardite
                     if (OreInAMillionConfig.isArditeEnabled) {
                         event.getRegistry().register(ingotArdite);
@@ -1144,9 +1164,6 @@ public class ModItems {
                     event.getRegistry().register(elementSilicon);
                     event.getRegistry().register(nuggetSilicon);
                     event.getRegistry().register(dustSilicon);
-//                    event.getRegistry().register(gearSilicon);
-//                    event.getRegistry().register(plateSilicon);
-//                    event.getRegistry().register(rodSilicon);
                 }
                 //sulphur
                 if (OreInAMillionConfig.isSulphurEnabled) {
@@ -1438,8 +1455,17 @@ public class ModItems {
                     registerRender(plateSteel);
                     registerRender(rodSteel);
                 }
+                //voidborn
+                if (OreInAMillionConfig.isVoidBornEnabled) {
+                    registerRender(ingotVoidBorn);
+                    registerRender(nuggetVoidBorn);
+                    registerRender(dustVoidBorn);
+                    registerRender(gearVoidBorn);
+                    registerRender(plateVoidBorn);
+                    registerRender(rodVoidBorn);
+                }
                 //thermal series
-                if (OreInAMillionConfig.isThermalIngotsEnabled){
+                if (OreInAMillionConfig.isThermalEnabled){
                     //constantan
                     if (OreInAMillionConfig.isConstantanEnabled){
                         registerRender(ingotConstantan);
@@ -1454,31 +1480,31 @@ public class ModItems {
                         registerRender(ingotEnderium);
                         registerRender(nuggetEnderium);
                         registerRender(dustEnderium);
-                        registerRender(gearConstantan);
-                        registerRender(plateConstantan);
-                        registerRender(rodConstantan);
+                        registerRender(gearEnderium);
+                        registerRender(plateEnderium);
+                        registerRender(rodEnderium);
                     }
                     //lumium
                     if (OreInAMillionConfig.isLumiumEnabled){
                         registerRender(ingotLumium);
                         registerRender(nuggetLumium);
                         registerRender(dustLumium);
-                        registerRender(gearConstantan);
-                        registerRender(plateConstantan);
-                        registerRender(rodConstantan);
+                        registerRender(gearLumium);
+                        registerRender(plateLumium);
+                        registerRender(rodLumium);
                     }
                     //signalum
                     if (OreInAMillionConfig.isSignalumEnabled){
                         registerRender(ingotSignalum);
                         registerRender(nuggetSignalum);
                         registerRender(dustSignalum);
-                        registerRender(gearConstantan);
-                        registerRender(plateConstantan);
-                        registerRender(rodConstantan);
+                        registerRender(gearSignalum);
+                        registerRender(plateSignalum);
+                        registerRender(rodSignalum);
                     }
                 }
                 //tinkers construct
-                if (OreInAMillionConfig.isTinkersIngotsEnabled){
+                if (OreInAMillionConfig.isTinkersEnabled){
                     //ardite
                     if (OreInAMillionConfig.isArditeEnabled){
                         registerRender(ingotArdite);
@@ -1575,9 +1601,6 @@ public class ModItems {
                     registerRender(elementSilicon);
                     registerRender(nuggetSilicon);
                     registerRender(dustSilicon);
-//                    registerRender(gearSilicon);
-//                    registerRender(plateSilicon);
-//                    registerRender(rodSilicon);
                 }
                 //sulphur
                 if (OreInAMillionConfig.isSulphurEnabled){
@@ -2169,7 +2192,7 @@ public class ModItems {
                     OreDictionary.registerOre("oreRod", ModItems.rodSteel);
                 }
                 //thermal series
-                if (OreInAMillionConfig.isThermalIngotsEnabled){
+                if (OreInAMillionConfig.isThermalEnabled){
                     //constantan
                     if (OreInAMillionConfig.isConstantanEnabled){
                         OreDictionary.registerOre("ingotConstantan", ModItems.ingotConstantan);
@@ -2256,7 +2279,7 @@ public class ModItems {
                     }
                 }
                 //tinkers construct
-                if (OreInAMillionConfig.isTinkersIngotsEnabled){
+                if (OreInAMillionConfig.isTinkersEnabled){
                     //ardite
                     if (OreInAMillionConfig.isArditeEnabled){
                         OreDictionary.registerOre("ingotArdite", ModItems.ingotArdite);
@@ -2470,9 +2493,9 @@ public class ModItems {
 //                    OreDictionary.registerOre("gearSilicon", ModItems.gearSilicon);
 //                    OreDictionary.registerOre("gear", ModItems.gearSilicon);
 //                    OreDictionary.registerOre("oreGear", ModItems.gearSilicon);
-//                    OreDictionary.registerOre("plateSilicon", ModItems.dustSilicon);
-//                    OreDictionary.registerOre("plate", ModItems.dustSilicon);
-//                    OreDictionary.registerOre("orePlate", ModItems.dustSilicon);
+//                    OreDictionary.registerOre("plateSilicon", ModItems.plateSilicon);
+//                    OreDictionary.registerOre("plate", ModItems.plateSilicon);
+//                    OreDictionary.registerOre("orePlate", ModItems.plateSilicon);
 //                    OreDictionary.registerOre("rodSilicon", ModItems.rodSilicon);
 //                    OreDictionary.registerOre("rod", ModItems.rodSilicon);
 //                    OreDictionary.registerOre("oreRod", ModItems.rodSilicon);

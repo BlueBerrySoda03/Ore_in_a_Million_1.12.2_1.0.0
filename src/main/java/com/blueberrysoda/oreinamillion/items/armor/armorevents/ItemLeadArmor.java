@@ -56,7 +56,6 @@ public class ItemLeadArmor {
                         damageReduction = 1.0F;
                 }
             }
-
             event.setAmount(event.getAmount() * damageReduction);
         }
     }
@@ -104,7 +103,6 @@ public class ItemLeadArmor {
             default:
                 speedReduction = 0.1F;
         }
-
         player.capabilities.setPlayerWalkSpeed(speedReduction);
         player.sendPlayerAbilities();
         }

@@ -2,7 +2,18 @@
             if (OreInAMillionConfig.isIngotsEnabled) {
                 //aluminum
                 if (OreInAMillionConfig.isAluminumEnabled) {
+                    if (OreInAMillionConfig.isAluminumBaseEnabled) {
 
+                    }
+                    if (OreInAMillionConfig.isAluminumCraftingEnabled) {
+
+                    }
+                    if (OreInAMillionConfig.isAluminumToolsEnabled) {
+
+                    }
+                    if (OreInAMillionConfig.isAluminumArmorEnabled) {
+
+                    }
                 }
                 //chrome
                 if (OreInAMillionConfig.isChromeEnabled) {

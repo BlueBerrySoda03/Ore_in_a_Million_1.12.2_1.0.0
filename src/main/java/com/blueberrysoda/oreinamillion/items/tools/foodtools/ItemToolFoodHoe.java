@@ -1,7 +1,6 @@
 package com.blueberrysoda.oreinamillion.items.tools.foodtools;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
-import com.blueberrysoda.oreinamillion.items.armor.ItemArmorBase;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
@@ -12,7 +11,6 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -23,9 +21,8 @@ import java.util.List;
 
 public class ItemToolFoodHoe extends ItemHoe {
 
-    private int healAmount;
-    public static float saturationModifier;
-    public static boolean addTooltip;
+    private final int healAmount;
+    private static boolean addTooltip;
 
     public ItemToolFoodHoe(String name, ToolMaterial material, int amount, boolean addTooltip) {
         super(material);
@@ -37,7 +34,7 @@ public class ItemToolFoodHoe extends ItemHoe {
     }
 
     public float saturation() {
-        return this.healAmount /2;
+        return (float) this.healAmount / 2;
     }
 
     @Override
@@ -85,7 +82,7 @@ public class ItemToolFoodHoe extends ItemHoe {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
         super.addInformation(stack,worldIn,tooltip,flagIn);
-        if (ItemArmorBase.addTooltip) {
+        if (ItemToolFoodHoe.addTooltip) {
             String s = stack.getItem().getUnlocalizedName() + ".tooltip";
             String result = I18n.format(s);
             tooltip.add(result);

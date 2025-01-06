@@ -46,10 +46,10 @@ public class MaterialTool {
     public static final Item.ToolMaterial toolRuby = EnumHelper.addToolMaterial("toolRuby", 3, 802, 8.0F, 2.8F, 11);
     public static final Item.ToolMaterial toolSapphire = EnumHelper.addToolMaterial("toolSapphire", 3, 803, 8.0F, 2.8F, 11);
 
-    public static final Item.ToolMaterial toolCoal = EnumHelper.addToolMaterial("toolCoal", 0, 6, 1.2F, 0.5F, 1);
-    public static final Item.ToolMaterial toolDenseCoal = EnumHelper.addToolMaterial("toolDenseCoal", 2, 245, 8.0F, 1.5F, 1);
     public static final Item.ToolMaterial toolCharcoal = EnumHelper.addToolMaterial("toolCharcoal", 0, 5, 1.2F, 0.5F, 1);
+    public static final Item.ToolMaterial toolCoal = EnumHelper.addToolMaterial("toolCoal", 0, 6, 1.2F, 0.5F, 1);
     public static final Item.ToolMaterial toolDenseCharcoal = EnumHelper.addToolMaterial("toolDenseCharcoal", 2, 245, 8.0F, 1.5F, 1);
+    public static final Item.ToolMaterial toolDenseCoal = EnumHelper.addToolMaterial("toolDenseCoal", 2, 245, 8.0F, 1.5F, 1);
     public static final Item.ToolMaterial toolEmerald = EnumHelper.addToolMaterial("toolEmerald", 3, 1423, 9.0F, 3.1F, 13);
     public static final Item.ToolMaterial toolQuartz = EnumHelper.addToolMaterial("toolQuartz", 2, 264, 6.0F, 2.0F, 12);
 }

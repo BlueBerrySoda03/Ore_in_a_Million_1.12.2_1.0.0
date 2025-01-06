@@ -4,7 +4,6 @@ import com.blueberrysoda.oreinamillion.config.OreInAMillionConfig;
 import com.blueberrysoda.oreinamillion.init.ModBlocks;
 import com.blueberrysoda.oreinamillion.init.ModItems;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -124,7 +123,7 @@ public class SmeltingRecipes {
                     GameRegistry.addSmelting(ModItems.dustSteel, new ItemStack(ModItems.ingotSteel), 0.7F);
                 }
                 //thermal series
-                if (OreInAMillionConfig.isThermalIngotsEnabled) {
+                if (OreInAMillionConfig.isThermalEnabled) {
                     //constantan
                     if (OreInAMillionConfig.isConstantanEnabled) {
                         GameRegistry.addSmelting(ModItems.dustConstantan, new ItemStack(ModItems.ingotConstantan), 0.7F);
@@ -143,7 +142,7 @@ public class SmeltingRecipes {
                     }
                 }
                 //tinkers construct
-                if (OreInAMillionConfig.isTinkersIngotsEnabled) {
+                if (OreInAMillionConfig.isTinkersEnabled) {
                     //ardite
                     if (OreInAMillionConfig.isArditeEnabled) {
                         GameRegistry.addSmelting(ModBlocks.oreArdite, new ItemStack(ModItems.ingotArdite), 0.7F);

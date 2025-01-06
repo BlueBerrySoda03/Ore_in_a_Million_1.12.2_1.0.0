@@ -284,6 +284,20 @@ public class ModTools {
     public static ItemToolCoalShovel shovelCoal;
     public static ItemToolCoalHoe hoeCoal;
     public static ItemToolCoalCrusher crusherCoal;
+    //dense charcoal
+    public static ItemToolCoalSword swordDenseCharcoal;
+    public static ItemToolCoalPickaxe pickaxeDenseCharcoal;
+    public static ItemToolCoalAxe axeDenseCharcoal;
+    public static ItemToolCoalShovel shovelDenseCharcoal;
+    public static ItemToolCoalHoe hoeDenseCharcoal;
+    public static ItemToolCoalCrusher crusherDenseCharcoal;
+    //dense coal
+    public static ItemToolCoalSword swordDenseCoal;
+    public static ItemToolCoalPickaxe pickaxeDenseCoal;
+    public static ItemToolCoalAxe axeDenseCoal;
+    public static ItemToolCoalShovel shovelDenseCoal;
+    public static ItemToolCoalHoe hoeDenseCoal;
+    public static ItemToolCoalCrusher crusherDenseCoal;
     //diamond
     public static ItemToolCrusher crusherDiamond;
     //emerald
@@ -517,7 +531,7 @@ public class ModTools {
                         crusherSteel = new ItemToolCrusher("steel_crusher", MaterialTool.toolSteel, false);
                     }
                     //thermal series
-                    if (OreInAMillionConfig.isThermalIngotsEnabled) {
+                    if (OreInAMillionConfig.isThermalEnabled) {
                         //constantan
                         if (OreInAMillionConfig.isConstantanEnabled) {
                             swordConstantan = new ItemToolSword("constantan_sword", MaterialTool.toolConstantan, false);
@@ -556,7 +570,7 @@ public class ModTools {
                         }
                     }
                     //tinkers construct
-                    if (OreInAMillionConfig.isTinkersIngotsEnabled) {
+                    if (OreInAMillionConfig.isTinkersEnabled) {
                         //ardite
                         if (OreInAMillionConfig.isArditeEnabled) {
                             swordArdite = new ItemToolSword("ardite_sword", MaterialTool.toolArdite, false);
@@ -904,7 +918,7 @@ public class ModTools {
                     event.getRegistry().register(crusherSteel);
                 }
                 //thermal series
-                if (OreInAMillionConfig.isThermalIngotsEnabled){
+                if (OreInAMillionConfig.isThermalEnabled){
                     //constantan
                     if (OreInAMillionConfig.isConstantanEnabled){
                         event.getRegistry().register(swordConstantan);
@@ -943,7 +957,7 @@ public class ModTools {
                     }
                 }
                 //tinkers construct
-                if (OreInAMillionConfig.isTinkersIngotsEnabled){
+                if (OreInAMillionConfig.isTinkersEnabled){
                     //ardite
                     if (OreInAMillionConfig.isArditeEnabled){
                         event.getRegistry().register(swordArdite);
@@ -1309,7 +1323,7 @@ public class ModTools {
                     registerRender(crusherSteel);
                 }
                 //thermal series
-                if (OreInAMillionConfig.isThermalIngotsEnabled){
+                if (OreInAMillionConfig.isThermalEnabled){
                     //constantan
                     if (OreInAMillionConfig.isConstantanEnabled){
                         registerRender(swordConstantan);
@@ -1326,7 +1340,7 @@ public class ModTools {
                         registerRender(axeEnderium);
                         registerRender(shovelEnderium);
                         registerRender(hoeEnderium);
-                        registerRender(crusherConstantan);
+                        registerRender(crusherEnderium);
                     }
                     //lumium
                     if (OreInAMillionConfig.isLumiumEnabled){
@@ -1335,7 +1349,7 @@ public class ModTools {
                         registerRender(axeLumium);
                         registerRender(shovelLumium);
                         registerRender(hoeLumium);
-                        registerRender(crusherConstantan);
+                        registerRender(crusherLumium);
                     }
                     //signalum
                     if (OreInAMillionConfig.isSignalumEnabled){
@@ -1344,11 +1358,11 @@ public class ModTools {
                         registerRender(axeSignalum);
                         registerRender(shovelSignalum);
                         registerRender(hoeSignalum);
-                        registerRender(crusherConstantan);
+                        registerRender(crusherSignalum);
                     }
                 }
                 //tinkers construct
-                if (OreInAMillionConfig.isTinkersIngotsEnabled){
+                if (OreInAMillionConfig.isTinkersEnabled){
                     //ardite
                     if (OreInAMillionConfig.isArditeEnabled){
                         registerRender(swordArdite);
@@ -1741,7 +1755,7 @@ public class ModTools {
                     OreDictionary.registerOre("toolCrusher", ModTools.crusherSteel);
                 }
                 //thermal series
-                if (OreInAMillionConfig.isThermalIngotsEnabled){
+                if (OreInAMillionConfig.isThermalEnabled){
                     //constantan
                     if (OreInAMillionConfig.isConstantanEnabled){
                         OreDictionary.registerOre("swordConstantan", ModTools.swordConstantan);
@@ -1784,7 +1798,7 @@ public class ModTools {
                     }
                 }
                 //tinkers construct
-                if (OreInAMillionConfig.isTinkersIngotsEnabled){
+                if (OreInAMillionConfig.isTinkersEnabled){
                     //ardite
                     if (OreInAMillionConfig.isArditeEnabled){
                         OreDictionary.registerOre("swordArdite", ModTools.swordArdite);

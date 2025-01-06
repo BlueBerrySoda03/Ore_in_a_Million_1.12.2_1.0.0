@@ -1,7 +1,6 @@
 package com.blueberrysoda.oreinamillion.items.tools.coaltools;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
-import com.blueberrysoda.oreinamillion.items.armor.ItemArmorBase;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemPickaxe;
@@ -16,7 +15,7 @@ import java.util.List;
 public class ItemToolCoalPickaxe extends ItemPickaxe {
 
     public final int burnTime;
-    public static boolean addTooltip;
+    private static boolean addTooltip;
 
     public ItemToolCoalPickaxe(String name, ToolMaterial material, int burnTimeIn, boolean addTooltip) {
         super(material);
@@ -36,7 +35,7 @@ public class ItemToolCoalPickaxe extends ItemPickaxe {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
         super.addInformation(stack,worldIn,tooltip,flagIn);
-        if (ItemArmorBase.addTooltip) {
+        if (ItemToolCoalPickaxe.addTooltip) {
             String s = stack.getItem().getUnlocalizedName() + ".tooltip";
             String result = I18n.format(s);
             tooltip.add(result);

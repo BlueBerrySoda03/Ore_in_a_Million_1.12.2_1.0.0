@@ -3,6 +3,7 @@ package com.blueberrysoda.oreinamillion.items.armor;
 import com.blueberrysoda.oreinamillion.OreInAMillion;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;

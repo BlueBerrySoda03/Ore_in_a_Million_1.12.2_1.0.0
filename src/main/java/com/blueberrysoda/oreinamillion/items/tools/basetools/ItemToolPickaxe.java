@@ -1,7 +1,6 @@
 package com.blueberrysoda.oreinamillion.items.tools.basetools;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
-import com.blueberrysoda.oreinamillion.items.armor.ItemArmorBase;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
@@ -16,7 +15,7 @@ import java.util.List;
 
 public class ItemToolPickaxe extends ItemPickaxe {
 
-    public static boolean addTooltip;
+    private static boolean addTooltip;
 
     public ItemToolPickaxe(String name, Item.ToolMaterial material, boolean addTooltip) {
         super(material);
@@ -30,7 +29,7 @@ public class ItemToolPickaxe extends ItemPickaxe {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
         super.addInformation(stack,worldIn,tooltip,flagIn);
-        if (ItemArmorBase.addTooltip) {
+        if (ItemToolPickaxe.addTooltip) {
             String s = stack.getItem().getUnlocalizedName() + ".tooltip";
             String result = I18n.format(s);
             tooltip.add(result);

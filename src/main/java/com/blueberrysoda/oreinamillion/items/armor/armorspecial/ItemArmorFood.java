@@ -1,7 +1,6 @@
 package com.blueberrysoda.oreinamillion.items.armor.armorspecial;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
-import com.blueberrysoda.oreinamillion.items.armor.ItemArmorBase;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
@@ -23,18 +22,16 @@ import java.util.List;
 
 public class ItemArmorFood extends ItemArmor {
 
-    public static int hunger;
-    public static float saturationModifier;
-    public static boolean addTooltip;
+    public static int healAmount;
+    private static boolean addTooltip;
 
-    public ItemArmorFood(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, boolean addTooltip, int hunger, float saturationModifier) {
+    public ItemArmorFood(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, boolean addTooltip, int healAmount) {
         super(materialIn, renderIndexIn, equipmentSlotIn);
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setMaxStackSize(1);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_ARMOR);
-        ItemArmorFood.hunger = hunger;
-        ItemArmorFood.saturationModifier = saturationModifier;
+        ItemArmorFood.healAmount = healAmount;
         ItemArmorFood.addTooltip = addTooltip;
     }
 
@@ -48,12 +45,16 @@ public class ItemArmorFood extends ItemArmor {
         return EnumActionResult.PASS;
     }
 
+    public float saturation() {
+        return (float) ItemArmorFood.healAmount /2;
+    }
+
     @Override
     @Nonnull
     public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
         if (entityLiving instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) entityLiving;
-            player.getFoodStats().addStats(hunger, saturationModifier);
+            player.getFoodStats().addStats(healAmount, saturation());
             stack.shrink(1);
         }
         return super.onItemUseFinish(stack, worldIn, entityLiving);
@@ -90,7 +91,7 @@ public class ItemArmorFood extends ItemArmor {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
         super.addInformation(stack,worldIn,tooltip,flagIn);
-        if (ItemArmorBase.addTooltip) {
+        if (ItemArmorFood.addTooltip) {
             String s = stack.getItem().getUnlocalizedName() + ".tooltip";
             String result = I18n.format(s);
             tooltip.add(result);

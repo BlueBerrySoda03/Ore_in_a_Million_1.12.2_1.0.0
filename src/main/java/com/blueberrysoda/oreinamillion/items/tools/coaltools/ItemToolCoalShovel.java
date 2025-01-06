@@ -16,7 +16,7 @@ import java.util.List;
 public class ItemToolCoalShovel extends ItemSpade {
 
     public final int burnTime;
-    public static boolean addTooltip;
+    private static boolean addTooltip;
 
     public ItemToolCoalShovel(String name, ToolMaterial material, int burnTimeIn, boolean addTooltip) {
         super(material);
@@ -36,7 +36,7 @@ public class ItemToolCoalShovel extends ItemSpade {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
         super.addInformation(stack,worldIn,tooltip,flagIn);
-        if (ItemArmorBase.addTooltip) {
+        if (ItemToolCoalShovel.addTooltip) {
             String s = stack.getItem().getUnlocalizedName() + ".tooltip";
             String result = I18n.format(s);
             tooltip.add(result);

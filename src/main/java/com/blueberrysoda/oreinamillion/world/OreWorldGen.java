@@ -100,7 +100,7 @@ public class OreWorldGen implements IWorldGenerator {
                         generateOre(ModBlocks.oreZinc.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 18, 64, random.nextInt(6) + 2, 5);
                     }
                     //tinkers construct
-                    if (OreInAMillionConfig.isTinkersIngotsEnabled) {
+                    if (OreInAMillionConfig.isTinkersEnabled) {
                         //ardite
                         if (OreInAMillionConfig.isArditeEnabled) {
                             generateOre(ModBlocks.oreArdite.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 16, random.nextInt(3) + 2, 4);

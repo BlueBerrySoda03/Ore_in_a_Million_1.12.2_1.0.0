@@ -6,8 +6,8 @@ import net.minecraft.block.material.Material;
 
 public class BlockCombinedTier1 extends BlockBase {
 
-    public BlockCombinedTier1(String name, Material material) {
-        super(name, material);
+    public BlockCombinedTier1(String name) {
+        super(name, Material.IRON);
 
         setSoundType(SoundType.METAL);
         setHardness(5.0F);

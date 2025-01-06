@@ -8,9 +8,11 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class ModSounds {
     public static SoundEvent soundWeezer;
+    public static SoundEvent soundCrusherHit;
 
     public static void init(){
         soundWeezer = registerSound("item.weezer");
+        soundCrusherHit = registerSound("item.crusher.hit");
     }
 
     private static SoundEvent registerSound(String name) {

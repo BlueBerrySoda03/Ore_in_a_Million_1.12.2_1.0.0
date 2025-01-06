@@ -1,7 +1,6 @@
 package com.blueberrysoda.oreinamillion.items.tools.basetools;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
-import com.blueberrysoda.oreinamillion.items.armor.ItemArmorBase;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemAxe;
@@ -15,13 +14,13 @@ import java.util.List;
 
 public class ItemToolAxe extends ItemAxe {
 
-    public static boolean addTooltip;
+    private static boolean addTooltip;
 
     public ItemToolAxe(String name, ToolMaterial material, boolean addTooltip) {
         ///the code to make the axes flexible in damage and attack speed came from Metallurgy 4 Reforged
         ///I thought I was gonna go crazy figuring this out. Thank you Metallurgy dev :D
         //-2.5F - (material.getAttackDamage() / 5)
-        super(material, (material.getAttackDamage() * 1.25F) + 3.0F, -3.0F);
+        super(material, (material.getAttackDamage() * 1.8F) + 3.0F, -3.0F);
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_TOOL);
@@ -32,10 +31,23 @@ public class ItemToolAxe extends ItemAxe {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
         super.addInformation(stack,worldIn,tooltip,flagIn);
-        if (ItemArmorBase.addTooltip) {
+        if (ItemToolAxe.addTooltip) {
             String s = stack.getItem().getUnlocalizedName() + ".tooltip";
             String result = I18n.format(s);
             tooltip.add(result);
         }
     }
+
+//    @SideOnly(Side.CLIENT)
+//    @Override
+//    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+//        System.out.println("addInformation called for: " + stack.getItem().getUnlocalizedName());
+//        if (ItemToolAxe.addTooltip) {
+//            String s = stack.getItem().getUnlocalizedName() + ".tooltip";
+//            String result = I18n.format(s);
+//            if (!result.isEmpty()) {
+//                tooltip.add(result);
+//            }
+//        }
+//    }
 }

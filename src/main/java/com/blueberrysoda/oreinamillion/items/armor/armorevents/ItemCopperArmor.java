@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ItemCopperArmor {
     @SubscribeEvent
     public void onLivingHurt(LivingHurtEvent event) {
-        //copper armor lighting resistance
+        //copper armor lighting vulnerability
         if (event.getEntityLiving() instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) event.getEntityLiving();
 
@@ -40,22 +40,21 @@ public class ItemCopperArmor {
             if (event.getSource() == DamageSource.LIGHTNING_BOLT) {
                 switch (armorPiecesWorn) {
                     case 1:
-                        damageReduction = 0.8F;
+                        damageReduction = 1.2F;
                         break;
                     case 2:
-                        damageReduction = 0.6F;
+                        damageReduction = 1.5F;
                         break;
                     case 3:
-                        damageReduction = 0.4F;
+                        damageReduction = 2.0F;
                         break;
                     case 4:
-                        damageReduction = 0.2F;
+                        damageReduction = 3.0F;
                         break;
                     default:
                         damageReduction = 1.0F;
                 }
             }
-
             event.setAmount(event.getAmount() * damageReduction);
         }
     }

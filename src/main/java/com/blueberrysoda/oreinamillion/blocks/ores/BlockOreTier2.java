@@ -6,8 +6,8 @@ import net.minecraft.block.material.Material;
 
 public class BlockOreTier2 extends BlockBase {
 
-    public BlockOreTier2(String name, Material material) {
-        super(name, material);
+    public BlockOreTier2(String name) {
+        super(name, Material.ROCK);
 
         setSoundType(SoundType.STONE);
         setHardness(3.0F);

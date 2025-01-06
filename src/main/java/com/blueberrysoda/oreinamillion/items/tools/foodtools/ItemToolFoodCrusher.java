@@ -2,7 +2,6 @@ package com.blueberrysoda.oreinamillion.items.tools.foodtools;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
 import com.blueberrysoda.oreinamillion.init.ModItems;
-import com.blueberrysoda.oreinamillion.items.armor.ItemArmorBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
@@ -31,7 +30,7 @@ import java.util.List;
 public class ItemToolFoodCrusher extends ItemPickaxe {
 
     private final int healAmount;
-    public static boolean addTooltip;
+    private static boolean addTooltip;
 
     public ItemToolFoodCrusher(String name, ToolMaterial material, int amount, boolean addTooltip) {
         super(material);
@@ -43,7 +42,7 @@ public class ItemToolFoodCrusher extends ItemPickaxe {
     }
 
     public float saturation() {
-        return this.healAmount /2;
+        return (float) this.healAmount / 2;
     }
 
     @Override
@@ -113,15 +112,16 @@ public class ItemToolFoodCrusher extends ItemPickaxe {
                 int harvestLevel = toolMaterial.getHarvestLevel();
                 int requiredHarvestLevel = state.getBlock().getHarvestLevel(state);
 
+                //aluminum
                 if (harvestLevel >= requiredHarvestLevel) {
-                    //aluminum
                     switch (oreType) {
                         case "oreAluminum": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustAluminum);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustAluminum);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustAluminum);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
@@ -129,11 +129,12 @@ public class ItemToolFoodCrusher extends ItemPickaxe {
                         }
                         //chrome
                         case "oreChrome": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustChrome);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustChrome);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustChrome);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
@@ -141,11 +142,12 @@ public class ItemToolFoodCrusher extends ItemPickaxe {
                         }
                         //cobalt
                         case "oreCobalt": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustCobalt);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustCobalt);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustCobalt);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
@@ -153,268 +155,312 @@ public class ItemToolFoodCrusher extends ItemPickaxe {
                         }
                         //copper
                         case "oreCopper": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustCopper);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustCopper);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustCopper);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreEnder": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustEnder);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustEnder);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustEnder);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreIridium": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustIridium);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustIridium);
+                            ItemStack crusherDrop = new ItemStack(ModItems.ingotIridium);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreLead": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustLead);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustLead);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustLead);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreMithril": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustMithril);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustMithril);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustMithril);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreNickel": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustNickel);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustNickel);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustNickel);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreOsmium": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustOsmium);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustOsmium);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustOsmium);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "orePlatinum": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustPlatinum);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustPlatinum);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustPlatinum);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreSilver": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustSilver);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustSilver);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustSilver);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreTin": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustTin);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustTin);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustTin);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreTitanium": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustTitanium);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustTitanium);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustTitanium);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreUranium": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustUranium);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustUranium);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustUranium);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreZinc": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustZinc);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustZinc);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustZinc);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreArdite": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustArdite);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustArdite);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustArdite);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreAmethyst": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustAmethyst);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustAmethyst);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustAmethyst);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "orePeridot": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustPeridot);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustPeridot);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustPeridot);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreRuby": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustRuby);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustRuby);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustRuby);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreSapphire": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustSapphire);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustSapphire);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustSapphire);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreCinnabar": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustCinnabar);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustCinnabar);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustCinnabar);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
+
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreSulfur": {
+                            ItemStack crusherDrop = new ItemStack(ModItems.elementSulfur);
+                            int itemDrops = 4;
+
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreIron": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustIron);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustIron);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustIron);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreGold": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustGold);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustGold);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustGold);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreDiamond": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustDiamond);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustDiamond);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustDiamond);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreEmerald": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.dustEmerald);
-                            ItemStack customDrop2 = new ItemStack(ModItems.dustEmerald);
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustEmerald);
+                            int itemDrops = 2;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
+
+                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
+                            worldIn.setBlockToAir(pos);
+                            break;
+                        }
+                        case "oreCoal": {
+                            ItemStack crusherDrop = new ItemStack(ModItems.dustCoal);
+                            int itemDrops = 2;
+
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);
                             break;
                         }
                         case "oreWeezer": {
-                            ItemStack customDrop1 = new ItemStack(ModItems.weezerWeezer);
-                            ItemStack customDrop2 = new ItemStack(ModItems.weezerWeezer);
-                            ItemStack customDrop3 = new ItemStack(ModItems.weezerWeezer);
-                            ItemStack customDrop4 = new ItemStack(ModItems.weezerWeezer);
+                            ItemStack crusherDrop = new ItemStack(ModItems.weezerWeezer);
+                            int itemDrops = 4;
 
-                            Block.spawnAsEntity(worldIn, pos, customDrop1);
-                            Block.spawnAsEntity(worldIn, pos, customDrop2);
-                            Block.spawnAsEntity(worldIn, pos, customDrop3);
-                            Block.spawnAsEntity(worldIn, pos, customDrop4);
+                            for (int i = 0; i < itemDrops; i++) {
+                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
+                            }
 
                             state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
                             worldIn.setBlockToAir(pos);

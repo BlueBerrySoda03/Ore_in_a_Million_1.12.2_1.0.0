@@ -1,7 +1,6 @@
 package com.blueberrysoda.oreinamillion.items.tools.foodtools;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
-import com.blueberrysoda.oreinamillion.items.armor.ItemArmorBase;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
@@ -38,7 +37,7 @@ public class ItemToolFoodSword extends ItemSword {
     }
 
     public float saturation() {
-        return this.healAmount /2;
+        return (float) this.healAmount / 2;
     }
 
     @Override
@@ -85,7 +84,7 @@ public class ItemToolFoodSword extends ItemSword {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
         super.addInformation(stack,worldIn,tooltip,flagIn);
-        if (ItemArmorBase.addTooltip) {
+        if (ItemToolFoodSword.addTooltip) {
             String s = stack.getItem().getUnlocalizedName() + ".tooltip";
             String result = I18n.format(s);
             tooltip.add(result);

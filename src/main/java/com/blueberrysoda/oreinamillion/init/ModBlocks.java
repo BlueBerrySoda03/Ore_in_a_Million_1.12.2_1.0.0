@@ -23,32 +23,32 @@ public class ModBlocks {
     //ores
     //=========
     //ingots
-    public static BlockOreTier1 oreAluminum;
-    public static BlockOreTier3 oreArdite;
-    public static BlockOreTier1 oreChrome;
-    public static BlockOreTier2 oreCobalt;
-    public static BlockOreTier1 oreCopper;
-    public static BlockOreTier2 oreEnder;
-    public static BlockOreTier2 oreIridium;
-    public static BlockOreTier1 oreLead;
-    public static BlockOreTier3 oreMithril;
-    public static BlockOreTier2 oreNickel;
-    public static BlockOreTier1 oreOsmium;
-    public static BlockOreTier3 orePlatinum;
-    public static BlockOreTier2 oreSilver;
-    public static BlockOreTier1 oreTin;
-    public static BlockOreTier3 oreTitanium;
-    public static BlockOreTier2 oreTungsten;
-    public static BlockOreTier3 oreUranium;
-    public static BlockOreTier1 oreZinc;
+    public static BlockOre oreAluminum;
+    public static BlockOre oreArdite;
+    public static BlockOre oreChrome;
+    public static BlockOre oreCobalt;
+    public static BlockOre oreCopper;
+    public static BlockOre oreEnder;
+    public static BlockOre oreIridium;
+    public static BlockOre oreLead;
+    public static BlockOre oreMithril;
+    public static BlockOre oreNickel;
+    public static BlockOre oreOsmium;
+    public static BlockOre orePlatinum;
+    public static BlockOre oreSilver;
+    public static BlockOre oreTin;
+    public static BlockOre oreTitanium;
+    public static BlockOre oreTungsten;
+    public static BlockOre oreUranium;
+    public static BlockOre oreZinc;
     //gems
-    public static BlockOreDropTier2 oreAmethyst;
-    public static BlockOreDropTier2 orePeridot;
-    public static BlockOreDropTier2 oreRuby;
-    public static BlockOreDropTier2 oreSapphire;
+    public static BlockOreDrop oreAmethyst;
+    public static BlockOreDrop orePeridot;
+    public static BlockOreDrop oreRuby;
+    public static BlockOreDrop oreSapphire;
     //other
-    public static BlockOreDropTier1 oreCinnabar;
-    public static BlockOreDropTier1 oreSulfur;
+    public static BlockOreDrop oreCinnabar;
+    public static BlockOreDrop oreSulfur;
 
     //=========
     //combined
@@ -84,7 +84,7 @@ public class ModBlocks {
     //=========
     //other
     //=========
-    public static BlockOreDropTier1 oreWeezer;
+    public static BlockOreDrop oreWeezer;
 
     public static void init(){
         // = new ("", Material.);
@@ -92,71 +92,71 @@ public class ModBlocks {
             if(OreInAMillionConfig.isIngotsEnabled) {
                 //aluminum
                 if (OreInAMillionConfig.isAluminumEnabled) {
-                    oreAluminum = new BlockOreTier1("aluminum_ore");
+                    oreAluminum = new BlockOre("aluminum_ore", 1);
                 }
                 //chrome
                 if (OreInAMillionConfig.isChromeEnabled) {
-                    oreChrome = new BlockOreTier1("chrome_ore");
+                    oreChrome = new BlockOre("chrome_ore", 1);
                 }
                 //cobalt
                 if (OreInAMillionConfig.isCobaltEnabled) {
-                    oreCobalt = new BlockOreTier2("cobalt_ore");
+                    oreCobalt = new BlockOre("cobalt_ore", 2);
                 }
                 //copper
                 if (OreInAMillionConfig.isCopperEnabled) {
-                    oreCopper = new BlockOreTier1("copper_ore");
+                    oreCopper = new BlockOre("copper_ore", 1);
                 }
                 //ender
                 if (OreInAMillionConfig.isEnderEnabled){
-                    oreEnder = new BlockOreTier2("ender_ore");
+                    oreEnder = new BlockOre("ender_ore", 2);
                 }
                 //iridium
                 if (OreInAMillionConfig.isIridiumEnabled) {
-                    oreIridium = new BlockOreTier2("iridium_ore");
+                    oreIridium = new BlockOre("iridium_ore", 2);
                 }
                 //lead
                 if (OreInAMillionConfig.isLeadEnabled) {
-                    oreLead = new BlockOreTier1("lead_ore");
+                    oreLead = new BlockOre("lead_ore", 1);
                 }
                 //mithril
                 if (OreInAMillionConfig.isMithrilEnabled) {
-                    oreMithril = new BlockOreTier3("mithril_ore");
+                    oreMithril = new BlockOre("mithril_ore", 3);
                 }
                 //nickel
                 if (OreInAMillionConfig.isNickelEnabled) {
-                    oreNickel = new BlockOreTier2("nickel_ore");
+                    oreNickel = new BlockOre("nickel_ore", 2);
                 }
                 //osmium
                 if (OreInAMillionConfig.isOsmiumEnabled) {
-                    oreOsmium = new BlockOreTier1("osmium_ore");
+                    oreOsmium = new BlockOre("osmium_ore", 1);
                 }
                 //platinum
                 if (OreInAMillionConfig.isPlatinumEnabled) {
-                    orePlatinum = new BlockOreTier3("platinum_ore");
+                    orePlatinum = new BlockOre("platinum_ore", 3);
                 }
                 //silver
                 if (OreInAMillionConfig.isSilverEnabled) {
-                    oreSilver = new BlockOreTier2("silver_ore");
+                    oreSilver = new BlockOre("silver_ore", 2);
                 }
                 //tin
                 if (OreInAMillionConfig.isTinEnabled) {
-                    oreTin = new BlockOreTier1("tin_ore");
+                    oreTin = new BlockOre("tin_ore", 1);
                 }
                 //titanium
                 if (OreInAMillionConfig.isTitaniumEnabled) {
-                    oreTitanium = new BlockOreTier3("titanium_ore");
+                    oreTitanium = new BlockOre("titanium_ore", 3);
                 }
                 //tungsten
                 if (OreInAMillionConfig.isTungstenEnabled) {
-                    oreTungsten = new BlockOreTier2("tungsten_ore");
+                    oreTungsten = new BlockOre("tungsten_ore", 2);
                 }
                 //uranium
                 if (OreInAMillionConfig.isUraniumEnabled) {
-                    oreUranium = new BlockOreTier3("uranium_ore");
+                    oreUranium = new BlockOre("uranium_ore", 3);
                 }
                 //zinc
                 if (OreInAMillionConfig.isZincEnabled) {
-                    oreZinc = new BlockOreTier1("zinc_ore");
+                    oreZinc = new BlockOre("zinc_ore", 1);
                 }
                 //brass
                 if (OreInAMillionConfig.isBrassEnabled) {
@@ -201,7 +201,7 @@ public class ModBlocks {
                 if (OreInAMillionConfig.isTinkersEnabled){
                     //ardite
                     if (OreInAMillionConfig.isArditeEnabled){
-                        oreArdite = new BlockOreTier3("ardite_ore");
+                        oreArdite = new BlockOre("ardite_ore", 3);
                     }
                     //knightslime
                     if (OreInAMillionConfig.isKnightSlimeEnabled){
@@ -220,19 +220,19 @@ public class ModBlocks {
             if (OreInAMillionConfig.isGemsEnabled){
                 //amethyst
                 if (OreInAMillionConfig.isAmethystEnabled){
-                    oreAmethyst = new BlockOreDropTier2("amethyst_ore", ModItems.gemAmethyst, 1);
+                    oreAmethyst = new BlockOreDrop("amethyst_ore", ModItems.gemAmethyst, 1, 2);
                 }
                 //peridot
                 if (OreInAMillionConfig.isPeridotEnabled){
-                    orePeridot = new BlockOreDropTier2("peridot_ore", ModItems.gemPeridot, 1);
+                    orePeridot = new BlockOreDrop("peridot_ore", ModItems.gemPeridot, 1, 2);
                 }
                 //ruby
                 if (OreInAMillionConfig.isRubyEnabled){
-                    oreRuby = new BlockOreDropTier2("ruby_ore", ModItems.gemRuby, 1);
+                    oreRuby = new BlockOreDrop("ruby_ore", ModItems.gemRuby, 1, 2);
                 }
                 //sapphire
                 if (OreInAMillionConfig.isSapphireEnabled){
-                    oreSapphire = new BlockOreDropTier2("sapphire_ore", ModItems.gemSapphire, 1);
+                    oreSapphire = new BlockOreDrop("sapphire_ore", ModItems.gemSapphire, 1, 2);
                 }
             }
             //elements
@@ -243,11 +243,11 @@ public class ModBlocks {
                 }
                 //cinnabar
                 if (OreInAMillionConfig.isCinnabarEnabled){
-                    oreCinnabar = new BlockOreDropTier1("cinnabar_ore", ModItems.elementCinnabar, 1);
+                    oreCinnabar = new BlockOreDrop("cinnabar_ore", ModItems.elementCinnabar, 1, 1);
                 }
                 //sulphur
                 if (OreInAMillionConfig.isSulphurEnabled){
-                    oreSulfur = new BlockOreDropTier1("sulfur_ore", ModItems.elementSulfur, 2);
+                    oreSulfur = new BlockOreDrop("sulfur_ore", ModItems.elementSulfur, 2, 1);
                 }
             }
             if (OreInAMillionConfig.isVanillaEnabled) {
@@ -269,7 +269,7 @@ public class ModBlocks {
                 }
             }
             if (OreInAMillionConfig.isSillyStuffEnabled) {
-                oreWeezer = new BlockOreDropTier1("weezer_ore", ModItems.weezerWeezer, 1);
+                oreWeezer = new BlockOreDrop("weezer_ore", ModItems.weezerWeezer, 1, 1);
             }
         }
     }

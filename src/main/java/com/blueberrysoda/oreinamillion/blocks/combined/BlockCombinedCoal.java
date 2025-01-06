@@ -3,19 +3,21 @@ package com.blueberrysoda.oreinamillion.blocks.combined;
 import com.blueberrysoda.oreinamillion.blocks.base.BlockBase;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.ItemStack;
 
-public class BlockCombinedCoalTier1 extends BlockBase {
+public class BlockCombinedCoal extends BlockBase {
 
     private final int burnTime;
+    private final int harvestLevel;
 
-    public BlockCombinedCoalTier1(String name, Material material, int burnTimeIn) {
+    public BlockCombinedCoal(String name, Material material, int burnTimeIn, int harvestLevel) {
         super(name, Material.ROCK);
+
         setSoundType(SoundType.STONE);
         setHardness(5.0F);
         setResistance(15.0f);
-        setHarvestLevel("pickaxe", 1);
+        setHarvestLevel("pickaxe", harvestLevel);
         this.burnTime = burnTimeIn;
+        this.harvestLevel = harvestLevel;
     }
 
 //    @Override

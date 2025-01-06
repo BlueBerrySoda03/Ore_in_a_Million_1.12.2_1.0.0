@@ -14,18 +14,20 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class BlockOreDropTier1 extends BlockBase {
+public class BlockOreDrop extends BlockBase {
 
     private final Item dropItem;
     private final int baseDropCount;
+    private final int harvestLevel;
 
-    public BlockOreDropTier1(String name, Item dropItem,  int baseDropCount) {
+    public BlockOreDrop(String name, Item dropItem, int baseDropCount, int harvestLevel) {
         super(name, Material.ROCK);
         setHardness(3.0F);
         setResistance(15.0f);
-        setHarvestLevel("pickaxe", 1);
+        setHarvestLevel("pickaxe", harvestLevel);
         this.dropItem = dropItem;
         this.baseDropCount = baseDropCount;
+        this.harvestLevel = harvestLevel;
     }
 
     @Override

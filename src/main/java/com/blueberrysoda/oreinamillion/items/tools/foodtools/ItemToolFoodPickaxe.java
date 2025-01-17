@@ -26,19 +26,21 @@ import java.util.List;
 public class ItemToolFoodPickaxe extends ItemPickaxe {
 
     private final int healAmount;
+    private final float saturation;
     private static boolean addTooltip;
 
-    public ItemToolFoodPickaxe(String name, ToolMaterial material, int amount, boolean addTooltip) {
+    public ItemToolFoodPickaxe(String name, ToolMaterial material, int amount, float saturation, boolean addTooltip) {
         super(material);
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_TOOL);
         this.healAmount = amount;
+        this.saturation = saturation;
         ItemToolFoodPickaxe.addTooltip = addTooltip;
     }
 
     public float saturation() {
-        return (float) this.healAmount / 2;
+        return healAmount * saturation;
     }
 
     @Override

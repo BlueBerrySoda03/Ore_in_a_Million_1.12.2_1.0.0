@@ -591,12 +591,12 @@ public class ModTools {
                         }
                         //pigiron
                         if (OreInAMillionConfig.isPigIronEnabled) {
-                            swordPigIron = new ItemToolFoodSword("pigiron_sword", MaterialTool.toolPigIron, 8,  true);
-                            pickaxePigIron = new ItemToolFoodPickaxe("pigiron_pickaxe", MaterialTool.toolPigIron, 12, true);
-                            axePigIron = new ItemToolFoodAxe("pigiron_axe", MaterialTool.toolPigIron, 12, true);
-                            shovelPigIron = new ItemToolFoodShovel("pigiron_shovel", MaterialTool.toolPigIron, 4, true);
-                            hoePigIron = new ItemToolFoodHoe("pigiron_hoe", MaterialTool.toolPigIron, 8, true);
-                            crusherPigIron = new ItemToolFoodCrusher("pigiron_crusher", MaterialTool.toolPigIron, 76, true);
+                            swordPigIron = new ItemToolFoodSword("pigiron_sword", MaterialTool.toolPigIron, 8, 0.5F, true);
+                            pickaxePigIron = new ItemToolFoodPickaxe("pigiron_pickaxe", MaterialTool.toolPigIron, 12, 0.5F, true);
+                            axePigIron = new ItemToolFoodAxe("pigiron_axe", MaterialTool.toolPigIron, 12, 0.5F, true);
+                            shovelPigIron = new ItemToolFoodShovel("pigiron_shovel", MaterialTool.toolPigIron, 4, 0.5F, true);
+                            hoePigIron = new ItemToolFoodHoe("pigiron_hoe", MaterialTool.toolPigIron, 8, 0.5F, true);
+                            crusherPigIron = new ItemToolFoodCrusher("pigiron_crusher", MaterialTool.toolPigIron, 76, 0.5F, true);
                         }
                         //manyullyn
                         if (OreInAMillionConfig.isManyullynEnabled) {
@@ -1050,7 +1050,7 @@ public class ModTools {
 
                 }
                 //sulphur
-                if (OreInAMillionConfig.isSulphurEnabled){
+                if (OreInAMillionConfig.isSulfurEnabled){
 
                 }
             }
@@ -1455,7 +1455,7 @@ public class ModTools {
 
                 }
                 //sulphur
-                if (OreInAMillionConfig.isSulphurEnabled){
+                if (OreInAMillionConfig.isSulfurEnabled){
 
                 }
             }
@@ -1899,7 +1899,7 @@ public class ModTools {
 
                 }
                 //sulphur
-                if (OreInAMillionConfig.isSulphurEnabled){
+                if (OreInAMillionConfig.isSulfurEnabled){
 
                 }
             }

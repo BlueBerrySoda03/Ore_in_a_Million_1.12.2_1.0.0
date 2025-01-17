@@ -22,19 +22,21 @@ import java.util.List;
 public class ItemToolFoodHoe extends ItemHoe {
 
     private final int healAmount;
+    private final float saturation;
     private static boolean addTooltip;
 
-    public ItemToolFoodHoe(String name, ToolMaterial material, int amount, boolean addTooltip) {
+    public ItemToolFoodHoe(String name, ToolMaterial material, int amount, float saturation, boolean addTooltip) {
         super(material);
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_TOOL);
         this.healAmount = amount;
+        this.saturation = saturation;
         ItemToolFoodHoe.addTooltip = addTooltip;
     }
 
     public float saturation() {
-        return (float) this.healAmount / 2;
+        return healAmount * saturation;
     }
 
     @Override

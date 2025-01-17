@@ -23,7 +23,7 @@ public class ItemFoodSoupcan extends ItemFood {
         if (entityLiving instanceof EntityPlayer) {
             //EntityPlayer player = (EntityPlayer) entityLiving;
             //player.getFoodStats().addStats(7, 5F);
-            return new ItemStack(ModItems.tinCan);
+//            return new ItemStack(ModItems.tinCan);
         }
         return super.onItemUseFinish(stack, worldIn, entityLiving);
     }

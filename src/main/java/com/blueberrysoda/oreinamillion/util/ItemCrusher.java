@@ -27,7 +27,7 @@ public class ItemCrusher extends ItemTool {
 
     private static final Set<Block> EFFECTIVE_ON = Sets.newHashSet(Blocks.ACTIVATOR_RAIL, Blocks.COAL_ORE, Blocks.COBBLESTONE, Blocks.DETECTOR_RAIL, Blocks.DIAMOND_BLOCK, Blocks.DIAMOND_ORE, Blocks.DOUBLE_STONE_SLAB, Blocks.GOLDEN_RAIL, Blocks.GOLD_BLOCK, Blocks.GOLD_ORE, Blocks.ICE, Blocks.IRON_BLOCK, Blocks.IRON_ORE, Blocks.LAPIS_BLOCK, Blocks.LAPIS_ORE, Blocks.LIT_REDSTONE_ORE, Blocks.MOSSY_COBBLESTONE, Blocks.NETHERRACK, Blocks.PACKED_ICE, Blocks.RAIL, Blocks.REDSTONE_ORE, Blocks.SANDSTONE, Blocks.RED_SANDSTONE, Blocks.STONE, Blocks.STONE_SLAB, Blocks.STONE_BUTTON, Blocks.STONE_PRESSURE_PLATE);
 
-    protected ItemCrusher(Item.ToolMaterial material)
+    protected ItemCrusher(ToolMaterial material)
     {
         super((material.getAttackDamage() * 2.3F) + 3.0F, -3.0F, material, EFFECTIVE_ON);
     }
@@ -146,502 +146,52 @@ public class ItemCrusher extends ItemTool {
     }
 
     @Override
-    public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving) {
-        if (!worldIn.isRemote) {
-            ItemStack blockStack = new ItemStack(state.getBlock());
-            int[] oreIds = OreDictionary.getOreIDs(blockStack);
+    public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos, EntityLivingBase livingBase) {
+        if (!world.isRemote) {
+            String oreName = getOreName(state);
 
-            boolean isOre = false;
-            String oreType = "";
-
-            for (int oreId : oreIds) {
-                String oreName = OreDictionary.getOreName(oreId);
-                if (oreName.startsWith("ore")){
-                    isOre = true;
-                    oreType = oreName;
-                    break;
-                }
-            }
-
-            if (isOre && entityLiving instanceof EntityPlayer) {
-                EntityPlayer player = (EntityPlayer) entityLiving;
-
-                int harvestLevel = toolMaterial.getHarvestLevel();
-                int requiredHarvestLevel = state.getBlock().getHarvestLevel(state);
-
-                if (harvestLevel >= requiredHarvestLevel) {
-                    switch (oreType) {
-                        case "oreAluminum": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustAluminum);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        //chrome
-                        case "oreChrome": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustChrome);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        //cobalt
-                        case "oreCobalt": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustCobalt);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        //copper
-                        case "oreCopper": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustCopper);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreEnder": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustEnder);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreIridium": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustIridium);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreLead": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustLead);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreMithril": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustMithril);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreNickel": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustNickel);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreOsmium": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustOsmium);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "orePlatinum": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustPlatinum);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreSilver": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustSilver);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreTin": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustTin);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreTitanium": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustTitanium);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreUranium": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustUranium);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreZinc": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustZinc);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreArdite": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustArdite);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreAmethyst": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustAmethyst);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "orePeridot": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustPeridot);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreRuby": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustRuby);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreSapphire": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustSapphire);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreCinnabar": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustCinnabar);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreSulfur": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.elementSulfur);
-                            int baseDrops = 4;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreIron": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustIron);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreGold": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustGold);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreDiamond": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustDiamond);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreEmerald": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustEmerald);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreCoal": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.dustCoal);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                        case "oreWeezer": {
-                            ItemStack crusherDrop = new ItemStack(ModItems.weezerWeezer);
-                            int baseDrops = 2;
-                            int fortuneLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
-                            double scalingFactor = 0.5;
-                            int additionalDrops = (int) (fortuneLevel * scalingFactor);
-                            int totalDrops = baseDrops + additionalDrops;
-
-                            for (int i = 0; i < totalDrops; i++) {
-                                Block.spawnAsEntity(worldIn, pos, crusherDrop);
-                            }
-
-                            state.getBlock().dropXpOnBlockBreak(worldIn, pos, 0);
-                            worldIn.setBlockToAir(pos);
-                            break;
-                        }
-                    }
-                }
+            if (oreName != null) {
+                handleDrops(world, pos, oreName);
             }
         }
-        return super.onBlockDestroyed(stack, worldIn, state, pos, entityLiving);
+        return super.onBlockDestroyed(stack,world,state, pos, livingBase);
+    }
+
+    private String getOreName(IBlockState state) {
+        int[] oreIDs = OreDictionary.getOreIDs(new ItemStack(state.getBlock()));
+        for (int oreID : oreIDs) {
+            String oreName = OreDictionary.getOreName(oreID);
+            if (oreName.startsWith("ore")) {
+                return oreName;
+            }
+        }
+        return null;
+    }
+
+    private void handleDrops(World world, BlockPos pos, String oreName) {
+        ItemStack dropItem;
+        int amountDrop = 2;
+        int amountDropSulfur = 4;
+
+        switch (oreName) {
+            case "oreSulfur":
+                dropItem = new ItemStack(ModItems.ingotIridium);
+                break;
+            case "oreCopper":
+                dropItem = new ItemStack(ModItems.ingotEnder);
+                break;
+            default:
+                dropItem = ItemStack.EMPTY;
+        }
+
+        if (!dropItem.isEmpty()) {
+            for (int i = 0; i < amountDrop; i++) {
+                Block.spawnAsEntity(world, pos, dropItem);
+            }
+            for (int i = 0; i < amountDropSulfur; i++) {
+                Block.spawnAsEntity(world, pos, dropItem);
+            }
+            world.setBlockToAir(pos);
+        }
     }
 }

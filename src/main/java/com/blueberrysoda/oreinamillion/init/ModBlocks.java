@@ -42,12 +42,12 @@ public class ModBlocks {
     public static BlockOre oreUranium;
     public static BlockOre oreZinc;
     //gems
-    public static BlockOreDrop oreAmethyst;
-    public static BlockOreDrop orePeridot;
-    public static BlockOreDrop oreRuby;
-    public static BlockOreDrop oreSapphire;
+    public static BlockOreDropOLD oreAmethyst;
+    public static BlockOreDropOLD orePeridot;
+    public static BlockOreDropOLD oreRuby;
+    public static BlockOreDropOLD oreSapphire;
     //other
-    public static BlockOreDrop oreCinnabar;
+    public static BlockOreDropOLD oreCinnabar;
     public static BlockOreDrop oreSulfur;
 
     //=========
@@ -84,7 +84,7 @@ public class ModBlocks {
     //=========
     //other
     //=========
-    public static BlockOreDrop oreWeezer;
+    public static BlockOreDropOLD oreWeezer;
 
     public static void init(){
         // = new ("", Material.);
@@ -220,19 +220,19 @@ public class ModBlocks {
             if (OreInAMillionConfig.isGemsEnabled){
                 //amethyst
                 if (OreInAMillionConfig.isAmethystEnabled){
-                    oreAmethyst = new BlockOreDrop("amethyst_ore", ModItems.gemAmethyst, 1, 2);
+                    oreAmethyst = new BlockOreDropOLD("amethyst_ore", ModItems.gemAmethyst, 2, 2);
                 }
                 //peridot
                 if (OreInAMillionConfig.isPeridotEnabled){
-                    orePeridot = new BlockOreDrop("peridot_ore", ModItems.gemPeridot, 1, 2);
+                    orePeridot = new BlockOreDropOLD("peridot_ore", ModItems.gemPeridot, 1, 2);
                 }
                 //ruby
                 if (OreInAMillionConfig.isRubyEnabled){
-                    oreRuby = new BlockOreDrop("ruby_ore", ModItems.gemRuby, 1, 2);
+                    oreRuby = new BlockOreDropOLD("ruby_ore", ModItems.gemRuby, 1, 2);
                 }
                 //sapphire
                 if (OreInAMillionConfig.isSapphireEnabled){
-                    oreSapphire = new BlockOreDrop("sapphire_ore", ModItems.gemSapphire, 1, 2);
+                    oreSapphire = new BlockOreDropOLD("sapphire_ore", ModItems.gemSapphire, 1, 2);
                 }
             }
             //elements
@@ -243,10 +243,10 @@ public class ModBlocks {
                 }
                 //cinnabar
                 if (OreInAMillionConfig.isCinnabarEnabled){
-                    oreCinnabar = new BlockOreDrop("cinnabar_ore", ModItems.elementCinnabar, 1, 1);
+                    oreCinnabar = new BlockOreDropOLD("cinnabar_ore", ModItems.elementCinnabar, 1, 1);
                 }
                 //sulphur
-                if (OreInAMillionConfig.isSulphurEnabled){
+                if (OreInAMillionConfig.isSulfurEnabled){
                     oreSulfur = new BlockOreDrop("sulfur_ore", ModItems.elementSulfur, 2, 1);
                 }
             }
@@ -269,7 +269,7 @@ public class ModBlocks {
                 }
             }
             if (OreInAMillionConfig.isSillyStuffEnabled) {
-                oreWeezer = new BlockOreDrop("weezer_ore", ModItems.weezerWeezer, 1, 1);
+                oreWeezer = new BlockOreDropOLD("weezer_ore", ModItems.weezerWeezer, 1, 1);
             }
         }
     }
@@ -435,7 +435,7 @@ public class ModBlocks {
                     event.getRegistry().register(oreCinnabar);
                 }
                 //sulphur
-                if (OreInAMillionConfig.isSulphurEnabled){
+                if (OreInAMillionConfig.isSulfurEnabled){
                     event.getRegistry().register(oreSulfur);
                 }
             }
@@ -631,7 +631,7 @@ public class ModBlocks {
                     event.getRegistry().register(new ItemBlock(oreCinnabar).setRegistryName(Objects.requireNonNull(oreCinnabar.getRegistryName())));
                 }
                 //sulphur
-                if (OreInAMillionConfig.isSulphurEnabled){
+                if (OreInAMillionConfig.isSulfurEnabled){
                     event.getRegistry().register(new ItemBlock(oreSulfur).setRegistryName(Objects.requireNonNull(oreSulfur.getRegistryName())));
                 }
             }
@@ -827,7 +827,7 @@ public class ModBlocks {
                     registerRender(Item.getItemFromBlock(oreCinnabar));
                 }
                 //sulphur
-                if (OreInAMillionConfig.isSulphurEnabled){
+                if (OreInAMillionConfig.isSulfurEnabled){
                     registerRender(Item.getItemFromBlock(oreSulfur));
                 }
             }
@@ -1029,7 +1029,7 @@ public class ModBlocks {
                     OreDictionary.registerOre("oreCinnabar", ModBlocks.oreCinnabar);
                 }
                 //sulphur
-                if (OreInAMillionConfig.isSulphurEnabled){
+                if (OreInAMillionConfig.isSulfurEnabled){
                     OreDictionary.registerOre("oreSulfur", ModBlocks.oreSulfur);
                 }
             }

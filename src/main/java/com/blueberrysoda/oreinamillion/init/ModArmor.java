@@ -400,7 +400,7 @@ public class ModArmor {
 
                     }
                     //sulphur
-                    if (OreInAMillionConfig.isSulphurEnabled) {
+                    if (OreInAMillionConfig.isSulfurEnabled) {
 
                     }
                 }
@@ -603,7 +603,7 @@ public class ModArmor {
 
                 }
                 //sulphur
-                if (OreInAMillionConfig.isSulphurEnabled){
+                if (OreInAMillionConfig.isSulfurEnabled){
 
                 }
             }
@@ -805,7 +805,7 @@ public class ModArmor {
 
                 }
                 //sulphur
-                if (OreInAMillionConfig.isSulphurEnabled){
+                if (OreInAMillionConfig.isSulfurEnabled){
 
                 }
             }
@@ -1011,7 +1011,7 @@ public class ModArmor {
 
                 }
                 //sulphur
-                if (OreInAMillionConfig.isSulphurEnabled){
+                if (OreInAMillionConfig.isSulfurEnabled){
 
                 }
             }

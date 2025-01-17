@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "oreinamillion:items/sapphire"
+    "layer0": "oreinamillion:items/lapite_tiny"
   }
 }

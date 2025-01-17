@@ -3,7 +3,7 @@ package com.blueberrysoda.oreinamillion;
 import com.blueberrysoda.oreinamillion.creativetabs.*;
 import com.blueberrysoda.oreinamillion.proxy.ClientProxy;
 import com.blueberrysoda.oreinamillion.proxy.CommonProxy;
-import com.blueberrysoda.oreinamillion.recipes.SmeltingRecipes;
+//import com.blueberrysoda.oreinamillion.recipes.SmeltingRecipes;
 import com.blueberrysoda.oreinamillion.world.OreWorldGen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
@@ -49,7 +49,7 @@ public class OreInAMillion {
     public static void init(FMLInitializationEvent event){
         ClientProxy.initClient(event);
         CommonProxy.initCommon(event);
-        SmeltingRecipes.init();
+//        SmeltingRecipes.init();
     }
 
     @Mod.EventHandler

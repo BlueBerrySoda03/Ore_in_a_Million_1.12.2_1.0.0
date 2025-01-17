@@ -25,9 +25,10 @@ import java.util.List;
 public class ItemToolFoodAxe extends ItemAxe {
 
     private final int healAmount;
+    private final float saturation;
     private static boolean addTooltip;
 
-    public ItemToolFoodAxe(String name, ToolMaterial material, int amount, boolean addTooltip) {
+    public ItemToolFoodAxe(String name, ToolMaterial material, int amount, float saturation, boolean addTooltip) {
         ///the code to make the axes flexible in damage and attack speed came from Metallurgy 4 Reforged
         ///I thought I was gonna go crazy figuring this out. Thank you Metallurgy dev :D
         //-2.5F - (material.getAttackDamage() / 5)
@@ -36,11 +37,12 @@ public class ItemToolFoodAxe extends ItemAxe {
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_TOOL);
         this.healAmount = amount;
+        this.saturation = saturation;
         ItemToolFoodAxe.addTooltip = addTooltip;
     }
 
     public float saturation() {
-        return (float) this.healAmount / 2;
+        return healAmount * saturation;
     }
 
     @Override

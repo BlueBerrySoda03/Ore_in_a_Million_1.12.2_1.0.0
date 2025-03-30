@@ -31,6 +31,10 @@ public class OreWorldGen implements IWorldGenerator {
         if (OreInAMillionConfig.isMineralsEnabled) {
             if (OreInAMillionConfig.isOreGenerationEnabled) {
                 if (OreInAMillionConfig.isIngotsEnabled) {
+                    //adamantine
+                    if (OreInAMillionConfig.isAdamantineEnabled) {
+                        generateOre(ModBlocks.oreAdamantine.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 32, random.nextInt(6) + 1, 3);
+                    }
                     //aluminum
                     if (OreInAMillionConfig.isAluminumEnabled) {
                         generateOre(ModBlocks.oreAluminum.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 64, random.nextInt(6) + 3, 7);
@@ -45,7 +49,7 @@ public class OreWorldGen implements IWorldGenerator {
                     }
                     //copper
                     if (OreInAMillionConfig.isCopperEnabled) {
-                        generateOre(ModBlocks.oreCopper.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 64, random.nextInt(12) + 4, 9);
+                        generateOre(ModBlocks.oreCopper.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, OreInAMillionConfig.maxHeightCopperOre, random.nextInt(12) + 4, 9);
                     }
                     if (OreInAMillionConfig.isEnderEnabled){
                         generateOre(ModBlocks.oreEnder.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 20, random.nextInt(5) + 2, 3);

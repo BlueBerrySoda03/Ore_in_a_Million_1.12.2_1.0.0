@@ -8,6 +8,7 @@ import net.minecraftforge.common.util.EnumHelper;
 
 public class MaterialTool {
 
+    public static final Item.ToolMaterial toolAdamantine = EnumHelper.addToolMaterial("toolAdamantine", 3, 1506, 10.0F, 2.7F, 7);
     public static final Item.ToolMaterial toolAluminum = EnumHelper.addToolMaterial("toolAluminum", 1, 181, 5.0F, 1.5F, 4);
     public static final Item.ToolMaterial toolArdite = EnumHelper.addToolMaterial("toolArdite", 2, 245, 7.0F, 2.5F, 10);
     public static final Item.ToolMaterial toolChrome = EnumHelper.addToolMaterial("toolChrome", 2, 222, 5.22F, 2.2F, 2);
@@ -48,8 +49,8 @@ public class MaterialTool {
 
     public static final Item.ToolMaterial toolCharcoal = EnumHelper.addToolMaterial("toolCharcoal", 0, 5, 1.2F, 0.5F, 1);
     public static final Item.ToolMaterial toolCoal = EnumHelper.addToolMaterial("toolCoal", 0, 6, 1.2F, 0.5F, 1);
-    public static final Item.ToolMaterial toolDenseCharcoal = EnumHelper.addToolMaterial("toolDenseCharcoal", 2, 245, 8.0F, 1.5F, 1);
-    public static final Item.ToolMaterial toolDenseCoal = EnumHelper.addToolMaterial("toolDenseCoal", 2, 245, 8.0F, 1.5F, 1);
+    public static final Item.ToolMaterial toolCharcoalium = EnumHelper.addToolMaterial("toolDenseCharcoal", 2, 245, 8.0F, 1.5F, 1);
+    public static final Item.ToolMaterial toolCoalium = EnumHelper.addToolMaterial("toolDenseCoal", 2, 245, 8.0F, 1.5F, 1);
     public static final Item.ToolMaterial toolEmerald = EnumHelper.addToolMaterial("toolEmerald", 3, 1423, 9.0F, 3.1F, 13);
     public static final Item.ToolMaterial toolQuartz = EnumHelper.addToolMaterial("toolQuartz", 2, 264, 6.0F, 2.0F, 12);
 }

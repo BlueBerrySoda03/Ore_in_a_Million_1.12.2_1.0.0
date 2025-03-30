@@ -3,6 +3,7 @@ package com.blueberrysoda.oreinamillion.items.tools.basetools;
 import com.blueberrysoda.oreinamillion.OreInAMillion;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
@@ -15,14 +16,16 @@ import java.util.List;
 
 public class ItemToolPickaxe extends ItemPickaxe {
 
+    private static CreativeTabs creativeTab;
     private static boolean addTooltip;
 
-    public ItemToolPickaxe(String name, Item.ToolMaterial material, boolean addTooltip) {
+    public ItemToolPickaxe(String name, Item.ToolMaterial material, CreativeTabs creativeTab, boolean addTooltip) {
         super(material);
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_TOOL);
         ItemToolPickaxe.addTooltip = addTooltip;
+        ItemToolPickaxe.creativeTab = creativeTab;
     }
 
     @SideOnly(Side.CLIENT)

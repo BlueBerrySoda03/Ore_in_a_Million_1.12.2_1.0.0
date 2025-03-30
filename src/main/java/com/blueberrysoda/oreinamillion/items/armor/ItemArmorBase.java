@@ -3,7 +3,7 @@ package com.blueberrysoda.oreinamillion.items.armor;
 import com.blueberrysoda.oreinamillion.OreInAMillion;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.init.Items;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -16,15 +16,16 @@ import java.util.List;
 
 public class ItemArmorBase extends ItemArmor {
 
-    public static boolean addTooltip;
+    private static CreativeTabs creativeTab;
+    private static boolean addTooltip;
 
-    public ItemArmorBase(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, boolean addTooltip) {
+    public ItemArmorBase(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, CreativeTabs creativeTabs, boolean addTooltip) {
         super(materialIn, renderIndexIn, equipmentSlotIn);
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
-        setMaxStackSize(1);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_ARMOR);
         ItemArmorBase.addTooltip = addTooltip;
+        ItemArmorBase.creativeTab = creativeTab;
     }
 
     @SideOnly(Side.CLIENT)

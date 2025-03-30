@@ -1,11 +1,15 @@
 package com.blueberrysoda.oreinamillion.init;
 
+import com.blueberrysoda.oreinamillion.blocks.base.BlockBase;
+import com.blueberrysoda.oreinamillion.blocks.combined.BlockCombined;
 import com.blueberrysoda.oreinamillion.blocks.ores.*;
 import com.blueberrysoda.oreinamillion.config.OreInAMillionConfig;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -15,40 +19,46 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Mod.EventBusSubscriber
 public class ModBlocks {
+
+    public static final List<Block> BLOCKS = new ArrayList<>();
+
     //=========
     //ores
     //=========
     //ingots
-    public static BlockOre oreAluminum;
-    public static BlockOre oreArdite;
-    public static BlockOre oreChrome;
-    public static BlockOre oreCobalt;
-    public static BlockOre oreCopper;
-    public static BlockOre oreEnder;
-    public static BlockOre oreIridium;
-    public static BlockOre oreLead;
-    public static BlockOre oreMithril;
-    public static BlockOre oreNickel;
-    public static BlockOre oreOsmium;
-    public static BlockOre orePlatinum;
-    public static BlockOre oreSilver;
-    public static BlockOre oreTin;
-    public static BlockOre oreTitanium;
-    public static BlockOre oreTungsten;
-    public static BlockOre oreUranium;
-    public static BlockOre oreZinc;
-    //gems
-    public static BlockOreDropOLD oreAmethyst;
-    public static BlockOreDropOLD orePeridot;
-    public static BlockOreDropOLD oreRuby;
-    public static BlockOreDropOLD oreSapphire;
-    //other
-    public static BlockOreDropOLD oreCinnabar;
-    public static BlockOreDrop oreSulfur;
+    public static Block oreAdamantine = new BlockOre("adamantine_ore", 3);
+    public static Block oreAluminum = new BlockOre("aluminum_ore", 1);
+    public static Block oreArdite = new BlockOre("ardite_ore", 1);
+    public static Block oreChrome = new BlockOre("chrome_ore", 1);
+    public static Block oreCobalt = new BlockOre("cobalt_ore", 2);
+    public static Block oreCopper = new BlockOre("copper_ore", 1);
+    public static Block oreEnder = new BlockOre("ender_ore", 3);
+    public static Block oreIridium = new BlockOre("iridium_ore", 2);
+    public static Block oreLead = new BlockOre("lead_ore", 1);
+    public static Block oreMithril = new BlockOre("mithril_ore", 2);
+    public static Block oreNickel = new BlockOre("nickel_ore", 1);
+    public static Block oreOsmium = new BlockOre("osmium_ore", 1);
+    public static Block orePlatinum = new BlockOre("platinum_ore", 2);
+    public static Block oreSilver = new BlockOre("silver_ore", 2);
+    public static Block oreTin = new BlockOre("tin_ore", 1);
+    public static Block oreTitanium = new BlockOre("titanium_ore", 3);
+    public static Block oreTungsten = new BlockOre("tungsten_ore", 2);
+    public static Block oreUranium = new BlockOre("uranium_ore", 3);
+    public static Block oreZinc = new BlockOre("zinc_ore", 1);
+
+    public static Block oreAmethyst = new BlockOre("amethyst_ore", 2);
+    public static Block orePeridot = new BlockOre("peridot_ore", 2);
+    public static Block oreRuby = new BlockOre("ruby_ore", 2);
+    public static Block oreSapphire = new BlockOre("sapphire_ore", 2);
+
+    public static Block oreCinnabar = new BlockOre("cinnabar_ore", 0);
+    public static Block oreSulfur = new BlockOre("sulfur_ore", 0);
 
     //=========
     //combined
@@ -62,6 +72,7 @@ public class ModBlocks {
     //other
 
     //vanilla
+    public static Block blockCharcoal = new BlockCombined("charcoal_block", 0);
 
     //=========
     //dust blocks
@@ -84,79 +95,85 @@ public class ModBlocks {
     //=========
     //other
     //=========
-    public static BlockOreDropOLD oreWeezer;
+    public static Block oreWeezer = new BlockOreDrop("weezer_ore", ModItems.weezerWeezer, 1, 0);
+//    public static Block blockEpic = new BlockBase("epic_block", Material.SAND, "axe", SoundType.METAL, 7.0F, 15.0F, 2);
 
     public static void init(){
+//        BLOCKS.add(blockEpic);
         // = new ("", Material.);
         if (OreInAMillionConfig.isMineralsEnabled) {
             if(OreInAMillionConfig.isIngotsEnabled) {
+                //adamantine
+                if (OreInAMillionConfig.isAdamantineEnabled) {
+                    BLOCKS.add(oreAluminum);
+                }
                 //aluminum
                 if (OreInAMillionConfig.isAluminumEnabled) {
-                    oreAluminum = new BlockOre("aluminum_ore", 1);
+                    BLOCKS.add(oreAluminum);
                 }
                 //chrome
                 if (OreInAMillionConfig.isChromeEnabled) {
-                    oreChrome = new BlockOre("chrome_ore", 1);
+                    BLOCKS.add(oreChrome);
                 }
                 //cobalt
                 if (OreInAMillionConfig.isCobaltEnabled) {
-                    oreCobalt = new BlockOre("cobalt_ore", 2);
+                    BLOCKS.add(oreCobalt);
                 }
                 //copper
                 if (OreInAMillionConfig.isCopperEnabled) {
-                    oreCopper = new BlockOre("copper_ore", 1);
+                    BLOCKS.add(oreCopper);
                 }
                 //ender
                 if (OreInAMillionConfig.isEnderEnabled){
-                    oreEnder = new BlockOre("ender_ore", 2);
+                    BLOCKS.add(oreEnder);
                 }
                 //iridium
                 if (OreInAMillionConfig.isIridiumEnabled) {
-                    oreIridium = new BlockOre("iridium_ore", 2);
+                    BLOCKS.add(oreIridium);
                 }
                 //lead
                 if (OreInAMillionConfig.isLeadEnabled) {
-                    oreLead = new BlockOre("lead_ore", 1);
+                    BLOCKS.add(oreLead);
                 }
                 //mithril
                 if (OreInAMillionConfig.isMithrilEnabled) {
-                    oreMithril = new BlockOre("mithril_ore", 3);
+                    BLOCKS.add(oreMithril);
                 }
                 //nickel
                 if (OreInAMillionConfig.isNickelEnabled) {
-                    oreNickel = new BlockOre("nickel_ore", 2);
+                    BLOCKS.add(oreNickel);
                 }
                 //osmium
                 if (OreInAMillionConfig.isOsmiumEnabled) {
-                    oreOsmium = new BlockOre("osmium_ore", 1);
+                    BLOCKS.add(oreOsmium);
                 }
                 //platinum
                 if (OreInAMillionConfig.isPlatinumEnabled) {
-                    orePlatinum = new BlockOre("platinum_ore", 3);
+                    BLOCKS.add(orePlatinum);
                 }
                 //silver
                 if (OreInAMillionConfig.isSilverEnabled) {
-                    oreSilver = new BlockOre("silver_ore", 2);
+                    BLOCKS.add(oreSilver);
                 }
                 //tin
                 if (OreInAMillionConfig.isTinEnabled) {
-                    oreTin = new BlockOre("tin_ore", 1);
+                    BLOCKS.add(oreTin);
                 }
                 //titanium
                 if (OreInAMillionConfig.isTitaniumEnabled) {
-                    oreTitanium = new BlockOre("titanium_ore", 3);
+                    BLOCKS.add(oreTitanium);
                 }
                 //tungsten
                 if (OreInAMillionConfig.isTungstenEnabled) {
-                    oreTungsten = new BlockOre("tungsten_ore", 2);
+                    BLOCKS.add(oreTungsten);
                 }
                 //uranium
                 if (OreInAMillionConfig.isUraniumEnabled) {
-                    oreUranium = new BlockOre("uranium_ore", 3);
+                    BLOCKS.add(oreUranium);
                 }
                 //zinc
                 if (OreInAMillionConfig.isZincEnabled) {
-                    oreZinc = new BlockOre("zinc_ore", 1);
+                    BLOCKS.add(oreZinc);
                 }
                 //brass
                 if (OreInAMillionConfig.isBrassEnabled) {
@@ -201,7 +218,7 @@ public class ModBlocks {
                 if (OreInAMillionConfig.isTinkersEnabled){
                     //ardite
                     if (OreInAMillionConfig.isArditeEnabled){
-                        oreArdite = new BlockOre("ardite_ore", 3);
+                        BLOCKS.add(oreArdite);
                     }
                     //knightslime
                     if (OreInAMillionConfig.isKnightSlimeEnabled){
@@ -220,19 +237,19 @@ public class ModBlocks {
             if (OreInAMillionConfig.isGemsEnabled){
                 //amethyst
                 if (OreInAMillionConfig.isAmethystEnabled){
-                    oreAmethyst = new BlockOreDropOLD("amethyst_ore", ModItems.gemAmethyst, 2, 2);
+                    BLOCKS.add(oreAmethyst);
                 }
                 //peridot
                 if (OreInAMillionConfig.isPeridotEnabled){
-                    orePeridot = new BlockOreDropOLD("peridot_ore", ModItems.gemPeridot, 1, 2);
+                    BLOCKS.add(orePeridot);
                 }
                 //ruby
                 if (OreInAMillionConfig.isRubyEnabled){
-                    oreRuby = new BlockOreDropOLD("ruby_ore", ModItems.gemRuby, 1, 2);
+                    BLOCKS.add(oreRuby);
                 }
                 //sapphire
                 if (OreInAMillionConfig.isSapphireEnabled){
-                    oreSapphire = new BlockOreDropOLD("sapphire_ore", ModItems.gemSapphire, 1, 2);
+                    BLOCKS.add(oreSapphire);
                 }
             }
             //elements
@@ -243,11 +260,11 @@ public class ModBlocks {
                 }
                 //cinnabar
                 if (OreInAMillionConfig.isCinnabarEnabled){
-                    oreCinnabar = new BlockOreDropOLD("cinnabar_ore", ModItems.elementCinnabar, 1, 1);
+                    BLOCKS.add(oreCinnabar);
                 }
                 //sulphur
                 if (OreInAMillionConfig.isSulfurEnabled){
-                    oreSulfur = new BlockOreDrop("sulfur_ore", ModItems.elementSulfur, 2, 1);
+                    BLOCKS.add(oreSulfur);
                 }
             }
             if (OreInAMillionConfig.isVanillaEnabled) {
@@ -265,598 +282,29 @@ public class ModBlocks {
                 }
                 //charcoal
                 if (OreInAMillionConfig.isCharcoalEnabled) {
-
+                    BLOCKS.add(blockCharcoal);
                 }
             }
             if (OreInAMillionConfig.isSillyStuffEnabled) {
-                oreWeezer = new BlockOreDropOLD("weezer_ore", ModItems.weezerWeezer, 1, 1);
+                BLOCKS.add(oreWeezer);
             }
         }
     }
 
     @SubscribeEvent
     public static void registerBlock(RegistryEvent.Register<Block> event){
-        if (OreInAMillionConfig.isMineralsEnabled) {
-            if (OreInAMillionConfig.isIngotsEnabled) {
-                //aluminum
-                if (OreInAMillionConfig.isAluminumEnabled) {
-                    event.getRegistry().register(oreAluminum);
-                }
-                //chrome
-                if (OreInAMillionConfig.isChromeEnabled) {
-                    event.getRegistry().register(oreChrome);
-                }
-                //cobalt
-                if (OreInAMillionConfig.isCobaltEnabled) {
-                    event.getRegistry().register(oreCobalt);
-                }
-                //copper
-                if (OreInAMillionConfig.isCopperEnabled) {
-                    event.getRegistry().register(oreCopper);
-                }
-                //ender
-                if (OreInAMillionConfig.isEnderEnabled) {
-                    event.getRegistry().register(oreEnder);
-                }
-                //iridium
-                if (OreInAMillionConfig.isIridiumEnabled) {
-                    event.getRegistry().register(oreIridium);
-                }
-                //lead
-                if (OreInAMillionConfig.isLeadEnabled) {
-                    event.getRegistry().register(oreLead);
-                }
-                //mithril
-                if (OreInAMillionConfig.isMithrilEnabled) {
-                    event.getRegistry().register(oreMithril);
-                }
-                //nickel
-                if (OreInAMillionConfig.isNickelEnabled) {
-                    event.getRegistry().register(oreNickel);
-                }
-                //osmium
-                if (OreInAMillionConfig.isOsmiumEnabled) {
-                    event.getRegistry().register(oreOsmium);
-                }
-                //platinum
-                if (OreInAMillionConfig.isPlatinumEnabled) {
-                    event.getRegistry().register(orePlatinum);
-                }
-                //silver
-                if (OreInAMillionConfig.isSilverEnabled) {
-                    event.getRegistry().register(oreSilver);
-                }
-                //tin
-                if (OreInAMillionConfig.isTinEnabled) {
-                    event.getRegistry().register(oreTin);
-                }
-                //titanium
-                if (OreInAMillionConfig.isTitaniumEnabled) {
-                    event.getRegistry().register(oreTitanium);
-                }
-                //tungsten
-                if (OreInAMillionConfig.isTungstenEnabled) {
-                    event.getRegistry().register(oreTungsten);
-                }
-                //uranium
-                if (OreInAMillionConfig.isUraniumEnabled) {
-                    event.getRegistry().register(oreUranium);
-                }
-                //zinc
-                if (OreInAMillionConfig.isZincEnabled) {
-                    event.getRegistry().register(oreZinc);
-                }
-                //brass
-                if (OreInAMillionConfig.isBrassEnabled) {
-
-                }
-                //bronze
-                if (OreInAMillionConfig.isBronzeEnabled) {
-
-                }
-                //electrum
-                if (OreInAMillionConfig.isElectrumEnabled) {
-
-                }
-                //invar
-                if (OreInAMillionConfig.isInvarEnabled) {
-
-                }
-                //steel
-                if (OreInAMillionConfig.isSteelEnabled) {
-
-                }
-                //thermal series
-                if (OreInAMillionConfig.isThermalEnabled){
-                    //constantan
-                    if (OreInAMillionConfig.isConstantanEnabled){
-
-                    }
-                    //enderium
-                    if (OreInAMillionConfig.isEnderiumEnabled){
-
-                    }
-                    //lumium
-                    if (OreInAMillionConfig.isLumiumEnabled){
-
-                    }
-                    //signalum
-                    if (OreInAMillionConfig.isSignalumEnabled){
-
-                    }
-                }
-                //tinkers construct
-                if (OreInAMillionConfig.isTinkersEnabled){
-                    //ardite
-                    if (OreInAMillionConfig.isArditeEnabled){
-                        event.getRegistry().register(oreArdite);
-                    }
-                    //knightslime
-                    if (OreInAMillionConfig.isKnightSlimeEnabled){
-
-                    }
-                    //pigiron
-                    if (OreInAMillionConfig.isPigIronEnabled) {
-
-                    }
-                    //manyullyn
-                    if (OreInAMillionConfig.isManyullynEnabled){
-
-                    }
-                }
-            }
-            //gems
-            if (OreInAMillionConfig.isGemsEnabled){
-                //amethyst
-                if (OreInAMillionConfig.isAmethystEnabled){
-                    event.getRegistry().register(oreAmethyst);
-                }
-                //peridot
-                if (OreInAMillionConfig.isPeridotEnabled){
-                    event.getRegistry().register(orePeridot);
-                }
-                //ruby
-                if (OreInAMillionConfig.isRubyEnabled){
-                    event.getRegistry().register(oreRuby);
-                }
-                //sapphire
-                if (OreInAMillionConfig.isSapphireEnabled){
-                    event.getRegistry().register(oreSapphire);
-                }
-            }
-            //elements
-            if (OreInAMillionConfig.isElementsEnabled){
-                //carbon
-                if (OreInAMillionConfig.isCarbonEnabled){
-
-                }
-                //cinnabar
-                if (OreInAMillionConfig.isCinnabarEnabled){
-                    event.getRegistry().register(oreCinnabar);
-                }
-                //sulphur
-                if (OreInAMillionConfig.isSulfurEnabled){
-                    event.getRegistry().register(oreSulfur);
-                }
-            }
-            //vanilla
-            if (OreInAMillionConfig.isVanillaEnabled) {
-                //charcoal
-                if (OreInAMillionConfig.isCharcoalEnabled) {
-
-                }
-                //coal
-                if (OreInAMillionConfig.isCoalEnabled) {
-
-                }
-                //diamond
-                if (OreInAMillionConfig.isDiamondEnabled) {
-
-                }
-                //emerald
-                if (OreInAMillionConfig.isEmeraldEnabled) {
-
-                }
-                //quartz
-                if (OreInAMillionConfig.isQuartzEnabled) {
-
-                }
-            }
-            //silly stuff
-            if (OreInAMillionConfig.isSillyStuffEnabled) {
-                event.getRegistry().register(oreWeezer);
-            }
-        }
-    }
-
-    @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event){
-        //event.getRegistry().register(new ItemBlock().setRegistryName(Objects.requireNonNull(.getRegistryName())));
-        if (OreInAMillionConfig.isMineralsEnabled) {
-            if (OreInAMillionConfig.isIngotsEnabled) {
-                //aluminum
-                if (OreInAMillionConfig.isAluminumEnabled) {
-                    event.getRegistry().register(new ItemBlock(oreAluminum).setRegistryName(Objects.requireNonNull(oreAluminum.getRegistryName())));
-                }
-                //chrome
-                if (OreInAMillionConfig.isChromeEnabled) {
-                    event.getRegistry().register(new ItemBlock(oreChrome).setRegistryName(Objects.requireNonNull(oreChrome.getRegistryName())));
-                }
-                //cobalt
-                if (OreInAMillionConfig.isCobaltEnabled) {
-                    event.getRegistry().register(new ItemBlock(oreCobalt).setRegistryName(Objects.requireNonNull(oreCobalt.getRegistryName())));
-                }
-                //copper
-                if (OreInAMillionConfig.isCopperEnabled) {
-                    event.getRegistry().register(new ItemBlock(oreCopper).setRegistryName(Objects.requireNonNull(oreCopper.getRegistryName())));
-                }
-                //ender
-                if (OreInAMillionConfig.isEnderEnabled){
-                    event.getRegistry().register(new ItemBlock(oreEnder).setRegistryName(Objects.requireNonNull(oreEnder.getRegistryName())));
-                }
-                //iridium
-                if (OreInAMillionConfig.isIridiumEnabled) {
-                    event.getRegistry().register(new ItemBlock(oreIridium).setRegistryName(Objects.requireNonNull(oreIridium.getRegistryName())));
-                }
-                //lead
-                if (OreInAMillionConfig.isLeadEnabled) {
-                    event.getRegistry().register(new ItemBlock(oreLead).setRegistryName(Objects.requireNonNull(oreLead.getRegistryName())));
-                }
-                //mithril
-                if (OreInAMillionConfig.isMithrilEnabled) {
-                    event.getRegistry().register(new ItemBlock(oreMithril).setRegistryName(Objects.requireNonNull(oreMithril.getRegistryName())));
-                }
-                //nickel
-                if (OreInAMillionConfig.isNickelEnabled) {
-                    event.getRegistry().register(new ItemBlock(oreNickel).setRegistryName(Objects.requireNonNull(oreNickel.getRegistryName())));
-                }
-                //osmium
-                if (OreInAMillionConfig.isOsmiumEnabled) {
-                    event.getRegistry().register(new ItemBlock(oreOsmium).setRegistryName(Objects.requireNonNull(oreOsmium.getRegistryName())));
-                }
-                //platinum
-                if (OreInAMillionConfig.isPlatinumEnabled) {
-                    event.getRegistry().register(new ItemBlock(orePlatinum).setRegistryName(Objects.requireNonNull(orePlatinum.getRegistryName())));
-                }
-                //silver
-                if (OreInAMillionConfig.isSilverEnabled) {
-                    event.getRegistry().register(new ItemBlock(oreSilver).setRegistryName(Objects.requireNonNull(oreSilver.getRegistryName())));
-                }
-                //tin
-                if (OreInAMillionConfig.isTinEnabled) {
-                    event.getRegistry().register(new ItemBlock(oreTin).setRegistryName(Objects.requireNonNull(oreTin.getRegistryName())));
-                }
-                //titanium
-                if (OreInAMillionConfig.isTitaniumEnabled) {
-                    event.getRegistry().register(new ItemBlock(oreTitanium).setRegistryName(Objects.requireNonNull(oreTitanium.getRegistryName())));
-                }
-                //tungsten
-                if (OreInAMillionConfig.isTungstenEnabled) {
-                    event.getRegistry().register(new ItemBlock(oreTungsten).setRegistryName(Objects.requireNonNull(oreTungsten.getRegistryName())));
-                }
-                //uranium
-                if (OreInAMillionConfig.isUraniumEnabled) {
-                    event.getRegistry().register(new ItemBlock(oreUranium).setRegistryName(Objects.requireNonNull(oreUranium.getRegistryName())));
-                }
-                //zinc
-                if (OreInAMillionConfig.isZincEnabled) {
-                    event.getRegistry().register(new ItemBlock(oreZinc).setRegistryName(Objects.requireNonNull(oreZinc.getRegistryName())));
-                }
-                //brass
-                if (OreInAMillionConfig.isBrassEnabled) {
-
-                }
-                //bronze
-                if (OreInAMillionConfig.isBronzeEnabled) {
-
-                }
-                //electrum
-                if (OreInAMillionConfig.isElectrumEnabled) {
-
-                }
-                //invar
-                if (OreInAMillionConfig.isInvarEnabled) {
-
-                }
-                //steel
-                if (OreInAMillionConfig.isSteelEnabled) {
-
-                }
-                //thermal series
-                if (OreInAMillionConfig.isThermalEnabled){
-                    //constantan
-                    if (OreInAMillionConfig.isConstantanEnabled){
-
-                    }
-                    //enderium
-                    if (OreInAMillionConfig.isEnderiumEnabled){
-
-                    }
-                    //lumium
-                    if (OreInAMillionConfig.isLumiumEnabled){
-
-                    }
-                    //signalum
-                    if (OreInAMillionConfig.isSignalumEnabled){
-
-                    }
-                }
-                //tinkers construct
-                if (OreInAMillionConfig.isTinkersEnabled){
-                    //ardite
-                    if (OreInAMillionConfig.isArditeEnabled){
-                        event.getRegistry().register(new ItemBlock(oreArdite).setRegistryName(Objects.requireNonNull(oreArdite.getRegistryName())));
-                    }
-                    //knightslime
-                    if (OreInAMillionConfig.isKnightSlimeEnabled){
-
-                    }
-                    //pigiron
-                    if (OreInAMillionConfig.isPigIronEnabled) {
-
-                    }
-                    //manyullyn
-                    if (OreInAMillionConfig.isManyullynEnabled){
-
-                    }
-                }
-            }
-            //gems
-            if (OreInAMillionConfig.isGemsEnabled){
-                //amethyst
-                if (OreInAMillionConfig.isAmethystEnabled){
-                    event.getRegistry().register(new ItemBlock(oreAmethyst).setRegistryName(Objects.requireNonNull(oreAmethyst.getRegistryName())));
-                }
-                //peridot
-                if (OreInAMillionConfig.isPeridotEnabled){
-                    event.getRegistry().register(new ItemBlock(orePeridot).setRegistryName(Objects.requireNonNull(orePeridot.getRegistryName())));
-                }
-                //ruby
-                if (OreInAMillionConfig.isRubyEnabled){
-                    event.getRegistry().register(new ItemBlock(oreRuby).setRegistryName(Objects.requireNonNull(oreRuby.getRegistryName())));
-                }
-                //sapphire
-                if (OreInAMillionConfig.isSapphireEnabled){
-                    event.getRegistry().register(new ItemBlock(oreSapphire).setRegistryName(Objects.requireNonNull(oreSapphire.getRegistryName())));
-                }
-            }
-            //other
-            if (OreInAMillionConfig.isElementsEnabled){
-                //carbon
-                if (OreInAMillionConfig.isCarbonEnabled){
-
-                }
-                //cinnabar
-                if (OreInAMillionConfig.isCinnabarEnabled){
-                    event.getRegistry().register(new ItemBlock(oreCinnabar).setRegistryName(Objects.requireNonNull(oreCinnabar.getRegistryName())));
-                }
-                //sulphur
-                if (OreInAMillionConfig.isSulfurEnabled){
-                    event.getRegistry().register(new ItemBlock(oreSulfur).setRegistryName(Objects.requireNonNull(oreSulfur.getRegistryName())));
-                }
-            }
-            if (OreInAMillionConfig.isVanillaEnabled) {
-                //charcoal
-                if (OreInAMillionConfig.isCharcoalEnabled) {
-
-                }
-                //coal
-                if (OreInAMillionConfig.isCoalEnabled) {
-
-                }
-                //diamond
-                if (OreInAMillionConfig.isDiamondEnabled) {
-
-                }
-                //emerald
-                if (OreInAMillionConfig.isEmeraldEnabled) {
-
-                }
-                //quartz
-                if (OreInAMillionConfig.isQuartzEnabled){
-
-                }
-            }
-            //silly stuff
-            if (OreInAMillionConfig.isSillyStuffEnabled) {
-                event.getRegistry().register(new ItemBlock(oreWeezer).setRegistryName(Objects.requireNonNull(oreWeezer.getRegistryName())));
-            }
+        ModBlocks.init();
+        for (Block block : BLOCKS) {
+            event.getRegistry().register(block);
         }
     }
 
     @SubscribeEvent
     @SideOnly(Side.CLIENT)
     public static void registerRenders(ModelRegistryEvent event){
-        //registerRender(Item.getItemFromBlock());
-        if (OreInAMillionConfig.isMineralsEnabled) {
-            if (OreInAMillionConfig.isIngotsEnabled) {
-                //aluminum
-                if (OreInAMillionConfig.isAluminumEnabled) {
-                    registerRender(Item.getItemFromBlock(oreAluminum));
-                }
-                //chrome
-                if (OreInAMillionConfig.isChromeEnabled) {
-                    registerRender(Item.getItemFromBlock(oreChrome));
-                }
-                //cobalt
-                if (OreInAMillionConfig.isCobaltEnabled) {
-                    registerRender(Item.getItemFromBlock(oreCobalt));
-                }
-                //copper
-                if (OreInAMillionConfig.isCopperEnabled) {
-                    registerRender(Item.getItemFromBlock(oreCopper));
-                }
-                //ender
-                if (OreInAMillionConfig.isEnderEnabled) {
-                    registerRender(Item.getItemFromBlock(oreEnder));
-                }
-                //iridium
-                if (OreInAMillionConfig.isIridiumEnabled) {
-                    registerRender(Item.getItemFromBlock(oreIridium));
-                }
-                //lead
-                if (OreInAMillionConfig.isLeadEnabled) {
-                    registerRender(Item.getItemFromBlock(oreLead));
-                }
-                //mithril
-                if (OreInAMillionConfig.isMithrilEnabled) {
-                    registerRender(Item.getItemFromBlock(oreMithril));
-                }
-                //nickel
-                if (OreInAMillionConfig.isNickelEnabled) {
-                    registerRender(Item.getItemFromBlock(oreNickel));
-                }
-                //osmium
-                if (OreInAMillionConfig.isOsmiumEnabled) {
-                    registerRender(Item.getItemFromBlock(oreOsmium));
-                }
-                //platinum
-                if (OreInAMillionConfig.isPlatinumEnabled) {
-                    registerRender(Item.getItemFromBlock(orePlatinum));
-                }
-                //silver
-                if (OreInAMillionConfig.isSilverEnabled) {
-                    registerRender(Item.getItemFromBlock(oreSilver));
-                }
-                //tin
-                if (OreInAMillionConfig.isTinEnabled) {
-                    registerRender(Item.getItemFromBlock(oreTin));
-                }
-                //titanium
-                if (OreInAMillionConfig.isTitaniumEnabled) {
-                    registerRender(Item.getItemFromBlock(oreTitanium));
-                }
-                //tungsten
-                if (OreInAMillionConfig.isTungstenEnabled) {
-                    registerRender(Item.getItemFromBlock(oreTungsten));
-                }
-                //uranium
-                if (OreInAMillionConfig.isUraniumEnabled) {
-                    registerRender(Item.getItemFromBlock(oreUranium));
-                }
-                //zinc
-                if (OreInAMillionConfig.isZincEnabled) {
-                    registerRender(Item.getItemFromBlock(oreZinc));
-                }
-                //brass
-                if (OreInAMillionConfig.isBrassEnabled) {
-
-                }
-                //bronze
-                if (OreInAMillionConfig.isBronzeEnabled) {
-
-                }
-                //electrum
-                if (OreInAMillionConfig.isElectrumEnabled) {
-
-                }
-                //invar
-                if (OreInAMillionConfig.isInvarEnabled) {
-
-                }
-                //steel
-                if (OreInAMillionConfig.isSteelEnabled) {
-
-                }
-                //thermal series
-                if (OreInAMillionConfig.isThermalEnabled){
-                    //constantan
-                    if (OreInAMillionConfig.isConstantanEnabled){
-
-                    }
-                    //enderium
-                    if (OreInAMillionConfig.isEnderiumEnabled){
-
-                    }
-                    //lumium
-                    if (OreInAMillionConfig.isLumiumEnabled){
-
-                    }
-                    //signalum
-                    if (OreInAMillionConfig.isSignalumEnabled){
-
-                    }
-                }
-                //tinkers construct
-                if (OreInAMillionConfig.isTinkersEnabled) {
-                    //ardite
-                    if (OreInAMillionConfig.isArditeEnabled) {
-                        registerRender(Item.getItemFromBlock(oreArdite));
-                    }
-                    //knightslime
-                    if (OreInAMillionConfig.isKnightSlimeEnabled) {
-
-                    }
-                    //pigiron
-                    if (OreInAMillionConfig.isPigIronEnabled) {
-
-                    }
-                    //manyullyn
-                    if (OreInAMillionConfig.isManyullynEnabled) {
-
-                    }
-                }
-            }
-            //gems
-            if (OreInAMillionConfig.isGemsEnabled){
-                //amethyst
-                if (OreInAMillionConfig.isAmethystEnabled){
-                    registerRender(Item.getItemFromBlock(oreAmethyst));
-                }
-                //peridot
-                if (OreInAMillionConfig.isPeridotEnabled){
-                    registerRender(Item.getItemFromBlock(orePeridot));
-                }
-                //ruby
-                if (OreInAMillionConfig.isRubyEnabled){
-                    registerRender(Item.getItemFromBlock(oreRuby));
-                }
-                //sapphire
-                if (OreInAMillionConfig.isSapphireEnabled){
-                    registerRender(Item.getItemFromBlock(oreSapphire));
-                }
-            }
-            //elements
-            if (OreInAMillionConfig.isElementsEnabled){
-                //carbon
-                if (OreInAMillionConfig.isCarbonEnabled){
-
-                }
-                //cinnabar
-                if (OreInAMillionConfig.isCinnabarEnabled){
-                    registerRender(Item.getItemFromBlock(oreCinnabar));
-                }
-                //sulphur
-                if (OreInAMillionConfig.isSulfurEnabled){
-                    registerRender(Item.getItemFromBlock(oreSulfur));
-                }
-            }
-            //vanilla additions
-            if (OreInAMillionConfig.isVanillaEnabled) {
-                //charcoal
-                if (OreInAMillionConfig.isCharcoalEnabled) {
-
-                }
-                //coal
-                if (OreInAMillionConfig.isCoalEnabled) {
-
-                }
-                //diamond
-                if (OreInAMillionConfig.isDiamondEnabled) {
-
-                }
-                //emerald
-                if (OreInAMillionConfig.isEmeraldEnabled) {
-
-                }
-                //quartz
-                if (OreInAMillionConfig.isQuartzEnabled){
-
-                }
-            }
-            if (OreInAMillionConfig.isSillyStuffEnabled) {
-                registerRender(Item.getItemFromBlock(oreWeezer));
-            }
+        ModBlocks.init();
+        for (Block block : BLOCKS) {
+            registerRender(Item.getItemFromBlock(block));
         }
     }
 
@@ -865,204 +313,66 @@ public class ModBlocks {
         ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(Objects.requireNonNull(item.getRegistryName()), "inventory"));
     }
 
-    public static void initOreDict(){
-        if (OreInAMillionConfig.isMineralsEnabled) {
-            if (OreInAMillionConfig.isIngotsEnabled) {
-                //aluminum
-                if (OreInAMillionConfig.isAluminumEnabled) {
-                    OreDictionary.registerOre("oreAluminum", ModBlocks.oreAluminum);
-                }
-                //chrome
-                if (OreInAMillionConfig.isChromeEnabled) {
-                    OreDictionary.registerOre("oreChrome", ModBlocks.oreChrome);
-                }
-                //cobalt
-                if (OreInAMillionConfig.isCobaltEnabled) {
-                    OreDictionary.registerOre("oreCobalt", ModBlocks.oreCobalt);
-                }
-                //copper
-                if (OreInAMillionConfig.isCopperEnabled) {
-                    OreDictionary.registerOre("oreCopper", ModBlocks.oreCopper);
-                }
-                //ender
-                if (OreInAMillionConfig.isEnderEnabled){
-                    OreDictionary.registerOre("oreEnder", ModBlocks.oreEnder);
-                }
-                //iridium
-                if (OreInAMillionConfig.isIridiumEnabled) {
-                    OreDictionary.registerOre("oreIridium", ModBlocks.oreIridium);
-                }
-                //lead
-                if (OreInAMillionConfig.isLeadEnabled) {
-                    OreDictionary.registerOre("oreLead", ModBlocks.oreLead);
-                }
-                //mithril
-                if (OreInAMillionConfig.isMithrilEnabled) {
-                    OreDictionary.registerOre("oreMithril", ModBlocks.oreMithril);
-                }
-                //nickel
-                if (OreInAMillionConfig.isNickelEnabled) {
-                    OreDictionary.registerOre("oreNickel", ModBlocks.oreNickel);
-                }
-                //osmium
-                if (OreInAMillionConfig.isOsmiumEnabled) {
-                    OreDictionary.registerOre("oreOsmium", ModBlocks.oreOsmium);
-                }
-                //platinum
-                if (OreInAMillionConfig.isPlatinumEnabled) {
-                    OreDictionary.registerOre("orePlatinum", ModBlocks.orePlatinum);
-                }
-                //silver
-                if (OreInAMillionConfig.isSilverEnabled) {
-                    OreDictionary.registerOre("oreSilver", ModBlocks.oreSilver);
-                }
-                //tin
-                if (OreInAMillionConfig.isTinEnabled) {
-                    OreDictionary.registerOre("oreTin", ModBlocks.oreTin);
-                }
-                //titanium
-                if (OreInAMillionConfig.isTitaniumEnabled) {
-                    OreDictionary.registerOre("oreTitanium", ModBlocks.oreTitanium);
-                }
-                //tungsten
-                if (OreInAMillionConfig.isTungstenEnabled) {
-                    OreDictionary.registerOre("oreTungsten", ModBlocks.oreTungsten);
-                }
-                //uranium
-                if (OreInAMillionConfig.isUraniumEnabled) {
-                    OreDictionary.registerOre("oreUranium", ModBlocks.oreUranium);
-                }
-                //zinc
-                if (OreInAMillionConfig.isZincEnabled) {
-                    OreDictionary.registerOre("oreZinc", ModBlocks.oreZinc);
-                }
-                //brass
-                if (OreInAMillionConfig.isBrassEnabled) {
-
-                }
-                //bronze
-                if (OreInAMillionConfig.isBronzeEnabled) {
-
-                }
-                //electrum
-                if (OreInAMillionConfig.isElectrumEnabled) {
-
-                }
-                //fairy
-                if (OreInAMillionConfig.isFairyEnabled){
-
-                }
-                //invar
-                if (OreInAMillionConfig.isInvarEnabled) {
-
-                }
-                //steel
-                if (OreInAMillionConfig.isSteelEnabled) {
-
-                }
-                //thermal series
-                if (OreInAMillionConfig.isThermalEnabled){
-                    //constantan
-                    if (OreInAMillionConfig.isConstantanEnabled){
-
-                    }
-                    //enderium
-                    if (OreInAMillionConfig.isEnderiumEnabled){
-
-                    }
-                    //lumium
-                    if (OreInAMillionConfig.isLumiumEnabled){
-
-                    }
-                    //signalum
-                    if (OreInAMillionConfig.isSignalumEnabled){
-
-                    }
-                }
-                //tinkers construct
-                if (OreInAMillionConfig.isTinkersEnabled){
-                    //ardite
-                    if (OreInAMillionConfig.isArditeEnabled){
-                        OreDictionary.registerOre("oreArdite", ModBlocks.oreArdite);
-                    }
-                    //knightslime
-                    if (OreInAMillionConfig.isKnightSlimeEnabled){
-
-                    }
-                    //pigiron
-                    if (OreInAMillionConfig.isPigIronEnabled) {
-
-                    }
-                    //manyullyn
-                    if (OreInAMillionConfig.isManyullynEnabled){
-
-                    }
-                }
-            }
-            //gems
-            if (OreInAMillionConfig.isGemsEnabled){
-                //amethyst
-                if (OreInAMillionConfig.isAmethystEnabled){
-                    OreDictionary.registerOre("oreAmethyst", ModBlocks.oreAmethyst);
-                }
-                //peridot
-                if (OreInAMillionConfig.isPeridotEnabled){
-                    OreDictionary.registerOre("orePeridot", ModBlocks.orePeridot);
-                }
-                //ruby
-                if (OreInAMillionConfig.isRubyEnabled){
-                    OreDictionary.registerOre("oreRuby", ModBlocks.oreRuby);
-                }
-                //sapphire
-                if (OreInAMillionConfig.isSapphireEnabled){
-                    OreDictionary.registerOre("oreSapphire", ModBlocks.oreSapphire);
-                }
-            }
-            //elements
-            if (OreInAMillionConfig.isElementsEnabled){
-                //carbon
-                if (OreInAMillionConfig.isCarbonEnabled){
-
-                }
-                //cinnabar
-                if (OreInAMillionConfig.isCinnabarEnabled){
-                    OreDictionary.registerOre("oreCinnabar", ModBlocks.oreCinnabar);
-                }
-                //sulphur
-                if (OreInAMillionConfig.isSulfurEnabled){
-                    OreDictionary.registerOre("oreSulfur", ModBlocks.oreSulfur);
-                }
-            }
-            //vanilla additions
-            if (OreInAMillionConfig.isVanillaEnabled){
-                //charcoal
-                if (OreInAMillionConfig.isCharcoalEnabled) {
-
-                }
-                //coal
-                if (OreInAMillionConfig.isCoalEnabled) {
-
-                }
-                //diamond
-                if (OreInAMillionConfig.isDiamondEnabled) {
-
-                }
-                //emerald
-                if (OreInAMillionConfig.isEmeraldEnabled) {
-
-                }
-                //quartz
-                if (OreInAMillionConfig.isQuartzEnabled){
-
-                }
-            }
-            if (OreInAMillionConfig.isSillyStuffEnabled){
-                OreDictionary.registerOre("oreWeezer", ModBlocks.oreWeezer);
-            }
+    public static void initOreDict() {
+        for (Block block : BLOCKS) {
+            registerOreDictNames(Item.getItemFromBlock(block));
         }
-        //OreDictionary.registerOre("blockAluminium", ModBlocks.blockAluminium);
-        //OreDictionary.registerOre("blockChrome", ModBlocks.blockChrome);
-        //OreDictionary.registerOre("blockCobalt", ModBlocks.blockCobalt);
-        //OreDictionary.registerOre("blockCopper", ModBlocks.blockCopper);
+    }
+
+    public static void registerOreDictNames(Item item) {
+        ResourceLocation registryName = item.getRegistryName();
+        if (registryName != null) {
+            List<String> oreDictNames = getOreDictNames(registryName);
+            for (String oreDictName : oreDictNames) {
+                OreDictionary.registerOre(oreDictName, item);
+            }
+        } else {
+            System.err.println("Item " + item + " does not have a valid registry name!");
+        }
+    }
+
+    private static List<String> getOreDictNames(ResourceLocation registryName) {
+        List<String> oreDictAdd = new ArrayList<>();
+
+        if (registryName == null) {
+            return oreDictAdd;
+        }
+
+        String path = registryName.getResourcePath();
+        String[] parts = path.split("_");
+        if (parts.length < 2) {
+            return oreDictAdd;
+        }
+
+        String itemName = capitalize(parts[0]);
+        String itemNameLower = parts[0];
+        String itemType = parts[1];
+
+        switch (itemType) {
+            case "ore":
+                oreDictAdd.add("ore" + itemName);
+                oreDictAdd.add(itemNameLower + "Ore");
+                oreDictAdd.add("oreBlock");
+                oreDictAdd.add("blockOre");
+                break;
+            case "gem":
+                oreDictAdd.add("block" + itemName);
+                oreDictAdd.add(itemNameLower + "Block");
+                oreDictAdd.add("blockCombined");
+                oreDictAdd.add("combinedBlock");
+                break;
+            case "block":
+                break;
+            default:
+                System.err.println("Unknown item type: " + itemType);
+        }
+        return oreDictAdd;
+    }
+
+    private static String capitalize(String string) {
+        if (string == null || string.isEmpty()) {
+            return string;
+        }
+        return string.substring(0, 1).toUpperCase() + string.substring(1);
     }
 }

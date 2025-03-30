@@ -3,6 +3,7 @@ package com.blueberrysoda.oreinamillion.items.tools.basetools;
 import com.blueberrysoda.oreinamillion.OreInAMillion;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -14,9 +15,10 @@ import java.util.List;
 
 public class ItemToolAxe extends ItemAxe {
 
+    private static CreativeTabs creativeTab;
     private static boolean addTooltip;
 
-    public ItemToolAxe(String name, ToolMaterial material, boolean addTooltip) {
+    public ItemToolAxe(String name, ToolMaterial material, CreativeTabs creativeTab, boolean addTooltip) {
         ///the code to make the axes flexible in damage and attack speed came from Metallurgy 4 Reforged
         ///I thought I was gonna go crazy figuring this out. Thank you Metallurgy dev :D
         //-2.5F - (material.getAttackDamage() / 5)
@@ -25,6 +27,7 @@ public class ItemToolAxe extends ItemAxe {
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_TOOL);
         ItemToolAxe.addTooltip = addTooltip;
+        ItemToolAxe.creativeTab = creativeTab;
     }
 
     @SideOnly(Side.CLIENT)
@@ -37,17 +40,4 @@ public class ItemToolAxe extends ItemAxe {
             tooltip.add(result);
         }
     }
-
-//    @SideOnly(Side.CLIENT)
-//    @Override
-//    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-//        System.out.println("addInformation called for: " + stack.getItem().getUnlocalizedName());
-//        if (ItemToolAxe.addTooltip) {
-//            String s = stack.getItem().getUnlocalizedName() + ".tooltip";
-//            String result = I18n.format(s);
-//            if (!result.isEmpty()) {
-//                tooltip.add(result);
-//            }
-//        }
-//    }
 }

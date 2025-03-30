@@ -12,7 +12,7 @@ public class BlockOre extends BlockBase {
         super(name, Material.ROCK);
         setSoundType(SoundType.STONE);
         setHardness(3.0F);
-        setResistance(15.0f);
+        setResistance(15.0F);
         setHarvestLevel("pickaxe", harvestLevel);
         this.harvestLevel = harvestLevel;
     }

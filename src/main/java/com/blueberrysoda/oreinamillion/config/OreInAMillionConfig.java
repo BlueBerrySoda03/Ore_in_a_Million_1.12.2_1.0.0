@@ -896,22 +896,22 @@ public class OreInAMillionConfig {
     @Config.RequiresMcRestart
     public static boolean isCharcoalBlockEnabled = true;
 
-    @Config.Name("Minerals: Is Modded Charcoalium Enabled?")
+    @Config.Name("Minerals: Is Charcoalium Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isCharcoaliumEnabled = true;
 
-    @Config.Name("Crafting: Is Modded Charcoalium Enabled?")
+    @Config.Name("Crafting: Is Charcoalium Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isCharcoaliumCraftingEnabled = true;
 
-    @Config.Name("Tools: Is Modded Charcoalium Enabled?")
+    @Config.Name("Tools: Is Charcoalium Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isCharcoaliumToolsEnabled = true;
 
-    @Config.Name("Armor: Is Modded Charcoalium Enabled?")
+    @Config.Name("Armor: Is Charcoalium Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isCharcoaliumArmorEnabled = true;
@@ -936,22 +936,22 @@ public class OreInAMillionConfig {
     @Config.RequiresMcRestart
     public static boolean isCoalArmorEnabled = true;
 
-    @Config.Name("Minerals: Is Modded Coalium Enabled?")
+    @Config.Name("Minerals: Is Coalium Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isCoaliumEnabled = true;
 
-    @Config.Name("Crafting: Is Modded Coalium Enabled?")
+    @Config.Name("Crafting: Is Coalium Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isCoaliumCraftingEnabled = true;
 
-    @Config.Name("Tools: Is Modded Coalium Enabled?")
+    @Config.Name("Tools: Is Coalium Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isCoaliumToolsEnabled = true;
 
-    @Config.Name("Armor: Is Modded Coalium Enabled?")
+    @Config.Name("Armor: Is Coalium Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isCoaliumArmorEnabled = true;
@@ -1056,22 +1056,22 @@ public class OreInAMillionConfig {
     @Config.RequiresMcRestart
     public static boolean isLapisArmorEnabled = true;
 
-    @Config.Name("Minerals: Is Modded Lapite Enabled?")
+    @Config.Name("Minerals: Is Lapite Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isLapiteEnabled = true;
 
-    @Config.Name("Crafting: Is Modded Lapite Enabled?")
+    @Config.Name("Crafting: Is Lapite Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isLapiteCraftingEnabled = true;
 
-    @Config.Name("Tools: Is Modded Lapite Enabled?")
+    @Config.Name("Tools: Is Lapite Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isLapiteToolsEnabled = true;
 
-    @Config.Name("Armor: Is Modded Lapite Enabled?")
+    @Config.Name("Armor: Is Lapite Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isLapiteArmorEnabled = true;
@@ -1096,23 +1096,28 @@ public class OreInAMillionConfig {
     @Config.RequiresMcRestart
     public static boolean isQuartzArmorEnabled = true;
 
-    @Config.Name("Minerals: Is Modded Quartzium Enabled?")
+    @Config.Name("Minerals: Is Quartzium Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isQuartziumEnabled = true;
 
-    @Config.Name("Crafting: Is Modded Quartzium Enabled?")
+    @Config.Name("Crafting: Is Quartzium Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isQuartziumCraftingEnabled = true;
 
-    @Config.Name("Tools: Is Modded Quartzium Enabled?")
+    @Config.Name("Tools: Is Quartzium Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isQuartziumToolsEnabled = true;
 
-    @Config.Name("Armor: Is Modded Quartzium Enabled?")
+    @Config.Name("Armor: Is Quartzium Enabled?")
     @Config.Comment("true or false")
     @Config.RequiresMcRestart
     public static boolean isQuartziumArmorEnabled = true;
+
+    @Config.Name("World Gen: Max Height of Copper Ore?")
+    @Config.Comment("Default: 64")
+    @Config.RequiresMcRestart
+    public static int maxHeightCopperOre = 64;
 }

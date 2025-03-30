@@ -8,6 +8,7 @@ import net.minecraftforge.common.util.EnumHelper;
 
 public class MaterialArmor {
 
+    public static final ItemArmor.ArmorMaterial armorAdamantine = EnumHelper.addArmorMaterial("armorAdamantine", OreInAMillion.MODID + ":adamantine", 12, new int[] {4, 6, 5, 4}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 2.0F);
     public static final ItemArmor.ArmorMaterial armorAluminum = EnumHelper.addArmorMaterial("armorAluminum", OreInAMillion.MODID + ":aluminum", 5, new int[] {1, 3, 4, 2}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
     public static final ItemArmor.ArmorMaterial armorArdite = EnumHelper.addArmorMaterial("armorArdite", OreInAMillion.MODID + ":ardite", 10, new int[] {2, 5, 7, 3}, 7, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 2.0F);
     public static final ItemArmor.ArmorMaterial armorChrome = EnumHelper.addArmorMaterial("armorChrome", OreInAMillion.MODID + ":chrome", 8, new int[] {2, 2, 2, 2}, 2, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 2.0F);
@@ -48,8 +49,8 @@ public class MaterialArmor {
 
     public static final ItemArmor.ArmorMaterial armorCharcoal = EnumHelper.addArmorMaterial("armorCharcoal", OreInAMillion.MODID + ":charcoal", 1, new int[] {1, 1, 1, 1}, 1, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
     public static final ItemArmor.ArmorMaterial armorCoal = EnumHelper.addArmorMaterial("armorCoal", OreInAMillion.MODID + ":coal", 1, new int[] {1, 1, 1, 1}, 1, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
-    public static final ItemArmor.ArmorMaterial armorDenseCharcoal = EnumHelper.addArmorMaterial("armorDenseCharcoal", OreInAMillion.MODID + ":dense_charcoal", 7, new int[] {2, 3, 5, 3}, 1, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 2.0F);
-    public static final ItemArmor.ArmorMaterial armorDenseCoal = EnumHelper.addArmorMaterial("armorDenseCoal", OreInAMillion.MODID + ":dense_coal", 7, new int[] {2, 3, 5, 3}, 1, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 2.0F);
+    public static final ItemArmor.ArmorMaterial armorCharcoalium = EnumHelper.addArmorMaterial("armorDenseCharcoal", OreInAMillion.MODID + ":dense_charcoal", 7, new int[] {2, 3, 5, 3}, 1, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 2.0F);
+    public static final ItemArmor.ArmorMaterial armorCoalium = EnumHelper.addArmorMaterial("armorDenseCoal", OreInAMillion.MODID + ":dense_coal", 7, new int[] {2, 3, 5, 3}, 1, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 2.0F);
     public static final ItemArmor.ArmorMaterial armorEmerald = EnumHelper.addArmorMaterial("armorEmerald", OreInAMillion.MODID + ":emerald", 6, new int[] {2, 5, 6, 3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 10.0F);
     public static final ItemArmor.ArmorMaterial armorQuartz = EnumHelper.addArmorMaterial("armorQuartz", OreInAMillion.MODID + ":quartz", 6, new int[] {1, 2, 2, 1}, 5, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
 

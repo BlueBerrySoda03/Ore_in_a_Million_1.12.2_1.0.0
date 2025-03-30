@@ -454,12 +454,12 @@ item.oreinamillion.quartz_hoe.name=Quartz Hoe
 item.oreinamillion.quartz_crusher.name=Quartz Crusher
 
 #tool tooltips
-item.oreinamillion.pigiron_sword.tooltip=Don't eat the blood D:
-item.oreinamillion.pigiron_pickaxe.tooltip=Rocks in your teeth
-item.oreinamillion.pigiron_axe.tooltip=I think you can eat sawdust
-item.oreinamillion.pigiron_shovel.tooltip=Dirty :P
-item.oreinamillion.pigiron_hoe.tooltip=Seedy? What?
-item.oreinamillion.pigiron_crusher.tooltip=Your teeth might hurt after this one
+item.oreinamillion.pigiron_sword.tooltip=Has a small chance to restore hunger when you attack/mine
+item.oreinamillion.pigiron_pickaxe.tooltip=Has a small chance to restore hunger when you attack/mine
+item.oreinamillion.pigiron_axe.tooltip=Has a small chance to restore hunger when you attack/mine
+item.oreinamillion.pigiron_shovel.tooltip=Has a small chance to restore hunger when you attack/mine
+item.oreinamillion.pigiron_hoe.tooltip=Has a small chance to restore hunger when you attack/mine
+item.oreinamillion.pigiron_crusher.tooltip=Has a small chance to restore hunger when you attack/mine
 
 #other
 item.oreinamillion.weezer.name=Weezer

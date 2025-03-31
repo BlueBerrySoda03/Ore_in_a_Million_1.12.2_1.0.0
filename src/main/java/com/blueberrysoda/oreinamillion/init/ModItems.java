@@ -2341,15 +2341,15 @@ public class ModItems {
                 }
             }
             //gems
-            if (OreInAMillionConfig.isGemsEnabled){
+            if (GeneralConfig.isGemsEnabled){
                 //amethyst
                 if (MineralsConfig.isAmethystEnabled) {
                     ITEMS.add(gemAmethyst);
                     ITEMS.add(nuggetAmethyst);
                     ITEMS.add(dustAmethyst);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isAmethystCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isAmethystCraftingEnabled) {
                             ITEMS.add(gearAmethyst);
                             ITEMS.add(plateAmethyst);
                             ITEMS.add(rodAmethyst);
@@ -2363,8 +2363,8 @@ public class ModItems {
                     ITEMS.add(nuggetPeridot);
                     ITEMS.add(dustPeridot);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isPeridotCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isPeridotCraftingEnabled) {
                             ITEMS.add(gearPeridot);
                             ITEMS.add(platePeridot);
                             ITEMS.add(rodPeridot);
@@ -2378,8 +2378,8 @@ public class ModItems {
                     ITEMS.add(nuggetRuby);
                     ITEMS.add(dustRuby);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isRubyCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isRubyCraftingEnabled) {
                             ITEMS.add(gearRuby);
                             ITEMS.add(plateRuby);
                             ITEMS.add(rodRuby);
@@ -2393,8 +2393,8 @@ public class ModItems {
                     ITEMS.add(nuggetSapphire);
                     ITEMS.add(dustSapphire);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isSapphireCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isSapphireCraftingEnabled) {
                             ITEMS.add(gearSapphire);
                             ITEMS.add(plateSapphire);
                             ITEMS.add(rodSapphire);
@@ -2404,15 +2404,15 @@ public class ModItems {
                 }
             }
             //elements
-            if (OreInAMillionConfig.isElementsEnabled){
+            if (GeneralConfig.isElementsEnabled){
                 //carbon
                 if (MineralsConfig.isCarbonEnabled) {
                     ITEMS.add(elementCarbon);
                     ITEMS.add(nuggetCarbon);
                     ITEMS.add(dustCarbon);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isCarbonCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isCarbonCraftingEnabled) {
                             ITEMS.add(gearCarbon);
                             ITEMS.add(plateCarbon);
                             ITEMS.add(rodCarbon);
@@ -2426,8 +2426,8 @@ public class ModItems {
                     ITEMS.add(nuggetCinnabar);
                     ITEMS.add(dustCinnabar);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isCinnabarCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isCinnabarCraftingEnabled) {
                             ITEMS.add(gearCinnabar);
                             ITEMS.add(plateCinnabar);
                             ITEMS.add(rodCinnabar);
@@ -2441,8 +2441,8 @@ public class ModItems {
                     ITEMS.add(nuggetSilicon);
                     ITEMS.add(dustSilicon);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isSiliconCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isSiliconCraftingEnabled) {
                             ITEMS.add(gearSilicon);
                             ITEMS.add(plateSilicon);
                             ITEMS.add(rodSilicon);
@@ -2456,8 +2456,8 @@ public class ModItems {
                     ITEMS.add(nuggetSulfur);
                     ITEMS.add(dustSulfur);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isSulfurCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isSulfurCraftingEnabled) {
                             ITEMS.add(gearSulfur);
                             ITEMS.add(plateSulfur);
                             ITEMS.add(rodSulfur);
@@ -2473,8 +2473,8 @@ public class ModItems {
                     ITEMS.add(nuggetCharcoal);
                     ITEMS.add(dustCharcoal);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isCharcoalCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isCharcoalCraftingEnabled) {
                             ITEMS.add(gearCharcoal);
                             ITEMS.add(plateCharcoal);
                             ITEMS.add(rodCharcoal);
@@ -2521,8 +2521,8 @@ public class ModItems {
                     ITEMS.add(nuggetCoal);
                     ITEMS.add(dustCoal);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isCoalCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isCoalCraftingEnabled) {
                             ITEMS.add(gearCoal);
                             ITEMS.add(plateCoal);
                             ITEMS.add(rodCoal);
@@ -2568,8 +2568,8 @@ public class ModItems {
                     ITEMS.add(nuggetDiamond);
                     ITEMS.add(dustDiamond);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isDiamondCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isDiamondCraftingEnabled) {
                             ITEMS.add(gearDiamond);
                             ITEMS.add(plateDiamond);
                             ITEMS.add(rodDiamond);
@@ -2582,8 +2582,8 @@ public class ModItems {
                     ITEMS.add(nuggetEmerald);
                     ITEMS.add(dustEmerald);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isEmeraldCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isEmeraldCraftingEnabled) {
                             ITEMS.add(gearEmerald);
                             ITEMS.add(plateEmerald);
                             ITEMS.add(rodEmerald);
@@ -2628,8 +2628,8 @@ public class ModItems {
                 if (MineralsConfig.isGoldEnabled) {
                     ITEMS.add(dustGold);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isGoldCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isGoldCraftingEnabled) {
                             ITEMS.add(gearGold);
                             ITEMS.add(plateGold);
                             ITEMS.add(rodGold);
@@ -2641,8 +2641,8 @@ public class ModItems {
                 if (MineralsConfig.isIronEnabled) {
                     ITEMS.add(dustIron);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isIronCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isIronCraftingEnabled) {
                             ITEMS.add(gearIron);
                             ITEMS.add(plateIron);
                             ITEMS.add(rodIron);
@@ -2655,8 +2655,8 @@ public class ModItems {
                     ITEMS.add(nuggetLapis);
                     ITEMS.add(dustLapis);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isLapisCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isLapisCraftingEnabled) {
                             ITEMS.add(gearLapis);
                             ITEMS.add(plateLapis);
                             ITEMS.add(rodLapis);
@@ -2702,8 +2702,8 @@ public class ModItems {
                     ITEMS.add(nuggetQuartz);
                     ITEMS.add(dustQuartz);
 
-                    if (OreInAMillionConfig.isCraftingEnabled) {
-                        if (OreInAMillionConfig.isQuartzCraftingEnabled) {
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isQuartzCraftingEnabled) {
                             ITEMS.add(gearQuartz);
                             ITEMS.add(plateQuartz);
                             ITEMS.add(rodQuartz);

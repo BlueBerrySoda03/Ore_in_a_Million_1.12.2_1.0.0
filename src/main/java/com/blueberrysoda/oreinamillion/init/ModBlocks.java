@@ -1,12 +1,11 @@
 package com.blueberrysoda.oreinamillion.init;
 
-import com.blueberrysoda.oreinamillion.blocks.base.BlockBase;
 import com.blueberrysoda.oreinamillion.blocks.combined.BlockCombined;
 import com.blueberrysoda.oreinamillion.blocks.ores.*;
-import com.blueberrysoda.oreinamillion.config.OreInAMillionConfig;
+import com.blueberrysoda.oreinamillion.config.GeneralConfig;
+import com.blueberrysoda.oreinamillion.config.MineralsConfig;
+import com.blueberrysoda.oreinamillion.config.ModCompatConfig;
 import net.minecraft.block.Block;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -101,191 +100,191 @@ public class ModBlocks {
     public static void init(){
 //        BLOCKS.add(blockEpic);
         // = new ("", Material.);
-        if (OreInAMillionConfig.isMineralsEnabled) {
-            if(OreInAMillionConfig.isIngotsEnabled) {
+        if (GeneralConfig.isMineralsEnabled) {
+            if(GeneralConfig.isIngotsEnabled) {
                 //adamantine
-                if (OreInAMillionConfig.isAdamantineEnabled) {
+                if (MineralsConfig.isAdamantineEnabled) {
                     BLOCKS.add(oreAluminum);
                 }
                 //aluminum
-                if (OreInAMillionConfig.isAluminumEnabled) {
+                if (MineralsConfig.isAluminumEnabled) {
                     BLOCKS.add(oreAluminum);
                 }
                 //chrome
-                if (OreInAMillionConfig.isChromeEnabled) {
+                if (MineralsConfig.isChromeEnabled) {
                     BLOCKS.add(oreChrome);
                 }
                 //cobalt
-                if (OreInAMillionConfig.isCobaltEnabled) {
+                if (MineralsConfig.isCobaltEnabled) {
                     BLOCKS.add(oreCobalt);
                 }
                 //copper
-                if (OreInAMillionConfig.isCopperEnabled) {
+                if (MineralsConfig.isCopperEnabled) {
                     BLOCKS.add(oreCopper);
                 }
                 //ender
-                if (OreInAMillionConfig.isEnderEnabled){
+                if (MineralsConfig.isEnderEnabled){
                     BLOCKS.add(oreEnder);
                 }
                 //iridium
-                if (OreInAMillionConfig.isIridiumEnabled) {
+                if (MineralsConfig.isIridiumEnabled) {
                     BLOCKS.add(oreIridium);
                 }
                 //lead
-                if (OreInAMillionConfig.isLeadEnabled) {
+                if (MineralsConfig.isLeadEnabled) {
                     BLOCKS.add(oreLead);
                 }
                 //mithril
-                if (OreInAMillionConfig.isMithrilEnabled) {
+                if (MineralsConfig.isMithrilEnabled) {
                     BLOCKS.add(oreMithril);
                 }
                 //nickel
-                if (OreInAMillionConfig.isNickelEnabled) {
+                if (MineralsConfig.isNickelEnabled) {
                     BLOCKS.add(oreNickel);
                 }
                 //osmium
-                if (OreInAMillionConfig.isOsmiumEnabled) {
+                if (MineralsConfig.isOsmiumEnabled) {
                     BLOCKS.add(oreOsmium);
                 }
                 //platinum
-                if (OreInAMillionConfig.isPlatinumEnabled) {
+                if (MineralsConfig.isPlatinumEnabled) {
                     BLOCKS.add(orePlatinum);
                 }
                 //silver
-                if (OreInAMillionConfig.isSilverEnabled) {
+                if (MineralsConfig.isSilverEnabled) {
                     BLOCKS.add(oreSilver);
                 }
                 //tin
-                if (OreInAMillionConfig.isTinEnabled) {
+                if (MineralsConfig.isTinEnabled) {
                     BLOCKS.add(oreTin);
                 }
                 //titanium
-                if (OreInAMillionConfig.isTitaniumEnabled) {
+                if (MineralsConfig.isTitaniumEnabled) {
                     BLOCKS.add(oreTitanium);
                 }
                 //tungsten
-                if (OreInAMillionConfig.isTungstenEnabled) {
+                if (MineralsConfig.isTungstenEnabled) {
                     BLOCKS.add(oreTungsten);
                 }
                 //uranium
-                if (OreInAMillionConfig.isUraniumEnabled) {
+                if (MineralsConfig.isUraniumEnabled) {
                     BLOCKS.add(oreUranium);
                 }
                 //zinc
-                if (OreInAMillionConfig.isZincEnabled) {
+                if (MineralsConfig.isZincEnabled) {
                     BLOCKS.add(oreZinc);
                 }
                 //brass
-                if (OreInAMillionConfig.isBrassEnabled) {
+                if (MineralsConfig.isBrassEnabled) {
 
                 }
                 //bronze
-                if (OreInAMillionConfig.isBronzeEnabled) {
+                if (MineralsConfig.isBronzeEnabled) {
 
                 }
                 //electrum
-                if (OreInAMillionConfig.isElectrumEnabled) {
+                if (MineralsConfig.isElectrumEnabled) {
 
                 }
                 //invar
-                if (OreInAMillionConfig.isInvarEnabled) {
+                if (MineralsConfig.isInvarEnabled) {
 
                 }
                 //steel
-                if (OreInAMillionConfig.isSteelEnabled) {
+                if (MineralsConfig.isSteelEnabled) {
 
                 }
                 //thermal series
-                if (OreInAMillionConfig.isThermalEnabled){
+                if (ModCompatConfig.isThermalEnabled){
                     //constantan
-                    if (OreInAMillionConfig.isConstantanEnabled){
+                    if (MineralsConfig.isConstantanEnabled){
 
                     }
                     //enderium
-                    if (OreInAMillionConfig.isEnderiumEnabled){
+                    if (MineralsConfig.isEnderiumEnabled){
 
                     }
                     //lumium
-                    if (OreInAMillionConfig.isLumiumEnabled){
+                    if (MineralsConfig.isLumiumEnabled){
 
                     }
                     //signalum
-                    if (OreInAMillionConfig.isSignalumEnabled){
+                    if (MineralsConfig.isSignalumEnabled){
 
                     }
                 }
                 //tinkers construct
-                if (OreInAMillionConfig.isTinkersEnabled){
+                if (ModCompatConfig.isTinkersEnabled){
                     //ardite
-                    if (OreInAMillionConfig.isArditeEnabled){
+                    if (MineralsConfig.isArditeEnabled){
                         BLOCKS.add(oreArdite);
                     }
                     //knightslime
-                    if (OreInAMillionConfig.isKnightSlimeEnabled){
+                    if (MineralsConfig.isKnightSlimeEnabled){
 
                     }
                     //pigiron
-                    if (OreInAMillionConfig.isPigIronEnabled) {
+                    if (MineralsConfig.isPigIronEnabled) {
 
                     }
                     //manyullyn
-                    if (OreInAMillionConfig.isManyullynEnabled){
+                    if (MineralsConfig.isManyullynEnabled){
 
                     }
                 }
             }
-            if (OreInAMillionConfig.isGemsEnabled){
+            if (GeneralConfig.isGemsEnabled){
                 //amethyst
-                if (OreInAMillionConfig.isAmethystEnabled){
+                if (MineralsConfig.isAmethystEnabled){
                     BLOCKS.add(oreAmethyst);
                 }
                 //peridot
-                if (OreInAMillionConfig.isPeridotEnabled){
+                if (MineralsConfig.isPeridotEnabled){
                     BLOCKS.add(orePeridot);
                 }
                 //ruby
-                if (OreInAMillionConfig.isRubyEnabled){
+                if (MineralsConfig.isRubyEnabled){
                     BLOCKS.add(oreRuby);
                 }
                 //sapphire
-                if (OreInAMillionConfig.isSapphireEnabled){
+                if (MineralsConfig.isSapphireEnabled){
                     BLOCKS.add(oreSapphire);
                 }
             }
             //elements
-            if (OreInAMillionConfig.isElementsEnabled){
+            if (GeneralConfig.isElementsEnabled){
                 //carbon
-                if (OreInAMillionConfig.isCarbonEnabled){
+                if (MineralsConfig.isCarbonEnabled){
 
                 }
                 //cinnabar
-                if (OreInAMillionConfig.isCinnabarEnabled){
+                if (MineralsConfig.isCinnabarEnabled){
                     BLOCKS.add(oreCinnabar);
                 }
                 //sulphur
-                if (OreInAMillionConfig.isSulfurEnabled){
+                if (MineralsConfig.isSulfurEnabled){
                     BLOCKS.add(oreSulfur);
                 }
             }
-            if (OreInAMillionConfig.isVanillaEnabled) {
+            if (GeneralConfig.isVanillaEnabled) {
                 //diamond
-                if (OreInAMillionConfig.isDiamondEnabled) {
+                if (MineralsConfig.isDiamondEnabled) {
 
                 }
                 //emerald
-                if (OreInAMillionConfig.isEmeraldEnabled) {
+                if (MineralsConfig.isEmeraldEnabled) {
 
                 }
                 //coal
-                if (OreInAMillionConfig.isCoalEnabled) {
+                if (MineralsConfig.isCoalEnabled) {
 
                 }
                 //charcoal
-                if (OreInAMillionConfig.isCharcoalEnabled) {
+                if (MineralsConfig.isCharcoalEnabled) {
                     BLOCKS.add(blockCharcoal);
                 }
             }
-            if (OreInAMillionConfig.isSillyStuffEnabled) {
+            if (GeneralConfig.isSillyStuffEnabled) {
                 BLOCKS.add(oreWeezer);
             }
         }

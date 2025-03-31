@@ -14,6 +14,7 @@ public class CommonProxy {
         CraftingConfig.init(event);
         ArmorConfig.init(event);
         ToolsConfig.init(event);
+        ModCompatConfig.init(event);
         ModItems.init();
         ModBlocks.init();
         ModSounds.init();

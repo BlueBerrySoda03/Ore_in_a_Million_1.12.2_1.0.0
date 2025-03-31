@@ -52,10 +52,18 @@ public class CraftingConfig {
     public static boolean isSiliconCraftingEnabled;
     public static boolean isSulfurCraftingEnabled;
 
+    public static boolean isCharcoalCraftingEnabled;
     public static boolean isCharcoaliumCraftingEnabled;
+    public static boolean isCoalCraftingEnabled;
     public static boolean isCoaliumCraftingEnabled;
+    public static boolean isDiamondCraftingEnabled;
+    public static boolean isEmeraldCraftingEnabled;
     public static boolean isGlowizeCraftingEnabled;
+    public static boolean isGoldCraftingEnabled;
+    public static boolean isIronCraftingEnabled;
+    public static boolean isLapisCraftingEnabled;
     public static boolean isLapiteCraftingEnabled;
+    public static boolean isQuartzCraftingEnabled;
     public static boolean isQuartziumCraftingEnabled;
 
     public static boolean theNothingSwitch;
@@ -137,10 +145,18 @@ public class CraftingConfig {
 
             config.addCustomCategoryComment(categoryVanilla, "Vanilla Additions. AKA: Things that I added that expand on the already available vanilla elements. [True or False]");
 
+            isCharcoalCraftingEnabled = config.getBoolean("Is Charcoal Crafting Enabled?", categoryVanilla, true, "Do you want Charcoal Crafting to be enabled?");
             isCharcoaliumCraftingEnabled = config.getBoolean("Is Charcoalium Crafting Enabled?", categoryVanilla, true, "Do you want Charcoalium Crafting to be enabled?");
+            isCoalCraftingEnabled = config.getBoolean("Is Coal Crafting Enabled?", categoryVanilla, true, "Do you want Coal Crafting to be enabled?");
             isCoaliumCraftingEnabled = config.getBoolean("Is Coalium Crafting Enabled?", categoryVanilla, true, "Do you want Coalium Crafting to be enabled?");
+            isDiamondCraftingEnabled = config.getBoolean("Is Diamond Crafting Enabled?", categoryVanilla, true, "Do you want Diamond Crafting to be enabled?");
+            isEmeraldCraftingEnabled = config.getBoolean("Is Charcoalium Emerald Enabled?", categoryVanilla, true, "Do you want Emerald Crafting to be enabled?");
             isGlowizeCraftingEnabled = config.getBoolean("Is Glowize Crafting Enabled?", categoryVanilla, true, "Do you want Glowize Crafting to be enabled?");
+            isGoldCraftingEnabled = config.getBoolean("Is Gold Crafting Enabled?", categoryVanilla, true, "Do you want Gold Crafting to be enabled?");
+            isIronCraftingEnabled = config.getBoolean("Is Iron Crafting Enabled?", categoryVanilla, true, "Do you want Iron Crafting to be enabled?");
+            isLapisCraftingEnabled = config.getBoolean("Is Lapis Crafting Enabled?", categoryVanilla, true, "Do you want Lapis Crafting to be enabled?");
             isLapiteCraftingEnabled = config.getBoolean("Is Lapite Crafting Enabled?", categoryVanilla, true, "Do you want Lapite Crafting to be enabled?");
+            isQuartzCraftingEnabled = config.getBoolean("Is Quartz Crafting Enabled?", categoryVanilla, true, "Do you want Quartz Crafting to be enabled?");
             isQuartziumCraftingEnabled = config.getBoolean("Is Quartzium Crafting Enabled?", categoryVanilla, true, "Do you want Quartzium Crafting to be enabled?");
 
         } catch (Exception e) {

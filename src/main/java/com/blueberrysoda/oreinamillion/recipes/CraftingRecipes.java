@@ -12,27 +12,6 @@ public class CraftingRecipes {
     public static void init() {
         if (GeneralConfig.isMineralsEnabled) {
             if (GeneralConfig.isIngotsEnabled) {
-                //aluminum
-                if (OreInAMillionConfig.isAluminumEnabled) {
-
-                    if (OreInAMillionConfig.isAluminumCraftingEnabled) {
-
-                    }
-                    if (OreInAMillionConfig.isAluminumToolsEnabled) {
-
-                    }
-                    if (OreInAMillionConfig.isAluminumArmorEnabled) {
-
-                    }
-                }
-                //chrome
-                if (OreInAMillionConfig.isChromeEnabled) {
-
-                }
-                //cobalt
-                if (OreInAMillionConfig.isCobaltEnabled) {
-
-                }
                 //copper
                 if (MineralsConfig.isCopperEnabled) {
                     GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_ingot"), null, new ItemStack(ModItems.ingotCopper),
@@ -45,7 +24,7 @@ public class CraftingRecipes {
                         GameRegistry.addShapelessRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_dust"), null, new ItemStack(ModItems.tinydustCopper, 9),
                                 new CustomOreIngredient("dustCopper", "copperDust"));
                         GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_tiny"), null, new ItemStack(ModItems.dustCopper),
-                                "AAA", "AAA", "AAA", 'A', new CustomOreIngredient("dustTinyCopper", "oreDustTinyCopper", "tinyDustCopper", "oreTinyDustCopper",  "dustSmallCopper", "oreDustSmallCopper", "smallDustCopper", "oreSmallDustCopper"));
+                                "AAA", "AAA", "AAA", 'A', new CustomOreIngredient("dustTinyCopper", "oreDustTinyCopper", "tinyDustCopper", "oreTinyDustCopper", "dustSmallCopper", "oreDustSmallCopper", "smallDustCopper", "oreSmallDustCopper"));
                     }
                     if (ToolsConfig.isCopperToolsEnabled) {
                         GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_sword"), null, new ItemStack(ModItems.swordCopper),
@@ -74,192 +53,9 @@ public class CraftingRecipes {
                                 "   ", "A A", "A A", 'A', new CustomOreIngredient("ingotCopper", "copperIngot"));
                     }
                 }
-                //ender
-                if (OreInAMillionConfig.isEnderEnabled){
+                if (GeneralConfig.isSillyStuffEnabled) {
 
                 }
-                //iridium
-                if (OreInAMillionConfig.isIridiumEnabled) {
-
-                }
-                //lead
-                if (OreInAMillionConfig.isLeadEnabled) {
-
-                }
-                //mithril
-                if (OreInAMillionConfig.isMithrilEnabled) {
-
-                }
-                //nickel
-                if (OreInAMillionConfig.isNickelEnabled) {
-
-                }
-                //osmium
-                if (OreInAMillionConfig.isOsmiumEnabled) {
-
-                }
-                //platinum
-                if (OreInAMillionConfig.isPlatinumEnabled) {
-
-                }
-                //silver
-                if (OreInAMillionConfig.isSilverEnabled) {
-
-                }
-                //tin
-                if (OreInAMillionConfig.isTinEnabled) {
-
-                }
-                //titanium
-                if (OreInAMillionConfig.isTitaniumEnabled) {
-
-                }
-                //tungsten
-                if (OreInAMillionConfig.isTungstenEnabled) {
-
-                }
-                //uranium
-                if (OreInAMillionConfig.isUraniumEnabled) {
-
-                }
-                //zinc
-                if (OreInAMillionConfig.isZincEnabled) {
-
-                }
-                //brass
-                if (OreInAMillionConfig.isBrassEnabled) {
-
-                }
-                //bronze
-                if (OreInAMillionConfig.isBronzeEnabled) {
-
-                }
-                //electrum
-                if (OreInAMillionConfig.isElectrumEnabled) {
-
-                }
-                //fairy
-                if (OreInAMillionConfig.isFairyEnabled){
-
-                }
-                //invar
-                if (OreInAMillionConfig.isInvarEnabled) {
-
-                }
-                //steel
-                if (OreInAMillionConfig.isSteelEnabled) {
-
-                }
-                //thermal series
-                if (ModCompatConfig.isThermalEnabled){
-                    //constantan
-                    if (OreInAMillionConfig.isConstantanEnabled){
-
-                    }
-                    //enderium
-                    if (OreInAMillionConfig.isEnderiumEnabled){
-
-                    }
-                    //lumium
-                    if (OreInAMillionConfig.isLumiumEnabled){
-
-                    }
-                    //signalum
-                    if (OreInAMillionConfig.isSignalumEnabled){
-
-                    }
-                }
-                //tinkers construct
-                if (ModCompatConfig.isTinkersEnabled){
-                    //ardite
-                    if (OreInAMillionConfig.isArditeEnabled){
-
-                    }
-                    //knightslime
-                    if (OreInAMillionConfig.isKnightSlimeEnabled){
-
-                    }
-                    //pigiron
-                    if (OreInAMillionConfig.isPigIronEnabled) {
-
-                    }
-                    //manyullyn
-                    if (OreInAMillionConfig.isManyullynEnabled){
-
-                    }
-                }
-            }
-            //gems
-            if (GeneralConfig.isGemsEnabled){
-                //amethyst
-                if (OreInAMillionConfig.isAmethystEnabled){
-
-                }
-                //peridot
-                if (OreInAMillionConfig.isPeridotEnabled){
-
-                }
-                //ruby
-                if (OreInAMillionConfig.isRubyEnabled){
-
-                }
-                //sapphire
-                if (OreInAMillionConfig.isSapphireEnabled){
-
-                }
-            }
-            //elements
-            if (GeneralConfig.isElementsEnabled){
-                //carbon
-                if (OreInAMillionConfig.isCarbonEnabled){
-
-                }
-                //cinnabar
-                if (OreInAMillionConfig.isCinnabarEnabled){
-
-                }
-                //silicon
-                if (OreInAMillionConfig.isSiliconEnabled){
-
-                }
-                //sulphur
-                if (OreInAMillionConfig.isSulfurEnabled){
-
-                }
-            }
-            //vanilla additions
-            if (GeneralConfig.isVanillaEnabled){
-                //charcoal
-                if (OreInAMillionConfig.isCharcoalEnabled) {
-
-                }
-                //coal
-                if (OreInAMillionConfig.isCoalEnabled) {
-
-                }
-                //diamond
-                if (OreInAMillionConfig.isDiamondEnabled) {
-
-                }
-                //emerald
-                if (OreInAMillionConfig.isEmeraldEnabled) {
-
-                }
-                //gold
-                if (OreInAMillionConfig.isGoldEnabled){
-
-                }
-                //iron
-                if (OreInAMillionConfig.isIronEnabled){
-
-                }
-                //quartz
-                if (OreInAMillionConfig.isQuartzEnabled){
-
-                }
-            }
-            if (GeneralConfig.isSillyStuffEnabled){
-
             }
         }
     }

@@ -1,6 +1,8 @@
 package com.blueberrysoda.oreinamillion.world;
 
-import com.blueberrysoda.oreinamillion.config.OreInAMillionConfig;
+import com.blueberrysoda.oreinamillion.config.GeneralConfig;
+import com.blueberrysoda.oreinamillion.config.MineralsConfig;
+import com.blueberrysoda.oreinamillion.config.ModCompatConfig;
 import com.blueberrysoda.oreinamillion.init.ModBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
@@ -28,121 +30,121 @@ public class OreWorldGen implements IWorldGenerator {
     }
 
     private void generateOverworld(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-        if (OreInAMillionConfig.isMineralsEnabled) {
-            if (OreInAMillionConfig.isOreGenerationEnabled) {
-                if (OreInAMillionConfig.isIngotsEnabled) {
+        if (GeneralConfig.isMineralsEnabled) {
+            if (GeneralConfig.isOreGenerationEnabled) {
+                if (GeneralConfig.isIngotsEnabled) {
                     //adamantine
-                    if (OreInAMillionConfig.isAdamantineEnabled) {
+                    if (MineralsConfig.isAdamantineEnabled) {
                         generateOre(ModBlocks.oreAdamantine.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 32, random.nextInt(6) + 1, 3);
                     }
                     //aluminum
-                    if (OreInAMillionConfig.isAluminumEnabled) {
+                    if (MineralsConfig.isAluminumEnabled) {
                         generateOre(ModBlocks.oreAluminum.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 64, random.nextInt(6) + 3, 7);
                     }
                     //chrome
-                    if (OreInAMillionConfig.isChromeEnabled) {
+                    if (MineralsConfig.isChromeEnabled) {
                         generateOre(ModBlocks.oreChrome.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 10, 40, random.nextInt(6) + 3, 5);
                     }
                     //cobalt
-                    if (OreInAMillionConfig.isCobaltEnabled) {
+                    if (MineralsConfig.isCobaltEnabled) {
                         generateOre(ModBlocks.oreCobalt.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 42, random.nextInt(5) + 3, 5);
                     }
                     //copper
-                    if (OreInAMillionConfig.isCopperEnabled) {
-                        generateOre(ModBlocks.oreCopper.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, OreInAMillionConfig.maxHeightCopperOre, random.nextInt(12) + 4, 9);
+                    if (MineralsConfig.isCopperEnabled) {
+                        generateOre(ModBlocks.oreCopper.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 56, random.nextInt(12) + 4, 9);
                     }
-                    if (OreInAMillionConfig.isEnderEnabled){
+                    if (MineralsConfig.isEnderEnabled){
                         generateOre(ModBlocks.oreEnder.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 20, random.nextInt(5) + 2, 3);
                         generateOre(ModBlocks.oreEnder.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 100, 255, random.nextInt(15) + 7, 1);
                     }
                     //iridium
-                    if (OreInAMillionConfig.isIridiumEnabled) {
+                    if (MineralsConfig.isIridiumEnabled) {
                         generateOre(ModBlocks.oreIridium.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 35, random.nextInt(8) + 3, 5);
                     }
                     //lead
-                    if (OreInAMillionConfig.isLeadEnabled) {
+                    if (MineralsConfig.isLeadEnabled) {
                         generateOre(ModBlocks.oreLead.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 18, 64, random.nextInt(7) + 3, 5);
                     }
                     //mithril
-                    if (OreInAMillionConfig.isMithrilEnabled) {
+                    if (MineralsConfig.isMithrilEnabled) {
                         generateOre(ModBlocks.oreMithril.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 50, random.nextInt(4) + 1, 5);
                     }
                     //nickel
-                    if (OreInAMillionConfig.isNickelEnabled) {
+                    if (MineralsConfig.isNickelEnabled) {
                         generateOre(ModBlocks.oreNickel.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 25, random.nextInt(5) + 2, 4);
                     }
                     //osmium
-                    if (OreInAMillionConfig.isOsmiumEnabled) {
+                    if (MineralsConfig.isOsmiumEnabled) {
                         generateOre(ModBlocks.oreOsmium.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 64, random.nextInt(8) + 4, 6);
                     }
                     //platinum
-                    if (OreInAMillionConfig.isPlatinumEnabled) {
+                    if (MineralsConfig.isPlatinumEnabled) {
                         generateOre(ModBlocks.orePlatinum.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 25, random.nextInt(4) + 2, 5);
                     }
                     //silver
-                    if (OreInAMillionConfig.isSilverEnabled) {
+                    if (MineralsConfig.isSilverEnabled) {
                         generateOre(ModBlocks.orePlatinum.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 45, random.nextInt(6) + 3, 6);
                     }
                     //tin
-                    if (OreInAMillionConfig.isTinEnabled) {
+                    if (MineralsConfig.isTinEnabled) {
                         generateOre(ModBlocks.oreTin.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 64, random.nextInt(8) + 3, 7);
                     }
                     //titanium
-                    if (OreInAMillionConfig.isTitaniumEnabled) {
+                    if (MineralsConfig.isTitaniumEnabled) {
                         generateOre(ModBlocks.oreTitanium.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 26, random.nextInt(5) + 2, 4);
                     }
                     //tungsten
-                    if (OreInAMillionConfig.isTungstenEnabled) {
+                    if (MineralsConfig.isTungstenEnabled) {
                         generateOre(ModBlocks.oreTungsten.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 44, random.nextInt(8) + 3, 5);
                     }
                     //uranium
-                    if (OreInAMillionConfig.isUraniumEnabled) {
+                    if (MineralsConfig.isUraniumEnabled) {
                         generateOre(ModBlocks.oreUranium.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 16, random.nextInt(5) + 1, 4);
                     }
                     //zinc
-                    if (OreInAMillionConfig.isZincEnabled) {
+                    if (MineralsConfig.isZincEnabled) {
                         generateOre(ModBlocks.oreZinc.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 18, 64, random.nextInt(6) + 2, 5);
                     }
                     //tinkers construct
-                    if (OreInAMillionConfig.isTinkersEnabled) {
+                    if (ModCompatConfig.isTinkersEnabled) {
                         //ardite
-                        if (OreInAMillionConfig.isArditeEnabled) {
+                        if (MineralsConfig.isArditeEnabled) {
                             generateOre(ModBlocks.oreArdite.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 16, random.nextInt(3) + 2, 4);
                         }
                     }
                 }
                 //gems
-                if (OreInAMillionConfig.isGemsEnabled) {
+                if (GeneralConfig.isGemsEnabled) {
                     //amethyst
-                    if (OreInAMillionConfig.isAmethystEnabled) {
+                    if (MineralsConfig.isAmethystEnabled) {
                         generateOre(ModBlocks.oreAmethyst.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 50, random.nextInt(5) + 2, 5);
                     }
                     //peridot
-                    if (OreInAMillionConfig.isPeridotEnabled) {
+                    if (MineralsConfig.isPeridotEnabled) {
                         generateOre(ModBlocks.orePeridot.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 32, 84, random.nextInt(5) + 2, 5);
                     }
                     //ruby
-                    if (OreInAMillionConfig.isRubyEnabled) {
+                    if (MineralsConfig.isRubyEnabled) {
                         generateOre(ModBlocks.oreRuby.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 22, random.nextInt(8) + 2, 4);
                     }
                     //sapphire
-                    if (OreInAMillionConfig.isSapphireEnabled) {
+                    if (MineralsConfig.isSapphireEnabled) {
                         generateOre(ModBlocks.oreSapphire.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 22, random.nextInt(8) + 2, 4);
                     }
                 }
                 //elements
-                if (OreInAMillionConfig.isElementsEnabled){
+                if (GeneralConfig.isElementsEnabled){
                     //cinnabar
-                    if (OreInAMillionConfig.isCinnabarEnabled){
+                    if (MineralsConfig.isCinnabarEnabled){
                         generateOre(ModBlocks.oreCinnabar.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 64, 255, random.nextInt(1) + 1, 8);
                     }
                     //sulphur
-                    if (OreInAMillionConfig.isSulfurEnabled){
+                    if (MineralsConfig.isSulfurEnabled){
                         generateOre(ModBlocks.oreSulfur.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 64, 255, random.nextInt(10) + 3, 8);
                     }
                 }
                 //silly stuffs
-                if (OreInAMillionConfig.isSillyStuffEnabled) {
+                if (GeneralConfig.isSillyStuffEnabled) {
                     generateOre(ModBlocks.oreWeezer.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 255, random.nextInt(1) + 1, 1);
                 }
             }

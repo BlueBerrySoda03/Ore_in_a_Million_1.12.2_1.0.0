@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "oreinamillion:items/armor/chestplate/chestplate_base",
+    "layer1": "oreinamillion:items/armor/chestplate/chestplate_overlay"
+  }
+}

@@ -24,6 +24,7 @@ public class ModCompatConfig {
             isThermalEnabledPlusAdditions = config.getBoolean("Is Thermal Series Additions Enabled?", mods, true, "Do you want to disable Thermal Series minerals but keep the tools and armor?");
             isTinkersEnabled = config.getBoolean("Is Tinkers Construct Enabled?", mods, true, "Do you want Tinkers Construct minerals enabled?");
             isTinkersEnabledPlusAdditions = config.getBoolean("Is Tinkers Construct Additions Enabled?", mods, true, "Do you want to disable Tinkers Construct minerals but keep the tools and armor?");
+
         } catch (Exception e) {
             System.out.println("error in config/oreinamillion/modcompat.cfg... setting default values...");
         } finally {

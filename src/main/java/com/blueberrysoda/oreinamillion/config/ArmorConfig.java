@@ -15,7 +15,6 @@ public class ArmorConfig {
     public static boolean isEnderArmorEnabled;
     public static boolean isIridiumArmorEnabled;
     public static boolean isLeadArmorEnabled;
-    public static boolean isMercuryArmorEnabled;
     public static boolean isMithrilArmorEnabled;
     public static boolean isNickelArmorEnabled;
     public static boolean isOsmiumArmorEnabled;
@@ -43,14 +42,12 @@ public class ArmorConfig {
     public static boolean isVoidBornArmorEnabled;
 
     public static boolean isAmethystArmorEnabled;
+    public static boolean isGarnetArmorEnabled;
+    public static boolean isOpalArmorEnabled;
+    public static boolean isPearlArmorEnabled;
     public static boolean isPeridotArmorEnabled;
     public static boolean isRubyArmorEnabled;
     public static boolean isSapphireArmorEnabled;
-
-    public static boolean isCarbonArmorEnabled;
-    public static boolean isCinnabarArmorEnabled;
-    public static boolean isSiliconArmorEnabled;
-    public static boolean isSulfurArmorEnabled;
 
     public static boolean isCharcoaliumArmorEnabled;
     public static boolean isCoaliumArmorEnabled;
@@ -67,14 +64,13 @@ public class ArmorConfig {
             String categoryBase;
             String categoryAlloy;
             String categoryGem;
-            String categoryElement;
+
             String categoryVanilla;
 
             categoryInfo = "1 - Info";
             categoryBase = "2 - Base";
             categoryAlloy = "3 - Alloys";
             categoryGem = "4 - Gems";
-            categoryElement = "5 - Elements";
             categoryVanilla = "6 - Vanilla";
 
             config.addCustomCategoryComment(categoryInfo, "This config file decides if you want to disable armors based on material. If you want to disabled something specific, such as Aluminum Chestplate, please just use crafttweaker. [Nothing or Nothing]");
@@ -92,7 +88,6 @@ public class ArmorConfig {
             isEnderArmorEnabled = config.getBoolean("Is Ender Armor Enabled?", categoryBase, true, "Do you want Ender Armor to be enabled?");
             isIridiumArmorEnabled = config.getBoolean("Is Iridium Armor Enabled?", categoryBase, true, "Do you want Iridium Armor to be enabled?");
             isLeadArmorEnabled = config.getBoolean("Is Lead Armor Enabled?", categoryBase, true, "Do you want Lead Armor to be enabled?");
-            isMercuryArmorEnabled = config.getBoolean("Is Mercury Armor Enabled?", categoryBase, true, "Do you want Mercury Armor to be enabled?");
             isMithrilArmorEnabled = config.getBoolean("Is Mithril Armor Enabled?", categoryBase, true, "Do you want Mithril Armor to be enabled?");
             isNickelArmorEnabled = config.getBoolean("Is Nickel Armor Enabled?", categoryBase, true, "Do you want Nickel Armor to be enabled?");
             isOsmiumArmorEnabled = config.getBoolean("Is Osmium Armor Enabled?", categoryBase, true, "Do you want Osmium Armor to be enabled?");
@@ -124,16 +119,12 @@ public class ArmorConfig {
             config.addCustomCategoryComment(categoryGem, "Gems. AKA: Shiny things, like diamonds and emeralds. [True or False]");
 
             isAmethystArmorEnabled = config.getBoolean("Is Amethyst Armor Enabled?", categoryGem, true, "Do you want Amethyst Armor to be enabled?");
+            isGarnetArmorEnabled = config.getBoolean("Is Garnet Armor Enabled?", categoryGem, true, "Do you want Garnet Armor to be enabled?");
+            isOpalArmorEnabled = config.getBoolean("Is Opal Armor Enabled?", categoryGem, true, "Do you want Opal Armor to be enabled?");
+            isPearlArmorEnabled = config.getBoolean("Is Pearl Armor Enabled?", categoryGem, true, "Do you want Pearl Armor to be enabled?");
             isPeridotArmorEnabled = config.getBoolean("Is Peridot Armor Enabled?", categoryGem, true, "Do you want Peridot Armor to be enabled?");
             isRubyArmorEnabled = config.getBoolean("Is Ruby Armor Enabled?", categoryGem, true, "Do you want Ruby Armor to be enabled?");
             isSapphireArmorEnabled = config.getBoolean("Is Sapphire Armor Enabled?", categoryGem, true, "Do you want Sapphire Armor to be enabled?");
-
-            config.addCustomCategoryComment(categoryElement, "Elements. AKA: Things that make different things. [True or False]");
-
-            isCarbonArmorEnabled = config.getBoolean("Is Carbon Armor Enabled?", categoryElement, true, "Do you want Carbon Armor to be enabled?");
-            isCinnabarArmorEnabled = config.getBoolean("Is Cinnabar Armor Enabled?", categoryElement, true, "Do you want Cinnabar Armor to be enabled?");
-            isSiliconArmorEnabled = config.getBoolean("Is Silicon Armor Enabled?", categoryElement, true, "Do you want Silicon Armor to be enabled?");
-            isSulfurArmorEnabled = config.getBoolean("Is Sulfur Armor Enabled?", categoryElement, true, "Do you want Sulfur Armor to be enabled?");
 
             config.addCustomCategoryComment(categoryVanilla, "Vanilla Additions. AKA: Things that I added that expand on the already available vanilla elements. [True or False]");
 

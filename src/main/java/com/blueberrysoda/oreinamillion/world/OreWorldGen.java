@@ -10,20 +10,37 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenMinable;
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.Random;
 
 public class OreWorldGen implements IWorldGenerator {
-
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+        //overworld
         if (world.provider.getDimension() == 0){
             generateOverworld(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
+
+            int x = (chunkX * 16) + random.nextInt(16);
+            int z = (chunkZ * 16) + random.nextInt(16);
+            BlockPos position = new BlockPos(x, random.nextInt(255), z);
+
+            if (BiomeDictionary.hasType(world.getBiome(position), BiomeDictionary.Type.HOT)) {
+                generateOverworldHot(world, position, random);
+            }
+            if (BiomeDictionary.hasType(world.getBiome(position), BiomeDictionary.Type.COLD)) {
+                generateOverworldCold(world, position, random);
+            }
+            if (BiomeDictionary.hasType(world.getBiome(position), BiomeDictionary.Type.OCEAN)) {
+                generateOverworldOcean(world, position, random);
+            }
         }
+        //nether
         if (world.provider.getDimension() == -1){
             generateNether(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
         }
+        //end
         if (world.provider.getDimension() == 1){
             generateEnd(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
         }
@@ -35,35 +52,35 @@ public class OreWorldGen implements IWorldGenerator {
                 if (GeneralConfig.isIngotsEnabled) {
                     //adamantine
                     if (MineralsConfig.isAdamantineEnabled) {
-                        generateOre(ModBlocks.oreAdamantine.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 32, random.nextInt(6) + 1, 3);
+                        generateOre(ModBlocks.oreAdamantine.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 32, random.nextInt(4) + 1, 3);
                     }
                     //aluminum
                     if (MineralsConfig.isAluminumEnabled) {
-                        generateOre(ModBlocks.oreAluminum.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 64, random.nextInt(6) + 3, 7);
+                        generateOre(ModBlocks.oreAluminum.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 64, random.nextInt(9) + 2, 7);
                     }
                     //chrome
                     if (MineralsConfig.isChromeEnabled) {
-                        generateOre(ModBlocks.oreChrome.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 10, 40, random.nextInt(6) + 3, 5);
+                        generateOre(ModBlocks.oreChrome.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 10, 40, random.nextInt(5) + 2, 5);
                     }
                     //cobalt
                     if (MineralsConfig.isCobaltEnabled) {
-                        generateOre(ModBlocks.oreCobalt.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 42, random.nextInt(5) + 3, 5);
+                        generateOre(ModBlocks.oreCobalt.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 42, random.nextInt(6) + 2, 5);
                     }
                     //copper
                     if (MineralsConfig.isCopperEnabled) {
-                        generateOre(ModBlocks.oreCopper.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 56, random.nextInt(12) + 4, 9);
+                        generateOre(ModBlocks.oreCopper.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 56, random.nextInt(9) + 2, 9);
                     }
                     if (MineralsConfig.isEnderEnabled){
-                        generateOre(ModBlocks.oreEnder.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 20, random.nextInt(5) + 2, 3);
-                        generateOre(ModBlocks.oreEnder.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 100, 255, random.nextInt(15) + 7, 1);
+                        generateOre(ModBlocks.oreEnder.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 20, random.nextInt(4) + 1, 3);
+                        generateOre(ModBlocks.oreEnder.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 100, 255, random.nextInt(11) + 5, 1);
                     }
                     //iridium
                     if (MineralsConfig.isIridiumEnabled) {
-                        generateOre(ModBlocks.oreIridium.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 35, random.nextInt(8) + 3, 5);
+                        generateOre(ModBlocks.oreIridium.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 35, random.nextInt(6) + 2, 5);
                     }
                     //lead
                     if (MineralsConfig.isLeadEnabled) {
-                        generateOre(ModBlocks.oreLead.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 18, 64, random.nextInt(7) + 3, 5);
+                        generateOre(ModBlocks.oreLead.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 18, 64, random.nextInt(6) + 2, 5);
                     }
                     //mithril
                     if (MineralsConfig.isMithrilEnabled) {
@@ -71,45 +88,45 @@ public class OreWorldGen implements IWorldGenerator {
                     }
                     //nickel
                     if (MineralsConfig.isNickelEnabled) {
-                        generateOre(ModBlocks.oreNickel.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 25, random.nextInt(5) + 2, 4);
+                        generateOre(ModBlocks.oreNickel.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 25, random.nextInt(6) + 2, 4);
                     }
                     //osmium
                     if (MineralsConfig.isOsmiumEnabled) {
-                        generateOre(ModBlocks.oreOsmium.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 64, random.nextInt(8) + 4, 6);
+                        generateOre(ModBlocks.oreOsmium.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 64, random.nextInt(9) + 2, 6);
                     }
                     //platinum
                     if (MineralsConfig.isPlatinumEnabled) {
-                        generateOre(ModBlocks.orePlatinum.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 25, random.nextInt(4) + 2, 5);
+                        generateOre(ModBlocks.orePlatinum.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 25, random.nextInt(7) + 2, 5);
                     }
                     //silver
                     if (MineralsConfig.isSilverEnabled) {
-                        generateOre(ModBlocks.orePlatinum.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 45, random.nextInt(6) + 3, 6);
+                        generateOre(ModBlocks.orePlatinum.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 45, random.nextInt(7) + 3, 6);
                     }
                     //tin
                     if (MineralsConfig.isTinEnabled) {
-                        generateOre(ModBlocks.oreTin.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 64, random.nextInt(8) + 3, 7);
+                        generateOre(ModBlocks.oreTin.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 64, random.nextInt(9) + 2, 7);
                     }
                     //titanium
                     if (MineralsConfig.isTitaniumEnabled) {
-                        generateOre(ModBlocks.oreTitanium.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 26, random.nextInt(5) + 2, 4);
+                        generateOre(ModBlocks.oreTitanium.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 26, random.nextInt(6) + 3, 4);
                     }
                     //tungsten
                     if (MineralsConfig.isTungstenEnabled) {
-                        generateOre(ModBlocks.oreTungsten.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 44, random.nextInt(8) + 3, 5);
+                        generateOre(ModBlocks.oreTungsten.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 44, random.nextInt(7) + 1, 5);
                     }
                     //uranium
                     if (MineralsConfig.isUraniumEnabled) {
-                        generateOre(ModBlocks.oreUranium.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 16, random.nextInt(5) + 1, 4);
+                        generateOre(ModBlocks.oreUranium.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 16, random.nextInt(4) + 1, 4);
                     }
                     //zinc
                     if (MineralsConfig.isZincEnabled) {
-                        generateOre(ModBlocks.oreZinc.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 18, 64, random.nextInt(6) + 2, 5);
+                        generateOre(ModBlocks.oreZinc.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 18, 64, random.nextInt(5) + 1, 5);
                     }
                     //tinkers construct
                     if (ModCompatConfig.isTinkersEnabled) {
                         //ardite
                         if (MineralsConfig.isArditeEnabled) {
-                            generateOre(ModBlocks.oreArdite.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 16, random.nextInt(3) + 2, 4);
+                            generateOre(ModBlocks.oreArdite.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 16, random.nextInt(4) + 2, 3);
                         }
                     }
                 }
@@ -117,11 +134,11 @@ public class OreWorldGen implements IWorldGenerator {
                 if (GeneralConfig.isGemsEnabled) {
                     //amethyst
                     if (MineralsConfig.isAmethystEnabled) {
-                        generateOre(ModBlocks.oreAmethyst.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 50, random.nextInt(5) + 2, 5);
+                        generateOre(ModBlocks.oreAmethyst.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 50, random.nextInt(7) + 2, 5);
                     }
                     //peridot
                     if (MineralsConfig.isPeridotEnabled) {
-                        generateOre(ModBlocks.orePeridot.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 32, 84, random.nextInt(5) + 2, 5);
+                        generateOre(ModBlocks.orePeridot.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 32, 84, random.nextInt(6) + 2, 5);
                     }
                     //ruby
                     if (MineralsConfig.isRubyEnabled) {
@@ -140,7 +157,8 @@ public class OreWorldGen implements IWorldGenerator {
                     }
                     //sulphur
                     if (MineralsConfig.isSulfurEnabled){
-                        generateOre(ModBlocks.oreSulfur.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 64, 255, random.nextInt(10) + 3, 8);
+                        generateOre(ModBlocks.oreSulfur.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 64, 255, random.nextInt(11) + 3, 8);
+                        generateOre(ModBlocks.oreSulfur.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 0, 64, random.nextInt(3) + 1, 4);
                     }
                 }
                 //silly stuffs
@@ -149,6 +167,18 @@ public class OreWorldGen implements IWorldGenerator {
                 }
             }
         }
+    }
+
+    private void generateOverworldHot(World world, BlockPos position, Random random) {
+
+    }
+
+    private void generateOverworldCold(World world, BlockPos position, Random random) {
+
+    }
+
+    private void generateOverworldOcean(World world, BlockPos position, Random random) {
+
     }
 
     private void generateNether(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider){

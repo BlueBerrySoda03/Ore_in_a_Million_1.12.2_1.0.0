@@ -38,14 +38,18 @@ public class MaterialTool {
     public static final Item.ToolMaterial toolKnightSlime = EnumHelper.addToolMaterial("toolKnightSlime", 4, 1024, 15.0F, 4.0F, 12);
     public static final Item.ToolMaterial toolLumium = EnumHelper.addToolMaterial("toolLumium", 2, 540, 6.0F, 2.5F, 10);
     public static final Item.ToolMaterial toolManyullyn = EnumHelper.addToolMaterial("toolManyullyn", 4, 3426, 12.0F, 4.5F, 12);
-    public static final Item.ToolMaterial toolPigIron = EnumHelper.addToolMaterial("toolPigIron", 1, 50, 20.0F, 3.0F, 16);
+    public static final Item.ToolMaterial toolPigIron = EnumHelper.addToolMaterial("toolPigIron", 2, 453, 8.0F, 2.5F, 8);
     public static final Item.ToolMaterial toolSignalum = EnumHelper.addToolMaterial("toolSignalum", 3, 1905, 9.0F, 3.5F, 10);
     public static final Item.ToolMaterial toolSteel = EnumHelper.addToolMaterial("toolSteel", 2, 535, 7.0F, 2.2F, 10);
+    public static final Item.ToolMaterial toolVoidBorn = EnumHelper.addToolMaterial("toolVoidBorn", 4, 3856, 12.0F, 5.9F, 21);
 
     public static final Item.ToolMaterial toolAmethyst = EnumHelper.addToolMaterial("toolAmethyst", 3, 532, 8.0F, 2.5F, 25);
-    public static final Item.ToolMaterial toolPeridot = EnumHelper.addToolMaterial("toolPeridot", 3, 623, 7.0F, 2.3F, 10);
-    public static final Item.ToolMaterial toolRuby = EnumHelper.addToolMaterial("toolRuby", 3, 802, 8.0F, 2.8F, 11);
-    public static final Item.ToolMaterial toolSapphire = EnumHelper.addToolMaterial("toolSapphire", 3, 803, 8.0F, 2.8F, 11);
+    public static final Item.ToolMaterial toolGarnet = EnumHelper.addToolMaterial("toolGarnet", 4, 2410, 13.0F, 4.4F, 2);
+    public static final Item.ToolMaterial toolOpal = EnumHelper.addToolMaterial("toolOpal", 2, 864, 8.0F, 2.8F, 15);
+    public static final Item.ToolMaterial toolPearl = EnumHelper.addToolMaterial("toolPearl", 2, 610, 7.0F, 2.5F, 12);
+    public static final Item.ToolMaterial toolPeridot = EnumHelper.addToolMaterial("toolPeridot", 2, 623, 7.0F, 2.3F, 5);
+    public static final Item.ToolMaterial toolRuby = EnumHelper.addToolMaterial("toolRuby", 3, 802, 6.0F, 3.4F, 11);
+    public static final Item.ToolMaterial toolSapphire = EnumHelper.addToolMaterial("toolSapphire", 3, 802, 13.0F, 1.2F, 11);
 
     public static final Item.ToolMaterial toolCharcoal = EnumHelper.addToolMaterial("toolCharcoal", 0, 5, 1.2F, 0.5F, 1);
     public static final Item.ToolMaterial toolCoal = EnumHelper.addToolMaterial("toolCoal", 0, 6, 1.2F, 0.5F, 1);

@@ -15,7 +15,6 @@ public class CraftingConfig {
     public static boolean isEnderCraftingEnabled;
     public static boolean isIridiumCraftingEnabled;
     public static boolean isLeadCraftingEnabled;
-    public static boolean isMercuryCraftingEnabled;
     public static boolean isMithrilCraftingEnabled;
     public static boolean isNickelCraftingEnabled;
     public static boolean isOsmiumCraftingEnabled;
@@ -43,12 +42,16 @@ public class CraftingConfig {
     public static boolean isVoidBornCraftingEnabled;
 
     public static boolean isAmethystCraftingEnabled;
+    public static boolean isGarnetCraftingEnabled;
+    public static boolean isOpalCraftingEnabled;
+    public static boolean isPearlCraftingEnabled;
     public static boolean isPeridotCraftingEnabled;
     public static boolean isRubyCraftingEnabled;
     public static boolean isSapphireCraftingEnabled;
 
     public static boolean isCarbonCraftingEnabled;
     public static boolean isCinnabarCraftingEnabled;
+    public static boolean isMercuryCraftingEnabled;
     public static boolean isSiliconCraftingEnabled;
     public static boolean isSulfurCraftingEnabled;
 
@@ -100,7 +103,6 @@ public class CraftingConfig {
             isEnderCraftingEnabled = config.getBoolean("Is Ender Crafting Enabled?", categoryBase, true, "Do you want Ender Crafting to be enabled?");
             isIridiumCraftingEnabled = config.getBoolean("Is Iridium Crafting Enabled?", categoryBase, true, "Do you want Iridium Crafting to be enabled?");
             isLeadCraftingEnabled = config.getBoolean("Is Lead Crafting Enabled?", categoryBase, true, "Do you want Lead Crafting to be enabled?");
-            isMercuryCraftingEnabled = config.getBoolean("Is Mercury Crafting Enabled?", categoryBase, true, "Do you want Mercury Crafting to be enabled?");
             isMithrilCraftingEnabled = config.getBoolean("Is Mithril Crafting Enabled?", categoryBase, true, "Do you want Mithril Crafting to be enabled?");
             isNickelCraftingEnabled = config.getBoolean("Is Nickel Crafting Enabled?", categoryBase, true, "Do you want Nickel Crafting to be enabled?");
             isOsmiumCraftingEnabled = config.getBoolean("Is Osmium Crafting Enabled?", categoryBase, true, "Do you want Osmium Crafting to be enabled?");
@@ -132,6 +134,9 @@ public class CraftingConfig {
             config.addCustomCategoryComment(categoryGem, "Gems. AKA: Shiny things, like diamonds and emeralds. [True or False]");
 
             isAmethystCraftingEnabled = config.getBoolean("Is Amethyst Crafting Enabled?", categoryGem, true, "Do you want Amethyst Crafting to be enabled?");
+            isGarnetCraftingEnabled = config.getBoolean("Is Garnet Crafting Enabled?", categoryGem, true, "Do you want Garnet Crafting to be enabled?");
+            isOpalCraftingEnabled = config.getBoolean("Is Opal Crafting Enabled?", categoryGem, true, "Do you want Opal Crafting to be enabled?");
+            isPearlCraftingEnabled = config.getBoolean("Is Pearl Crafting Enabled?", categoryGem, true, "Do you want Pearl Crafting to be enabled?");
             isPeridotCraftingEnabled = config.getBoolean("Is Peridot Crafting Enabled?", categoryGem, true, "Do you want Peridot Crafting to be enabled?");
             isRubyCraftingEnabled = config.getBoolean("Is Ruby Crafting Enabled?", categoryGem, true, "Do you want Ruby Crafting to be enabled?");
             isSapphireCraftingEnabled = config.getBoolean("Is Sapphire Crafting Enabled?", categoryGem, true, "Do you want Sapphire Crafting to be enabled?");
@@ -140,6 +145,7 @@ public class CraftingConfig {
 
             isCarbonCraftingEnabled = config.getBoolean("Is Carbon Crafting Enabled?", categoryElement, true, "Do you want Carbon Crafting to be enabled?");
             isCinnabarCraftingEnabled = config.getBoolean("Is Cinnabar Crafting Enabled?", categoryElement, true, "Do you want Cinnabar Crafting to be enabled?");
+            isMercuryCraftingEnabled = config.getBoolean("Is Mercury Crafting Enabled?", categoryElement, true, "Do you want Mercury Crafting to be enabled?");
             isSiliconCraftingEnabled = config.getBoolean("Is Silicon Crafting Enabled?", categoryElement, true, "Do you want Silicon Crafting to be enabled?");
             isSulfurCraftingEnabled = config.getBoolean("Is Sulfur Crafting Enabled?", categoryElement, true, "Do you want Sulfur Crafting to be enabled?");
 

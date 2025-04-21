@@ -13,12 +13,13 @@ public class CommonProxy {
         MineralsConfig.init(event);
         CraftingConfig.init(event);
         ArmorConfig.init(event);
+        ArmorEventsConfig.init(event);
         ToolsConfig.init(event);
         ModCompatConfig.init(event);
         ModItems.init();
         ModBlocks.init();
         ModSounds.init();
-        ModArmorEvents.init();
+        ModEvents.init();
         EventUtil.init();
     }
 

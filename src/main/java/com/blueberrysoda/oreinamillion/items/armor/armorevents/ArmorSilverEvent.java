@@ -23,16 +23,16 @@ public class ArmorSilverEvent {
 
             int armorPiecesWorn = 0;
 
-            if (helmet != null && helmet.getItem() == ModItems.helmetSilver) {
+            if (helmet.getItem() == ModItems.helmetSilver) {
                 armorPiecesWorn++;
             }
-            if (chestplate != null && chestplate.getItem() == ModItems.chestplateSilver) {
+            if (chestplate.getItem() == ModItems.chestplateSilver) {
                 armorPiecesWorn++;
             }
-            if (leggings != null && leggings.getItem() == ModItems.leggingsSilver) {
+            if (leggings.getItem() == ModItems.leggingsSilver) {
                 armorPiecesWorn++;
             }
-            if (boots != null && boots.getItem() == ModItems.bootsSilver) {
+            if (boots.getItem() == ModItems.bootsSilver) {
                 armorPiecesWorn++;
             }
 
@@ -54,8 +54,6 @@ public class ArmorSilverEvent {
                     case 4:
                         damageReduction = 0.5F;
                         break;
-                    default:
-                        damageReduction = 1.0F;
                 }
                 event.setAmount(event.getAmount() * damageReduction);
             }

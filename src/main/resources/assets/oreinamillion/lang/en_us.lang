@@ -6,6 +6,8 @@ itemGroup.CreativeTabBlock=Ore in a Million: Blocks
 itemGroup.CreativeTabTool=Ore in a Million: Tools
 itemGroup.CreativeTabArmor=Ore in a Million: Armor
 
+hold.shift.tooltip=Hold SHIFT for info
+
 #item.oreinamillion..name=
 #minerals
 #base

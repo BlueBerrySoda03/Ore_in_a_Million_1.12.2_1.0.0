@@ -8,6 +8,9 @@ import com.blueberrysoda.oreinamillion.items.materials.MaterialArmor;
 import com.blueberrysoda.oreinamillion.items.materials.MaterialTool;
 import com.blueberrysoda.oreinamillion.items.misc.ItemWeezer;
 import com.blueberrysoda.oreinamillion.items.tools.basetools.*;
+import com.blueberrysoda.oreinamillion.util.ItemModelHandler;
+import com.blueberrysoda.oreinamillion.util.enumerations.ItemType;
+import com.blueberrysoda.oreinamillion.util.enumerations.MaterialType;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -179,10 +182,10 @@ public class ModItems {
     public static Item hoeCopper = new ItemToolHoe("copper_hoe", MaterialTool.toolCopper, Tool, false);
     public static Item crusherCopper = new ItemToolCrusher("copper_crusher", MaterialTool.toolCopper, Tool, false);
     //armor
-    public static Item helmetCopper = new ItemArmorBase("copper_helmet", MaterialArmor.armorCopper, 1, EntityEquipmentSlot.HEAD, Armor, false);
-    public static Item chestplateCopper = new ItemArmorBase("copper_chestplate", MaterialArmor.armorCopper, 1, EntityEquipmentSlot.CHEST, Armor, false);
-    public static Item leggingsCopper = new ItemArmorBase("copper_leggings", MaterialArmor.armorCopper, 2, EntityEquipmentSlot.LEGS, Armor, false);
-    public static Item bootsCopper = new ItemArmorBase("copper_boots", MaterialArmor.armorCopper, 1, EntityEquipmentSlot.FEET, Armor, false);
+    public static Item helmetCopper = new ItemArmorBase("copper_helmet", MaterialArmor.armorCopper, 1, EntityEquipmentSlot.HEAD, Armor, true);
+    public static Item chestplateCopper = new ItemArmorBase("copper_chestplate", MaterialArmor.armorCopper, 1, EntityEquipmentSlot.CHEST, Armor, true);
+    public static Item leggingsCopper = new ItemArmorBase("copper_leggings", MaterialArmor.armorCopper, 2, EntityEquipmentSlot.LEGS, Armor, true);
+    public static Item bootsCopper = new ItemArmorBase("copper_boots", MaterialArmor.armorCopper, 1, EntityEquipmentSlot.FEET, Armor, true);
 
     //ender
     //base
@@ -252,29 +255,6 @@ public class ModItems {
     public static Item chestplateLead = new ItemArmorBase("lead_chestplate", MaterialArmor.armorLead, 1, EntityEquipmentSlot.CHEST, Armor, false);
     public static Item leggingsLead = new ItemArmorBase("lead_leggings", MaterialArmor.armorLead, 2, EntityEquipmentSlot.LEGS, Armor, false);
     public static Item bootsLead = new ItemArmorBase("lead_boots", MaterialArmor.armorLead, 1, EntityEquipmentSlot.FEET, Armor, false);
-
-    //mercury
-    //base
-    public static Item ingotMercury = new ItemBase("mercury_ingot", Mineral, false);
-    public static Item nuggetMercury = new ItemBase("mercury_nugget", Mineral, false);
-    public static Item dustMercury = new ItemBase("mercury_dust", Mineral, false);
-    //crafting
-    public static Item gearMercury = new ItemBase("mercury_gear", Crafting, false);
-    public static Item plateMercury = new ItemBase("mercury_plate", Crafting, false);
-    public static Item rodMercury = new ItemBase("mercury_rod", Crafting, false);
-    public static Item tinydustMercury = new ItemBase("mercury_tiny", Crafting, false);
-//    //tools
-//    public static Item swordMercury = new ItemToolSword("mercury_sword", MaterialTool.toolMercury, Tool, false);
-//    public static Item pickaxeMercury = new ItemToolPickaxe("mercury_pickaxe", MaterialTool.toolMercury, Tool, false);
-//    public static Item axeMercury = new ItemToolAxe("mercury_axe", MaterialTool.toolMercury, Tool, false);
-//    public static Item shovelMercury = new ItemToolShovel("mercury_shovel", MaterialTool.toolMercury, Tool, false);
-//    public static Item hoeMercury = new ItemToolHoe("mercury_hoe", MaterialTool.toolMercury, Tool, false);
-//    public static Item crusherMercury = new ItemToolCrusher("mercury_crusher", MaterialTool.toolMercury, Tool, false);
-//    //armor
-//    public static Item helmetMercury = new ItemArmorBase("mercury_helmet", MaterialArmor.armorMercury, 1, EntityEquipmentSlot.HEAD, Armor, false);
-//    public static Item chestplateMercury = new ItemArmorBase("mercury_chestplate", MaterialArmor.armorMercury, 1, EntityEquipmentSlot.CHEST, Armor, false);
-//    public static Item leggingsMercury = new ItemArmorBase("mercury_leggings", MaterialArmor.armorMercury, 2, EntityEquipmentSlot.LEGS, Armor, false);
-//    public static Item bootsMercury = new ItemArmorBase("mercury_boots", MaterialArmor.armorMercury, 1, EntityEquipmentSlot.FEET, Armor, false);
 
     //mithril
     //base
@@ -386,10 +366,10 @@ public class ModItems {
     public static Item hoeSilver = new ItemToolHoe("silver_hoe", MaterialTool.toolSilver, Tool, false);
     public static Item crusherSilver = new ItemToolCrusher("silver_crusher", MaterialTool.toolSilver, Tool, false);
     //armor
-    public static Item helmetSilver = new ItemArmorBase("silver_helmet", MaterialArmor.armorSilver, 1, EntityEquipmentSlot.HEAD, Armor, false);
-    public static Item chestplateSilver = new ItemArmorBase("silver_chestplate", MaterialArmor.armorSilver, 1, EntityEquipmentSlot.CHEST, Armor, false);
-    public static Item leggingsSilver = new ItemArmorBase("silver_leggings", MaterialArmor.armorSilver, 2, EntityEquipmentSlot.LEGS, Armor, false);
-    public static Item bootsSilver = new ItemArmorBase("silver_boots", MaterialArmor.armorSilver, 1, EntityEquipmentSlot.FEET, Armor, false);
+    public static Item helmetSilver = new ItemArmorBase("silver_helmet", MaterialArmor.armorSilver, 1, EntityEquipmentSlot.HEAD, Armor, true);
+    public static Item chestplateSilver = new ItemArmorBase("silver_chestplate", MaterialArmor.armorSilver, 1, EntityEquipmentSlot.CHEST, Armor, true);
+    public static Item leggingsSilver = new ItemArmorBase("silver_leggings", MaterialArmor.armorSilver, 2, EntityEquipmentSlot.LEGS, Armor, true);
+    public static Item bootsSilver = new ItemArmorBase("silver_boots", MaterialArmor.armorSilver, 1, EntityEquipmentSlot.FEET, Armor, true);
 
     //tin
     //base
@@ -673,7 +653,7 @@ public class ModItems {
 
     //knightslime
     //base
-    public static Item ingotKnightSlime = new ItemBase("knightslime_ingot", Mineral, false);
+    public static Item ingotKnightSlime = new ItemBase("knightslime_ingot", Mineral, true);
     public static Item nuggetKnightSlime = new ItemBase("knightslime_nugget", Mineral, false);
     public static Item dustKnightSlime = new ItemBase("knightslime_dust", Mineral, false);
     //crafting
@@ -682,12 +662,12 @@ public class ModItems {
     public static Item rodKnightSlime = new ItemBase("knightslime_rod", Crafting, false);
     public static Item tinydustKnightSlime = new ItemBase("knightslime_tiny", Crafting, false);
     //tools
-    public static Item swordKnightSlime = new ItemToolSword("knightslime_sword", MaterialTool.toolKnightSlime, Tool, false);
-    public static Item pickaxeKnightSlime = new ItemToolPickaxe("knightslime_pickaxe", MaterialTool.toolKnightSlime, Tool, false);
-    public static Item axeKnightSlime = new ItemToolAxe("knightslime_axe", MaterialTool.toolKnightSlime, Tool, false);
-    public static Item shovelKnightSlime = new ItemToolShovel("knightslime_shovel", MaterialTool.toolKnightSlime, Tool, false);
-    public static Item hoeKnightSlime = new ItemToolHoe("knightslime_hoe", MaterialTool.toolKnightSlime, Tool, false);
-    public static Item crusherKnightSlime = new ItemToolCrusher("knightslime_crusher", MaterialTool.toolKnightSlime, Tool, false);
+    public static Item swordKnightSlime = new ItemToolSword("knightslime_sword", MaterialTool.toolKnightSlime, Tool, true);
+    public static Item pickaxeKnightSlime = new ItemToolPickaxe("knightslime_pickaxe", MaterialTool.toolKnightSlime, Tool, true);
+    public static Item axeKnightSlime = new ItemToolAxe("knightslime_axe", MaterialTool.toolKnightSlime, Tool, true);
+    public static Item shovelKnightSlime = new ItemToolShovel("knightslime_shovel", MaterialTool.toolKnightSlime, Tool, true);
+    public static Item hoeKnightSlime = new ItemToolHoe("knightslime_hoe", MaterialTool.toolKnightSlime, Tool, true);
+    public static Item crusherKnightSlime = new ItemToolCrusher("knightslime_crusher", MaterialTool.toolKnightSlime, Tool, true);
     //armor
     public static Item helmetKnightSlime = new ItemArmorBase("knightslime_helmet", MaterialArmor.armorKnightSlime, 1, EntityEquipmentSlot.HEAD, Armor, false);
     public static Item chestplateKnightSlime = new ItemArmorBase("knightslime_chestplate", MaterialArmor.armorKnightSlime, 1, EntityEquipmentSlot.CHEST, Armor, false);
@@ -751,12 +731,12 @@ public class ModItems {
     public static Item rodPigIron = new ItemBase("pigiron_rod", Crafting, false);
     public static Item tinydustPigIron = new ItemBase("pigiron_tiny", Crafting, false);
     //tools
-    public static Item swordPigIron = new ItemToolSword("pigiron_sword", MaterialTool.toolPigIron, Tool, false);
-    public static Item pickaxePigIron = new ItemToolPickaxe("pigiron_pickaxe", MaterialTool.toolPigIron, Tool, false);
-    public static Item axePigIron = new ItemToolAxe("pigiron_axe", MaterialTool.toolPigIron, Tool, false);
-    public static Item shovelPigIron = new ItemToolShovel("pigiron_shovel", MaterialTool.toolPigIron, Tool, false);
-    public static Item hoePigIron = new ItemToolHoe("pigiron_hoe", MaterialTool.toolPigIron, Tool, false);
-    public static Item crusherPigIron = new ItemToolCrusher("pigiron_crusher", MaterialTool.toolPigIron, Tool, false);
+    public static Item swordPigIron = new ItemToolSword("pigiron_sword", MaterialTool.toolPigIron, Tool, true);
+    public static Item pickaxePigIron = new ItemToolPickaxe("pigiron_pickaxe", MaterialTool.toolPigIron, Tool, true);
+    public static Item axePigIron = new ItemToolAxe("pigiron_axe", MaterialTool.toolPigIron, Tool, true);
+    public static Item shovelPigIron = new ItemToolShovel("pigiron_shovel", MaterialTool.toolPigIron, Tool, true);
+    public static Item hoePigIron = new ItemToolHoe("pigiron_hoe", MaterialTool.toolPigIron, Tool, true);
+    public static Item crusherPigIron = new ItemToolCrusher("pigiron_crusher", MaterialTool.toolPigIron, Tool, true);
     //armor
     public static Item helmetPigIron = new ItemArmorBase("pigiron_helmet", MaterialArmor.armorPigIron, 1, EntityEquipmentSlot.HEAD, Armor, false);
     public static Item chestplatePigIron = new ItemArmorBase("pigiron_chestplate", MaterialArmor.armorPigIron, 1, EntityEquipmentSlot.CHEST, Armor, false);
@@ -819,18 +799,18 @@ public class ModItems {
     public static Item plateVoidBorn = new ItemBase("voidborn_plate", Crafting, false);
     public static Item rodVoidBorn = new ItemBase("voidborn_rod", Crafting, false);
     public static Item tinydustVoidBorn = new ItemBase("voidborn_tiny", Crafting, false);
-//    //tools
-//    public static Item swordVoidBorn = new ItemToolSword("voidborn_sword", MaterialTool.toolVoidBorn, Tool, false);
-//    public static Item pickaxeVoidBorn = new ItemToolPickaxe("voidborn_pickaxe", MaterialTool.toolVoidBorn, Tool, false);
-//    public static Item axeVoidBorn = new ItemToolAxe("voidborn_axe", MaterialTool.toolVoidBorn, Tool, false);
-//    public static Item shovelVoidBorn = new ItemToolShovel("voidborn_shovel", MaterialTool.toolVoidBorn, Tool, false);
-//    public static Item hoeVoidBorn = new ItemToolHoe("voidborn_hoe", MaterialTool.toolVoidBorn, Tool, false);
-//    public static Item crusherVoidBorn = new ItemToolCrusher("voidborn_crusher", MaterialTool.toolVoidBorn, Tool, false);
-//    //armor
-//    public static Item helmetVoidBorn = new ItemArmorBase("voidborn_helmet", MaterialArmor.armorVoidBorn, 1, EntityEquipmentSlot.HEAD, Armor, false);
-//    public static Item chestplateVoidBorn = new ItemArmorBase("voidborn_chestplate", MaterialArmor.armorVoidBorn, 1, EntityEquipmentSlot.CHEST, Armor, false);
-//    public static Item leggingsVoidBorn = new ItemArmorBase("voidborn_leggings", MaterialArmor.armorVoidBorn, 2, EntityEquipmentSlot.LEGS, Armor, false);
-//    public static Item bootsVoidBorn = new ItemArmorBase("voidborn_boots", MaterialArmor.armorVoidBorn, 1, EntityEquipmentSlot.FEET, Armor, false);
+    //tools
+    public static Item swordVoidBorn = new ItemToolSword("voidborn_sword", MaterialTool.toolVoidBorn, Tool, false);
+    public static Item pickaxeVoidBorn = new ItemToolPickaxe("voidborn_pickaxe", MaterialTool.toolVoidBorn, Tool, false);
+    public static Item axeVoidBorn = new ItemToolAxe("voidborn_axe", MaterialTool.toolVoidBorn, Tool, false);
+    public static Item shovelVoidBorn = new ItemToolShovel("voidborn_shovel", MaterialTool.toolVoidBorn, Tool, false);
+    public static Item hoeVoidBorn = new ItemToolHoe("voidborn_hoe", MaterialTool.toolVoidBorn, Tool, false);
+    public static Item crusherVoidBorn = new ItemToolCrusher("voidborn_crusher", MaterialTool.toolVoidBorn, Tool, false);
+    //armor
+    public static Item helmetVoidBorn = new ItemArmorBase("voidborn_helmet", MaterialArmor.armorVoidBorn, 1, EntityEquipmentSlot.HEAD, Armor, false);
+    public static Item chestplateVoidBorn = new ItemArmorBase("voidborn_chestplate", MaterialArmor.armorVoidBorn, 1, EntityEquipmentSlot.CHEST, Armor, false);
+    public static Item leggingsVoidBorn = new ItemArmorBase("voidborn_leggings", MaterialArmor.armorVoidBorn, 2, EntityEquipmentSlot.LEGS, Armor, false);
+    public static Item bootsVoidBorn = new ItemArmorBase("voidborn_boots", MaterialArmor.armorVoidBorn, 1, EntityEquipmentSlot.FEET, Armor, false);
 
     //----------
     //gems
@@ -858,6 +838,75 @@ public class ModItems {
     public static Item chestplateAmethyst = new ItemArmorBase("amethyst_chestplate", MaterialArmor.armorAmethyst, 1, EntityEquipmentSlot.CHEST, Armor, false);
     public static Item leggingsAmethyst = new ItemArmorBase("amethyst_leggings", MaterialArmor.armorAmethyst, 2, EntityEquipmentSlot.LEGS, Armor, false);
     public static Item bootsAmethyst = new ItemArmorBase("amethyst_boots", MaterialArmor.armorAmethyst, 1, EntityEquipmentSlot.FEET, Armor, false);
+
+    //garnet
+    //base
+    public static Item gemGarnet = new ItemBase("garnet_gem", Mineral, false);
+    public static Item nuggetGarnet = new ItemBase("garnet_nugget", Mineral, false);
+    public static Item dustGarnet = new ItemBase("garnet_dust", Mineral, false);
+    //crafting
+    public static Item gearGarnet = new ItemBase("garnet_gear", Crafting, false);
+    public static Item plateGarnet = new ItemBase("garnet_plate", Crafting, false);
+    public static Item rodGarnet = new ItemBase("garnet_rod", Crafting, false);
+    public static Item tinydustGarnet = new ItemBase("garnet_tiny", Crafting, false);
+    //tools
+    public static Item swordGarnet = new ItemToolSword("garnet_sword", MaterialTool.toolGarnet, Tool, false);
+    public static Item pickaxeGarnet = new ItemToolPickaxe("garnet_pickaxe", MaterialTool.toolGarnet, Tool, false);
+    public static Item axeGarnet = new ItemToolAxe("garnet_axe", MaterialTool.toolGarnet, Tool, false);
+    public static Item shovelGarnet = new ItemToolShovel("garnet_shovel", MaterialTool.toolGarnet, Tool, false);
+    public static Item hoeGarnet = new ItemToolHoe("garnet_hoe", MaterialTool.toolGarnet, Tool, false);
+    public static Item crusherGarnet = new ItemToolCrusher("garnet_crusher", MaterialTool.toolGarnet, Tool, false);
+    //armor
+    public static Item helmetGarnet = new ItemArmorBase("garnet_helmet", MaterialArmor.armorGarnet, 1, EntityEquipmentSlot.HEAD, Armor, false);
+    public static Item chestplateGarnet = new ItemArmorBase("garnet_chestplate", MaterialArmor.armorGarnet, 1, EntityEquipmentSlot.CHEST, Armor, false);
+    public static Item leggingsGarnet = new ItemArmorBase("garnet_leggings", MaterialArmor.armorGarnet, 2, EntityEquipmentSlot.LEGS, Armor, false);
+    public static Item bootsGarnet = new ItemArmorBase("garnet_boots", MaterialArmor.armorGarnet, 1, EntityEquipmentSlot.FEET, Armor, false);
+
+    //opal
+    //base
+    public static Item gemOpal = new ItemBase("opal_gem", Mineral, false);
+    public static Item nuggetOpal = new ItemBase("opal_nugget", Mineral, false);
+    public static Item dustOpal = new ItemBase("opal_dust", Mineral, false);
+    //crafting
+    public static Item gearOpal = new ItemBase("opal_gear", Crafting, false);
+    public static Item plateOpal = new ItemBase("opal_plate", Crafting, false);
+    public static Item rodOpal = new ItemBase("opal_rod", Crafting, false);
+    public static Item tinydustOpal = new ItemBase("opal_tiny", Crafting, false);
+    //tools
+    public static Item swordOpal = new ItemToolSword("opal_sword", MaterialTool.toolOpal, Tool, false);
+    public static Item pickaxeOpal = new ItemToolPickaxe("opal_pickaxe", MaterialTool.toolOpal, Tool, false);
+    public static Item axeOpal = new ItemToolAxe("opal_axe", MaterialTool.toolOpal, Tool, false);
+    public static Item shovelOpal = new ItemToolShovel("opal_shovel", MaterialTool.toolOpal, Tool, false);
+    public static Item hoeOpal = new ItemToolHoe("opal_hoe", MaterialTool.toolOpal, Tool, false);
+    public static Item crusherOpal = new ItemToolCrusher("opal_crusher", MaterialTool.toolOpal, Tool, false);
+    //armor
+    public static Item helmetOpal = new ItemArmorBase("opal_helmet", MaterialArmor.armorOpal, 1, EntityEquipmentSlot.HEAD, Armor, false);
+    public static Item chestplateOpal = new ItemArmorBase("opal_chestplate", MaterialArmor.armorOpal, 1, EntityEquipmentSlot.CHEST, Armor, false);
+    public static Item leggingsOpal = new ItemArmorBase("opal_leggings", MaterialArmor.armorOpal, 2, EntityEquipmentSlot.LEGS, Armor, false);
+    public static Item bootsOpal = new ItemArmorBase("opal_boots", MaterialArmor.armorOpal, 1, EntityEquipmentSlot.FEET, Armor, false);
+
+    //pearl
+    //base
+    public static Item gemPearl = new ItemBase("pearl_gem", Mineral, false);
+    public static Item nuggetPearl = new ItemBase("pearl_nugget", Mineral, false);
+    public static Item dustPearl = new ItemBase("pearl_dust", Mineral, false);
+    //crafting
+    public static Item gearPearl = new ItemBase("pearl_gear", Crafting, false);
+    public static Item platePearl = new ItemBase("pearl_plate", Crafting, false);
+    public static Item rodPearl = new ItemBase("pearl_rod", Crafting, false);
+    public static Item tinydustPearl = new ItemBase("pearl_tiny", Crafting, false);
+    //tools
+    public static Item swordPearl = new ItemToolSword("pearl_sword", MaterialTool.toolPearl, Tool, false);
+    public static Item pickaxePearl = new ItemToolPickaxe("pearl_pickaxe", MaterialTool.toolPearl, Tool, false);
+    public static Item axePearl = new ItemToolAxe("pearl_axe", MaterialTool.toolPearl, Tool, false);
+    public static Item shovelPearl = new ItemToolShovel("pearl_shovel", MaterialTool.toolPearl, Tool, false);
+    public static Item hoePearl = new ItemToolHoe("pearl_hoe", MaterialTool.toolPearl, Tool, false);
+    public static Item crusherPearl = new ItemToolCrusher("pearl_crusher", MaterialTool.toolPearl, Tool, false);
+    //armor
+    public static Item helmetPearl = new ItemArmorBase("pearl_helmet", MaterialArmor.armorPearl, 1, EntityEquipmentSlot.HEAD, Armor, false);
+    public static Item chestplatePearl = new ItemArmorBase("pearl_chestplate", MaterialArmor.armorPearl, 1, EntityEquipmentSlot.CHEST, Armor, false);
+    public static Item leggingsPearl = new ItemArmorBase("pearl_leggings", MaterialArmor.armorPearl, 2, EntityEquipmentSlot.LEGS, Armor, false);
+    public static Item bootsPearl = new ItemArmorBase("pearl_boots", MaterialArmor.armorPearl, 1, EntityEquipmentSlot.FEET, Armor, false);
 
     //peridot
     //base
@@ -942,18 +991,6 @@ public class ModItems {
     public static Item plateCarbon = new ItemBase("carbon_plate", Crafting, false);
     public static Item rodCarbon = new ItemBase("carbon_rod", Crafting, false);
     public static Item tinydustCarbon = new ItemBase("carbon_tiny", Crafting, false);
-//    //tools
-//    public static Item swordCarbon = new ItemToolSword("carbon_sword", MaterialTool.toolCarbon, Tool, false);
-//    public static Item pickaxeCarbon = new ItemToolPickaxe("carbon_pickaxe", MaterialTool.toolCarbon, Tool, false);
-//    public static Item axeCarbon = new ItemToolAxe("carbon_axe", MaterialTool.toolCarbon, Tool, false);
-//    public static Item shovelCarbon = new ItemToolShovel("carbon_shovel", MaterialTool.toolCarbon, Tool, false);
-//    public static Item hoeCarbon = new ItemToolHoe("carbon_hoe", MaterialTool.toolCarbon, Tool, false);
-//    public static Item crusherCarbon = new ItemToolCrusher("carbon_crusher", MaterialTool.toolCarbon, Tool, false);
-//    //armor
-//    public static Item helmetCarbon = new ItemArmorBase("carbon_helmet", MaterialArmor.armorCarbon, 1, EntityEquipmentSlot.HEAD, Armor, false);
-//    public static Item chestplateCarbon = new ItemArmorBase("carbon_chestplate", MaterialArmor.armorCarbon, 1, EntityEquipmentSlot.CHEST, Armor, false);
-//    public static Item leggingsCarbon = new ItemArmorBase("carbon_leggings", MaterialArmor.armorCarbon, 2, EntityEquipmentSlot.LEGS, Armor, false);
-//    public static Item bootsCarbon = new ItemArmorBase("carbon_boots", MaterialArmor.armorCarbon, 1, EntityEquipmentSlot.FEET, Armor, false);
 
     //cinnabar
     //base
@@ -965,18 +1002,17 @@ public class ModItems {
     public static Item plateCinnabar = new ItemBase("cinnabar_plate", Crafting, false);
     public static Item rodCinnabar = new ItemBase("cinnabar_rod", Crafting, false);
     public static Item tinydustCinnabar = new ItemBase("cinnabar_tiny", Crafting, false);
-//    //tools
-//    public static Item swordCinnabar = new ItemToolSword("cinnabar_sword", MaterialTool.toolCinnabar, Tool, false);
-//    public static Item pickaxeCinnabar = new ItemToolPickaxe("cinnabar_pickaxe", MaterialTool.toolCinnabar, Tool, false);
-//    public static Item axeCinnabar = new ItemToolAxe("cinnabar_axe", MaterialTool.toolCinnabar, Tool, false);
-//    public static Item shovelCinnabar = new ItemToolShovel("cinnabar_shovel", MaterialTool.toolCinnabar, Tool, false);
-//    public static Item hoeCinnabar = new ItemToolHoe("cinnabar_hoe", MaterialTool.toolCinnabar, Tool, false);
-//    public static Item crusherCinnabar = new ItemToolCrusher("cinnabar_crusher", MaterialTool.toolCinnabar, Tool, false);
-//    //armor
-//    public static Item helmetCinnabar = new ItemArmorBase("cinnabar_helmet", MaterialArmor.armorCinnabar, 1, EntityEquipmentSlot.HEAD, Armor, false);
-//    public static Item chestplateCinnabar = new ItemArmorBase("cinnabar_chestplate", MaterialArmor.armorCinnabar, 1, EntityEquipmentSlot.CHEST, Armor, false);
-//    public static Item leggingsCinnabar = new ItemArmorBase("cinnabar_leggings", MaterialArmor.armorCinnabar, 2, EntityEquipmentSlot.LEGS, Armor, false);
-//    public static Item bootsCinnabar = new ItemArmorBase("cinnabar_boots", MaterialArmor.armorCinnabar, 1, EntityEquipmentSlot.FEET, Armor, false);
+
+    //mercury
+    //base
+    public static Item elementMercury = new ItemBase("mercury_element", Mineral, false);
+    public static Item nuggetMercury = new ItemBase("mercury_nugget", Mineral, false);
+    public static Item dustMercury = new ItemBase("mercury_dust", Mineral, false);
+    //crafting
+    public static Item gearMercury = new ItemBase("mercury_gear", Crafting, false);
+    public static Item plateMercury = new ItemBase("mercury_plate", Crafting, false);
+    public static Item rodMercury = new ItemBase("mercury_rod", Crafting, false);
+    public static Item tinydustMercury = new ItemBase("mercury_tiny", Crafting, false);
 
     //silicon
     //base
@@ -988,18 +1024,6 @@ public class ModItems {
     public static Item plateSilicon = new ItemBase("silicon_plate", Crafting, false);
     public static Item rodSilicon = new ItemBase("silicon_rod", Crafting, false);
     public static Item tinydustSilicon = new ItemBase("silicon_tiny", Crafting, false);
-//    //tools
-//    public static Item swordSilicon = new ItemToolSword("silicon_sword", MaterialTool.toolSilicon, Tool, false);
-//    public static Item pickaxeSilicon = new ItemToolPickaxe("silicon_pickaxe", MaterialTool.toolSilicon, Tool, false);
-//    public static Item axeSilicon = new ItemToolAxe("silicon_axe", MaterialTool.toolSilicon, Tool, false);
-//    public static Item shovelSilicon = new ItemToolShovel("silicon_shovel", MaterialTool.toolSilicon, Tool, false);
-//    public static Item hoeSilicon = new ItemToolHoe("silicon_hoe", MaterialTool.toolSilicon, Tool, false);
-//    public static Item crusherSilicon = new ItemToolCrusher("silicon_crusher", MaterialTool.toolSilicon, Tool, false);
-//    //armor
-//    public static Item helmetSilicon = new ItemArmorBase("silicon_helmet", MaterialArmor.armorSilicon, 1, EntityEquipmentSlot.HEAD, Armor, false);
-//    public static Item chestplateSilicon = new ItemArmorBase("silicon_chestplate", MaterialArmor.armorSilicon, 1, EntityEquipmentSlot.CHEST, Armor, false);
-//    public static Item leggingsSilicon = new ItemArmorBase("silicon_leggings", MaterialArmor.armorSilicon, 2, EntityEquipmentSlot.LEGS, Armor, false);
-//    public static Item bootsSilicon = new ItemArmorBase("silicon_boots", MaterialArmor.armorSilicon, 1, EntityEquipmentSlot.FEET, Armor, false);
 
     //sulfur
     //base
@@ -1011,19 +1035,6 @@ public class ModItems {
     public static Item plateSulfur = new ItemBase("sulfur_plate", Crafting, false);
     public static Item rodSulfur = new ItemBase("sulfur_rod", Crafting, false);
     public static Item tinydustSulfur = new ItemBase("sulfur_tiny", Crafting, false);
-//    //tools
-//    public static Item swordSulfur = new ItemToolSword("sulfur_sword", MaterialTool.toolSulfur, Tool, false);
-//    public static Item pickaxeSulfur = new ItemToolPickaxe("sulfur_pickaxe", MaterialTool.toolSulfur, Tool, false);
-//    public static Item axeSulfur = new ItemToolAxe("sulfur_axe", MaterialTool.toolSulfur, Tool, false);
-//    public static Item shovelSulfur = new ItemToolShovel("sulfur_shovel", MaterialTool.toolSulfur, Tool, false);
-//    public static Item hoeSulfur = new ItemToolHoe("sulfur_hoe", MaterialTool.toolSulfur, Tool, false);
-//    public static Item crusherSulfur = new ItemToolCrusher("sulfur_crusher", MaterialTool.toolSulfur, Tool, false);
-//    //armor
-//    public static Item helmetSulfur = new ItemArmorBase("sulfur_helmet", MaterialArmor.armorSulfur, 1, EntityEquipmentSlot.HEAD, Armor, false);
-//    public static Item chestplateSulfur = new ItemArmorBase("sulfur_chestplate", MaterialArmor.armorSulfur, 1, EntityEquipmentSlot.CHEST, Armor, false);
-//    public static Item leggingsSulfur = new ItemArmorBase("sulfur_leggings", MaterialArmor.armorSulfur, 2, EntityEquipmentSlot.LEGS, Armor, false);
-//    public static Item bootsSulfur = new ItemArmorBase("sulfur_boots", MaterialArmor.armorSulfur, 1, EntityEquipmentSlot.FEET, Armor, false);
-
 
     //----------
     //vanilla
@@ -1490,21 +1501,6 @@ public class ModItems {
                             ITEMS.add(shovelLead);
                             ITEMS.add(hoeLead);
                             ITEMS.add(crusherLead);
-                        }
-                    }
-                }
-                //mercury
-                if (MineralsConfig.isMercuryEnabled) {
-                    ITEMS.add(ingotMercury);
-                    ITEMS.add(nuggetMercury);
-                    ITEMS.add(dustMercury);
-
-                    if (GeneralConfig.isCraftingEnabled) {
-                        if (CraftingConfig.isMercuryCraftingEnabled) {
-                            ITEMS.add(gearMercury);
-                            ITEMS.add(plateMercury);
-                            ITEMS.add(rodMercury);
-                            ITEMS.add(tinydustMercury);
                         }
                     }
                 }
@@ -2003,7 +1999,7 @@ public class ModItems {
                         }
                     }
                 }
-//steel
+                //steel
                 if (MineralsConfig.isSteelEnabled) {
                     ITEMS.add(ingotSteel);
                     ITEMS.add(nuggetSteel);
@@ -2036,7 +2032,7 @@ public class ModItems {
                         }
                     }
                 }
-//voidborn
+                //voidborn
                 if (MineralsConfig.isVoidBornEnabled) {
                     ITEMS.add(ingotVoidBorn);
                     ITEMS.add(nuggetVoidBorn);
@@ -2050,24 +2046,24 @@ public class ModItems {
                             ITEMS.add(tinydustVoidBorn);
                         }
                     }
-//                    if (GeneralConfig.isArmorEnabled) {
-//                        if (ArmorConfig.isVoidBornArmorEnabled) {
-//                            ITEMS.add(helmetVoidBorn);
-//                            ITEMS.add(chestplateVoidBorn);
-//                            ITEMS.add(leggingsVoidBorn);
-//                            ITEMS.add(bootsVoidBorn);
-//                        }
-//                    }
-//                    if (GeneralConfig.isToolsEnabled) {
-//                        if (ToolsConfig.isVoidBornToolsEnabled) {
-//                            ITEMS.add(swordVoidBorn);
-//                            ITEMS.add(pickaxeVoidBorn);
-//                            ITEMS.add(axeVoidBorn);
-//                            ITEMS.add(shovelVoidBorn);
-//                            ITEMS.add(hoeVoidBorn);
-//                            ITEMS.add(crusherVoidBorn);
-//                        }
-//                    }
+                    if (GeneralConfig.isArmorEnabled) {
+                        if (ArmorConfig.isVoidBornArmorEnabled) {
+                            ITEMS.add(helmetVoidBorn);
+                            ITEMS.add(chestplateVoidBorn);
+                            ITEMS.add(leggingsVoidBorn);
+                            ITEMS.add(bootsVoidBorn);
+                        }
+                    }
+                    if (GeneralConfig.isToolsEnabled) {
+                        if (ToolsConfig.isVoidBornToolsEnabled) {
+                            ITEMS.add(swordVoidBorn);
+                            ITEMS.add(pickaxeVoidBorn);
+                            ITEMS.add(axeVoidBorn);
+                            ITEMS.add(shovelVoidBorn);
+                            ITEMS.add(hoeVoidBorn);
+                            ITEMS.add(crusherVoidBorn);
+                        }
+                    }
                 }
                 //thermal series
                 if (ModCompatConfig.isThermalEnabled){
@@ -2356,6 +2352,156 @@ public class ModItems {
                             ITEMS.add(tinydustAmethyst);
                         }
                     }
+                    if (GeneralConfig.isArmorEnabled) {
+                        if (ArmorConfig.isAmethystArmorEnabled) {
+                            ITEMS.add(helmetAmethyst);
+                            ITEMS.add(chestplateAmethyst);
+                            ITEMS.add(leggingsAmethyst);
+                            ITEMS.add(bootsAmethyst);
+                        }
+                    }
+                    if (GeneralConfig.isToolsEnabled) {
+                        if (ToolsConfig.isAmethystToolsEnabled) {
+                            ITEMS.add(swordAmethyst);
+                            ITEMS.add(pickaxeAmethyst);
+                            ITEMS.add(axeAmethyst);
+                            ITEMS.add(shovelAmethyst);
+                            ITEMS.add(hoeAmethyst);
+                            ITEMS.add(crusherAmethyst);
+                        }
+                    }
+                }
+                //garnet
+                if (MineralsConfig.isGarnetEnabled) {
+                    ITEMS.add(gemGarnet);
+                    ITEMS.add(nuggetGarnet);
+                    ITEMS.add(dustGarnet);
+
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isGarnetCraftingEnabled) {
+                            ITEMS.add(gearGarnet);
+                            ITEMS.add(plateGarnet);
+                            ITEMS.add(rodGarnet);
+                            ITEMS.add(tinydustGarnet);
+                        }
+                    }
+                    if (GeneralConfig.isArmorEnabled) {
+                        if (ArmorConfig.isGarnetArmorEnabled) {
+                            ITEMS.add(helmetGarnet);
+                            ITEMS.add(chestplateGarnet);
+                            ITEMS.add(leggingsGarnet);
+                            ITEMS.add(bootsGarnet);
+                        }
+                    }
+                    if (GeneralConfig.isToolsEnabled) {
+                        if (ToolsConfig.isGarnetToolsEnabled) {
+                            ITEMS.add(swordGarnet);
+                            ITEMS.add(pickaxeGarnet);
+                            ITEMS.add(axeGarnet);
+                            ITEMS.add(shovelGarnet);
+                            ITEMS.add(hoeGarnet);
+                            ITEMS.add(crusherGarnet);
+                        }
+                    }
+                }
+//                //nephrite
+//                if (MineralsConfig.isNephriteEnabled) {
+//                    ITEMS.add(gemNephrite);
+//                    ITEMS.add(nuggetNephrite);
+//                    ITEMS.add(dustNephrite);
+//
+//                    if (GeneralConfig.isCraftingEnabled) {
+//                        if (CraftingConfig.isNephriteCraftingEnabled) {
+//                            ITEMS.add(gearNephrite);
+//                            ITEMS.add(plateNephrite);
+//                            ITEMS.add(rodNephrite);
+//                            ITEMS.add(tinydustNephrite);
+//                        }
+//                    }
+//                    if (GeneralConfig.isArmorEnabled) {
+//                        if (ArmorConfig.isNephriteArmorEnabled) {
+//                            ITEMS.add(helmetNephrite);
+//                            ITEMS.add(chestplateNephrite);
+//                            ITEMS.add(leggingsNephrite);
+//                            ITEMS.add(bootsNephrite);
+//                        }
+//                    }
+//                    if (GeneralConfig.isToolsEnabled) {
+//                        if (ToolsConfig.isNephriteToolsEnabled) {
+//                            ITEMS.add(swordNephrite);
+//                            ITEMS.add(pickaxeNephrite);
+//                            ITEMS.add(axeNephrite);
+//                            ITEMS.add(shovelNephrite);
+//                            ITEMS.add(hoeNephrite);
+//                            ITEMS.add(crusherNephrite);
+//                        }
+//                    }
+//                }
+                //opal
+                if (MineralsConfig.isOpalEnabled) {
+                    ITEMS.add(gemOpal);
+                    ITEMS.add(nuggetOpal);
+                    ITEMS.add(dustOpal);
+
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isOpalCraftingEnabled) {
+                            ITEMS.add(gearOpal);
+                            ITEMS.add(plateOpal);
+                            ITEMS.add(rodOpal);
+                            ITEMS.add(tinydustOpal);
+                        }
+                    }
+                    if (GeneralConfig.isArmorEnabled) {
+                        if (ArmorConfig.isOpalArmorEnabled) {
+                            ITEMS.add(helmetOpal);
+                            ITEMS.add(chestplateOpal);
+                            ITEMS.add(leggingsOpal);
+                            ITEMS.add(bootsOpal);
+                        }
+                    }
+                    if (GeneralConfig.isToolsEnabled) {
+                        if (ToolsConfig.isOpalToolsEnabled) {
+                            ITEMS.add(swordOpal);
+                            ITEMS.add(pickaxeOpal);
+                            ITEMS.add(axeOpal);
+                            ITEMS.add(shovelOpal);
+                            ITEMS.add(hoeOpal);
+                            ITEMS.add(crusherOpal);
+                        }
+                    }
+                }
+                //pearl
+                if (MineralsConfig.isPearlEnabled) {
+                    ITEMS.add(gemPearl);
+                    ITEMS.add(nuggetPearl);
+                    ITEMS.add(dustPearl);
+
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isPearlCraftingEnabled) {
+                            ITEMS.add(gearPearl);
+                            ITEMS.add(platePearl);
+                            ITEMS.add(rodPearl);
+                            ITEMS.add(tinydustPearl);
+                        }
+                    }
+                    if (GeneralConfig.isArmorEnabled) {
+                        if (ArmorConfig.isPearlArmorEnabled) {
+                            ITEMS.add(helmetPearl);
+                            ITEMS.add(chestplatePearl);
+                            ITEMS.add(leggingsPearl);
+                            ITEMS.add(bootsPearl);
+                        }
+                    }
+                    if (GeneralConfig.isToolsEnabled) {
+                        if (ToolsConfig.isPearlToolsEnabled) {
+                            ITEMS.add(swordPearl);
+                            ITEMS.add(pickaxePearl);
+                            ITEMS.add(axePearl);
+                            ITEMS.add(shovelPearl);
+                            ITEMS.add(hoePearl);
+                            ITEMS.add(crusherPearl);
+                        }
+                    }
                 }
                 //peridot
                 if (MineralsConfig.isPeridotEnabled) {
@@ -2369,6 +2515,24 @@ public class ModItems {
                             ITEMS.add(platePeridot);
                             ITEMS.add(rodPeridot);
                             ITEMS.add(tinydustPeridot);
+                        }
+                    }
+                    if (GeneralConfig.isArmorEnabled) {
+                        if (ArmorConfig.isPeridotArmorEnabled) {
+                            ITEMS.add(helmetPeridot);
+                            ITEMS.add(chestplatePeridot);
+                            ITEMS.add(leggingsPeridot);
+                            ITEMS.add(bootsPeridot);
+                        }
+                    }
+                    if (GeneralConfig.isToolsEnabled) {
+                        if (ToolsConfig.isPeridotToolsEnabled) {
+                            ITEMS.add(swordPeridot);
+                            ITEMS.add(pickaxePeridot);
+                            ITEMS.add(axePeridot);
+                            ITEMS.add(shovelPeridot);
+                            ITEMS.add(hoePeridot);
+                            ITEMS.add(crusherPeridot);
                         }
                     }
                 }
@@ -2386,6 +2550,24 @@ public class ModItems {
                             ITEMS.add(tinydustRuby);
                         }
                     }
+                    if (GeneralConfig.isArmorEnabled) {
+                        if (ArmorConfig.isRubyArmorEnabled) {
+                            ITEMS.add(helmetRuby);
+                            ITEMS.add(chestplateRuby);
+                            ITEMS.add(leggingsRuby);
+                            ITEMS.add(bootsRuby);
+                        }
+                    }
+                    if (GeneralConfig.isToolsEnabled) {
+                        if (ToolsConfig.isRubyToolsEnabled) {
+                            ITEMS.add(swordRuby);
+                            ITEMS.add(pickaxeRuby);
+                            ITEMS.add(axeRuby);
+                            ITEMS.add(shovelRuby);
+                            ITEMS.add(hoeRuby);
+                            ITEMS.add(crusherRuby);
+                        }
+                    }
                 }
                 //sapphire
                 if (MineralsConfig.isSapphireEnabled) {
@@ -2399,6 +2581,24 @@ public class ModItems {
                             ITEMS.add(plateSapphire);
                             ITEMS.add(rodSapphire);
                             ITEMS.add(tinydustSapphire);
+                        }
+                    }
+                    if (GeneralConfig.isArmorEnabled) {
+                        if (ArmorConfig.isSapphireArmorEnabled) {
+                            ITEMS.add(helmetSapphire);
+                            ITEMS.add(chestplateSapphire);
+                            ITEMS.add(leggingsSapphire);
+                            ITEMS.add(bootsSapphire);
+                        }
+                    }
+                    if (GeneralConfig.isToolsEnabled) {
+                        if (ToolsConfig.isSapphireToolsEnabled) {
+                            ITEMS.add(swordSapphire);
+                            ITEMS.add(pickaxeSapphire);
+                            ITEMS.add(axeSapphire);
+                            ITEMS.add(shovelSapphire);
+                            ITEMS.add(hoeSapphire);
+                            ITEMS.add(crusherSapphire);
                         }
                     }
                 }
@@ -2432,6 +2632,21 @@ public class ModItems {
                             ITEMS.add(plateCinnabar);
                             ITEMS.add(rodCinnabar);
                             ITEMS.add(tinydustCinnabar);
+                        }
+                    }
+                }
+                //mercury
+                if (MineralsConfig.isMercuryEnabled) {
+                    ITEMS.add(elementMercury);
+                    ITEMS.add(nuggetMercury);
+                    ITEMS.add(dustMercury);
+
+                    if (GeneralConfig.isCraftingEnabled) {
+                        if (CraftingConfig.isMercuryCraftingEnabled) {
+                            ITEMS.add(gearMercury);
+                            ITEMS.add(plateMercury);
+                            ITEMS.add(rodMercury);
+                            ITEMS.add(tinydustMercury);
                         }
                     }
                 }
@@ -2762,19 +2977,24 @@ public class ModItems {
     public static void registerItems(RegistryEvent.Register<Item> event){
         for (Item item : ITEMS) {
             event.getRegistry().register(item);
+            ItemModelHandler.assignCategory(item);
+            ItemModelHandler.assignMaterial(item);
         }
     }
+
+//    @SubscribeEvent
+//    public static void registerRenders(ModelRegistryEvent event){
+//        for (Item item : ITEMS) {
+//            ItemModelHandler.onModelRegister(event);
+////            registerRender(item);
+//        }
+//    }
 
     @SubscribeEvent
-    public static void registerRenders(ModelRegistryEvent event){
+    public static void onModelRegister(ModelRegistryEvent event) {
         for (Item item : ITEMS) {
-            registerRender(item);
+            ItemModelHandler.registerItemModel(item);
         }
-    }
-
-    public static void registerRender(Item item)
-    {
-        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(Objects.requireNonNull(item.getRegistryName()), "inventory"));
     }
 
     public static void initOreDict() {
@@ -2791,7 +3011,7 @@ public class ModItems {
                 OreDictionary.registerOre(oreDictName, item);
             }
         } else {
-            System.err.println("Item " + item + " does not have a valid registry name!");
+            System.err.println("Item '" + item + "' could not be added to the OreDict");
         }
     }
 
@@ -2874,8 +3094,58 @@ public class ModItems {
                 oreDictAdd.add("ore");
                 oreDictAdd.add("Ore");
                 break;
+            case "sword":
+                oreDictAdd.add("sword" + itemName);
+                oreDictAdd.add("sword");
+                oreDictAdd.add("oreSword");
+                break;
+            case "pickaxe":
+                oreDictAdd.add("pickaxe" + itemName);
+                oreDictAdd.add("pickaxe");
+                oreDictAdd.add("orePickaxe");
+                break;
+            case "axe":
+                oreDictAdd.add("axe" + itemName);
+                oreDictAdd.add("axe");
+                oreDictAdd.add("oreAxe");
+                break;
+            case "shovel":
+                oreDictAdd.add("shovel" + itemName);
+                oreDictAdd.add("shovel");
+                oreDictAdd.add("oreShovel");
+                break;
+            case "hoe":
+                oreDictAdd.add("hoe" + itemName);
+                oreDictAdd.add("hoe");
+                oreDictAdd.add("oreHoe");
+                break;
+            case "crusher":
+                oreDictAdd.add("crusher" + itemName);
+                oreDictAdd.add("crusher");
+                oreDictAdd.add("oreCrusher");
+                break;
+            case "helmet":
+                oreDictAdd.add("helmet" + itemName);
+                oreDictAdd.add("helmet");
+                oreDictAdd.add("oreHelmet");
+                break;
+            case "chestplate":
+                oreDictAdd.add("chestplate" + itemName);
+                oreDictAdd.add("chestplate");
+                oreDictAdd.add("oreChestplate");
+                break;
+            case "leggings":
+                oreDictAdd.add("leggings" + itemName);
+                oreDictAdd.add("leggings");
+                oreDictAdd.add("oreLeggings");
+                break;
+            case "boots":
+                oreDictAdd.add("boots" + itemName);
+                oreDictAdd.add("boots");
+                oreDictAdd.add("oreBoots");
+                break;
             default:
-                System.err.println("Unknown item type: " + itemType);
+                System.err.println("Unknown item type: '" + itemType + "'");
         }
         return oreDictAdd;
     }

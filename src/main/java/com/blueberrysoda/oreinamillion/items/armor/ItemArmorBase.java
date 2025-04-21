@@ -1,6 +1,7 @@
 package com.blueberrysoda.oreinamillion.items.armor;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
@@ -17,14 +18,14 @@ import java.util.List;
 public class ItemArmorBase extends ItemArmor {
 
     private static CreativeTabs creativeTab;
-    private static boolean addTooltip;
+    private final boolean addTooltip;
 
     public ItemArmorBase(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, CreativeTabs creativeTabs, boolean addTooltip) {
         super(materialIn, renderIndexIn, equipmentSlotIn);
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_ARMOR);
-        ItemArmorBase.addTooltip = addTooltip;
+        this.addTooltip = addTooltip;
         ItemArmorBase.creativeTab = creativeTab;
     }
 
@@ -32,10 +33,16 @@ public class ItemArmorBase extends ItemArmor {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
         super.addInformation(stack,worldIn,tooltip,flagIn);
-        if (ItemArmorBase.addTooltip) {
-            String s = stack.getItem().getUnlocalizedName() + ".tooltip";
-            String result = I18n.format(s);
-            tooltip.add(result);
+        if (this.addTooltip) {
+            if (GuiScreen.isShiftKeyDown()) {
+                String s = stack.getItem().getUnlocalizedName() + ".tooltip";
+                String result = I18n.format(s);
+                tooltip.add(result);
+            } else {
+                String s = "hold.shift.tooltip";
+                String result = I18n.format(s);
+                tooltip.add(result);
+            }
         }
     }
 }

@@ -23,7 +23,6 @@ public class OreInAMillion {
     public static final String DEPENDENCIES = "";
     public static final String CLIENT_PROXY = "com.blueberrysoda.oreinamillion.proxy.ClientProxy";
     public static final String COMMON_PROXY = "com.blueberrysoda.oreinamillion.proxy.CommonProxy";
-    public static final int GUI_ALLOYER = 0;
     public static final CreativeTabs CREATIVE_TAB_MAIN = new CreativeTabMain(CreativeTabs.getNextID(), "CreativeTabMain", 1);
     public static final CreativeTabs CREATIVE_TAB_MINERAL = new CreativeTabMineral(CreativeTabs.getNextID(), "CreativeTabMineral", 2);
     public static final CreativeTabs CREATIVE_TAB_CRAFTING = new CreativeTabCrafting(CreativeTabs.getNextID(), "CreativeTabCrafting", 3);

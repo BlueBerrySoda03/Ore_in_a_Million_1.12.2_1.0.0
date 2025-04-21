@@ -144,52 +144,144 @@ public class ItemCrusher extends ItemTool {
     }
 
     @Override
-    public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos, EntityLivingBase livingBase) {
-        if (!world.isRemote) {
-            String oreName = getOreName(state);
+    public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase player) {
+        if (!worldIn.isRemote) {
+            ItemStack blockStack = new ItemStack(state.getBlock());
+            int[] oreIDs = OreDictionary.getOreIDs(blockStack);
 
-            if (oreName != null) {
-                handleDrops(world, pos, oreName);
+            for (int oreID : oreIDs) {
+                String oreName = OreDictionary.getOreName(oreID);
+
+                int harvestLevel = toolMaterial.getHarvestLevel();
+                int requiredHarvestLevel = state.getBlock().getHarvestLevel(state);
+
+                if (harvestLevel >= requiredHarvestLevel) {
+                    switch (oreName) {
+                        case "oreAdamantine":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustAdamantine), 2);
+                            break;
+                        case "oreAluminum":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustAluminum), 2);
+                            break;
+                        case "oreArdite":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustArdite), 2);
+                            break;
+                        case "oreChrome":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustChrome), 2);
+                            break;
+                        case "oreCobalt":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustCobalt), 2);
+                            break;
+                        case "oreCopper":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustCopper), 2);
+                            break;
+                        case "oreEnder":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustEnder), 2);
+                            break;
+                        case "oreIridium":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustIridium), 2);
+                            break;
+                        case "oreLead":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustLead), 2);
+                            break;
+                        case "oreMithril":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustMithril), 2);
+                            break;
+                        case "oreNickel":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustNickel), 2);
+                            break;
+                        case "oreOsmium":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustOsmium), 2);
+                            break;
+                        case "orePlatinum":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustPlatinum), 2);
+                            break;
+                        case "oreSilver":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustSilver), 2);
+                            break;
+                        case "oreTin":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustTin), 2);
+                            break;
+                        case "oreTitanium":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustTitanium), 2);
+                            break;
+                        case "oreTungsten":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustTungsten), 2);
+                            break;
+                        case "oreUranium":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustUranium), 2);
+                            break;
+                        case "oreZinc":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustZinc), 2);
+                            break;
+                        case "oreAmethyst":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustAmethyst), 2);
+                            break;
+                        case "orePearl":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustPearl), 2);
+                            break;
+                        case "orePeridot":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustPeridot), 2);
+                            break;
+                        case "oreRuby":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustRuby), 2);
+                            break;
+                        case "oreSapphire":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustSapphire), 2);
+                            break;
+                        case "oreCinnabar":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustCinnabar), 2);
+                            break;
+                        case "oreSulfur":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustSulfur), 4);
+                            break;
+                        case "oreDiamond":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustDiamond), 2);
+                            break;
+                        case "oreEmerald":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustEmerald), 2);
+                            break;
+                        case "oreGold":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustGold), 2);
+                            break;
+                        case "oreIron":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustIron), 2);
+                            break;
+                        case "oreLapis":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(ModItems.dustLapis), 10);
+                            break;
+                        case "oreQuartz":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(Items.QUARTZ), 8);
+                            break;
+                        case "oreRedstone":
+                            spawnCustomDrops(worldIn, pos, new ItemStack(Items.REDSTONE), 12);
+                            break;
+                        default:
+                            break;
+                    }
+                } else {
+                    return false;
+                }
             }
+            worldIn.setBlockToAir(pos);
+            stack.damageItem(1, player);
         }
-        return super.onBlockDestroyed(stack,world,state, pos, livingBase);
+        return super.onBlockDestroyed(stack, worldIn, state, pos, player);
     }
 
-    private String getOreName(IBlockState state) {
-        int[] oreIDs = OreDictionary.getOreIDs(new ItemStack(state.getBlock()));
-        for (int oreID : oreIDs) {
-            String oreName = OreDictionary.getOreName(oreID);
-            if (oreName.startsWith("ore")) {
-                return oreName;
-            }
+    private String getOreDictName(IBlockState state) {
+        ItemStack blockStack = new ItemStack(state.getBlock());
+        int[] oreIDs = OreDictionary.getOreIDs(blockStack);
+
+        if (oreIDs.length > 0) {
+            return OreDictionary.getOreName(oreIDs[0]);
         }
-        return null;
+        return "";
     }
 
-    private void handleDrops(World world, BlockPos pos, String oreName) {
-        ItemStack dropItem;
-        int amountDrop = 2;
-        int amountDropSulfur = 4;
-
-        switch (oreName) {
-            case "oreSulfur":
-                dropItem = new ItemStack(ModItems.ingotIridium);
-                break;
-            case "oreCopper":
-                dropItem = new ItemStack(ModItems.ingotEnder);
-                break;
-            default:
-                dropItem = ItemStack.EMPTY;
-        }
-
-        if (!dropItem.isEmpty()) {
-            for (int i = 0; i < amountDrop; i++) {
-                Block.spawnAsEntity(world, pos, dropItem);
-            }
-            for (int i = 0; i < amountDropSulfur; i++) {
-                Block.spawnAsEntity(world, pos, dropItem);
-            }
-            world.setBlockToAir(pos);
+    private void spawnCustomDrops(World world, BlockPos pos, ItemStack dropStack, int count) {
+        for (int i = 0; i < count; i++) {
+            Block.spawnAsEntity(world, pos, dropStack.copy());
         }
     }
 }

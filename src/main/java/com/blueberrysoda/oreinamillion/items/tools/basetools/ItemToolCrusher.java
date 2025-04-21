@@ -2,6 +2,7 @@ package com.blueberrysoda.oreinamillion.items.tools.basetools;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
 import com.blueberrysoda.oreinamillion.util.ItemCrusher;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
@@ -15,26 +16,31 @@ import java.util.List;
 
 public class ItemToolCrusher extends ItemCrusher {
 
-    private static CreativeTabs creativeTab;
-    private static boolean addTooltip;
+    private final boolean addTooltip;
 
     public ItemToolCrusher(String name, ToolMaterial material, CreativeTabs creativeTab, boolean addTooltip) {
         super(material);
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
-        setCreativeTab(OreInAMillion.CREATIVE_TAB_TOOL);
-        ItemToolCrusher.addTooltip = addTooltip;
-        ItemToolCrusher.creativeTab = creativeTab;
+        setCreativeTab(creativeTab);
+        this.addTooltip = addTooltip;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
         super.addInformation(stack,worldIn,tooltip,flagIn);
-        if (ItemToolCrusher.addTooltip) {
-            String s = stack.getItem().getUnlocalizedName() + ".tooltip";
-            String result = I18n.format(s);
-            tooltip.add(result);
+        if (this.addTooltip) {
+            if (GuiScreen.isShiftKeyDown()) {
+                String s = stack.getItem().getUnlocalizedName() + ".tooltip";
+                String result = I18n.format(s);
+                tooltip.add(result);
+            } else {
+                String s = "hold.shift.tooltip";
+                String result = I18n.format(s);
+                tooltip.add(result);
+            }
         }
     }
 }

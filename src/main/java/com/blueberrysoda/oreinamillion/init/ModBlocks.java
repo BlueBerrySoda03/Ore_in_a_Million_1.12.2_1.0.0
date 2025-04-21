@@ -1,12 +1,21 @@
 package com.blueberrysoda.oreinamillion.init;
 
+import com.blueberrysoda.oreinamillion.OreInAMillion;
+import com.blueberrysoda.oreinamillion.blocks.base.BlockBaseExp;
+import com.blueberrysoda.oreinamillion.blocks.base.BlockDropBase;
 import com.blueberrysoda.oreinamillion.blocks.combined.BlockCombined;
+import com.blueberrysoda.oreinamillion.blocks.drop.BlockDropSand;
 import com.blueberrysoda.oreinamillion.blocks.ores.*;
 import com.blueberrysoda.oreinamillion.config.GeneralConfig;
 import com.blueberrysoda.oreinamillion.config.MineralsConfig;
 import com.blueberrysoda.oreinamillion.config.ModCompatConfig;
+import com.blueberrysoda.oreinamillion.creativetabs.CreativeTabBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -25,12 +34,14 @@ import java.util.Objects;
 @Mod.EventBusSubscriber
 public class ModBlocks {
 
+    private static final CreativeTabs Block = OreInAMillion.CREATIVE_TAB_BLOCK;
+    private static final CreativeTabs None = null;
+
     public static final List<Block> BLOCKS = new ArrayList<>();
 
     //=========
     //ores
     //=========
-    //ingots
     public static Block oreAdamantine = new BlockOre("adamantine_ore", 3);
     public static Block oreAluminum = new BlockOre("aluminum_ore", 1);
     public static Block oreArdite = new BlockOre("ardite_ore", 1);
@@ -52,12 +63,13 @@ public class ModBlocks {
     public static Block oreZinc = new BlockOre("zinc_ore", 1);
 
     public static Block oreAmethyst = new BlockOre("amethyst_ore", 2);
+    public static Block orePearl = new BlockDropSand("pearl_ore", Block, ModItems.gemPearl.getDefaultInstance(), Blocks.SAND, false);
     public static Block orePeridot = new BlockOre("peridot_ore", 2);
     public static Block oreRuby = new BlockOre("ruby_ore", 2);
     public static Block oreSapphire = new BlockOre("sapphire_ore", 2);
 
     public static Block oreCinnabar = new BlockOre("cinnabar_ore", 0);
-    public static Block oreSulfur = new BlockOre("sulfur_ore", 0);
+    public static Block oreSulfur = new BlockOreDrop("sulfur_ore",  ModItems.elementSulfur, 2, 1);
 
     //=========
     //combined
@@ -95,10 +107,8 @@ public class ModBlocks {
     //other
     //=========
     public static Block oreWeezer = new BlockOreDrop("weezer_ore", ModItems.weezerWeezer, 1, 0);
-//    public static Block blockEpic = new BlockBase("epic_block", Material.SAND, "axe", SoundType.METAL, 7.0F, 15.0F, 2);
 
     public static void init(){
-//        BLOCKS.add(blockEpic);
         // = new ("", Material.);
         if (GeneralConfig.isMineralsEnabled) {
             if(GeneralConfig.isIngotsEnabled) {
@@ -237,6 +247,10 @@ public class ModBlocks {
                 //amethyst
                 if (MineralsConfig.isAmethystEnabled){
                     BLOCKS.add(oreAmethyst);
+                }
+                //pearl
+                if (MineralsConfig.isPearlEnabled) {
+                    BLOCKS.add(orePearl);
                 }
                 //peridot
                 if (MineralsConfig.isPeridotEnabled){

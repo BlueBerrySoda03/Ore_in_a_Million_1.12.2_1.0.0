@@ -25,9 +25,6 @@ public class BlockBase extends Block{
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_BLOCK);
-//        setHardness(hardness);
-//        setResistance(resistance);
-//        setHarvestLevel(toolClass, harvestLevel);
 
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(Objects.requireNonNull(this.getRegistryName())));
     }

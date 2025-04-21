@@ -51,8 +51,6 @@ public class ArmorCopperEvent {
                     case 4:
                         damageReduction = 3.0F;
                         break;
-                    default:
-                        damageReduction = 1.0F;
                 }
             }
             event.setAmount(event.getAmount() * damageReduction);

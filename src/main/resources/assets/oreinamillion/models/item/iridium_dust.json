@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "oreinamillion:items/iridium_dust"
-  }
+    "parent": "oreinamillion:item/base/dust_base",
+    "textures": {
+        "layer0": "oreinamillion:items/base/dust_base"
+    }
 }

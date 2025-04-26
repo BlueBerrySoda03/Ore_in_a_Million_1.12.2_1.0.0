@@ -1,7 +1,10 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "oreinamillion:items/tools/sword/head",
-    "layer1": "oreinamillion:items/tools/sword/handle"
-  }
+    "layer0": "oreinamillion:items/tools/sword/head_inner",
+    "layer1": "oreinamillion:items/tools/sword/head_outer",
+    "layer2": "oreinamillion:items/tools/sword/guard",
+    "layer3": "oreinamillion:items/tools/sword/handle"
+  },
+  "tintindex": [0, 1, 2, 3]
 }

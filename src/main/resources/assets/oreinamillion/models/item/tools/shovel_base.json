@@ -2,6 +2,7 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "oreinamillion:items/tools/shovel/head",
-    "layer1": "oreinamillion:items/tools/shovel/handle"
+    "layer1": "oreinamillion:items/tools/shovel/handle_bottom",
+    "layer2": "oreinamillion:items/tools/shovel/handle_top"
   }
 }

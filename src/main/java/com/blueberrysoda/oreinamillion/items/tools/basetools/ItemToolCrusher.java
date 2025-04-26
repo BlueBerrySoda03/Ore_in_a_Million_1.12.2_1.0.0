@@ -1,7 +1,7 @@
 package com.blueberrysoda.oreinamillion.items.tools.basetools;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
-import com.blueberrysoda.oreinamillion.util.ItemCrusher;
+import com.blueberrysoda.oreinamillion.items.tools.customtools.ItemCrusherCustom;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -14,7 +14,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ItemToolCrusher extends ItemCrusher {
+public class ItemToolCrusher extends ItemCrusherCustom {
 
     private final boolean addTooltip;
 

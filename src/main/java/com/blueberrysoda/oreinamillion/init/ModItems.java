@@ -8,21 +8,21 @@ import com.blueberrysoda.oreinamillion.items.materials.MaterialArmor;
 import com.blueberrysoda.oreinamillion.items.materials.MaterialTool;
 import com.blueberrysoda.oreinamillion.items.misc.ItemWeezer;
 import com.blueberrysoda.oreinamillion.items.tools.basetools.*;
-import com.blueberrysoda.oreinamillion.util.ItemModelHandler;
-import com.blueberrysoda.oreinamillion.util.enumerations.ItemType;
-import com.blueberrysoda.oreinamillion.util.enumerations.MaterialType;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import com.blueberrysoda.oreinamillion.items.tools.customtools.ItemPickaxeModular;
+import com.blueberrysoda.oreinamillion.util.enumerations.ToolMaterials;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.OreDictionary;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -1237,7 +1237,10 @@ public class ModItems {
     public static Item creativeIcon5 = new ItemBase("creative_icon5", None, false);
     public static Item creativeIcon6 = new ItemBase("creative_icon6", None, false);
 
+    public static Item modularPickaxe = new ItemPickaxeModular("pickaxe_modular", ToolMaterials.Diamond, ToolMaterials.Iron, ToolMaterials.Emerald, null);
+
     public static void init(){
+        ITEMS.add(modularPickaxe);
         if (GeneralConfig.isMineralsEnabled) {
             if (GeneralConfig.isIngotsEnabled) {
                 //adamantine
@@ -2977,8 +2980,8 @@ public class ModItems {
     public static void registerItems(RegistryEvent.Register<Item> event){
         for (Item item : ITEMS) {
             event.getRegistry().register(item);
-            ItemModelHandler.assignCategory(item);
-            ItemModelHandler.assignMaterial(item);
+//            ItemModelHandler.assignCategory(item);
+//            ItemModelHandler.assignMaterial(item);
         }
     }
 
@@ -2993,7 +2996,28 @@ public class ModItems {
     @SubscribeEvent
     public static void onModelRegister(ModelRegistryEvent event) {
         for (Item item : ITEMS) {
-            ItemModelHandler.registerItemModel(item);
+//            ItemModelHandler.registerItemModel(item);
+        }
+    }
+
+    public static void generateItemJsons() {
+        for (Item item : ITEMS) {
+            String jsonContent = String.format(
+                    "{\n" +
+                    " \"parent\": \"item/handheld\",\n" +
+                    " \"textures\": {\n" +
+                    "  \"layer0\": \"oreinamillion:items/%s\"\n" +
+                    " }\n" +
+                    "}",
+                    item.getRegistryName()
+            );
+
+            File file = new File("resources/assets/oreinamillion/models/item/" + item.getRegistryName() + ".json");
+            try (FileWriter writer = new FileWriter(file)) {
+                writer.write(jsonContent);
+            } catch (IOException e) {
+                System.err.println("Error generating JSON model for " + item.getRegistryName());
+            }
         }
     }
 

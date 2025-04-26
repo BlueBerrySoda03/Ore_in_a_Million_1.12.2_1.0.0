@@ -2,7 +2,7 @@ package com.blueberrysoda.oreinamillion.proxy;
 
 import com.blueberrysoda.oreinamillion.config.*;
 import com.blueberrysoda.oreinamillion.init.*;
-import com.blueberrysoda.oreinamillion.util.EventUtil;
+//import com.blueberrysoda.oreinamillion.util.EventUtil;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -16,15 +16,17 @@ public class CommonProxy {
         ArmorEventsConfig.init(event);
         ToolsConfig.init(event);
         ModCompatConfig.init(event);
-        ModItems.init();
+//        ModItems.init();
+        ModItemsExp.init();
         ModBlocks.init();
         ModSounds.init();
-        ModEvents.init();
-        EventUtil.init();
+//        ModEvents.init();
+//        EventUtil.init();
     }
 
     public static void initCommon(FMLInitializationEvent event){
-        ModItems.initOreDict();
+//        ModItems.initOreDict();
+        ModItemsExp.initOreDict();
         ModBlocks.initOreDict();
     }
 

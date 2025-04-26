@@ -2,6 +2,7 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "oreinamillion:items/tools/hoe/head",
-    "layer1": "oreinamillion:items/tools/hoe/handle"
+    "layer1": "oreinamillion:items/tools/hoe/handle_top",
+    "layer2": "oreinamillion:items/tools/hoe/handle_bottom"
   }
 }

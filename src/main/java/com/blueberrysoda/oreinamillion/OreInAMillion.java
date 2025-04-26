@@ -3,8 +3,9 @@ package com.blueberrysoda.oreinamillion;
 import com.blueberrysoda.oreinamillion.creativetabs.*;
 import com.blueberrysoda.oreinamillion.proxy.ClientProxy;
 import com.blueberrysoda.oreinamillion.proxy.CommonProxy;
-import com.blueberrysoda.oreinamillion.recipes.CraftingRecipes;
-import com.blueberrysoda.oreinamillion.recipes.SmeltingRecipes;
+//import com.blueberrysoda.oreinamillion.recipes.CraftingRecipes;
+//import com.blueberrysoda.oreinamillion.recipes.SmeltingRecipes;
+import com.blueberrysoda.oreinamillion.util.JsonGenerator;
 import com.blueberrysoda.oreinamillion.world.OreWorldGen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
@@ -40,17 +41,28 @@ public class OreInAMillion {
 
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event){
+        System.out.println("Ore In A Million: Pre-Initialization Started!");
+
+//        JsonGenerator jsonGenerator = new JsonGenerator();
+//        jsonGenerator.main(null);
+//        System.out.println("Ore In A Million: JSON Generation Complete!");
+
         ClientProxy.preInitClient(event);
+        System.out.println("Ore In A Million: Client Proxy Complete!");
+
         CommonProxy.preInitCommon(event);
+        System.out.println("Ore In A Million: Server Proxy Complete!");
+
         GameRegistry.registerWorldGenerator(new OreWorldGen(), 1);
+        System.out.println("Ore In A Million: Ore Generation Complete!");
     }
 
     @Mod.EventHandler
     public static void init(FMLInitializationEvent event){
         ClientProxy.initClient(event);
         CommonProxy.initCommon(event);
-        SmeltingRecipes.init();
-        CraftingRecipes.init();
+//        SmeltingRecipes.init();
+//        CraftingRecipes.init();
     }
 
     @Mod.EventHandler

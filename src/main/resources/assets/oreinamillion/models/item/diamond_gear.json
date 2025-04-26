@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "oreinamillion:items/diamond_gear"
-  }
+    "parent": "oreinamillion:item/base/gear_base",
+    "textures": {
+        "layer0": "oreinamillion:items/base/gear_base"
+    }
 }

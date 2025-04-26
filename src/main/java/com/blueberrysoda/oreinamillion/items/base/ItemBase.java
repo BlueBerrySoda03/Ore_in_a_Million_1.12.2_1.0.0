@@ -16,6 +16,7 @@ import java.util.List;
 public class ItemBase extends Item {
 
     private final boolean addTooltip;
+    private final String name;
 
     public ItemBase(String name, CreativeTabs creativeTab, boolean addTooltip){
         setRegistryName(name);
@@ -23,6 +24,11 @@ public class ItemBase extends Item {
         setMaxStackSize(64);
         setCreativeTab(creativeTab);
         this.addTooltip = addTooltip;
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     @SideOnly(Side.CLIENT)

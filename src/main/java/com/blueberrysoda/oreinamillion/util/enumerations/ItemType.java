@@ -1,34 +1,41 @@
 package com.blueberrysoda.oreinamillion.util.enumerations;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
+import net.minecraft.creativetab.CreativeTabs;
 
 public enum ItemType {
-    Ingot(OreInAMillion.MODID + ":item/ingot_base"),
-    Nugget(OreInAMillion.MODID + ":item/nugget_base"),
-    Dust(OreInAMillion.MODID + ":item/dust_base"),
-    Gear(OreInAMillion.MODID + ":gear_base"),
-    Plate(OreInAMillion.MODID + "item/plate_base"),
-    Rod(OreInAMillion.MODID + "item/rod_base"),
-    TinyDust(OreInAMillion.MODID + "item/tiny_dust_base"),
-    Helmet(OreInAMillion.MODID + "item/helmet_base"),
-    Chestplate(OreInAMillion.MODID + "item/chestplate_base"),
-    Leggings(OreInAMillion.MODID + "item/leggings_base"),
-    Boots(OreInAMillion.MODID + "item/boots_base"),
-    Sword(OreInAMillion.MODID + "item/sword_base"),
-    Pickaxe(OreInAMillion.MODID + "item/pickaxe_base"),
-    Axe(OreInAMillion.MODID + "item/axe_base"),
-    Shovel(OreInAMillion.MODID + "item/shovel_base"),
-    Hoe(OreInAMillion.MODID + "item/hoe_base"),
-    Crusher(OreInAMillion.MODID + "item/crusher_base");
+    Ingot(OreInAMillion.MODID + ":items/base/ingot_base", OreInAMillion.CREATIVE_TAB_MINERAL),
+    Nugget(OreInAMillion.MODID + ":items/base/nugget_base", OreInAMillion.CREATIVE_TAB_MINERAL),
+    Dust(OreInAMillion.MODID + ":items/base/dust_base", OreInAMillion.CREATIVE_TAB_MINERAL),
+    Gear(OreInAMillion.MODID + ":items/base/gear_base", OreInAMillion.CREATIVE_TAB_CRAFTING),
+    Plate(OreInAMillion.MODID + ":items/base/plate_base", OreInAMillion.CREATIVE_TAB_CRAFTING),
+    Rod(OreInAMillion.MODID + ":items/base/rod_base", OreInAMillion.CREATIVE_TAB_CRAFTING),
+    TinyDust(OreInAMillion.MODID + "items/:tiny_dust_base", OreInAMillion.CREATIVE_TAB_CRAFTING);
+//    Helmet(OreInAMillion.MODID + ":helmet_base", OreInAMillion.CREATIVE_TAB_ARMOR),
+//    Chestplate(OreInAMillion.MODID + ":chestplate_base", OreInAMillion.CREATIVE_TAB_ARMOR),
+//    Leggings(OreInAMillion.MODID + ":leggings_base", OreInAMillion.CREATIVE_TAB_ARMOR),
+//    Boots(OreInAMillion.MODID + ":boots_base", OreInAMillion.CREATIVE_TAB_ARMOR),
+//    Sword(OreInAMillion.MODID + ":sword_base", OreInAMillion.CREATIVE_TAB_TOOL),
+//    Pickaxe(OreInAMillion.MODID + ":pickaxe_base", OreInAMillion.CREATIVE_TAB_TOOL),
+//    Axe(OreInAMillion.MODID + ":axe_base", OreInAMillion.CREATIVE_TAB_TOOL),
+//    Shovel(OreInAMillion.MODID + ":shovel_base", OreInAMillion.CREATIVE_TAB_TOOL),
+//    Hoe(OreInAMillion.MODID + ":hoe_base", OreInAMillion.CREATIVE_TAB_TOOL),
+//    Crusher(OreInAMillion.MODID + ":crusher_base", OreInAMillion.CREATIVE_TAB_TOOL);
 
 
     private final String texturePath;
+    private final CreativeTabs creativeTab;
 
-    ItemType(String texturePath) {
+    ItemType(String texturePath, CreativeTabs creativeTab) {
         this.texturePath = texturePath;
+        this.creativeTab = creativeTab;
     }
 
     public String getTexturePath() {
         return texturePath;
+    }
+
+    public CreativeTabs getCreativeTab() {
+        return creativeTab;
     }
 }

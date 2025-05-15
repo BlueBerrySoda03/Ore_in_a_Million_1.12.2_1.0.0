@@ -1,6 +1,5 @@
 package com.blueberrysoda.oreinamillion.creativetabs;
 
-import com.blueberrysoda.oreinamillion.init.ModBlocks;
 import com.blueberrysoda.oreinamillion.init.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

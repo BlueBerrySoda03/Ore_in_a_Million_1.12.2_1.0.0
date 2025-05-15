@@ -43,9 +43,9 @@ public class OreInAMillion {
     public static void preInit(FMLPreInitializationEvent event){
         System.out.println("Ore In A Million: Pre-Initialization Started!");
 
-//        JsonGenerator jsonGenerator = new JsonGenerator();
-//        jsonGenerator.main(null);
-//        System.out.println("Ore In A Million: JSON Generation Complete!");
+        JsonGenerator jsonGenerator = new JsonGenerator();
+        jsonGenerator.main(null);
+        System.out.println("Ore In A Million: JSON Generation Complete!");
 
         ClientProxy.preInitClient(event);
         System.out.println("Ore In A Million: Client Proxy Complete!");
@@ -61,7 +61,6 @@ public class OreInAMillion {
     public static void init(FMLInitializationEvent event){
         ClientProxy.initClient(event);
         CommonProxy.initCommon(event);
-//        SmeltingRecipes.init();
 //        CraftingRecipes.init();
     }
 

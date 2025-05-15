@@ -1,6 +1,7 @@
 package com.blueberrysoda.oreinamillion.init;
 
 import com.blueberrysoda.oreinamillion.items.base.ItemBaseExp;
+import com.blueberrysoda.oreinamillion.util.enumerations.CategoryItem;
 import com.blueberrysoda.oreinamillion.util.enumerations.ItemType;
 import com.blueberrysoda.oreinamillion.util.enumerations.MaterialType;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -22,23 +23,33 @@ public class ModItemsExp {
 
     public static final Map<String, Item> ITEMS = new LinkedHashMap<>();
 
+    private static final Map<CategoryItem, Set<ItemType>> exclusionMap = new HashMap<>();
+
+    static {
+        exclusionMap.put(CategoryItem.Base, EnumSet.of(ItemType.Gem, ItemType.Element));
+        exclusionMap.put(CategoryItem.Gem, EnumSet.of(ItemType.Element, ItemType.Ingot));
+        exclusionMap.put(CategoryItem.Element, EnumSet.of(ItemType.Gem, ItemType.Ingot));
+        exclusionMap.put(CategoryItem.Alloy, EnumSet.of(ItemType.Gem, ItemType.Element));
+        exclusionMap.put(CategoryItem.Vanilla, EnumSet.of(ItemType.Gem, ItemType.Element));
+    }
+
     private static final Set<String> exclusionList = new HashSet<>(Arrays.asList(
-            "iron_ingot",
-            "gold_ingot",
-            "iron_nugget",
-            "gold_nugget",
-            "wood_ingot",
-            "stone_ingot",
-            "diamond_ingot"
+            "iron_ingot", "gold_ingot", "iron_nugget", "gold_nugget", "wood_ingot",
+            "stone_ingot", "diamond_ingot", "iron_gem", "iron_element", "redstone_dust",
+            "glowstone_dust"
     ));
 
     public static void init() {
-
         //base items
         for (MaterialType material : MaterialType.values()) {
             for (ItemType type : ItemType.values()) {
                 String itemName = material.name().toLowerCase() + "_" + type.name().toLowerCase();
                 Item item = new ItemBaseExp(itemName);
+
+                if (exclusionMap.containsKey(material.getCategory()) && exclusionMap.get(material.getCategory()).contains(type)) {
+                    System.err.println("Skipping item registration: " + itemName);
+                    continue;
+                }
 
                 if (exclusionList.contains(itemName)) {
                     System.err.println("Skipping item registration: " + itemName);
@@ -50,7 +61,6 @@ public class ModItemsExp {
                 ITEMS.put(itemName, item);
             }
         }
-
     }
 
     public static MaterialType getMaterialType(String name) {
@@ -77,10 +87,10 @@ public class ModItemsExp {
                 materialType = getMaterialType(materialName);
             } catch (IllegalArgumentException e) {
                 System.err.println("Error: Unknown material type '" + materialName + "'");
-                continue; // Skip registration for invalid items
+                continue;
             }
 
-            itemColors.registerItemColorHandler((stack, tintIndex) -> materialType.getColor(), item);
+            itemColors.registerItemColorHandler((stack, tintIndex) -> tintIndex == 0 ? materialType.getColor() : -1, item);
         }
     }
 

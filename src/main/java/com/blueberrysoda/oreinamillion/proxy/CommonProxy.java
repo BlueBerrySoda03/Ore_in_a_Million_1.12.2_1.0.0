@@ -3,6 +3,9 @@ package com.blueberrysoda.oreinamillion.proxy;
 import com.blueberrysoda.oreinamillion.config.*;
 import com.blueberrysoda.oreinamillion.init.*;
 //import com.blueberrysoda.oreinamillion.util.EventUtil;
+import com.blueberrysoda.oreinamillion.recipes.SmeltingRecipes;
+import com.blueberrysoda.oreinamillion.recipes.WaterDustCleanRecipe;
+import com.blueberrysoda.oreinamillion.util.EventUtil;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -18,16 +21,25 @@ public class CommonProxy {
         ModCompatConfig.init(event);
 //        ModItems.init();
         ModItemsExp.init();
-        ModBlocks.init();
+        System.out.println("Ore In A Million: Item Init Complete!");
+
+//        ModBlocks.init();
+        ModBlocksExp.init();
+        System.out.println("Ore In A Million: Block Init Complete!");
+
         ModSounds.init();
+        System.out.println("Ore In A Million: Sound Init Complete!");
 //        ModEvents.init();
-//        EventUtil.init();
+        EventUtil.init();
     }
 
     public static void initCommon(FMLInitializationEvent event){
 //        ModItems.initOreDict();
         ModItemsExp.initOreDict();
-        ModBlocks.initOreDict();
+        System.out.println("Ore In A Million: Item Ore Dict Complete!");
+
+//        ModBlocks.initOreDict();
+        SmeltingRecipes.init();
     }
 
     public static void postInitCommon(FMLPostInitializationEvent event){

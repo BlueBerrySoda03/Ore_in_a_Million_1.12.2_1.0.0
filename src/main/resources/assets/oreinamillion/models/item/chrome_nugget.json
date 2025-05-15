@@ -1,6 +1,3 @@
 {
-    "parent": "oreinamillion:item/base/nugget_base",
-    "textures": {
-        "layer0": "oreinamillion:items/base/nugget_base"
-    }
+    "parent": "oreinamillion:item/base/nugget_base"
 }

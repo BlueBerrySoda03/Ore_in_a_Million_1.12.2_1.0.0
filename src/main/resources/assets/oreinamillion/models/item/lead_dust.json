@@ -1,6 +1,3 @@
 {
-    "parent": "oreinamillion:item/base/dust_base",
-    "textures": {
-        "layer0": "oreinamillion:items/base/dust_base"
-    }
+    "parent": "oreinamillion:item/base/dust_base"
 }

@@ -1,0 +1,6 @@
+{
+    "parent": "oreinamillion:item/base/plate_base",
+    "textures": {
+        "layer0": "oreinamillion:items/base/plate_base"
+    }
+}

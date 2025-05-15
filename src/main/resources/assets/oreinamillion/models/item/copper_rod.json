@@ -1,6 +1,3 @@
 {
-    "parent": "oreinamillion:item/base/rod_base",
-    "textures": {
-        "layer0": "oreinamillion:items/base/rod_base"
-    }
+    "parent": "oreinamillion:item/base/rod_base"
 }

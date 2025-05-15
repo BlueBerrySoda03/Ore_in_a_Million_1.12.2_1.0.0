@@ -1,6 +1,3 @@
 {
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "oreinamillion:blocks/uranium_ore"
-  }
+    "parent": "oreinamillion:block/base/ore_base"
 }

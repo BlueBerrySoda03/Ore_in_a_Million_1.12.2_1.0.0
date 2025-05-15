@@ -1,5 +1,5 @@
 {
-  "variants": {
-    "normal": {"model":  "oreinamillion:cobalt_ore"}
-  }
+    "variants": {
+        "normal": { "model": "oreinamillion:cobalt_ore" }
+    }
 }

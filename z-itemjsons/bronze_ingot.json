@@ -1,0 +1,6 @@
+{
+    "parent": "oreinamillion:item/base/ingot_base",
+    "textures": {
+        "layer0": "oreinamillion:items/base/ingot_base"
+    }
+}

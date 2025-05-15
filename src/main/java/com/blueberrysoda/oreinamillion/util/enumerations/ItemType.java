@@ -1,16 +1,24 @@
 package com.blueberrysoda.oreinamillion.util.enumerations;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
+import com.blueberrysoda.oreinamillion.config.GeneralConfig;
 import net.minecraft.creativetab.CreativeTabs;
 
 public enum ItemType {
+    //basic items
     Ingot(OreInAMillion.MODID + ":items/base/ingot_base", OreInAMillion.CREATIVE_TAB_MINERAL),
+    Gem(OreInAMillion.MODID + ":items/base/gem_base", OreInAMillion.CREATIVE_TAB_MINERAL),
+    Element(OreInAMillion.MODID + ":items/base/element_base", OreInAMillion.CREATIVE_TAB_MINERAL),
     Nugget(OreInAMillion.MODID + ":items/base/nugget_base", OreInAMillion.CREATIVE_TAB_MINERAL),
     Dust(OreInAMillion.MODID + ":items/base/dust_base", OreInAMillion.CREATIVE_TAB_MINERAL),
+    //crafting items
     Gear(OreInAMillion.MODID + ":items/base/gear_base", OreInAMillion.CREATIVE_TAB_CRAFTING),
     Plate(OreInAMillion.MODID + ":items/base/plate_base", OreInAMillion.CREATIVE_TAB_CRAFTING),
     Rod(OreInAMillion.MODID + ":items/base/rod_base", OreInAMillion.CREATIVE_TAB_CRAFTING),
-    TinyDust(OreInAMillion.MODID + "items/:tiny_dust_base", OreInAMillion.CREATIVE_TAB_CRAFTING);
+    Tiny_Dust(OreInAMillion.MODID + ":items/base/tiny_dust_base", OreInAMillion.CREATIVE_TAB_CRAFTING),
+    Dirty_Dust(OreInAMillion.MODID + ":items/base/dirty_dust_base", OreInAMillion.CREATIVE_TAB_CRAFTING),
+    Tiny_Dirty_Dust(OreInAMillion.MODID + ":items/base/tiny_dirty_dust_base", OreInAMillion.CREATIVE_TAB_CRAFTING)
+    ;
 //    Helmet(OreInAMillion.MODID + ":helmet_base", OreInAMillion.CREATIVE_TAB_ARMOR),
 //    Chestplate(OreInAMillion.MODID + ":chestplate_base", OreInAMillion.CREATIVE_TAB_ARMOR),
 //    Leggings(OreInAMillion.MODID + ":leggings_base", OreInAMillion.CREATIVE_TAB_ARMOR),

@@ -4,3 +4,87 @@ after that, make an elaborate and cool way to combine those parts into a single 
 
 #2
 JETPACKS. PLEASE. AND LET THEM HAVE BAUBLES SUPPORT
+
+#3
+modular shields that support all the ores
+
+#4
+modular bows that have special string effects, for example, a nether material sets mobs on fire
+
+#5
+different parts of the tool add stats in a different way.
+the mining/hitting part adds the mining level, efficiency, and attack damage.
+the base of the tool adds the durability, some efficiency and attack damage.
+the handle adds the attack speed
+the grip/extra adds an affix
+
+#6
+the hammer can be shift + right clicked to flip it and deal damage/mine with the opposite side
+
+#7
+either make the item system really in depth or make everything fit together using already existing items/materials.
+aka: make them as modded as possible, or make them closer to vanilla
+like, instead of blades and heads and such, it'll be plates or ingots
+instead of a specialized handle for different types of weapons, just use rods/sticks
+for something heavy like the hammer, use entire blocks
+those are just a few examples, and it'll remove the entire middle ground in the process and make it so everything is more streamlined and understandable
+...
+its a more boring way of doing things, and I would have to take a few "artistic liberties", but it can be beneficial to me, and the users
+OR
+I can make a few specialized parts, and share them among (AMONG US) themselves
+
+
+
+
+
+
+
+ORDER OF CONSTRUCTION:
+
+Base Sword:
+blade + guard + short handle + grip + hilt
+
+Base Pickaxe:
+pick edge + pick head + handle + grip
+
+Base Axe:
+head edge + axe head + handle + grip
+
+Base Shovel:
+shovel edge + shovel head + handle + grip
+
+Base Hoe:
+angled_blade + handle + grip
+
+Base Hammer:
+hammer face + crushing head + hammer face + long handle + long handle + grip
+
+Long Sword:
+long blade + guard + short handle + grip
+
+Short Sword:
+short blade + guard + short handle + grip
+
+Dagger:
+short blade + short handle + grip
+
+Bow:
+bow limb + riser + bow limb + bowstring
+
+Shield:
+shield rim + shield base + short handle + grip
+
+Helmet:
+helmet base + helmet top + inscription
+
+Chestplate:
+chestplate base + shoulder guards + emblem + inscription
+
+Leggings:
+leggings base + legging + legging + inscription
+
+Boots:
+boot + boot + inscription
+
+Jetpack:
+tank + tank + thrusters + pack

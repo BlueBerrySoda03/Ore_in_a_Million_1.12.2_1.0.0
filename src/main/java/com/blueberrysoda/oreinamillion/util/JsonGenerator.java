@@ -16,14 +16,38 @@ public class JsonGenerator {
     public static void main(String[] args) {
         for (MaterialType material : MaterialType.values()) {
             for (ItemType type : ItemType.values()) {
-                generateBaseItemJsonFile(material, type);
+                switch (material.getTextureTint()) {
+                    case TextureLighter:
+                        generateBaseItemLighterJsonFile(material, type);
+                        break;
+                    case TextureDarker:
+                        generateBaseItemDarkerJsonFile(material, type);
+                        break;
+                    default:
+                        generateBaseItemJsonFile(material, type);
+                        break;
+                }
             }
         }
         for (MaterialType material : MaterialType.values()) {
             for (BlockType type : BlockType.values()) {
-                generateBaseBlockModelJsonFile(material, type);
-                generateBaseBlockItemModelJsonFile(material, type);
-                generateBaseBlockBlockstateJsonFile(material, type);
+                switch (material.getTextureTint()) {
+                    case TextureLighter:
+                        generateBaseBlockModelLighterJsonFile(material, type);
+                        generateBaseBlockItemModelJsonFile(material, type);
+                        generateBaseBlockBlockstateJsonFile(material, type);
+                        break;
+                    case TextureDarker:
+                        generateBaseBlockModelDarkerJsonFile(material, type);
+                        generateBaseBlockItemModelJsonFile(material, type);
+                        generateBaseBlockBlockstateJsonFile(material, type);
+                        break;
+                    default:
+                        generateBaseBlockModelJsonFile(material, type);
+                        generateBaseBlockItemModelJsonFile(material, type);
+                        generateBaseBlockBlockstateJsonFile(material, type);
+                        break;
+                }
             }
         }
     }
@@ -51,6 +75,52 @@ public class JsonGenerator {
         }
     }
 
+    private static void generateBaseItemLighterJsonFile(MaterialType material, ItemType type) {
+        String filename = basePathItemModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
+        filename = filename.replace("\\", "/");
+        File file = new File(filename);
+
+
+        File parentDir = file.getParentFile();
+        if (!parentDir.exists()) {
+            parentDir.mkdirs();
+        }
+
+        String jsonContent = "{\n" +
+                "    \"parent\": \"oreinamillion:item/base/" + type.name().toLowerCase() + "_base_light" + "\"\n" +
+                "}";
+
+        try (FileWriter writer = new FileWriter(file)) {
+            writer.write(jsonContent);
+            System.out.println("Generated: " + filename);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void generateBaseItemDarkerJsonFile(MaterialType material, ItemType type) {
+        String filename = basePathItemModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
+        filename = filename.replace("\\", "/");
+        File file = new File(filename);
+
+
+        File parentDir = file.getParentFile();
+        if (!parentDir.exists()) {
+            parentDir.mkdirs();
+        }
+
+        String jsonContent = "{\n" +
+                "    \"parent\": \"oreinamillion:item/base/" + type.name().toLowerCase() + "_base_dark" + "\"\n" +
+                "}";
+
+        try (FileWriter writer = new FileWriter(file)) {
+            writer.write(jsonContent);
+            System.out.println("Generated: " + filename);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private static void generateBaseBlockModelJsonFile(MaterialType material, BlockType type) {
         String filename = basePathBlockModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
         File file = new File(filename);
@@ -62,6 +132,48 @@ public class JsonGenerator {
 
         String jsonContent = "{\n" +
                 "    \"parent\": \"oreinamillion:block/base/" + type.name().toLowerCase() + "_base" + "\"\n" +
+                "}";
+
+        try (FileWriter writer = new FileWriter(file)) {
+            writer.write(jsonContent);
+            System.out.println("Generated: " + filename);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void generateBaseBlockModelLighterJsonFile(MaterialType material, BlockType type) {
+        String filename = basePathBlockModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
+        File file = new File(filename);
+
+        File parentDir = file.getParentFile();
+        if (!parentDir.exists()) {
+            parentDir.mkdirs();
+        }
+
+        String jsonContent = "{\n" +
+                "    \"parent\": \"oreinamillion:block/base/" + type.name().toLowerCase() + "_base_light" + "\"\n" +
+                "}";
+
+        try (FileWriter writer = new FileWriter(file)) {
+            writer.write(jsonContent);
+            System.out.println("Generated: " + filename);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void generateBaseBlockModelDarkerJsonFile(MaterialType material, BlockType type) {
+        String filename = basePathBlockModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
+        File file = new File(filename);
+
+        File parentDir = file.getParentFile();
+        if (!parentDir.exists()) {
+            parentDir.mkdirs();
+        }
+
+        String jsonContent = "{\n" +
+                "    \"parent\": \"oreinamillion:block/base/" + type.name().toLowerCase() + "_base_dark" + "\"\n" +
                 "}";
 
         try (FileWriter writer = new FileWriter(file)) {

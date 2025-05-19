@@ -29,20 +29,23 @@ public class ItemToolAxe extends ItemAxe {
         this.addTooltip = addTooltip;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
-    {
-        super.addInformation(stack,worldIn,tooltip,flagIn);
-        if (this.addTooltip) {
-            if (GuiScreen.isShiftKeyDown()) {
-                String s = stack.getItem().getUnlocalizedName() + ".tooltip";
-                String result = I18n.format(s);
-                tooltip.add(result);
-            } else {
-                String s = "hold.shift.tooltip";
-                String result = I18n.format(s);
-                tooltip.add(result);
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+        super.addInformation(stack, worldIn, tooltip, flagIn);
+
+        String tooltipKey = stack.getItem().getUnlocalizedName() + ".tooltip";
+        String shiftKeyMessage = "hold.shift.tooltip";
+
+        if (GuiScreen.isShiftKeyDown()) {
+//            tooltip.add(I18n.format(tooltipKey));
+            if (this.toolMaterial != null) {
+                tooltip.add(I18n.format("tooltip.harvest_level") + ": " + toolMaterial.getHarvestLevel());
+                tooltip.add(I18n.format("tooltip.enchantability") + ": " + toolMaterial.getEnchantability());
+                tooltip.add(I18n.format("tooltip.mining_speed") + ": " + toolMaterial.getEfficiency());
             }
+        } else {
+            tooltip.add(I18n.format(shiftKeyMessage));
         }
     }
 }

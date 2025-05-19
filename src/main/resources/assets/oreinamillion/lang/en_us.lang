@@ -7,6 +7,9 @@ itemGroup.CreativeTabTool=Ore in a Million: Tools
 itemGroup.CreativeTabArmor=Ore in a Million: Armor
 
 hold.shift.tooltip=Hold SHIFT for info
+tooltip.harvest_level=Tier
+tooltip.enchantability=Magic
+tooltip.mining_speed=Speed
 
 #item.oreinamillion..name=
 #minerals

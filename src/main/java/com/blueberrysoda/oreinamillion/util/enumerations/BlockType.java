@@ -7,32 +7,26 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public enum BlockType {
 
-    Block(OreInAMillion.MODID + ":blocks/base/storage_base", OreInAMillion.CREATIVE_TAB_BLOCK, Material.IRON, "pickaxe", SoundType.METAL, CategoryBlock.Storage),
-    Ore(OreInAMillion.MODID + ":blocks/base/ore_base", OreInAMillion.CREATIVE_TAB_BLOCK, Material.ROCK, "pickaxe", SoundType.STONE, CategoryBlock.Ore),
-    Cluster(OreInAMillion.MODID + ":blocks/base/cluster_base", OreInAMillion.CREATIVE_TAB_BLOCK, Material.ROCK, "pickaxe", SoundType.STONE, CategoryBlock.Ore),
-    Dirty_Dust_Block(OreInAMillion.MODID + ":blocks/base/dirty_dust_block_base", OreInAMillion.CREATIVE_TAB_BLOCK, Material.SAND, "shovel", SoundType.GROUND, CategoryBlock.Falling),
-    Dust_Block(OreInAMillion.MODID + ":blocks/base/dust_block_base", OreInAMillion.CREATIVE_TAB_BLOCK, Material.SAND, "shovel", SoundType.SAND, CategoryBlock.Falling)
+    Block(OreInAMillion.CREATIVE_TAB_BLOCK, Material.IRON, "pickaxe", SoundType.METAL, Categories.Storage),
+    Ore(OreInAMillion.CREATIVE_TAB_BLOCK, Material.ROCK, "pickaxe", SoundType.STONE, Categories.Ore),
+    Cluster(OreInAMillion.CREATIVE_TAB_BLOCK, Material.ROCK, "pickaxe", SoundType.STONE, Categories.Ore),
+    Dirty_Dust_Block(OreInAMillion.CREATIVE_TAB_BLOCK, Material.SAND, "shovel", SoundType.GROUND, Categories.Falling),
+    Dust_Block(OreInAMillion.CREATIVE_TAB_BLOCK, Material.SAND, "shovel", SoundType.SAND, Categories.Falling)
     ;
 
 
-    private final String texturePath;
     private final CreativeTabs creativeTab;
     private final Material material;
     private final String tool;
     private final SoundType soundType;
-    private final CategoryBlock category;
+    private final Categories category;
 
-    BlockType(String texturePath, CreativeTabs creativeTab, Material material, String tool, SoundType soundType, CategoryBlock category) {
-        this.texturePath = texturePath;
+    BlockType( CreativeTabs creativeTab, Material material, String tool, SoundType soundType, Categories category) {
         this.creativeTab = creativeTab;
         this.material = material;
         this.tool = tool;
         this.soundType = soundType;
         this.category = category;
-    }
-
-    public String getTexturePath() {
-        return texturePath;
     }
 
     public CreativeTabs getCreativeTab() {
@@ -51,7 +45,7 @@ public enum BlockType {
         return soundType;
     }
 
-    public CategoryBlock getCategory() {
+    public Categories getCategory() {
         return category;
     }
 }

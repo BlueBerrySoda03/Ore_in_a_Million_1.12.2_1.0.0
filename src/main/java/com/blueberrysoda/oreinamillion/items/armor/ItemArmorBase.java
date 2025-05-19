@@ -1,10 +1,12 @@
 package com.blueberrysoda.oreinamillion.items.armor;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
+import com.blueberrysoda.oreinamillion.util.enumerations.MaterialType;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
@@ -30,7 +32,22 @@ public class ItemArmorBase extends ItemArmor {
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setCreativeTab(OreInAMillion.CREATIVE_TAB_ARMOR);
         this.addTooltip = addTooltip;
-        ItemArmorBase.creativeTab = creativeTab;
+    }
+
+    @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type) {
+        return "oreinamillion:textures/models/armor/base/base_layer_" + (slot == EntityEquipmentSlot.LEGS ? "2" : "1") + ".png";
+    }
+
+    @Override
+    public int getColor(ItemStack stack) {
+        MaterialType materialType = MaterialType.fromItemStack(stack);
+        return materialType != null ? materialType.getColor() : 0xFFFFFF;
+    }
+
+    @Override
+    public boolean hasColor(ItemStack stack) {
+        return MaterialType.fromItemStack(stack) != null;
     }
 
     @SideOnly(Side.CLIENT)

@@ -1,11 +1,16 @@
 package com.blueberrysoda.oreinamillion.init;
 
+import com.blueberrysoda.oreinamillion.items.armor.ItemArmorBase;
 import com.blueberrysoda.oreinamillion.items.base.ItemBaseExp;
-import com.blueberrysoda.oreinamillion.util.enumerations.CategoryItem;
+import com.blueberrysoda.oreinamillion.items.materials.MaterialArmor;
+import com.blueberrysoda.oreinamillion.items.materials.MaterialTool;
+import com.blueberrysoda.oreinamillion.items.tools.basetools.*;
+import com.blueberrysoda.oreinamillion.util.enumerations.Categories;
 import com.blueberrysoda.oreinamillion.util.enumerations.ItemType;
 import com.blueberrysoda.oreinamillion.util.enumerations.MaterialType;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.color.ItemColors;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ColorHandlerEvent;
@@ -23,14 +28,17 @@ public class ModItemsExp {
 
     public static final Map<String, Item> ITEMS = new LinkedHashMap<>();
 
-    private static final Map<CategoryItem, Set<ItemType>> exclusionMap = new HashMap<>();
+    private static final Map<Categories, Set<ItemType>> exclusionMap = new HashMap<>();
 
     static {
-        exclusionMap.put(CategoryItem.Base, EnumSet.of(ItemType.Gem, ItemType.Element));
-        exclusionMap.put(CategoryItem.Gem, EnumSet.of(ItemType.Element, ItemType.Ingot));
-        exclusionMap.put(CategoryItem.Element, EnumSet.of(ItemType.Gem, ItemType.Ingot));
-        exclusionMap.put(CategoryItem.Alloy, EnumSet.of(ItemType.Gem, ItemType.Element));
-        exclusionMap.put(CategoryItem.Vanilla, EnumSet.of(ItemType.Gem, ItemType.Element));
+        exclusionMap.put(Categories.Base, EnumSet.of(ItemType.Gem, ItemType.Element));
+        exclusionMap.put(Categories.Gem, EnumSet.of(ItemType.Element, ItemType.Ingot));
+        exclusionMap.put(Categories.Element, EnumSet.of(ItemType.Gem, ItemType.Ingot));
+        exclusionMap.put(Categories.Alloy, EnumSet.of(ItemType.Gem, ItemType.Element));
+        exclusionMap.put(Categories.VanillaTooless, EnumSet.of(ItemType.Ingot, ItemType.Gem, ItemType.Element,
+        ItemType.Sword, ItemType.Pickaxe, ItemType.Axe, ItemType.Hoe, ItemType.Shovel, ItemType.Helmet, ItemType.Chestplate,
+                ItemType.Leggings, ItemType.Boots));
+        exclusionMap.put(Categories.VanillaTool, EnumSet.of(ItemType.Gem, ItemType.Element));
     }
 
     private static final Set<String> exclusionList = new HashSet<>(Arrays.asList(
@@ -40,11 +48,10 @@ public class ModItemsExp {
     ));
 
     public static void init() {
-        //base items
         for (MaterialType material : MaterialType.values()) {
             for (ItemType type : ItemType.values()) {
                 String itemName = material.name().toLowerCase() + "_" + type.name().toLowerCase();
-                Item item = new ItemBaseExp(itemName);
+
 
                 if (exclusionMap.containsKey(material.getCategory()) && exclusionMap.get(material.getCategory()).contains(type)) {
                     System.err.println("Skipping item registration: " + itemName);
@@ -56,7 +63,65 @@ public class ModItemsExp {
                     continue;
                 }
 
-                item.setCreativeTab(type.getCreativeTab());
+                Item item = null;
+
+                switch (type.getCategory()) {
+                    case Sword:
+                        item = new ItemToolSword(itemName, material.getToolMaterial(), type.getCreativeTab(), false);
+                        item.setCreativeTab(type.getCreativeTab());
+                        ITEMS.put(itemName, item);
+                        break;
+                    case Pickaxe:
+                        item = new ItemToolPickaxe(itemName, material.getToolMaterial(), type.getCreativeTab(), false);
+                        item.setCreativeTab(type.getCreativeTab());
+                        ITEMS.put(itemName, item);
+                        break;
+                    case Axe:
+                        item = new ItemToolAxe(itemName, material.getToolMaterial(), type.getCreativeTab(), false);
+                        item.setCreativeTab(type.getCreativeTab());
+                        ITEMS.put(itemName, item);
+                        break;
+                    case Shovel:
+                        item = new ItemToolShovel(itemName, material.getToolMaterial(), type.getCreativeTab(), false);
+                        item.setCreativeTab(type.getCreativeTab());
+                        ITEMS.put(itemName, item);
+                        break;
+                    case Hoe:
+                        item = new ItemToolHoe(itemName, material.getToolMaterial(), type.getCreativeTab(), false);
+                        item.setCreativeTab(type.getCreativeTab());
+                        ITEMS.put(itemName, item);
+                        break;
+                    case Hammer:
+                        item = new ItemToolHammer(itemName, material.getToolMaterial(), type.getCreativeTab(), false);
+                        item.setCreativeTab(type.getCreativeTab());
+                        ITEMS.put(itemName, item);
+                        break;
+                    case Helmet:
+                        item = new ItemArmorBase(itemName, MaterialArmor.armorEnder, 1, EntityEquipmentSlot.HEAD, type.getCreativeTab(), false);
+                        item.setCreativeTab(type.getCreativeTab());
+                        ITEMS.put(itemName, item);
+                        break;
+                    case Chestplate:
+                        item = new ItemArmorBase(itemName, MaterialArmor.armorEnder, 1, EntityEquipmentSlot.CHEST, type.getCreativeTab(), false);
+                        item.setCreativeTab(type.getCreativeTab());
+                        ITEMS.put(itemName, item);
+                        break;
+                    case Leggings:
+                        item = new ItemArmorBase(itemName, MaterialArmor.armorEnder, 2, EntityEquipmentSlot.LEGS, type.getCreativeTab(), false);
+                        item.setCreativeTab(type.getCreativeTab());
+                        ITEMS.put(itemName, item);
+                        break;
+                    case Boots:
+                        item = new ItemArmorBase(itemName, MaterialArmor.armorEnder, 1, EntityEquipmentSlot.FEET, type.getCreativeTab(), false);
+                        item.setCreativeTab(type.getCreativeTab());
+                        ITEMS.put(itemName, item);
+                        break;
+                    default:
+                        item = new ItemBaseExp(itemName);
+                        item.setCreativeTab(type.getCreativeTab());
+                        ITEMS.put(itemName, item);
+                        break;
+                }
 
                 ITEMS.put(itemName, item);
             }
@@ -89,9 +154,19 @@ public class ModItemsExp {
                 System.err.println("Error: Unknown material type '" + materialName + "'");
                 continue;
             }
-
             itemColors.registerItemColorHandler((stack, tintIndex) -> tintIndex == 0 ? materialType.getColor() : -1, item);
         }
+//        for (Map.Entry<String, Item> entry : ITEMS.entrySet()) {
+//            Item item = entry.getValue();
+//
+//            if (item instanceof ItemArmorBase) {
+//                itemColors.registerItemColorHandler((stack, tintIndex) -> {
+//                    MaterialType materialType = MaterialType.fromItemStack(stack);
+//                    return materialType != null && tintIndex == 1 ? materialType.getColor() : -1;
+//                }, item);
+//
+//            }
+//        }
     }
 
     @SubscribeEvent
@@ -144,7 +219,7 @@ public class ModItemsExp {
         }
 
         String itemName = capitalize(parts[0]);
-        String itemType = parts[1];
+        String itemType = String.join("_", Arrays.copyOfRange(parts, 1, parts.length));
 
         switch (itemType) {
             case "ingot":
@@ -190,7 +265,7 @@ public class ModItemsExp {
                 oreDictAdd.add("rod");
                 oreDictAdd.add("oreRod");
                 break;
-            case "tinydust":
+            case "tiny_dust":
                 oreDictAdd.add("dustTiny" + itemName);
                 oreDictAdd.add("dustTiny");
                 oreDictAdd.add("oreDustTiny");
@@ -203,6 +278,25 @@ public class ModItemsExp {
                 oreDictAdd.add("smallDust" + itemName);
                 oreDictAdd.add("smallDust");
                 oreDictAdd.add("oreSmallDust");
+                break;
+            case "dirty_dust":
+                oreDictAdd.add("dirtyDust" + itemName);
+                oreDictAdd.add("dirtyDust");
+                oreDictAdd.add("oreDirtyDust");
+                break;
+            case "tiny_dirty_dust":
+                oreDictAdd.add("dirtyDustTiny" + itemName);
+                oreDictAdd.add("dirtyDustTiny");
+                oreDictAdd.add("oreDirtyDustTiny");
+                oreDictAdd.add("dirtyTinyDust" + itemName);
+                oreDictAdd.add("dirtyTinyDust");
+                oreDictAdd.add("oreDirtyTinyDust");
+                oreDictAdd.add("dirtyDustSmall" + itemName);
+                oreDictAdd.add("dirtyDustSmall");
+                oreDictAdd.add("oreDirtyDustSmall");
+                oreDictAdd.add("dirtySmallDust" + itemName);
+                oreDictAdd.add("dirtySmallDust");
+                oreDictAdd.add("oreDirtySmallDust");
                 break;
             case "ore":
                 oreDictAdd.add("ore" + itemName);

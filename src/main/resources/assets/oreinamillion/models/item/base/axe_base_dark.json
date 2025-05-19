@@ -1,0 +1,7 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "oreinamillion:items/base/axe_base_dark",
+    "layer1": "oreinamillion:items/base/axe_handle_base"
+  }
+}

@@ -47,4 +47,9 @@ public class CustomOreIngredient extends Ingredient {
         }
         return false;
     }
+
+    @Override
+    public boolean isSimple() {
+        return false;
+    }
 }

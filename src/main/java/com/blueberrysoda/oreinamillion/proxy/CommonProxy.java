@@ -3,6 +3,7 @@ package com.blueberrysoda.oreinamillion.proxy;
 import com.blueberrysoda.oreinamillion.config.*;
 import com.blueberrysoda.oreinamillion.init.*;
 //import com.blueberrysoda.oreinamillion.util.EventUtil;
+import com.blueberrysoda.oreinamillion.recipes.CraftingRecipes;
 import com.blueberrysoda.oreinamillion.recipes.SmeltingRecipes;
 import com.blueberrysoda.oreinamillion.recipes.WaterDustCleanRecipe;
 import com.blueberrysoda.oreinamillion.util.EventUtil;
@@ -38,8 +39,15 @@ public class CommonProxy {
         ModItemsExp.initOreDict();
         System.out.println("Ore In A Million: Item Ore Dict Complete!");
 
+        ModBlocksExp.initOreDict();
+        System.out.println("Ore In A Million: Block Ore Dict Complete!");
+
 //        ModBlocks.initOreDict();
         SmeltingRecipes.init();
+        System.out.println("Ore In A Million: Smelting Recipes Complete!");
+
+        CraftingRecipes.init();
+        System.out.println("Ore In A Million: Crafting Recipes Complete!");
     }
 
     public static void postInitCommon(FMLPostInitializationEvent event){

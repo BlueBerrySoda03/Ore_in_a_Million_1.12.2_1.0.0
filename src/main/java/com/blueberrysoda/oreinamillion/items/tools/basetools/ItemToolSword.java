@@ -17,6 +17,7 @@ import java.util.List;
 
 public class ItemToolSword extends ItemSword {
 
+    private final ToolMaterial material;
     private final boolean addTooltip;
 
     public ItemToolSword(String name, ToolMaterial material, CreativeTabs creativeTab, boolean addTooltip) {
@@ -25,22 +26,26 @@ public class ItemToolSword extends ItemSword {
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setCreativeTab(creativeTab);
         this.addTooltip = addTooltip;
+        this.material = material;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
-    {
-        if (this.addTooltip) {
-            if (GuiScreen.isShiftKeyDown()) {
-                String s = stack.getItem().getUnlocalizedName() + ".tooltip";
-                String result = I18n.format(s);
-                tooltip.add(result);
-            } else {
-                String s = "hold.shift.tooltip";
-                String result = I18n.format(s);
-                tooltip.add(result);
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+        super.addInformation(stack, worldIn, tooltip, flagIn);
+
+        String tooltipKey = stack.getItem().getUnlocalizedName() + ".tooltip";
+        String shiftKeyMessage = "hold.shift.tooltip";
+
+        if (GuiScreen.isShiftKeyDown()) {
+//            tooltip.add(I18n.format(tooltipKey));
+            if (this.material != null) {
+                tooltip.add(I18n.format("tooltip.harvest_level") + ": " + material.getHarvestLevel());
+                tooltip.add(I18n.format("tooltip.enchantability") + ": " + material.getEnchantability());
+                tooltip.add(I18n.format("tooltip.mining_speed") + ": " + material.getEfficiency());
             }
+        } else {
+            tooltip.add(I18n.format(shiftKeyMessage));
         }
     }
 }

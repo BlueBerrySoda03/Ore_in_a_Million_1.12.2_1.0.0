@@ -1,5 +1,6 @@
 package com.blueberrysoda.oreinamillion.util;
 
+import com.blueberrysoda.oreinamillion.enchantments.EnchantmentAerialAffinity;
 import com.blueberrysoda.oreinamillion.recipes.FuelRegistry;
 import com.blueberrysoda.oreinamillion.recipes.WaterDustCleanRecipe;
 import net.minecraftforge.common.MinecraftForge;

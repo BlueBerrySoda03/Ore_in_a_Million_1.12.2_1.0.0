@@ -3,11 +3,12 @@ package com.blueberrysoda.oreinamillion;
 import com.blueberrysoda.oreinamillion.creativetabs.*;
 import com.blueberrysoda.oreinamillion.proxy.ClientProxy;
 import com.blueberrysoda.oreinamillion.proxy.CommonProxy;
-//import com.blueberrysoda.oreinamillion.recipes.CraftingRecipes;
-//import com.blueberrysoda.oreinamillion.recipes.SmeltingRecipes;
+import com.blueberrysoda.oreinamillion.util.JetpackChargeHandler;
 import com.blueberrysoda.oreinamillion.util.JsonGenerator;
+import com.blueberrysoda.oreinamillion.util.keybinds.NetworkHandler;
 import com.blueberrysoda.oreinamillion.world.OreWorldGen;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -30,6 +31,7 @@ public class OreInAMillion {
     public static final CreativeTabs CREATIVE_TAB_BLOCK = new CreativeTabBlock(CreativeTabs.getNextID(), "CreativeTabBlock", 4);
     public static final CreativeTabs CREATIVE_TAB_TOOL = new CreativeTabTool(CreativeTabs.getNextID(), "CreativeTabTool", 5);
     public static final CreativeTabs CREATIVE_TAB_ARMOR = new CreativeTabArmor(CreativeTabs.getNextID(), "CreativeTabArmor", 6);
+    public static final CreativeTabs CREATIVE_TAB_MEKANISM = new CreativeTabArmor(CreativeTabs.getNextID(), "CreativeTabMekanism", 7);
 
     @Mod.Instance
     public static OreInAMillion instance;
@@ -61,7 +63,8 @@ public class OreInAMillion {
     public static void init(FMLInitializationEvent event){
         ClientProxy.initClient(event);
         CommonProxy.initCommon(event);
-//        CraftingRecipes.init();
+        NetworkHandler.registerMessages();
+//        MinecraftForge.EVENT_BUS.register(new JetpackChargeHandler());
     }
 
     @Mod.EventHandler

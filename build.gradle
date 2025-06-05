@@ -1,110 +1,90 @@
 buildscript {
     repositories {
-        maven { url = 'https://maven.minecraftforge.net/' }
-        mavenCentral()
+        jcenter()
+        maven { url = "https://files.minecraftforge.net/maven" }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
-        
-apply plugin: 'net.minecraftforge.gradle'
-// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
+
+apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.0'
-group = 'com.blueberrysoda.oreinamillion' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+version = '1.0.0'
+group = 'com.blueberrysoda.oreinamillion'
 archivesBaseName = 'oreinamillion'
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
-
-sourceSets.all {
-    it.output.resourcesDir = it.output.classesDirs.getFiles().iterator().next()
+sourceCompatibility = targetCompatibility = '1.8'
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
 }
 
+ext.minecraft_version = '1.12.2'
+ext.forge_version = '14.23.5.2838' // Or 2847 if you prefer
+ext.jei_version = '4.16.1.302'
+
 minecraft {
-    // The mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   Snapshot are built nightly.
-    // stable_#            Stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // Simply re-run your setup task after changing the mappings to update your workspace.
-    //mappings channel: 'snapshot', version: '20171003-1.12'
-    mappings channel: 'snapshot', version: '20171003-1.12'
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-    
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    version = "${minecraft_version}-${forge_version}"
+    runDir = "run"
+    mappings = "snapshot_20171003"
+    makeObfSourceJar = false
+}
 
-    // Default run configurations.
-    // These can be tweaked, removed, or duplicated as needed.
-    runs {
-        client {
-            workingDirectory project.file('run')
-
-            // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
-            // Recommended logging level for the console
-            property 'forge.logging.console.level', 'debug'
-        }
-
-        server {
-
-            // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
-            // Recommended logging level for the console
-            property 'forge.logging.console.level', 'debug'
-        }
-    }
+repositories {
+    maven { url = "https://maven.minecraftforge.net/" }
+    maven { url = "https://files.minecraftforge.net/maven" }
+    maven { url = "https://dvs1.progwml6.com/files/maven/" }
+    maven { url = "https://chickenbones.net/maven/" }
+    maven { url = "https://maven.covers1624.net/" }
+    maven { url = "https://www.cursemaven.com/" }
+    maven { url = "https://maven.blamejared.com/" }
+    maven { url = "https://maven.tterrag.com/" }
+    maven { url = "https://modmaven.dev/" }
+    flatDir { dirs 'libs' }
 }
 
 dependencies {
-    // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
-    // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
-    // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
+    // JEI
+    compileOnly "mezz.jei:jei_${minecraft_version}:${jei_version}:api"
+    runtime "mezz.jei:jei_${minecraft_version}:${jei_version}"
 
-    // You may put jars on which you depend on in ./libs or you may define them like so..
-    // compile "some.group:artifact:version:classifier"
-    // compile "some.group:artifact:version"
+    // Mekanism
+    deobfCompile "curse.maven:mekanism-268560:2835175"
 
-    // Real examples
-    // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    // compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // The 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
-    // provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // These dependencies get remapped to your current MCP mappings
-    // deobf 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // For more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
+    // Baubles
+    compileOnly "curse.maven:baubles-227083:2518667"
+    runtime "curse.maven:baubles-227083:2518667"
 }
 
-// Example for how to get properties into the manifest for reading by the runtime..
-jar {
-    manifest {
-        attributes([
-            "Specification-Title": "examplemod",
-            "Specification-Vendor": "examplemodsareus",
-            "Specification-Version": "1", // We are version 1 of ourselves
-            "Implementation-Title": project.name,
-            "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"examplemodsareus",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
-        ])
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version': project.version, 'mcversion': project.minecraft.version
+    }
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
     }
 }
 
-// Example configuration to allow publishing using the maven-publish task
-// This is the preferred method to reobfuscate your jar file
-jar.finalizedBy('reobfJar') 
-// However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
-//publish.dependsOn('reobfJar')
+jar {
+    manifest {
+        attributes(
+                "Specification-Title": "Ore In A Million",
+                "Specification-Vendor": "BlueBerrySoda",
+                "Specification-Version": version,
+                "Implementation-Title": project.name,
+                "Implementation-Version": version,
+                "Implementation-Vendor": "BlueBerrySoda",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        )
+    }
+}
+jar.finalizedBy('reobfJar')
 
 publishing {
     publications {

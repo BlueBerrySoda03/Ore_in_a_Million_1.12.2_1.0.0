@@ -1,13 +1,15 @@
 package com.blueberrysoda.oreinamillion.items.tools.basetools;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
-import com.blueberrysoda.oreinamillion.items.base.ItemBase;
+import com.blueberrysoda.oreinamillion.util.enumerations.MaterialType;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;

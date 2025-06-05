@@ -50,12 +50,16 @@ public class JsonGenerator {
                 }
             }
         }
+        for (MaterialType material : MaterialType.values()) {
+            generateFluidBlockModelJson(material);
+            generateFluidBlockStateJson(material);
+        }
     }
 
     private static void generateBaseItemJsonFile(MaterialType material, ItemType type) {
-        String filename = basePathItemModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
-        filename = filename.replace("\\", "/");
-        File file = new File(filename);
+        String fileName = basePathItemModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
+        fileName = fileName.replace("\\", "/");
+        File file = new File(fileName);
 
 
         File parentDir = file.getParentFile();
@@ -69,16 +73,16 @@ public class JsonGenerator {
 
         try (FileWriter writer = new FileWriter(file)) {
             writer.write(jsonContent);
-            System.out.println("Generated: " + filename);
+//            System.out.println("Generated: " + fileName);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private static void generateBaseItemLighterJsonFile(MaterialType material, ItemType type) {
-        String filename = basePathItemModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
-        filename = filename.replace("\\", "/");
-        File file = new File(filename);
+        String fileName = basePathItemModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
+        fileName = fileName.replace("\\", "/");
+        File file = new File(fileName);
 
 
         File parentDir = file.getParentFile();
@@ -92,16 +96,16 @@ public class JsonGenerator {
 
         try (FileWriter writer = new FileWriter(file)) {
             writer.write(jsonContent);
-            System.out.println("Generated: " + filename);
+//            System.out.println("Generated: " + fileName);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private static void generateBaseItemDarkerJsonFile(MaterialType material, ItemType type) {
-        String filename = basePathItemModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
-        filename = filename.replace("\\", "/");
-        File file = new File(filename);
+        String fileName = basePathItemModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
+        fileName = fileName.replace("\\", "/");
+        File file = new File(fileName);
 
 
         File parentDir = file.getParentFile();
@@ -115,15 +119,15 @@ public class JsonGenerator {
 
         try (FileWriter writer = new FileWriter(file)) {
             writer.write(jsonContent);
-            System.out.println("Generated: " + filename);
+//            System.out.println("Generated: " + fileName);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private static void generateBaseBlockModelJsonFile(MaterialType material, BlockType type) {
-        String filename = basePathBlockModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
-        File file = new File(filename);
+        String fileName = basePathBlockModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
+        File file = new File(fileName);
 
         File parentDir = file.getParentFile();
         if (!parentDir.exists()) {
@@ -136,15 +140,15 @@ public class JsonGenerator {
 
         try (FileWriter writer = new FileWriter(file)) {
             writer.write(jsonContent);
-            System.out.println("Generated: " + filename);
+//            System.out.println("Generated: " + fileName);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private static void generateBaseBlockModelLighterJsonFile(MaterialType material, BlockType type) {
-        String filename = basePathBlockModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
-        File file = new File(filename);
+        String fileName = basePathBlockModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
+        File file = new File(fileName);
 
         File parentDir = file.getParentFile();
         if (!parentDir.exists()) {
@@ -157,15 +161,15 @@ public class JsonGenerator {
 
         try (FileWriter writer = new FileWriter(file)) {
             writer.write(jsonContent);
-            System.out.println("Generated: " + filename);
+//            System.out.println("Generated: " + fileName);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private static void generateBaseBlockModelDarkerJsonFile(MaterialType material, BlockType type) {
-        String filename = basePathBlockModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
-        File file = new File(filename);
+        String fileName = basePathBlockModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
+        File file = new File(fileName);
 
         File parentDir = file.getParentFile();
         if (!parentDir.exists()) {
@@ -178,15 +182,15 @@ public class JsonGenerator {
 
         try (FileWriter writer = new FileWriter(file)) {
             writer.write(jsonContent);
-            System.out.println("Generated: " + filename);
+//            System.out.println("Generated: " + fileName);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private static void generateBaseBlockItemModelJsonFile(MaterialType material, BlockType type) {
-        String filename = basePathItemModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
-        File file = new File(filename);
+        String fileName = basePathItemModels + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
+        File file = new File(fileName);
 
         File parentDir = file.getParentFile();
         if (!parentDir.exists()) {
@@ -199,15 +203,15 @@ public class JsonGenerator {
 
         try (FileWriter writer = new FileWriter(file)) {
             writer.write(jsonContent);
-            System.out.println("Generated: " + filename);
+//            System.out.println("Generated: " + fileName);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private static void generateBaseBlockBlockstateJsonFile(MaterialType material, BlockType type) {
-        String filename = basePathBlockStates + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
-        File file = new File(filename);
+        String fileName = basePathBlockStates + material.name().toLowerCase() + "_" + type.name().toLowerCase() + ".json";
+        File file = new File(fileName);
 
         File parentDir = file.getParentFile();
         if (!parentDir.exists()) {
@@ -222,7 +226,55 @@ public class JsonGenerator {
 
         try (FileWriter writer = new FileWriter(file)) {
             writer.write(jsonContent);
-            System.out.println("Generated: " + filename);
+//            System.out.println("Generated: " + fileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void generateFluidBlockModelJson(MaterialType material) {
+        String fileName = basePathBlockModels + "molten_" + material.getMaterialName() + ".json";
+        File file = new File(fileName);
+
+        File parentDir = file.getParentFile();
+        if (!parentDir.exists()) {
+            parentDir.mkdirs();
+        }
+
+        String jsonContent = "{\n" +
+                "    \"parent\": \"block/lava\",\n" +
+                "        \"textures\": {\n" +
+                "           \"particle\": \"oreinamillion:base/molten_base_still\n" +
+                "       }\n" +
+                "}";
+
+        try (FileWriter writer = new FileWriter(file)) {
+            writer.write(jsonContent);
+//            System.out.println("Generated: " + fileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void generateFluidBlockStateJson(MaterialType material) {
+        String fileName = basePathBlockStates + "molten_" + material.getMaterialName() + ".json";
+        File file = new File(fileName);
+
+        File parentDir = file.getParentFile();
+        if (!parentDir.exists()) {
+            parentDir.mkdirs();
+        }
+
+        String jsonContent =
+                "{\n" +
+                "    \"variants\": {\n" +
+                "        \"\": { \"model\": \"forge:fluid\" }\n" +
+                "   }" +
+                "}";
+
+        try (FileWriter writer = new FileWriter(file)) {
+            writer.write(jsonContent);
+//            System.out.println("Generated: " + fileName);
         } catch (IOException e) {
             e.printStackTrace();
         }

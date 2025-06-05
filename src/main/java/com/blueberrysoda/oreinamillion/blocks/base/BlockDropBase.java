@@ -1,7 +1,6 @@
 package com.blueberrysoda.oreinamillion.blocks.base;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
-import com.blueberrysoda.oreinamillion.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -42,8 +41,6 @@ public class BlockDropBase extends Block {
         this.itemDrop = itemDrop.getItem();
         this.transBlock = transBlock;
         this.addTooltip = addTooltip;
-
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(Objects.requireNonNull(this.getRegistryName())));
     }
 
     @Override

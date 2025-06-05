@@ -1,6 +1,6 @@
 package com.blueberrysoda.oreinamillion.creativetabs;
 
-import com.blueberrysoda.oreinamillion.init.ModItems;
+import com.blueberrysoda.oreinamillion.util.enumerations.MaterialType;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
@@ -16,6 +16,6 @@ public class CreativeTabTool extends CreativeTabs {    private int tab;
     @SideOnly(Side.CLIENT)
     @Override
     public ItemStack getTabIconItem(){
-        return new ItemStack(ModItems.creativeIcon5);
+        return new ItemStack(MaterialType.Cobalt.getItem("pickaxe"));
     }
 }

@@ -19,6 +19,7 @@ public class CraftingRecipes {
         Item tinyDust = material.getItem("tiny_dust");
         Item dirtyDust = material.getItem("dirty_dust");
         Item dirtyTinyDust = material.getItem("tiny_dirty_dust");
+        Item clump = material.getItem("clump");
         Item nugget = material.getItem("nugget");
         Item sword = material.getItem("sword");
         Item pickaxe = material.getItem("pickaxe");
@@ -338,38 +339,6 @@ public class CraftingRecipes {
                     "   ", "A A", "A A",
                     'A', new CustomOreIngredient("gem" + material.getMaterialNameUppercase(), material.getMaterialName() + "Gem"));
         }
-//
-//            GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_gear"), null, new ItemStack(ModItems.gearCopper),
-//                    " A ", "A A", " A ", 'A', new CustomOreIngredient("ingotCopper", "copperIngot"));
-//            GameRegistry.addShapelessRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_dust"), null, new ItemStack(ModItems.tinydustCopper, 9),
-//                    new CustomOreIngredient("dustCopper", "copperDust"));
-//            GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_tiny"), null, new ItemStack(ModItems.dustCopper),
-//                    "AAA", "AAA", "AAA", 'A', new CustomOreIngredient("dustTinyCopper", "oreDustTinyCopper", "tinyDustCopper", "oreTinyDustCopper", "dustSmallCopper", "oreDustSmallCopper", "smallDustCopper", "oreSmallDustCopper"));
-//
-//            GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_sword"), null, new ItemStack(ModItems.swordCopper),
-//                    " A ", " A ", " B ", 'A', new CustomOreIngredient("ingotCopper", "copperIngot"), 'B', new CustomOreIngredient("stickWood", "oreRod"));
-//            GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_pickaxe"), null, new ItemStack(ModItems.pickaxeCopper),
-//                    "AAA", " B ", " B ", 'A', new CustomOreIngredient("ingotCopper", "copperIngot"), 'B', new CustomOreIngredient("stickWood", "oreRod"));
-//            GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_axe"), null, new ItemStack(ModItems.axeCopper),
-//                    " AA", " BA", " B ", 'A', new CustomOreIngredient("ingotCopper", "copperIngot"), 'B', new CustomOreIngredient("stickWood", "oreRod"));
-//            GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_shovel"), null, new ItemStack(ModItems.shovelCopper),
-//                    " A ", " B ", " B ", 'A', new CustomOreIngredient("ingotCopper", "copperIngot"), 'B', new CustomOreIngredient("stickWood", "oreRod"));
-//            GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_hoe"), null, new ItemStack(ModItems.hoeCopper),
-//                    " AA", " B ", " B ", 'A', new CustomOreIngredient("ingotCopper", "copperIngot"), 'B', new CustomOreIngredient("stickWood", "oreRod"));
-//
-//            GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_helmet_top"), null, new ItemStack(ModItems.helmetCopper),
-//                    "AAA", "A A", "   ", 'A', new CustomOreIngredient("ingotCopper", "copperIngot"));
-//            GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_helmet_bottom"), null, new ItemStack(ModItems.helmetCopper),
-//                    "   ", "AAA", "A A", 'A', new CustomOreIngredient("ingotCopper", "copperIngot"));
-//            GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_chestplate"), null, new ItemStack(ModItems.chestplateCopper),
-//                    "A A", "AAA", "AAA", 'A', new CustomOreIngredient("ingotCopper", "copperIngot"));
-//            GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_leggings"), null, new ItemStack(ModItems.leggingsCopper),
-//                    "AAA", "A A", "A A", 'A', new CustomOreIngredient("ingotCopper", "copperIngot"));
-//            GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_boots_top"), null, new ItemStack(ModItems.bootsCopper),
-//                    "A A", "A A", "   ", 'A', new CustomOreIngredient("ingotCopper", "copperIngot"));
-//            GameRegistry.addShapedRecipe(new ResourceLocation(OreInAMillion.MODID, "copper_boots_bottom"), null, new ItemStack(ModItems.bootsCopper),
-//                    "   ", "A A", "A A", 'A', new CustomOreIngredient("ingotCopper", "copperIngot"));
-
     }
 
     public static void init() {

@@ -1,6 +1,0 @@
-{
-    "parent": "oreinamillion:item/base/gear_base",
-    "textures": {
-        "layer0": "oreinamillion:items/base/gear_base"
-    }
-}

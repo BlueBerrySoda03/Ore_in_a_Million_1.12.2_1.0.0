@@ -1,0 +1,6 @@
+{
+    "parent": "block/lava",
+        "textures": {
+           "particle": "oreinamillion:base/molten_base_still
+       }
+}

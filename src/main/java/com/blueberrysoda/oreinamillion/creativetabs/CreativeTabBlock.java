@@ -1,6 +1,6 @@
 package com.blueberrysoda.oreinamillion.creativetabs;
 
-import com.blueberrysoda.oreinamillion.init.ModItems;
+import com.blueberrysoda.oreinamillion.util.enumerations.MaterialType;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
@@ -17,6 +17,6 @@ public class CreativeTabBlock extends CreativeTabs {
     @SideOnly(Side.CLIENT)
     @Override
     public ItemStack getTabIconItem(){
-        return new ItemStack(ModItems.creativeIcon4);
+        return new ItemStack(MaterialType.Amethyst.getBlock("ore"));
     }
 }

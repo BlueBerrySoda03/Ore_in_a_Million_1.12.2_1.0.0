@@ -17,6 +17,10 @@ public enum ItemType {
     Tiny_Dust(OreInAMillion.CREATIVE_TAB_CRAFTING, Categories.Crafting),
     Dirty_Dust(OreInAMillion.CREATIVE_TAB_CRAFTING, Categories.Crafting),
     Tiny_Dirty_Dust(OreInAMillion.CREATIVE_TAB_CRAFTING, Categories.Crafting),
+    //mekanism stuffs
+    Clump(OreInAMillion.CREATIVE_TAB_MEKANISM, Categories.Crafting),
+    Crystal(OreInAMillion.CREATIVE_TAB_MEKANISM, Categories.Crafting),
+    Shard(OreInAMillion.CREATIVE_TAB_MEKANISM, Categories.Crafting),
     //tools
     Sword(OreInAMillion.CREATIVE_TAB_TOOL, Categories.Sword),
     Pickaxe(OreInAMillion.CREATIVE_TAB_TOOL, Categories.Pickaxe),
@@ -24,14 +28,15 @@ public enum ItemType {
     Shovel(OreInAMillion.CREATIVE_TAB_TOOL, Categories.Shovel),
     Hoe(OreInAMillion.CREATIVE_TAB_TOOL, Categories.Hoe),
     Hammer(OreInAMillion.CREATIVE_TAB_TOOL, Categories.Hammer),
+    Bow(OreInAMillion.CREATIVE_TAB_TOOL, Categories.Bow),
     //armor
     Helmet(OreInAMillion.CREATIVE_TAB_ARMOR, Categories.Helmet),
     Chestplate(OreInAMillion.CREATIVE_TAB_ARMOR, Categories.Chestplate),
     Leggings(OreInAMillion.CREATIVE_TAB_ARMOR, Categories.Leggings),
     Boots(OreInAMillion.CREATIVE_TAB_ARMOR, Categories.Boots),
+    //other
+    Jetpack(OreInAMillion.CREATIVE_TAB_MAIN, Categories.Jetpack),
     ;
-
-
 
     private final CreativeTabs creativeTab;
     private final Categories category;

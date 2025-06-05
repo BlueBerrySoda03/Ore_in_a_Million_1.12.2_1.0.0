@@ -17,6 +17,7 @@ public enum Categories {
     Shovel,
     Hoe,
     Hammer,
+    Bow,
     //armor
     Helmet,
     Chestplate,
@@ -26,6 +27,8 @@ public enum Categories {
     Falling,
     Storage,
     Ore,
+    //other stuffs
+    Jetpack,
     //texture categories
     TextureNormal,
     TextureLighter,

@@ -1,0 +1,11 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "oreinamillion:items/base/bow_base_light"
+  },
+  "overrides": [
+    { "predicate": { "pulling": 1 }, "model": "oreinamillion:items/base/bow/bow_pull_light_0" },
+    { "predicate": { "pulling": 1, "pull": 0.65 }, "model": "oreinamillion:items/base/bow/bow_pull_light_1" },
+    { "predicate": { "pulling": 1, "pull": 0.9 }, "model": "oreinamillion:items/base/bow/bow_pull_light_2" }
+  ]
+}

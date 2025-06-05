@@ -43,6 +43,9 @@ public class MineralsConfig {
     public static boolean isVoidBornEnabled;
 
     public static boolean isAmethystEnabled;
+    public static boolean isGarnetEnabled;
+    public static boolean isOpalEnabled;
+    public static boolean isPearlEnabled;
     public static boolean isPeridotEnabled;
     public static boolean isRubyEnabled;
     public static boolean isSapphireEnabled;
@@ -100,7 +103,6 @@ public class MineralsConfig {
             isEnderEnabled = config.getBoolean("Is Ender Enabled?", categoryBase, true, "Do you want Ender to be enabled?");
             isIridiumEnabled = config.getBoolean("Is Iridium Enabled?", categoryBase, true, "Do you want Iridium to be enabled?");
             isLeadEnabled = config.getBoolean("Is Lead Enabled?", categoryBase, true, "Do you want Lead to be enabled?");
-            isMercuryEnabled = config.getBoolean("Is Mercury Enabled?", categoryBase, true, "Do you want Mercury to be enabled?");
             isMithrilEnabled = config.getBoolean("Is Mithril Enabled?", categoryBase, true, "Do you want Mithril to be enabled?");
             isNickelEnabled = config.getBoolean("Is Nickel Enabled?", categoryBase, true, "Do you want Nickel to be enabled?");
             isOsmiumEnabled = config.getBoolean("Is Osmium Enabled?", categoryBase, true, "Do you want Osmium to be enabled?");
@@ -132,6 +134,9 @@ public class MineralsConfig {
             config.addCustomCategoryComment(categoryGem, "Gems. AKA: Shiny things, like diamonds and emeralds. [True or False]");
 
             isAmethystEnabled = config.getBoolean("Is Amethyst Enabled?", categoryGem, true, "Do you want Amethyst to be enabled?");
+            isGarnetEnabled = config.getBoolean("Is Garnet Enabled?", categoryGem, true, "Do you want Garnet to be enabled?");
+            isOpalEnabled = config.getBoolean("Is Opal Enabled?", categoryGem, true, "Do you want Opal to be enabled?");
+            isPearlEnabled = config.getBoolean("Is Pearl Enabled?", categoryGem, true, "Do you want Pearl to be enabled?");
             isPeridotEnabled = config.getBoolean("Is Peridot Enabled?", categoryGem, true, "Do you want Peridot to be enabled?");
             isRubyEnabled = config.getBoolean("Is Ruby Enabled?", categoryGem, true, "Do you want Ruby to be enabled?");
             isSapphireEnabled = config.getBoolean("Is Sapphire Enabled?", categoryGem, true, "Do you want Sapphire to be enabled?");
@@ -140,6 +145,7 @@ public class MineralsConfig {
 
             isCarbonEnabled = config.getBoolean("Is Carbon Enabled?", categoryElement, true, "Do you want Carbon to be enabled?");
             isCinnabarEnabled = config.getBoolean("Is Cinnabar Enabled?", categoryElement, true, "Do you want Cinnabar to be enabled?");
+            isMercuryEnabled = config.getBoolean("Is Mercury Enabled?", categoryElement, true, "Do you want Mercury to be enabled?");
             isSiliconEnabled = config.getBoolean("Is Silicon Enabled?", categoryElement, true, "Do you want Silicon to be enabled?");
             isSulfurEnabled = config.getBoolean("Is Sulfur Enabled?", categoryElement, true, "Do you want Sulfur to be enabled?");
 

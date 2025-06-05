@@ -20,10 +20,10 @@ public class CustomOreIngredient extends Ingredient {
             if (ores != null && !ores.isEmpty()) {
                 matchingStacks.addAll(ores);
             } else {
-                System.out.println("No ores found for oreName: " + oreName);
+//                System.out.println("No ores found for oreName: " + oreName);
             }
         }
-        System.out.println("matchingStacks size: " + matchingStacks.size());
+//        System.out.println("matchingStacks size: " + matchingStacks.size());
     }
 
     @Nonnull
@@ -45,6 +45,11 @@ public class CustomOreIngredient extends Ingredient {
                 return true;
             }
         }
+        return false;
+    }
+
+    @Override
+    public boolean isSimple() {
         return false;
     }
 }

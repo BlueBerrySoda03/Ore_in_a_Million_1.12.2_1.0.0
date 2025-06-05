@@ -1,0 +1,8 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "oreinamillion:items/tools/axe/head",
+    "layer1": "oreinamillion:items/tools/axe/handle_top",
+    "layer2": "oreinamillion:items/tools/axe/handle_bottom"
+  }
+}

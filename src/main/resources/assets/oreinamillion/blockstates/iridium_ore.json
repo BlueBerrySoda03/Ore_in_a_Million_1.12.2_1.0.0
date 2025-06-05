@@ -1,5 +1,5 @@
 {
-  "variants": {
-    "normal": {"model":  "oreinamillion:iridium_ore"}
-  }
+    "variants": {
+        "normal": { "model": "oreinamillion:iridium_ore" }
+    }
 }

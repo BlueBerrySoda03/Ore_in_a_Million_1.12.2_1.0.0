@@ -1,6 +1,3 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "oreinamillion:items/platinum_boots"
-  }
+    "parent": "oreinamillion:item/base/boots_base_light"
 }

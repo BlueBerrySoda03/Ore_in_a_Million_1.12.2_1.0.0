@@ -1,6 +1,3 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "oreinamillion:items/cobalt_leggings"
-  }
+    "parent": "oreinamillion:item/base/leggings_base"
 }

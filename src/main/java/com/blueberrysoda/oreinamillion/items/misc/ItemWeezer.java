@@ -2,11 +2,9 @@ package com.blueberrysoda.oreinamillion.items.misc;
 
 import com.blueberrysoda.oreinamillion.OreInAMillion;
 import com.blueberrysoda.oreinamillion.init.ModSounds;
-import com.blueberrysoda.oreinamillion.items.base.ItemBase;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
@@ -31,9 +29,8 @@ public class ItemWeezer extends Item {
     }
 
     @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
-    {
-        super.addInformation(stack,worldIn,tooltip,flagIn);
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+        super.addInformation(stack, worldIn, tooltip, flagIn);
         String s = stack.getItem().getUnlocalizedName() + ".tooltip";
         String result = I18n.format(s);
         tooltip.add(result);

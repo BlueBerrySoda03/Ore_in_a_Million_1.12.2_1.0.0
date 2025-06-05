@@ -1,0 +1,8 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "oreinamillion:items/tools/parts/pickaxe/handle",
+    "layer1": "oreinamillion:items/tools/parts/pickaxe/head",
+    "layer2": "oreinamillion:items/tools/parts/pickaxe/tips"
+  }
+}

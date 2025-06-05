@@ -1,6 +1,3 @@
 {
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "oreinamillion:blocks/mithril_ore"
-  }
+    "parent": "oreinamillion:block/base/ore_base"
 }

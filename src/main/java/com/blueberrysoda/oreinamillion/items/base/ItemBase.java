@@ -15,23 +15,27 @@ import java.util.List;
 
 public class ItemBase extends Item {
 
-    private static CreativeTabs creativeTab;
-    private static boolean addTooltip;
+    private final boolean addTooltip;
+    private final String name;
 
     public ItemBase(String name, CreativeTabs creativeTab, boolean addTooltip){
         setRegistryName(name);
         setUnlocalizedName(OreInAMillion.MODID + "." + name);
         setMaxStackSize(64);
         setCreativeTab(creativeTab);
-        ItemBase.creativeTab = creativeTab;
-        ItemBase.addTooltip = addTooltip;
+        this.addTooltip = addTooltip;
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
         super.addInformation(stack,worldIn,tooltip,flagIn);
-        if (ItemBase.addTooltip) {
+        if (this.addTooltip) {
             String s = stack.getItem().getUnlocalizedName() + ".tooltip";
             String result = I18n.format(s);
             tooltip.add(result);

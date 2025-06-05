@@ -1,14 +1,16 @@
 package com.blueberrysoda.oreinamillion.init;
 
-import com.blueberrysoda.oreinamillion.blocks.combined.BlockCombined;
-import com.blueberrysoda.oreinamillion.blocks.ores.*;
-import com.blueberrysoda.oreinamillion.config.GeneralConfig;
-import com.blueberrysoda.oreinamillion.config.MineralsConfig;
-import com.blueberrysoda.oreinamillion.config.ModCompatConfig;
+import com.blueberrysoda.oreinamillion.blocks.base.BlockBase;
+import com.blueberrysoda.oreinamillion.blocks.base.BlockBaseFalling;
+import com.blueberrysoda.oreinamillion.util.enumerations.*;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.color.BlockColors;
+import net.minecraft.client.renderer.color.ItemColors;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -18,282 +20,111 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Mod.EventBusSubscriber
 public class ModBlocks {
 
-    public static final List<Block> BLOCKS = new ArrayList<>();
+    private static final Map<String, Block> BLOCKS = new LinkedHashMap<>();
+    private static final Map<String, ItemBlock> BLOCK_ITEM = new LinkedHashMap<>();
 
-    //=========
-    //ores
-    //=========
-    //ingots
-    public static Block oreAdamantine = new BlockOre("adamantine_ore", 3);
-    public static Block oreAluminum = new BlockOre("aluminum_ore", 1);
-    public static Block oreArdite = new BlockOre("ardite_ore", 1);
-    public static Block oreChrome = new BlockOre("chrome_ore", 1);
-    public static Block oreCobalt = new BlockOre("cobalt_ore", 2);
-    public static Block oreCopper = new BlockOre("copper_ore", 1);
-    public static Block oreEnder = new BlockOre("ender_ore", 3);
-    public static Block oreIridium = new BlockOre("iridium_ore", 2);
-    public static Block oreLead = new BlockOre("lead_ore", 1);
-    public static Block oreMithril = new BlockOre("mithril_ore", 2);
-    public static Block oreNickel = new BlockOre("nickel_ore", 1);
-    public static Block oreOsmium = new BlockOre("osmium_ore", 1);
-    public static Block orePlatinum = new BlockOre("platinum_ore", 2);
-    public static Block oreSilver = new BlockOre("silver_ore", 2);
-    public static Block oreTin = new BlockOre("tin_ore", 1);
-    public static Block oreTitanium = new BlockOre("titanium_ore", 3);
-    public static Block oreTungsten = new BlockOre("tungsten_ore", 2);
-    public static Block oreUranium = new BlockOre("uranium_ore", 3);
-    public static Block oreZinc = new BlockOre("zinc_ore", 1);
+    private static final Map<Categories, Set<BlockType>> exclusionMap = new HashMap<>();
 
-    public static Block oreAmethyst = new BlockOre("amethyst_ore", 2);
-    public static Block orePeridot = new BlockOre("peridot_ore", 2);
-    public static Block oreRuby = new BlockOre("ruby_ore", 2);
-    public static Block oreSapphire = new BlockOre("sapphire_ore", 2);
+    static {
+        exclusionMap.put(Categories.Alloy, EnumSet.of(BlockType.Ore));
+    }
 
-    public static Block oreCinnabar = new BlockOre("cinnabar_ore", 0);
-    public static Block oreSulfur = new BlockOre("sulfur_ore", 0);
+    private static final Set<String> exclusionList = new HashSet<>(Arrays.asList(
+            "iron_block", "gold_block", "diamond_block", "coal_block",
+            "iron_ore", "gold_ore", "diamond_ore", "coal_ore", "redstone_ore", "lapis_ore",
+            "wood_block", "wood_ore", "stone_block", "stone_ore", "lapis_block", "emerald_ore",
+            "emerald_block"
+    ));
 
-    //=========
-    //combined
-    //=========
-    //base ingots
+    public static void init() {
+        for (MaterialType material : MaterialType.values()) {
+            for (BlockType type : BlockType.values()) {
+                String blockName = material.name().toLowerCase() + "_" + type.name().toLowerCase();
 
-    //alloy ingots
+                if (exclusionMap.containsKey(material.getCategory()) && exclusionMap.get(material.getCategory()).contains(type)) {
+//                    System.err.println("Skipping item registration: " + blockName);
+                    continue;
+                }
 
-    //gems
+                if (exclusionList.contains(blockName)) {
+//                    System.out.println("Skipping block registration: " + blockName);
+                    continue;
+                }
 
-    //other
+                Block block;
 
-    //vanilla
-    public static Block blockCharcoal = new BlockCombined("charcoal_block", 0);
+                switch (type.getCategory()) {
+                    case Falling:
+                        block = new BlockBaseFalling(blockName, type.getTool(), 0, type.getSoundType());
+                        block.setCreativeTab(type.getCreativeTab());
+                        BLOCKS.put(blockName, block);
+                        break;
+                    default:
+                        block = new BlockBase(blockName, type.getMaterial(), type.getTool(), material.getHarvestLevel(), type.getSoundType());
+                        block.setCreativeTab(type.getCreativeTab());
+                        BLOCKS.put(blockName, block);
+                        break;
+                }
 
-    //=========
-    //dust blocks
-    //=========
-    //base
-
-    //alloy
-
-    //gems
-
-    //other
-
-    //vanilla
-
-    //=========
-    //tile entities
-    //=========
-
-
-    //=========
-    //other
-    //=========
-    public static Block oreWeezer = new BlockOreDrop("weezer_ore", ModItems.weezerWeezer, 1, 0);
-//    public static Block blockEpic = new BlockBase("epic_block", Material.SAND, "axe", SoundType.METAL, 7.0F, 15.0F, 2);
-
-    public static void init(){
-//        BLOCKS.add(blockEpic);
-        // = new ("", Material.);
-        if (GeneralConfig.isMineralsEnabled) {
-            if(GeneralConfig.isIngotsEnabled) {
-                //adamantine
-                if (MineralsConfig.isAdamantineEnabled) {
-                    BLOCKS.add(oreAluminum);
-                }
-                //aluminum
-                if (MineralsConfig.isAluminumEnabled) {
-                    BLOCKS.add(oreAluminum);
-                }
-                //chrome
-                if (MineralsConfig.isChromeEnabled) {
-                    BLOCKS.add(oreChrome);
-                }
-                //cobalt
-                if (MineralsConfig.isCobaltEnabled) {
-                    BLOCKS.add(oreCobalt);
-                }
-                //copper
-                if (MineralsConfig.isCopperEnabled) {
-                    BLOCKS.add(oreCopper);
-                }
-                //ender
-                if (MineralsConfig.isEnderEnabled){
-                    BLOCKS.add(oreEnder);
-                }
-                //iridium
-                if (MineralsConfig.isIridiumEnabled) {
-                    BLOCKS.add(oreIridium);
-                }
-                //lead
-                if (MineralsConfig.isLeadEnabled) {
-                    BLOCKS.add(oreLead);
-                }
-                //mithril
-                if (MineralsConfig.isMithrilEnabled) {
-                    BLOCKS.add(oreMithril);
-                }
-                //nickel
-                if (MineralsConfig.isNickelEnabled) {
-                    BLOCKS.add(oreNickel);
-                }
-                //osmium
-                if (MineralsConfig.isOsmiumEnabled) {
-                    BLOCKS.add(oreOsmium);
-                }
-                //platinum
-                if (MineralsConfig.isPlatinumEnabled) {
-                    BLOCKS.add(orePlatinum);
-                }
-                //silver
-                if (MineralsConfig.isSilverEnabled) {
-                    BLOCKS.add(oreSilver);
-                }
-                //tin
-                if (MineralsConfig.isTinEnabled) {
-                    BLOCKS.add(oreTin);
-                }
-                //titanium
-                if (MineralsConfig.isTitaniumEnabled) {
-                    BLOCKS.add(oreTitanium);
-                }
-                //tungsten
-                if (MineralsConfig.isTungstenEnabled) {
-                    BLOCKS.add(oreTungsten);
-                }
-                //uranium
-                if (MineralsConfig.isUraniumEnabled) {
-                    BLOCKS.add(oreUranium);
-                }
-                //zinc
-                if (MineralsConfig.isZincEnabled) {
-                    BLOCKS.add(oreZinc);
-                }
-                //brass
-                if (MineralsConfig.isBrassEnabled) {
-
-                }
-                //bronze
-                if (MineralsConfig.isBronzeEnabled) {
-
-                }
-                //electrum
-                if (MineralsConfig.isElectrumEnabled) {
-
-                }
-                //invar
-                if (MineralsConfig.isInvarEnabled) {
-
-                }
-                //steel
-                if (MineralsConfig.isSteelEnabled) {
-
-                }
-                //thermal series
-                if (ModCompatConfig.isThermalEnabled){
-                    //constantan
-                    if (MineralsConfig.isConstantanEnabled){
-
-                    }
-                    //enderium
-                    if (MineralsConfig.isEnderiumEnabled){
-
-                    }
-                    //lumium
-                    if (MineralsConfig.isLumiumEnabled){
-
-                    }
-                    //signalum
-                    if (MineralsConfig.isSignalumEnabled){
-
-                    }
-                }
-                //tinkers construct
-                if (ModCompatConfig.isTinkersEnabled){
-                    //ardite
-                    if (MineralsConfig.isArditeEnabled){
-                        BLOCKS.add(oreArdite);
-                    }
-                    //knightslime
-                    if (MineralsConfig.isKnightSlimeEnabled){
-
-                    }
-                    //pigiron
-                    if (MineralsConfig.isPigIronEnabled) {
-
-                    }
-                    //manyullyn
-                    if (MineralsConfig.isManyullynEnabled){
-
-                    }
-                }
-            }
-            if (GeneralConfig.isGemsEnabled){
-                //amethyst
-                if (MineralsConfig.isAmethystEnabled){
-                    BLOCKS.add(oreAmethyst);
-                }
-                //peridot
-                if (MineralsConfig.isPeridotEnabled){
-                    BLOCKS.add(orePeridot);
-                }
-                //ruby
-                if (MineralsConfig.isRubyEnabled){
-                    BLOCKS.add(oreRuby);
-                }
-                //sapphire
-                if (MineralsConfig.isSapphireEnabled){
-                    BLOCKS.add(oreSapphire);
-                }
-            }
-            //elements
-            if (GeneralConfig.isElementsEnabled){
-                //carbon
-                if (MineralsConfig.isCarbonEnabled){
-
-                }
-                //cinnabar
-                if (MineralsConfig.isCinnabarEnabled){
-                    BLOCKS.add(oreCinnabar);
-                }
-                //sulphur
-                if (MineralsConfig.isSulfurEnabled){
-                    BLOCKS.add(oreSulfur);
-                }
-            }
-            if (GeneralConfig.isVanillaEnabled) {
-                //diamond
-                if (MineralsConfig.isDiamondEnabled) {
-
-                }
-                //emerald
-                if (MineralsConfig.isEmeraldEnabled) {
-
-                }
-                //coal
-                if (MineralsConfig.isCoalEnabled) {
-
-                }
-                //charcoal
-                if (MineralsConfig.isCharcoalEnabled) {
-                    BLOCKS.add(blockCharcoal);
-                }
-            }
-            if (GeneralConfig.isSillyStuffEnabled) {
-                BLOCKS.add(oreWeezer);
+                ItemBlock itemBlock = new ItemBlock(block);
+                itemBlock.setRegistryName(blockName);
+                BLOCK_ITEM.put(blockName, itemBlock);
             }
         }
     }
 
     @SubscribeEvent
+    public static void registerBlockColors(ColorHandlerEvent.Block event) {
+        BlockColors blockColors = event.getBlockColors();
+
+        for (Map.Entry<String, Block> entry : BLOCKS.entrySet()) {
+            String blockName = entry.getKey();
+            Block block = entry.getValue();
+
+            String materialName = blockName.split("_")[0];
+            MaterialType materialType = getMaterialType(materialName);
+
+            blockColors.registerBlockColorHandler((state, world, pos, tintIndex) -> {
+                return tintIndex == 0 ? materialType.getColor() : -1;
+            }, block);
+        }
+    }
+
+    @SubscribeEvent
+    public static void registerItemColors(ColorHandlerEvent.Item event) {
+        ItemColors itemColors = event.getItemColors();
+        BlockColors blockColors = event.getBlockColors();
+
+        for (Map.Entry<String, Block> entry : BLOCKS.entrySet()) {
+            String blockName = entry.getKey();
+            Block block = entry.getValue();
+
+            String materialName = blockName.split("_")[0];
+            MaterialType materialType = getMaterialType(materialName);
+
+            itemColors.registerItemColorHandler((stack, tintIndex) -> {
+                return tintIndex == 0 ? materialType.getColor() : -1;
+            }, Item.getItemFromBlock(block));
+        }
+    }
+
+    public static MaterialType getMaterialType(String name) {
+        for (MaterialType material : MaterialType.values()) {
+            if (material.name().equalsIgnoreCase(name)) {
+                return material;
+            }
+        }
+        throw new IllegalArgumentException("Invalid material type: " + name);
+    }
+
+    @SubscribeEvent
     public static void registerBlock(RegistryEvent.Register<Block> event){
-        ModBlocks.init();
-        for (Block block : BLOCKS) {
+        for (Block block : BLOCKS.values()) {
             event.getRegistry().register(block);
         }
     }
@@ -301,8 +132,7 @@ public class ModBlocks {
     @SubscribeEvent
     @SideOnly(Side.CLIENT)
     public static void registerRenders(ModelRegistryEvent event){
-        ModBlocks.init();
-        for (Block block : BLOCKS) {
+        for (Block block : BLOCKS.values()) {
             registerRender(Item.getItemFromBlock(block));
         }
     }
@@ -312,8 +142,28 @@ public class ModBlocks {
         ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(Objects.requireNonNull(item.getRegistryName()), "inventory"));
     }
 
-    public static void initOreDict() {
-        for (Block block : BLOCKS) {
+    @SubscribeEvent
+    public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
+        for (ItemBlock item : BLOCK_ITEM.values()) {
+            event.getRegistry().register(item);
+        }
+    }
+
+    @SubscribeEvent
+    public static void registerBlockModels(ModelRegistryEvent event) {
+        for (Block block : BLOCKS.values()) {
+            ModelLoader.setCustomModelResourceLocation(
+                    Item.getItemFromBlock(block), 0, new ModelResourceLocation(
+                            Objects.requireNonNull(block.getRegistryName()
+                            ),
+                            "inventory"
+                    )
+            );
+        }
+    }
+
+        public static void initOreDict() {
+        for (Block block : BLOCKS.values()) {
             registerOreDictNames(Item.getItemFromBlock(block));
         }
     }
@@ -345,7 +195,7 @@ public class ModBlocks {
 
         String itemName = capitalize(parts[0]);
         String itemNameLower = parts[0];
-        String itemType = parts[1];
+        String itemType = String.join("_", Arrays.copyOfRange(parts, 1, parts.length));
 
         switch (itemType) {
             case "ore":
@@ -354,13 +204,28 @@ public class ModBlocks {
                 oreDictAdd.add("oreBlock");
                 oreDictAdd.add("blockOre");
                 break;
-            case "gem":
-                oreDictAdd.add("block" + itemName);
-                oreDictAdd.add(itemNameLower + "Block");
-                oreDictAdd.add("blockCombined");
-                oreDictAdd.add("combinedBlock");
+            case "dust_block":
+                oreDictAdd.add("dustBlock" + itemName);
+                oreDictAdd.add(itemNameLower + "DustBlock");
+                oreDictAdd.add("blockDust");
+                oreDictAdd.add("dustBlock");
+                break;
+            case "dirty_dust_block":
+                oreDictAdd.add("dirtyDustBlock" + itemName);
+                oreDictAdd.add(itemNameLower + "DirtyDustBlock");
+                oreDictAdd.add("blockDirtyDust");
+                oreDictAdd.add("dirtyDustBlock");
                 break;
             case "block":
+                oreDictAdd.add("block" + itemName);
+                oreDictAdd.add(itemNameLower + "Block");
+                oreDictAdd.add("storage" + itemName);
+                oreDictAdd.add(itemNameLower + "Storage");
+                oreDictAdd.add("blockCombined");
+                oreDictAdd.add("combinedBlock");
+                oreDictAdd.add("storageCombined");
+                oreDictAdd.add("combinedStorage");
+                oreDictAdd.add("blockBeaconBase");
                 break;
             default:
                 System.err.println("Unknown item type: " + itemType);

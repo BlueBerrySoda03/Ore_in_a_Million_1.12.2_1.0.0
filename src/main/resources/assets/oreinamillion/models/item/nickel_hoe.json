@@ -1,6 +1,3 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "oreinamillion:items/nickel_hoe"
-  }
+    "parent": "oreinamillion:item/base/hoe_base"
 }

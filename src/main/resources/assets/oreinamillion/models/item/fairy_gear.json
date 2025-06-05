@@ -1,6 +1,3 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "oreinamillion:items/fairy_gear"
-  }
+    "parent": "oreinamillion:item/base/gear_base_dark"
 }

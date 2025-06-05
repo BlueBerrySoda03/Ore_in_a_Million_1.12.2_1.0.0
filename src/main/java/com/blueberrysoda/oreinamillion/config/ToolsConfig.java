@@ -15,7 +15,6 @@ public class ToolsConfig {
     public static boolean isEnderToolsEnabled;
     public static boolean isIridiumToolsEnabled;
     public static boolean isLeadToolsEnabled;
-    public static boolean isMercuryToolsEnabled;
     public static boolean isMithrilToolsEnabled;
     public static boolean isNickelToolsEnabled;
     public static boolean isOsmiumToolsEnabled;
@@ -43,14 +42,12 @@ public class ToolsConfig {
     public static boolean isVoidBornToolsEnabled;
 
     public static boolean isAmethystToolsEnabled;
+    public static boolean isGarnetToolsEnabled;
+    public static boolean isOpalToolsEnabled;
+    public static boolean isPearlToolsEnabled;
     public static boolean isPeridotToolsEnabled;
     public static boolean isRubyToolsEnabled;
     public static boolean isSapphireToolsEnabled;
-
-    public static boolean isCarbonToolsEnabled;
-    public static boolean isCinnabarToolsEnabled;
-    public static boolean isSiliconToolsEnabled;
-    public static boolean isSulfurToolsEnabled;
 
     public static boolean isCharcoalToolsEnabled;
     public static boolean isCharcoaliumToolsEnabled;
@@ -71,15 +68,13 @@ public class ToolsConfig {
             String categoryBase;
             String categoryAlloy;
             String categoryGem;
-            String categoryElement;
             String categoryVanilla;
 
             categoryInfo = "1 - Info";
             categoryBase = "2 - Base";
             categoryAlloy = "3 - Alloys";
             categoryGem = "4 - Gems";
-            categoryElement = "5 - Elements";
-            categoryVanilla = "6 - Vanilla";
+            categoryVanilla = "5 - Vanilla";
 
             config.addCustomCategoryComment(categoryInfo, "This config file decides if you want to disable specific tools based on the mineral. If you want to disabled specific tools, such as the Aluminum Pickaxe, please just use crafttweaker. [Nothing or Nothing]");
 
@@ -96,7 +91,6 @@ public class ToolsConfig {
             isEnderToolsEnabled = config.getBoolean("Is Ender Tools Enabled?", categoryBase, true, "Do you want Ender Tools to be enabled?");
             isIridiumToolsEnabled = config.getBoolean("Is Iridium Tools Enabled?", categoryBase, true, "Do you want Iridium Tools to be enabled?");
             isLeadToolsEnabled = config.getBoolean("Is Lead Tools Enabled?", categoryBase, true, "Do you want Lead Tools to be enabled?");
-            isMercuryToolsEnabled = config.getBoolean("Is Mercury Tools Enabled?", categoryBase, true, "Do you want Mercury Tools to be enabled?");
             isMithrilToolsEnabled = config.getBoolean("Is Mithril Tools Enabled?", categoryBase, true, "Do you want Mithril Tools to be enabled?");
             isNickelToolsEnabled = config.getBoolean("Is Nickel Tools Enabled?", categoryBase, true, "Do you want Nickel Tools to be enabled?");
             isOsmiumToolsEnabled = config.getBoolean("Is Osmium Tools Enabled?", categoryBase, true, "Do you want Osmium Tools to be enabled?");
@@ -128,16 +122,12 @@ public class ToolsConfig {
             config.addCustomCategoryComment(categoryGem, "Gems. AKA: Shiny things, like diamonds and emeralds. [True or False]");
 
             isAmethystToolsEnabled = config.getBoolean("Is Amethyst Tools Enabled?", categoryGem, true, "Do you want Amethyst Tools to be enabled?");
+            isGarnetToolsEnabled = config.getBoolean("Is Garnet Tools Enabled?", categoryGem, true, "Do you want Garnet Tools to be enabled?");
+            isOpalToolsEnabled = config.getBoolean("Is Opal Tools Enabled?", categoryGem, true, "Do you want Opal Tools to be enabled?");
+            isPearlToolsEnabled = config.getBoolean("Is Pearl Tools Enabled?", categoryGem, true, "Do you want Pearl Tools to be enabled?");
             isPeridotToolsEnabled = config.getBoolean("Is Peridot Tools Enabled?", categoryGem, true, "Do you want Peridot Tools to be enabled?");
             isRubyToolsEnabled = config.getBoolean("Is Ruby Tools Enabled?", categoryGem, true, "Do you want Ruby Tools to be enabled?");
             isSapphireToolsEnabled = config.getBoolean("Is Sapphire Tools Enabled?", categoryGem, true, "Do you want Sapphire Tools to be enabled?");
-
-            config.addCustomCategoryComment(categoryElement, "Elements. AKA: Things that make different things. [True or False]");
-
-            isCarbonToolsEnabled = config.getBoolean("Is Carbon Tools Enabled?", categoryElement, true, "Do you want Carbon Tools to be enabled?");
-            isCinnabarToolsEnabled = config.getBoolean("Is Cinnabar Tools Enabled?", categoryElement, true, "Do you want Cinnabar Tools to be enabled?");
-            isSiliconToolsEnabled = config.getBoolean("Is Silicon Tools Enabled?", categoryElement, true, "Do you want Silicon Tools to be enabled?");
-            isSulfurToolsEnabled = config.getBoolean("Is Sulfur Tools Enabled?", categoryElement, true, "Do you want Sulfur Tools to be enabled?");
 
             config.addCustomCategoryComment(categoryVanilla, "Vanilla Additions. AKA: Things that I added that expand on the already available vanilla elements. [True or False]");
 
